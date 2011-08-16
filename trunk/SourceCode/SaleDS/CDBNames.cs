@@ -29,6 +29,23 @@ namespace Sale.CDBNames
         public const string CURRENT_PRICE = "CURRENT_PRICE";
     }
 
+    public class DM_UNIT
+    {
+        public const string ID = "ID";
+        public const string UNIT_CODE = "UNIT_CODE";
+        public const string DESCRIPTION = "DESCRIPTION";
+    }
+    public class DM_PROVIDER
+    {
+        public const string ID = "ID";
+        public const string PROVIDER_CODE = "PROVIDER_CODE";
+        public const string PROVIDER_NAME = "PROVIDER_NAME";
+        public const string MOBILE = "MOBILE";
+        public const string EMAIL = "EMAIL";
+        public const string ADDRESS = "ADDRESS";
+        public const string TAX_CODE = "TAX_CODE";
+    }
+
 }
 
 
