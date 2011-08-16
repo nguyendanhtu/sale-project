@@ -71,7 +71,7 @@ namespace SaleApp
 
             m_cbo_unit.DisplayMember = DM_UNIT.UNIT_CODE;
             m_cbo_unit.ValueMember = DM_UNIT.ID;
-            m_cbo_unit.DataSource = v
+            //m_cbo_unit.DataSource = v
         }
 
         private void us_object_2_form(US_DM_PRODUCT ip_us_product)

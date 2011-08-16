@@ -59,7 +59,6 @@
             this.m_cbo_category.Name = "m_cbo_category";
             this.m_cbo_category.Size = new System.Drawing.Size(151, 21);
             this.m_cbo_category.TabIndex = 37;
-            this.m_cbo_category.SelectedIndexChanged += new System.EventHandler(this.m_cbo_category_SelectedIndexChanged);
             // 
             // m_lbl_categories
             // 
