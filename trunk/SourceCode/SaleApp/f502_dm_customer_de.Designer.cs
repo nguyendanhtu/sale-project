@@ -109,7 +109,7 @@
             // m_lbl_tax_code
             // 
             this.m_lbl_tax_code.AutoSize = true;
-            this.m_lbl_tax_code.Location = new System.Drawing.Point(328, 234);
+            this.m_lbl_tax_code.Location = new System.Drawing.Point(35, 231);
             this.m_lbl_tax_code.Name = "m_lbl_tax_code";
             this.m_lbl_tax_code.Size = new System.Drawing.Size(46, 13);
             this.m_lbl_tax_code.TabIndex = 6;
@@ -170,9 +170,9 @@
             // 
             // m_txt_tax_code
             // 
-            this.m_txt_tax_code.Location = new System.Drawing.Point(431, 234);
+            this.m_txt_tax_code.Location = new System.Drawing.Point(141, 231);
             this.m_txt_tax_code.Name = "m_txt_tax_code";
-            this.m_txt_tax_code.Size = new System.Drawing.Size(141, 20);
+            this.m_txt_tax_code.Size = new System.Drawing.Size(142, 20);
             this.m_txt_tax_code.TabIndex = 14;
             // 
             // ImageList
