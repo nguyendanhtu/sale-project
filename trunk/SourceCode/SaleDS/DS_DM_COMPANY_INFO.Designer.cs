@@ -260,7 +260,8 @@ namespace SaleDS {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DM_COMPANY_INFODataTable : global::System.Data.TypedTableBase<DM_COMPANY_INFORow> {
+        public partial class DM_COMPANY_INFODataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable
+        {
             
             private global::System.Data.DataColumn columnID;
             

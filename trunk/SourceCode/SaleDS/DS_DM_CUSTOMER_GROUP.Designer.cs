@@ -260,7 +260,8 @@ namespace SaleDS {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DM_CUSTOMER_GROUPDataTable : global::System.Data.TypedTableBase<DM_CUSTOMER_GROUPRow> {
+        public partial class DM_CUSTOMER_GROUPDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable
+        {
             
             private global::System.Data.DataColumn columnID;
             
