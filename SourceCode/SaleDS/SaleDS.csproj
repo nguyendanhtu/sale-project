@@ -1,7 +1,7 @@
 ﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
-    <ProductVersion>8.0.50727</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{39DC1A18-A725-4DF1-93CE-467C130CEEF9}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -103,6 +103,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_DM_CATEGORY.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_DM_COMPANY_INFO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_DM_COMPANY_INFO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_DM_CUSTOMER.cs">
+      <DependentUpon>DS_DM_CUSTOMER.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DS_DM_CUSTOMER.Designer.cs" />
+    <Compile Include="DS_DM_CUSTOMER_GROUP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_DM_CUSTOMER_GROUP.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_HT_QUYEN_USER.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -126,6 +141,37 @@
     </None>
     <None Include="DS_DM_CATEGORY.xss">
       <DependentUpon>DS_DM_CATEGORY.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_COMPANY_INFO.xsc">
+      <DependentUpon>DS_DM_COMPANY_INFO.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_COMPANY_INFO.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_DM_COMPANY_INFO.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DS_DM_COMPANY_INFO.xss">
+      <DependentUpon>DS_DM_COMPANY_INFO.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_CUSTOMER.xsc">
+      <DependentUpon>DS_DM_CUSTOMER.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_CUSTOMER.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DS_DM_CUSTOMER.xss">
+      <DependentUpon>DS_DM_CUSTOMER.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_CUSTOMER_GROUP.xsc">
+      <DependentUpon>DS_DM_CUSTOMER_GROUP.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_CUSTOMER_GROUP.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_DM_CUSTOMER_GROUP.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DS_DM_CUSTOMER_GROUP.xss">
+      <DependentUpon>DS_DM_CUSTOMER_GROUP.xsd</DependentUpon>
     </None>
     <None Include="DS_HT_QUYEN_USER.xsc">
       <DependentUpon>DS_HT_QUYEN_USER.xsd</DependentUpon>
