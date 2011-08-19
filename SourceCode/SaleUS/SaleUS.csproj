@@ -27,7 +27,9 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>2.0</OldToolsVersion>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -79,9 +81,6 @@
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
     <Reference Include="System.Data">
       <Name>System.Data</Name>
     </Reference>
@@ -114,7 +113,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="US_DM_CATEGORY.cs" />
+    <Compile Include="US_DM_COMPANY_INFO.cs" />
+    <Compile Include="US_DM_CUSTOMER.cs" />
+    <Compile Include="US_DM_CUSTOMER_GROUP.cs" />
+    <Compile Include="US_DM_PROVIDER.cs" />
+    <Compile Include="US_DM_UNIT.cs" />
     <Compile Include="US_HT_QUYEN_USER.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
