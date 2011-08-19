@@ -1,7 +1,7 @@
 ﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{78272235-1F54-4999-968E-A24136D4F875}</ProjectGuid>
     <SccProjectName>
@@ -48,6 +48,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -161,6 +162,9 @@
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
     <Reference Include="System.Data">
       <Name>System.Data</Name>
     </Reference>
@@ -252,6 +256,72 @@
     <Compile Include="f202_dm_category_de.Designer.cs">
       <DependentUpon>f202_dm_category_de.cs</DependentUpon>
     </Compile>
+    <Compile Include="f301_dm_product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f301_dm_product_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f301_dm_product_de.Designer.cs">
+      <DependentUpon>f301_dm_product_de.cs</DependentUpon>
+    </Compile>
+    <Compile Include="f302_dm_product_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f302_dm_product_de.Designer.cs">
+      <DependentUpon>f302_dm_product_de.cs</DependentUpon>
+    </Compile>
+    <Compile Include="f401_DM_COMPANY_INFO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f402_dm_company_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f402_dm_company_de.Designer.cs">
+      <DependentUpon>f402_dm_company_de.cs</DependentUpon>
+    </Compile>
+    <Compile Include="f501_dm_customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f502_dm_customer_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f502_dm_customer_de.Designer.cs">
+      <DependentUpon>f502_dm_customer_de.cs</DependentUpon>
+    </Compile>
+    <Compile Include="f601_DM_CUSTOMER_GROUP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f602_dm_customer_group_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f602_dm_customer_group_de.Designer.cs">
+      <DependentUpon>f602_dm_customer_group_de.cs</DependentUpon>
+    </Compile>
+    <Compile Include="f701_dm_provider.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f702_dm_provider_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f702_dm_provider_de.Designer.cs">
+      <DependentUpon>f702_dm_provider_de.cs</DependentUpon>
+    </Compile>
+    <Compile Include="f802_dm_repository_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f802_dm_repository_de.Designer.cs">
+      <DependentUpon>f802_dm_repository_de.cs</DependentUpon>
+    </Compile>
+    <Compile Include="f901_dm_unit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f902_dm_uinit_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f902_dm_uinit_de.Designer.cs">
+      <DependentUpon>f902_dm_uinit_de.cs</DependentUpon>
+    </Compile>
     <Compile Include="f996_license_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -289,6 +359,48 @@
     <EmbeddedResource Include="f202_dm_category_de.resx">
       <SubType>Designer</SubType>
       <DependentUpon>f202_dm_category_de.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f301_dm_product.resx">
+      <DependentUpon>f301_dm_product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f301_dm_product_de.resx">
+      <DependentUpon>f301_dm_product_de.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f302_dm_product_de.resx">
+      <DependentUpon>f302_dm_product_de.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f401_DM_COMPANY_INFO.resx">
+      <DependentUpon>f401_DM_COMPANY_INFO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f402_dm_company_de.resx">
+      <DependentUpon>f402_dm_company_de.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f501_dm_customer.resx">
+      <DependentUpon>f501_dm_customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f502_dm_customer_de.resx">
+      <DependentUpon>f502_dm_customer_de.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f601_dm_customer_group.resx">
+      <DependentUpon>f601_DM_CUSTOMER_GROUP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f602_dm_customer_group_de.resx">
+      <DependentUpon>f602_dm_customer_group_de.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f701_dm_provider.resx">
+      <DependentUpon>f701_dm_provider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f702_dm_provider_de.resx">
+      <DependentUpon>f702_dm_provider_de.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f802_dm_repository_de.resx">
+      <DependentUpon>f802_dm_repository_de.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f901_dm_unit.resx">
+      <DependentUpon>f901_dm_unit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f902_dm_uinit_de.resx">
+      <DependentUpon>f902_dm_uinit_de.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="f996_license_form.resx">
       <DependentUpon>f996_license_form.cs</DependentUpon>
