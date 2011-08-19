@@ -47,6 +47,45 @@ namespace Sale.CDBNames
         public const string UNIT_CODE = "UNIT_CODE";
         public const string DESCRIPTION = "DESCRIPTION";
     }
+
+    public class DM_CUSTOMER_GROUP
+    {
+        public const string ID = "ID";
+        public const string CUSTOMER_GROUP_NAME = "CUSTOMER_GROUP_NAME";
+    }
+
+    public class DM_CUSTOMER
+    {
+        public const string ID = "ID";
+        public const string CUSTOMER_GROUP_ID = "CUSTOMER_GROUP_ID";
+        public const string CUSTOMER_NAME = "CUSTOMER_NAME";
+        public const string MOBLIE_PHONE = "MOBLIE_PHONE";
+        public const string EMAIL = "EMAIL";
+        public const string ADDRESS = "ADDRESS";
+        public const string WEBSITE = "WEBSITE";
+        public const string TAX_CODE = "TAX_CODE";
+    }
+
+    public class DM_COMPANY_INFO
+    {
+        public const string ID = "ID";
+        public const string SHORT_NAME = "SHORT_NAME";
+        public const string FULL_NAME = "FULL_NAME";
+        public const string ADDRESS = "ADDRESS";
+        public const string MOBLIE = "MOBLIE";
+        public const string EMAIL = "EMAIL";
+        public const string TAX_CODE = "TAX_CODE";
+    }
+
+    public class DM_REPOSITORY
+    {
+        public const string ID = "ID";
+        public const string REPOSITORY_CODE = "REPOSITORY_CODE";
+        public const string REPOSITORY_NAME = "REPOSITORY_NAME";
+        public const string ADDRESS = "ADDRESS";
+        public const string MOBILE = "MOBILE";
+    }
+
     //public class DM_PROVIDER
     //{
     //    public const string ID = "ID";
