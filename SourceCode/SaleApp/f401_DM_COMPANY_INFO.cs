@@ -218,7 +218,13 @@ namespace SaleApp
 
 		#region Data Structure
 		private enum e_col_Number{
-			TAX_CODE = 6,ADDRESS = 3,FULL_NAME = 2,EMAIL = 5,MOBLIE = 4,SHORT_NAME = 1
+			TAX_CODE = 6
+,ADDRESS = 3
+,FULL_NAME = 2
+,EMAIL = 5
+,MOBLIE = 4
+,SHORT_NAME = 1
+
 		}			
 		#endregion
 
@@ -241,7 +247,13 @@ namespace SaleApp
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
-			v_htb.Add(DM_COMPANY_INFO.TAX_CODE, e_col_Number.TAX_CODE);			v_htb.Add(DM_COMPANY_INFO.ADDRESS, e_col_Number.ADDRESS);			v_htb.Add(DM_COMPANY_INFO.FULL_NAME, e_col_Number.FULL_NAME);			v_htb.Add(DM_COMPANY_INFO.EMAIL, e_col_Number.EMAIL);			v_htb.Add(DM_COMPANY_INFO.MOBLIE, e_col_Number.MOBLIE);			v_htb.Add(DM_COMPANY_INFO.SHORT_NAME, e_col_Number.SHORT_NAME);									
+			v_htb.Add(DM_COMPANY_INFO.TAX_CODE, e_col_Number.TAX_CODE);
+			v_htb.Add(DM_COMPANY_INFO.ADDRESS, e_col_Number.ADDRESS);
+			v_htb.Add(DM_COMPANY_INFO.FULL_NAME, e_col_Number.FULL_NAME);
+			v_htb.Add(DM_COMPANY_INFO.EMAIL, e_col_Number.EMAIL);
+			v_htb.Add(DM_COMPANY_INFO.MOBLIE, e_col_Number.MOBLIE);
+			v_htb.Add(DM_COMPANY_INFO.SHORT_NAME, e_col_Number.SHORT_NAME);
+									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.DM_COMPANY_INFO.NewRow());
 			return v_obj_trans;			
 		}

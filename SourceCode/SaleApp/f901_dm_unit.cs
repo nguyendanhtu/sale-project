@@ -239,7 +239,9 @@ namespace SaleApp
 
 		#region Data Structure
 		private enum e_col_Number{
-			DESCRIPTION = 2,UNIT_CODE = 1
+			DESCRIPTION = 2
+,UNIT_CODE = 1
+
 		}			
 		#endregion
 
@@ -262,7 +264,9 @@ namespace SaleApp
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
-			v_htb.Add(DM_UNIT.DESCRIPTION, e_col_Number.DESCRIPTION);			v_htb.Add(DM_UNIT.UNIT_CODE, e_col_Number.UNIT_CODE);									
+			v_htb.Add(DM_UNIT.DESCRIPTION, e_col_Number.DESCRIPTION);
+			v_htb.Add(DM_UNIT.UNIT_CODE, e_col_Number.UNIT_CODE);
+									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.DM_UNIT.NewRow());
 			return v_obj_trans;			
 		}
