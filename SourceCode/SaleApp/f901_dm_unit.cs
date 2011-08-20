@@ -297,6 +297,7 @@ namespace SaleApp
 		private void insert_dm_unit(){			
 		//	f901_dm_unit_DE v_fDE = new  f901_dm_unit_DE();								
 		//	v_fDE.display();
+            f902_dm_uinit_de v_frm902 = new f902_dm_uinit_de();
 			load_data_2_grid();
 		}
 
@@ -404,6 +405,8 @@ namespace SaleApp
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
+
+        
 
 	}
 }

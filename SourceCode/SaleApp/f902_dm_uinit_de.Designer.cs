@@ -64,7 +64,7 @@
             // m_lbl__description
             // 
             this.m_lbl__description.AutoSize = true;
-            this.m_lbl__description.Location = new System.Drawing.Point(33, 150);
+            this.m_lbl__description.Location = new System.Drawing.Point(33, 146);
             this.m_lbl__description.Name = "m_lbl__description";
             this.m_lbl__description.Size = new System.Drawing.Size(34, 13);
             this.m_lbl__description.TabIndex = 10;
@@ -72,14 +72,14 @@
             // 
             // m_txt_unit_code
             // 
-            this.m_txt_unit_code.Location = new System.Drawing.Point(144, 62);
+            this.m_txt_unit_code.Location = new System.Drawing.Point(130, 62);
             this.m_txt_unit_code.Name = "m_txt_unit_code";
             this.m_txt_unit_code.Size = new System.Drawing.Size(239, 20);
             this.m_txt_unit_code.TabIndex = 11;
             // 
             // m_txt_description
             // 
-            this.m_txt_description.Location = new System.Drawing.Point(144, 121);
+            this.m_txt_description.Location = new System.Drawing.Point(130, 120);
             this.m_txt_description.Multiline = true;
             this.m_txt_description.Name = "m_txt_description";
             this.m_txt_description.Size = new System.Drawing.Size(239, 74);
