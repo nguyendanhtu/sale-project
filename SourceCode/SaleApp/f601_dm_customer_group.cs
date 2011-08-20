@@ -218,7 +218,8 @@ namespace SaleApp
 
 		#region Data Structure
 		private enum e_col_Number{
-			CUSTOMER_GROUP_NAME = 1
+			CUSTOMER_GROUP_NAME = 1
+
 		}			
 		#endregion
 
@@ -241,7 +242,8 @@ namespace SaleApp
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
-			v_htb.Add(DM_CUSTOMER_GROUP.CUSTOMER_GROUP_NAME, e_col_Number.CUSTOMER_GROUP_NAME);									
+			v_htb.Add(DM_CUSTOMER_GROUP.CUSTOMER_GROUP_NAME, e_col_Number.CUSTOMER_GROUP_NAME);
+									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.DM_CUSTOMER_GROUP.NewRow());
 			return v_obj_trans;			
 		}
@@ -269,9 +271,9 @@ namespace SaleApp
 		}
 
 
-		private void insert_dm_customer_group(){			
-		//	f601_dm_customer_group_DE v_fDE = new  f601_dm_customer_group_DE();								
-		//	v_fDE.display();
+		private void insert_dm_customer_group(){
+            f602_dm_customer_group_de v_fDE = new f602_dm_customer_group_de();
+            v_fDE.display_for_insert();
 			load_data_2_grid();
 		}
 
@@ -279,8 +281,8 @@ namespace SaleApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
 			grid2us_object(m_us, m_fg.Row);
-		//	f601_dm_customer_group_DE v_fDE = new f601_dm_customer_group_DE();
-		//	v_fDE.display(m_us);
+            f602_dm_customer_group_de v_fDE = new f602_dm_customer_group_de();
+            v_fDE.display_for_update(m_us);
 			load_data_2_grid();
 		}
 				
@@ -308,8 +310,8 @@ namespace SaleApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
 			grid2us_object(m_us, m_fg.Row);
-		//	f601_dm_customer_group_DE v_fDE = new f601_dm_customer_group_DE();			
-		//	v_fDE.display(m_us);
+		//	f602_dm_customer_group_de v_fDE = new f602_dm_customer_group_de();			
+		//	v_fDE.di;
 		}
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
