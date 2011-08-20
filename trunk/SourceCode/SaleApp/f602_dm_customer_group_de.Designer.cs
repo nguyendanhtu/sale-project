@@ -118,6 +118,7 @@
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 12;
             this.m_cmd_save.Text = "&Lưu";
+            this.m_cmd_save.Click += new System.EventHandler(this.m_cmd_save_Click);
             // 
             // m_cmd_exit
             // 
@@ -133,6 +134,7 @@
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
+            this.m_cmd_exit.Click += new System.EventHandler(this.m_cmd_exit_Click);
             // 
             // f602_dm_customer_group_de
             // 
@@ -145,6 +147,7 @@
             this.Controls.Add(this.m_lbl_add_customer_group);
             this.Name = "f602_dm_customer_group_de";
             this.Text = "f602 Thêm nhóm khách hàng";
+            this.Load += new System.EventHandler(this.f602_dm_customer_group_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
