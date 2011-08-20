@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
+using System.Configuration;
 
 
 using System.Collections;
@@ -32,6 +33,8 @@ namespace SaleApp
             // TODO: Add any constructor code after InitializeComponent call
             //
             format_controls();
+            DevExpress.Skins.SkinManager.Default.RegisterAssembly(typeof(DevExpress.UserSkins.BonusSkins).Assembly);
+            DevExpress.Skins.SkinManager.Default.RegisterAssembly(typeof(DevExpress.UserSkins.OfficeSkins).Assembly);
         }
 
         /// <summary>
@@ -153,6 +156,17 @@ namespace SaleApp
             f901_dm_unit v_frm901 = new f901_dm_unit();
             v_frm901.display();
         }
+        private void show_repository()
+        {
+            if (!CAppContext_201.IsHavingQuyen(IP.Core.IPSystemAdmin.PHAN_QUYEN.IN_BAO_CAO))
+            {
+                BaseMessages.MsgBox_Infor(" Người sử dụng không được phép truy nhập phần này !!! ");
+                return;
+            }
+
+            f801_dm_repository v_frm801 = new f801_dm_repository();
+            v_frm801.display();
+        }
         #endregion
         //
         //
@@ -163,20 +177,9 @@ namespace SaleApp
         {
 
 
-
-
-
         }
 
      
-      
-
-      
-
-      
-     
-    
-      
 
         private void mnu_user_management_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -289,7 +292,44 @@ namespace SaleApp
             }
         }
 
-    
+        private void mnu_dm_repository_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+            try
+            {
+
+                show_repository();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+
+        private void barEditItem1_EditValueChanged(object sender, EventArgs e)
+        {
+            string SkinName = barEditItem1.EditValue.ToString();//lấy tên giao diện được chọn.
+            DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle(SkinName);//đổi giao diện thành giao diện được chọn.            
+            //lưu giao diện được chọn vào file config
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            config.AppSettings.Settings["SkinName"].Value = SkinName;
+            config.Save(ConfigurationSaveMode.Modified);
+            ConfigurationManager.RefreshSection("appSetting");
+        }
+
+        private void f001_main_form_Load(object sender, EventArgs e)
+        {
+            string SkinName = ConfigurationManager.AppSettings["SkinName"];//lấy tên giao diện được chọn đã lưu trong file config
+            DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle(SkinName);
+            barEditItem1.EditValue = SkinName;
+        }
+
+        private void ribbon_Click(object sender, EventArgs e)
+        {
+
+        }
 
     
      
