@@ -249,7 +249,6 @@
     <Compile Include="CChartParameter.cs" />
     <Compile Include="ChartDataSourceInterface.cs" />
     <Compile Include="f001_main_form.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="f001_main_form.Designer.cs">
       <DependentUpon>f001_main_form.cs</DependentUpon>
@@ -263,7 +262,7 @@
     <Compile Include="f202_dm_category_de.Designer.cs">
       <DependentUpon>f202_dm_category_de.cs</DependentUpon>
     </Compile>
-    <Compile Include="f401_DM_COMPANY_INFO.cs">
+    <Compile Include="f401_dm_company_info.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="f402_dm_company_de.cs">
@@ -281,7 +280,7 @@
     <Compile Include="f502_dm_customer_de.Designer.cs">
       <DependentUpon>f502_dm_customer_de.cs</DependentUpon>
     </Compile>
-    <Compile Include="f601_DM_CUSTOMER_GROUP.cs">
+    <Compile Include="f601_dm_customer_group.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="f602_dm_customer_group_de.cs">
@@ -352,9 +351,8 @@
       <SubType>Designer</SubType>
       <DependentUpon>f202_dm_category_de.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="f401_DM_COMPANY_INFO.resx">
-      <DependentUpon>f401_DM_COMPANY_INFO.cs</DependentUpon>
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="f401_dm_company_info.resx">
+      <DependentUpon>f401_dm_company_info.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="f402_dm_company_de.resx">
       <DependentUpon>f402_dm_company_de.cs</DependentUpon>
@@ -369,8 +367,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="f601_dm_customer_group.resx">
-      <DependentUpon>f601_DM_CUSTOMER_GROUP.cs</DependentUpon>
-      <SubType>Designer</SubType>
+      <DependentUpon>f601_dm_customer_group.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="f602_dm_customer_group_de.resx">
       <DependentUpon>f602_dm_customer_group_de.cs</DependentUpon>

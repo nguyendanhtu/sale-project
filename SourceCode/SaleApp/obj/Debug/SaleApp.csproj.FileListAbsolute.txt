@@ -58,3 +58,6 @@ D:\00. BKIndex\01. Project\Projects\02. Application\QuanLyKho\PROJECT_BAN HANG\S
 D:\00. BKIndex\01. Project\Projects\02. Application\QuanLyKho\PROJECT_BAN HANG\SourceCode\SaleApp\bin\Debug\SaleDS.pdb
 D:\00. BKIndex\01. Project\Projects\02. Application\QuanLyKho\PROJECT_BAN HANG\SourceCode\SaleApp\obj\Debug\SaleApp.exe
 D:\00. BKIndex\01. Project\Projects\02. Application\QuanLyKho\PROJECT_BAN HANG\SourceCode\SaleApp\obj\Debug\SaleApp.pdb
+C:\Users\MinhNN\Desktop\sale-project\SourceCode\SaleApp\bin\Debug\SaleApp.exe.config
+C:\Users\MinhNN\Desktop\sale-project\SourceCode\SaleApp\obj\Debug\SaleApp.exe
+C:\Users\MinhNN\Desktop\sale-project\SourceCode\SaleApp\obj\Debug\SaleApp.pdb
