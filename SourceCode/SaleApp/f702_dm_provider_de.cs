@@ -18,7 +18,7 @@ namespace SaleApp
         public f702_dm_provider_de()
         {
             InitializeComponent();
-
+            set_define_events();
         }
         #region Public Interface
         public void display_for_insert()
@@ -35,12 +35,14 @@ namespace SaleApp
 
         }
         #endregion
+
         #region Members
 
         US_DM_PROVIDER m_us_provider = new US_DM_PROVIDER();
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
         
         #endregion
+
         #region Private Method
         private void format_controls()
         {
@@ -58,23 +60,25 @@ namespace SaleApp
         }
         private void form_2_us_object(US_DM_PROVIDER op_us_provider)
         {
+            op_us_provider.strPROVIDER_CODE = m_txt_provider_code.Text;
             op_us_provider.strADDRESS = m_txt_address.Text;
             op_us_provider.strEMAIL = m_txt_email.Text;
             op_us_provider.strMOBILE = m_txt_mobile.Text;
             op_us_provider.strPROVIDER_NAME = m_txt_provider_name.Text;
-
+            if (m_txt_tax_code.Text.Trim() == "") op_us_provider.SetTAX_CODENull();
+            else op_us_provider.strTAX_CODE = m_txt_tax_code.Text.Trim();
         }
         private bool check_validate_data_is_ok()
         {
-            if (!CValidateTextBox.IsValid(m_txt_address, DataType.StringType, allowNull.NO, true))
+            if (!CValidateTextBox.IsValid(m_txt_address, DataType.StringType, allowNull.YES, true))
             { 
                 return false;
             }
-            if (!CValidateTextBox.IsValid(m_txt_email, DataType.StringType, allowNull.NO, true))
+            if (!CValidateTextBox.IsValid(m_txt_email, DataType.StringType, allowNull.YES, true))
             {
                 return false;
             }
-            if (!CValidateTextBox.IsValid(m_txt_mobile, DataType.NumberType, allowNull.NO, true))
+            if (!CValidateTextBox.IsValid(m_txt_mobile, DataType.NumberType, allowNull.YES, true))
             {
                 return false;
             
@@ -88,9 +92,8 @@ namespace SaleApp
             {
                 return false;
             }
-            if (!CValidateTextBox.IsValid(m_txt_tax_code, DataType.StringType, allowNull.NO, true))
+            if (!CValidateTextBox.IsValid(m_txt_tax_code, DataType.StringType, allowNull.YES, true))
             {
-
                 return false;
             }
             return true;
@@ -100,18 +103,21 @@ namespace SaleApp
             if (check_validate_data_is_ok() == false)
                 return;
             form_2_us_object(m_us_provider);
-                switch (m_e_form_mode)
-	{
-		        case DataEntryFormMode.InsertDataState:m_us_provider.Insert();
-         break;
+            switch (m_e_form_mode)
+            {
+                case DataEntryFormMode.InsertDataState:
+                    m_us_provider.Insert();
+                    break;
                 case DataEntryFormMode.SelectDataState:
-         break;
-        case DataEntryFormMode.UpdateDataState:m_us_provider.Update();
-         break;
-        case DataEntryFormMode.ViewDataState:
-         break;default:
-         break;
-	}
+                    break;
+                case DataEntryFormMode.UpdateDataState:
+                    m_us_provider.Update();
+                    break;
+                case DataEntryFormMode.ViewDataState:
+                    break;
+                default:
+                    break;
+            }
              BaseMessages.MsgBox_Infor(10); //Dữ liệu cập nhật thành cộng
             this.Close();
         }
@@ -120,7 +126,6 @@ namespace SaleApp
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
             this.Load += new EventHandler(f702_dm_provider_de_Load);
-        
         }
 
         void f702_dm_provider_de_Load(object sender, EventArgs e)
@@ -151,8 +156,8 @@ namespace SaleApp
             }
         }
        
-
         #endregion
+
         #region Events
 
         void m_cmd_exit_Click(Object Sender, EventArgs e)
