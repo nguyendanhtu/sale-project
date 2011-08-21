@@ -269,9 +269,9 @@ namespace SaleApp
 		}
 
 
-		private void insert_dm_repository(){			
-		//	f801_dm_repository_DE v_fDE = new  f801_dm_repository_DE();								
-		//	v_fDE.display();
+		private void insert_dm_repository(){
+            f802_dm_repository_de frm802 = new f802_dm_repository_de();
+            frm802.display_for_insert();
 			load_data_2_grid();
 		}
 
@@ -279,8 +279,8 @@ namespace SaleApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
 			grid2us_object(m_us, m_fg.Row);
-		//	f801_dm_repository_DE v_fDE = new f801_dm_repository_DE();
-		//	v_fDE.display(m_us);
+            f802_dm_repository_de frm802 = new f802_dm_repository_de();
+            frm802.display_for_update();
 			load_data_2_grid();
 		}
 				
