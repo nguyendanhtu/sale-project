@@ -60,6 +60,20 @@ namespace SaleApp.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap _37371_57 {
+            get {
+                object obj = ResourceManager.GetObject("37371-57", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap BKIndex_icon {
+            get {
+                object obj = ResourceManager.GetObject("BKIndex-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap report {
             get {
                 object obj = ResourceManager.GetObject("report", resourceCulture);
