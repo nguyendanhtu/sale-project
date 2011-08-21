@@ -34,9 +34,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(505, 369);
+            this.ClientSize = new System.Drawing.Size(649, 411);
             this.Name = "f321_nhap_so_du_hang_hoa";
-            this.Text = "f321_nhap_so_du_hang_hoa";
+            this.Text = "F321 - Nhập số dư đầu hàng hóa";
             this.ResumeLayout(false);
 
         }
