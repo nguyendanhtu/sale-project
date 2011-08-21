@@ -124,11 +124,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_DM_CUSTOMER_GROUP.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DS_DM_PRODUCT.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_DM_PRODUCT.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DS_DM_PROVIDER.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -200,17 +195,6 @@
     </None>
     <None Include="DS_DM_CUSTOMER_GROUP.xss">
       <DependentUpon>DS_DM_CUSTOMER_GROUP.xsd</DependentUpon>
-    </None>
-    <None Include="DS_DM_PRODUCT.xsc">
-      <DependentUpon>DS_DM_PRODUCT.xsd</DependentUpon>
-    </None>
-    <None Include="DS_DM_PRODUCT.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_DM_PRODUCT.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_DM_PRODUCT.xss">
-      <DependentUpon>DS_DM_PRODUCT.xsd</DependentUpon>
     </None>
     <None Include="DS_DM_PROVIDER.xsc">
       <DependentUpon>DS_DM_PROVIDER.xsd</DependentUpon>
