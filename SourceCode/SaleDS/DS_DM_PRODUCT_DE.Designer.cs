@@ -268,11 +268,19 @@ namespace SaleDS {
             
             private global::System.Data.DataColumn columnPRODUCT_NAME;
             
-            private global::System.Data.DataColumn columnUNIT_NANE;
+            private global::System.Data.DataColumn columnUNIT_ID;
+            
+            private global::System.Data.DataColumn columnCATEGORY_ID;
             
             private global::System.Data.DataColumn columnCATEGORY_NAME;
             
+            private global::System.Data.DataColumn columnUNIT_NANE;
+            
+            private global::System.Data.DataColumn columnIMAGE_PATH;
+            
             private global::System.Data.DataColumn columnDESCRIPTION;
+            
+            private global::System.Data.DataColumn columnPROVIDER_ID;
             
             private global::System.Data.DataColumn columnCURRENT_PRICE;
             
@@ -328,9 +336,16 @@ namespace SaleDS {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn UNIT_NANEColumn {
+            public global::System.Data.DataColumn UNIT_IDColumn {
                 get {
-                    return this.columnUNIT_NANE;
+                    return this.columnUNIT_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn CATEGORY_IDColumn {
+                get {
+                    return this.columnCATEGORY_ID;
                 }
             }
             
@@ -342,9 +357,30 @@ namespace SaleDS {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn UNIT_NANEColumn {
+                get {
+                    return this.columnUNIT_NANE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn IMAGE_PATHColumn {
+                get {
+                    return this.columnIMAGE_PATH;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public global::System.Data.DataColumn DESCRIPTIONColumn {
                 get {
                     return this.columnDESCRIPTION;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn PROVIDER_IDColumn {
+                get {
+                    return this.columnPROVIDER_ID;
                 }
             }
             
@@ -384,19 +420,29 @@ namespace SaleDS {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public DM_PRODUCT_DERow AddDM_PRODUCT_DERow(string PRODUCT_CODE, string PRODUCT_NAME, string UNIT_NANE, string CATEGORY_NAME, string DESCRIPTION, decimal CURRENT_PRICE) {
+            public DM_PRODUCT_DERow AddDM_PRODUCT_DERow(string PRODUCT_CODE, string PRODUCT_NAME, decimal UNIT_ID, decimal CATEGORY_ID, string CATEGORY_NAME, string UNIT_NANE, string IMAGE_PATH, string DESCRIPTION, decimal PROVIDER_ID, decimal CURRENT_PRICE) {
                 DM_PRODUCT_DERow rowDM_PRODUCT_DERow = ((DM_PRODUCT_DERow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         PRODUCT_CODE,
                         PRODUCT_NAME,
-                        UNIT_NANE,
+                        UNIT_ID,
+                        CATEGORY_ID,
                         CATEGORY_NAME,
+                        UNIT_NANE,
+                        IMAGE_PATH,
                         DESCRIPTION,
+                        PROVIDER_ID,
                         CURRENT_PRICE};
                 rowDM_PRODUCT_DERow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDM_PRODUCT_DERow);
                 return rowDM_PRODUCT_DERow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public DM_PRODUCT_DERow FindByID(decimal ID) {
+                return ((DM_PRODUCT_DERow)(this.Rows.Find(new object[] {
+                            ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -421,9 +467,13 @@ namespace SaleDS {
                 this.columnID = base.Columns["ID"];
                 this.columnPRODUCT_CODE = base.Columns["PRODUCT_CODE"];
                 this.columnPRODUCT_NAME = base.Columns["PRODUCT_NAME"];
-                this.columnUNIT_NANE = base.Columns["UNIT_NANE"];
+                this.columnUNIT_ID = base.Columns["UNIT_ID"];
+                this.columnCATEGORY_ID = base.Columns["CATEGORY_ID"];
                 this.columnCATEGORY_NAME = base.Columns["CATEGORY_NAME"];
+                this.columnUNIT_NANE = base.Columns["UNIT_NANE"];
+                this.columnIMAGE_PATH = base.Columns["IMAGE_PATH"];
                 this.columnDESCRIPTION = base.Columns["DESCRIPTION"];
+                this.columnPROVIDER_ID = base.Columns["PROVIDER_ID"];
                 this.columnCURRENT_PRICE = base.Columns["CURRENT_PRICE"];
             }
             
@@ -435,27 +485,39 @@ namespace SaleDS {
                 base.Columns.Add(this.columnPRODUCT_CODE);
                 this.columnPRODUCT_NAME = new global::System.Data.DataColumn("PRODUCT_NAME", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPRODUCT_NAME);
-                this.columnUNIT_NANE = new global::System.Data.DataColumn("UNIT_NANE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUNIT_NANE);
+                this.columnUNIT_ID = new global::System.Data.DataColumn("UNIT_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUNIT_ID);
+                this.columnCATEGORY_ID = new global::System.Data.DataColumn("CATEGORY_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCATEGORY_ID);
                 this.columnCATEGORY_NAME = new global::System.Data.DataColumn("CATEGORY_NAME", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCATEGORY_NAME);
+                this.columnUNIT_NANE = new global::System.Data.DataColumn("UNIT_NANE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUNIT_NANE);
+                this.columnIMAGE_PATH = new global::System.Data.DataColumn("IMAGE_PATH", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIMAGE_PATH);
                 this.columnDESCRIPTION = new global::System.Data.DataColumn("DESCRIPTION", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDESCRIPTION);
+                this.columnPROVIDER_ID = new global::System.Data.DataColumn("PROVIDER_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPROVIDER_ID);
                 this.columnCURRENT_PRICE = new global::System.Data.DataColumn("CURRENT_PRICE", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCURRENT_PRICE);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID}, true));
                 this.columnID.AutoIncrement = true;
                 this.columnID.AutoIncrementSeed = -1;
                 this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.ReadOnly = true;
+                this.columnID.Unique = true;
                 this.columnPRODUCT_CODE.AllowDBNull = false;
                 this.columnPRODUCT_CODE.MaxLength = 50;
                 this.columnPRODUCT_NAME.AllowDBNull = false;
                 this.columnPRODUCT_NAME.MaxLength = 250;
-                this.columnUNIT_NANE.AllowDBNull = false;
-                this.columnUNIT_NANE.MaxLength = 250;
-                this.columnCATEGORY_NAME.AllowDBNull = false;
+                this.columnUNIT_ID.AllowDBNull = false;
+                this.columnCATEGORY_ID.AllowDBNull = false;
                 this.columnCATEGORY_NAME.MaxLength = 250;
+                this.columnUNIT_NANE.MaxLength = 250;
+                this.columnIMAGE_PATH.MaxLength = 250;
                 this.columnDESCRIPTION.MaxLength = 250;
                 this.columnCURRENT_PRICE.AllowDBNull = false;
             }
@@ -620,9 +682,49 @@ namespace SaleDS {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public decimal UNIT_ID {
+                get {
+                    return ((decimal)(this[this.tableDM_PRODUCT_DE.UNIT_IDColumn]));
+                }
+                set {
+                    this[this.tableDM_PRODUCT_DE.UNIT_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public decimal CATEGORY_ID {
+                get {
+                    return ((decimal)(this[this.tableDM_PRODUCT_DE.CATEGORY_IDColumn]));
+                }
+                set {
+                    this[this.tableDM_PRODUCT_DE.CATEGORY_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string CATEGORY_NAME {
+                get {
+                    try {
+                        return ((string)(this[this.tableDM_PRODUCT_DE.CATEGORY_NAMEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CATEGORY_NAME\' in table \'DM_PRODUCT_DE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDM_PRODUCT_DE.CATEGORY_NAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public string UNIT_NANE {
                 get {
-                    return ((string)(this[this.tableDM_PRODUCT_DE.UNIT_NANEColumn]));
+                    try {
+                        return ((string)(this[this.tableDM_PRODUCT_DE.UNIT_NANEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UNIT_NANE\' in table \'DM_PRODUCT_DE\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDM_PRODUCT_DE.UNIT_NANEColumn] = value;
@@ -630,12 +732,17 @@ namespace SaleDS {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string CATEGORY_NAME {
+            public string IMAGE_PATH {
                 get {
-                    return ((string)(this[this.tableDM_PRODUCT_DE.CATEGORY_NAMEColumn]));
+                    try {
+                        return ((string)(this[this.tableDM_PRODUCT_DE.IMAGE_PATHColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IMAGE_PATH\' in table \'DM_PRODUCT_DE\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableDM_PRODUCT_DE.CATEGORY_NAMEColumn] = value;
+                    this[this.tableDM_PRODUCT_DE.IMAGE_PATHColumn] = value;
                 }
             }
             
@@ -655,6 +762,21 @@ namespace SaleDS {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public decimal PROVIDER_ID {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableDM_PRODUCT_DE.PROVIDER_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PROVIDER_ID\' in table \'DM_PRODUCT_DE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDM_PRODUCT_DE.PROVIDER_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public decimal CURRENT_PRICE {
                 get {
                     return ((decimal)(this[this.tableDM_PRODUCT_DE.CURRENT_PRICEColumn]));
@@ -665,6 +787,36 @@ namespace SaleDS {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsCATEGORY_NAMENull() {
+                return this.IsNull(this.tableDM_PRODUCT_DE.CATEGORY_NAMEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetCATEGORY_NAMENull() {
+                this[this.tableDM_PRODUCT_DE.CATEGORY_NAMEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsUNIT_NANENull() {
+                return this.IsNull(this.tableDM_PRODUCT_DE.UNIT_NANEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetUNIT_NANENull() {
+                this[this.tableDM_PRODUCT_DE.UNIT_NANEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsIMAGE_PATHNull() {
+                return this.IsNull(this.tableDM_PRODUCT_DE.IMAGE_PATHColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetIMAGE_PATHNull() {
+                this[this.tableDM_PRODUCT_DE.IMAGE_PATHColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public bool IsDESCRIPTIONNull() {
                 return this.IsNull(this.tableDM_PRODUCT_DE.DESCRIPTIONColumn);
             }
@@ -672,6 +824,16 @@ namespace SaleDS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public void SetDESCRIPTIONNull() {
                 this[this.tableDM_PRODUCT_DE.DESCRIPTIONColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsPROVIDER_IDNull() {
+                return this.IsNull(this.tableDM_PRODUCT_DE.PROVIDER_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetPROVIDER_IDNull() {
+                this[this.tableDM_PRODUCT_DE.PROVIDER_IDColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -828,23 +990,82 @@ namespace SaleDS.DS_DM_PRODUCT_DETableAdapters {
             tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("PRODUCT_CODE", "PRODUCT_CODE");
             tableMapping.ColumnMappings.Add("PRODUCT_NAME", "PRODUCT_NAME");
-            tableMapping.ColumnMappings.Add("UNIT_NANE", "UNIT_NANE");
+            tableMapping.ColumnMappings.Add("UNIT_ID", "UNIT_ID");
+            tableMapping.ColumnMappings.Add("CATEGORY_ID", "CATEGORY_ID");
             tableMapping.ColumnMappings.Add("CATEGORY_NAME", "CATEGORY_NAME");
+            tableMapping.ColumnMappings.Add("UNIT_NANE", "UNIT_NANE");
+            tableMapping.ColumnMappings.Add("IMAGE_PATH", "IMAGE_PATH");
             tableMapping.ColumnMappings.Add("DESCRIPTION", "DESCRIPTION");
+            tableMapping.ColumnMappings.Add("PROVIDER_ID", "PROVIDER_ID");
             tableMapping.ColumnMappings.Add("CURRENT_PRICE", "CURRENT_PRICE");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[DM_PRODUCT_DE] WHERE (([ID] = @Original_ID) AND ([PRODUCT_CODE] = @Original_PRODUCT_CODE) AND ([PRODUCT_NAME] = @Original_PRODUCT_NAME) AND ([UNIT_ID] = @Original_UNIT_ID) AND ([CATEGORY_ID] = @Original_CATEGORY_ID) AND ((@IsNull_CATEGORY_NAME = 1 AND [CATEGORY_NAME] IS NULL) OR ([CATEGORY_NAME] = @Original_CATEGORY_NAME)) AND ((@IsNull_UNIT_NANE = 1 AND [UNIT_NANE] IS NULL) OR ([UNIT_NANE] = @Original_UNIT_NANE)) AND ((@IsNull_IMAGE_PATH = 1 AND [IMAGE_PATH] IS NULL) OR ([IMAGE_PATH] = @Original_IMAGE_PATH)) AND ((@IsNull_DESCRIPTION = 1 AND [DESCRIPTION] IS NULL) OR ([DESCRIPTION] = @Original_DESCRIPTION)) AND ((@IsNull_PROVIDER_ID = 1 AND [PROVIDER_ID] IS NULL) OR ([PROVIDER_ID] = @Original_PROVIDER_ID)) AND ([CURRENT_PRICE] = @Original_CURRENT_PRICE))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PRODUCT_CODE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PRODUCT_CODE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PRODUCT_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PRODUCT_NAME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UNIT_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "UNIT_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CATEGORY_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CATEGORY_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CATEGORY_NAME", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CATEGORY_NAME", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CATEGORY_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CATEGORY_NAME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_UNIT_NANE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UNIT_NANE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UNIT_NANE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UNIT_NANE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IMAGE_PATH", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IMAGE_PATH", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IMAGE_PATH", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IMAGE_PATH", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DESCRIPTION", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DESCRIPTION", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DESCRIPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DESCRIPTION", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PROVIDER_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROVIDER_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PROVIDER_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "PROVIDER_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CURRENT_PRICE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "CURRENT_PRICE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[DM_PRODUCT_DE] ([PRODUCT_CODE], [PRODUCT_NAME], [UNIT_NANE], [" +
-                "CATEGORY_NAME], [DESCRIPTION], [CURRENT_PRICE]) VALUES (@PRODUCT_CODE, @PRODUCT_" +
-                "NAME, @UNIT_NANE, @CATEGORY_NAME, @DESCRIPTION, @CURRENT_PRICE)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[DM_PRODUCT_DE] ([PRODUCT_CODE], [PRODUCT_NAME], [UNIT_ID], [CATEGORY_ID], [CATEGORY_NAME], [UNIT_NANE], [IMAGE_PATH], [DESCRIPTION], [PROVIDER_ID], [CURRENT_PRICE]) VALUES (@PRODUCT_CODE, @PRODUCT_NAME, @UNIT_ID, @CATEGORY_ID, @CATEGORY_NAME, @UNIT_NANE, @IMAGE_PATH, @DESCRIPTION, @PROVIDER_ID, @CURRENT_PRICE);
+SELECT ID, PRODUCT_CODE, PRODUCT_NAME, UNIT_ID, CATEGORY_ID, CATEGORY_NAME, UNIT_NANE, IMAGE_PATH, DESCRIPTION, PROVIDER_ID, CURRENT_PRICE FROM DM_PRODUCT_DE WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PRODUCT_CODE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PRODUCT_CODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PRODUCT_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PRODUCT_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UNIT_NANE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UNIT_NANE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UNIT_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "UNIT_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CATEGORY_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CATEGORY_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CATEGORY_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CATEGORY_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UNIT_NANE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UNIT_NANE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IMAGE_PATH", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IMAGE_PATH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DESCRIPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DESCRIPTION", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROVIDER_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "PROVIDER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CURRENT_PRICE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "CURRENT_PRICE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[DM_PRODUCT_DE] SET [PRODUCT_CODE] = @PRODUCT_CODE, [PRODUCT_NAME] = @PRODUCT_NAME, [UNIT_ID] = @UNIT_ID, [CATEGORY_ID] = @CATEGORY_ID, [CATEGORY_NAME] = @CATEGORY_NAME, [UNIT_NANE] = @UNIT_NANE, [IMAGE_PATH] = @IMAGE_PATH, [DESCRIPTION] = @DESCRIPTION, [PROVIDER_ID] = @PROVIDER_ID, [CURRENT_PRICE] = @CURRENT_PRICE WHERE (([ID] = @Original_ID) AND ([PRODUCT_CODE] = @Original_PRODUCT_CODE) AND ([PRODUCT_NAME] = @Original_PRODUCT_NAME) AND ([UNIT_ID] = @Original_UNIT_ID) AND ([CATEGORY_ID] = @Original_CATEGORY_ID) AND ((@IsNull_CATEGORY_NAME = 1 AND [CATEGORY_NAME] IS NULL) OR ([CATEGORY_NAME] = @Original_CATEGORY_NAME)) AND ((@IsNull_UNIT_NANE = 1 AND [UNIT_NANE] IS NULL) OR ([UNIT_NANE] = @Original_UNIT_NANE)) AND ((@IsNull_IMAGE_PATH = 1 AND [IMAGE_PATH] IS NULL) OR ([IMAGE_PATH] = @Original_IMAGE_PATH)) AND ((@IsNull_DESCRIPTION = 1 AND [DESCRIPTION] IS NULL) OR ([DESCRIPTION] = @Original_DESCRIPTION)) AND ((@IsNull_PROVIDER_ID = 1 AND [PROVIDER_ID] IS NULL) OR ([PROVIDER_ID] = @Original_PROVIDER_ID)) AND ([CURRENT_PRICE] = @Original_CURRENT_PRICE));
+SELECT ID, PRODUCT_CODE, PRODUCT_NAME, UNIT_ID, CATEGORY_ID, CATEGORY_NAME, UNIT_NANE, IMAGE_PATH, DESCRIPTION, PROVIDER_ID, CURRENT_PRICE FROM DM_PRODUCT_DE WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PRODUCT_CODE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PRODUCT_CODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PRODUCT_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PRODUCT_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UNIT_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "UNIT_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CATEGORY_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CATEGORY_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CATEGORY_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CATEGORY_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UNIT_NANE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UNIT_NANE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IMAGE_PATH", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IMAGE_PATH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DESCRIPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DESCRIPTION", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROVIDER_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "PROVIDER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CURRENT_PRICE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "CURRENT_PRICE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PRODUCT_CODE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PRODUCT_CODE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PRODUCT_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PRODUCT_NAME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UNIT_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "UNIT_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CATEGORY_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CATEGORY_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CATEGORY_NAME", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CATEGORY_NAME", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CATEGORY_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CATEGORY_NAME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_UNIT_NANE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UNIT_NANE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UNIT_NANE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UNIT_NANE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IMAGE_PATH", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IMAGE_PATH", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IMAGE_PATH", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IMAGE_PATH", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DESCRIPTION", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DESCRIPTION", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DESCRIPTION", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DESCRIPTION", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PROVIDER_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROVIDER_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PROVIDER_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "PROVIDER_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CURRENT_PRICE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "CURRENT_PRICE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -858,8 +1079,9 @@ namespace SaleDS.DS_DM_PRODUCT_DETableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, PRODUCT_CODE, PRODUCT_NAME, UNIT_NANE, CATEGORY_NAME, DESCRIPTION, CUR" +
-                "RENT_PRICE FROM dbo.DM_PRODUCT_DE";
+            this._commandCollection[0].CommandText = "SELECT ID, PRODUCT_CODE, PRODUCT_NAME, UNIT_ID, CATEGORY_ID, CATEGORY_NAME, UNIT_" +
+                "NANE, IMAGE_PATH, DESCRIPTION, PROVIDER_ID, CURRENT_PRICE FROM dbo.DM_PRODUCT_DE" +
+                "";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -912,8 +1134,84 @@ namespace SaleDS.DS_DM_PRODUCT_DETableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(decimal Original_ID, string Original_PRODUCT_CODE, string Original_PRODUCT_NAME, decimal Original_UNIT_ID, decimal Original_CATEGORY_ID, string Original_CATEGORY_NAME, string Original_UNIT_NANE, string Original_IMAGE_PATH, string Original_DESCRIPTION, global::System.Nullable<decimal> Original_PROVIDER_ID, decimal Original_CURRENT_PRICE) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_ID));
+            if ((Original_PRODUCT_CODE == null)) {
+                throw new global::System.ArgumentNullException("Original_PRODUCT_CODE");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_PRODUCT_CODE));
+            }
+            if ((Original_PRODUCT_NAME == null)) {
+                throw new global::System.ArgumentNullException("Original_PRODUCT_NAME");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_PRODUCT_NAME));
+            }
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((decimal)(Original_UNIT_ID));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((decimal)(Original_CATEGORY_ID));
+            if ((Original_CATEGORY_NAME == null)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_CATEGORY_NAME));
+            }
+            if ((Original_UNIT_NANE == null)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_UNIT_NANE));
+            }
+            if ((Original_IMAGE_PATH == null)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_IMAGE_PATH));
+            }
+            if ((Original_DESCRIPTION == null)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_DESCRIPTION));
+            }
+            if ((Original_PROVIDER_ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((decimal)(Original_PROVIDER_ID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.DeleteCommand.Parameters[15].Value = ((decimal)(Original_CURRENT_PRICE));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string PRODUCT_CODE, string PRODUCT_NAME, string UNIT_NANE, string CATEGORY_NAME, string DESCRIPTION, decimal CURRENT_PRICE) {
+        public virtual int Insert(string PRODUCT_CODE, string PRODUCT_NAME, decimal UNIT_ID, decimal CATEGORY_ID, string CATEGORY_NAME, string UNIT_NANE, string IMAGE_PATH, string DESCRIPTION, global::System.Nullable<decimal> PROVIDER_ID, decimal CURRENT_PRICE) {
             if ((PRODUCT_CODE == null)) {
                 throw new global::System.ArgumentNullException("PRODUCT_CODE");
             }
@@ -926,25 +1224,39 @@ namespace SaleDS.DS_DM_PRODUCT_DETableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(PRODUCT_NAME));
             }
-            if ((UNIT_NANE == null)) {
-                throw new global::System.ArgumentNullException("UNIT_NANE");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(UNIT_NANE));
-            }
+            this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(UNIT_ID));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((decimal)(CATEGORY_ID));
             if ((CATEGORY_NAME == null)) {
-                throw new global::System.ArgumentNullException("CATEGORY_NAME");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(CATEGORY_NAME));
-            }
-            if ((DESCRIPTION == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(DESCRIPTION));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(CATEGORY_NAME));
             }
-            this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(CURRENT_PRICE));
+            if ((UNIT_NANE == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(UNIT_NANE));
+            }
+            if ((IMAGE_PATH == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(IMAGE_PATH));
+            }
+            if ((DESCRIPTION == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(DESCRIPTION));
+            }
+            if ((PROVIDER_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((decimal)(PROVIDER_ID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.InsertCommand.Parameters[9].Value = ((decimal)(CURRENT_PRICE));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -959,6 +1271,178 @@ namespace SaleDS.DS_DM_PRODUCT_DETableAdapters {
                     this.Adapter.InsertCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    string PRODUCT_CODE, 
+                    string PRODUCT_NAME, 
+                    decimal UNIT_ID, 
+                    decimal CATEGORY_ID, 
+                    string CATEGORY_NAME, 
+                    string UNIT_NANE, 
+                    string IMAGE_PATH, 
+                    string DESCRIPTION, 
+                    global::System.Nullable<decimal> PROVIDER_ID, 
+                    decimal CURRENT_PRICE, 
+                    decimal Original_ID, 
+                    string Original_PRODUCT_CODE, 
+                    string Original_PRODUCT_NAME, 
+                    decimal Original_UNIT_ID, 
+                    decimal Original_CATEGORY_ID, 
+                    string Original_CATEGORY_NAME, 
+                    string Original_UNIT_NANE, 
+                    string Original_IMAGE_PATH, 
+                    string Original_DESCRIPTION, 
+                    global::System.Nullable<decimal> Original_PROVIDER_ID, 
+                    decimal Original_CURRENT_PRICE, 
+                    decimal ID) {
+            if ((PRODUCT_CODE == null)) {
+                throw new global::System.ArgumentNullException("PRODUCT_CODE");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(PRODUCT_CODE));
+            }
+            if ((PRODUCT_NAME == null)) {
+                throw new global::System.ArgumentNullException("PRODUCT_NAME");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(PRODUCT_NAME));
+            }
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(UNIT_ID));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(CATEGORY_ID));
+            if ((CATEGORY_NAME == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(CATEGORY_NAME));
+            }
+            if ((UNIT_NANE == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(UNIT_NANE));
+            }
+            if ((IMAGE_PATH == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(IMAGE_PATH));
+            }
+            if ((DESCRIPTION == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(DESCRIPTION));
+            }
+            if ((PROVIDER_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(PROVIDER_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(CURRENT_PRICE));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(Original_ID));
+            if ((Original_PRODUCT_CODE == null)) {
+                throw new global::System.ArgumentNullException("Original_PRODUCT_CODE");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_PRODUCT_CODE));
+            }
+            if ((Original_PRODUCT_NAME == null)) {
+                throw new global::System.ArgumentNullException("Original_PRODUCT_NAME");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_PRODUCT_NAME));
+            }
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(Original_UNIT_ID));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((decimal)(Original_CATEGORY_ID));
+            if ((Original_CATEGORY_NAME == null)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_CATEGORY_NAME));
+            }
+            if ((Original_UNIT_NANE == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_UNIT_NANE));
+            }
+            if ((Original_IMAGE_PATH == null)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_IMAGE_PATH));
+            }
+            if ((Original_DESCRIPTION == null)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_DESCRIPTION));
+            }
+            if ((Original_PROVIDER_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((decimal)(Original_PROVIDER_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[25].Value = ((decimal)(Original_CURRENT_PRICE));
+            this.Adapter.UpdateCommand.Parameters[26].Value = ((decimal)(ID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    string PRODUCT_CODE, 
+                    string PRODUCT_NAME, 
+                    decimal UNIT_ID, 
+                    decimal CATEGORY_ID, 
+                    string CATEGORY_NAME, 
+                    string UNIT_NANE, 
+                    string IMAGE_PATH, 
+                    string DESCRIPTION, 
+                    global::System.Nullable<decimal> PROVIDER_ID, 
+                    decimal CURRENT_PRICE, 
+                    decimal Original_ID, 
+                    string Original_PRODUCT_CODE, 
+                    string Original_PRODUCT_NAME, 
+                    decimal Original_UNIT_ID, 
+                    decimal Original_CATEGORY_ID, 
+                    string Original_CATEGORY_NAME, 
+                    string Original_UNIT_NANE, 
+                    string Original_IMAGE_PATH, 
+                    string Original_DESCRIPTION, 
+                    global::System.Nullable<decimal> Original_PROVIDER_ID, 
+                    decimal Original_CURRENT_PRICE) {
+            return this.Update(PRODUCT_CODE, PRODUCT_NAME, UNIT_ID, CATEGORY_ID, CATEGORY_NAME, UNIT_NANE, IMAGE_PATH, DESCRIPTION, PROVIDER_ID, CURRENT_PRICE, Original_ID, Original_PRODUCT_CODE, Original_PRODUCT_NAME, Original_UNIT_ID, Original_CATEGORY_ID, Original_CATEGORY_NAME, Original_UNIT_NANE, Original_IMAGE_PATH, Original_DESCRIPTION, Original_PROVIDER_ID, Original_CURRENT_PRICE, Original_ID);
         }
     }
     
