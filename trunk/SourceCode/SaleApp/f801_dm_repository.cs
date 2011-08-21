@@ -280,7 +280,7 @@ namespace SaleApp
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
 			grid2us_object(m_us, m_fg.Row);
             f802_dm_repository_de frm802 = new f802_dm_repository_de();
-            frm802.display_for_update();
+            frm802.display_for_update(m_us);
 			load_data_2_grid();
 		}
 				
