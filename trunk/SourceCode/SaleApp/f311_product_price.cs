@@ -25,15 +25,15 @@ namespace SaleApp
         {
             US_DM_PRODUCT_DE v_us_product = new US_DM_PRODUCT_DE();
             DS_DM_PRODUCT_DE v_ds_product = new DS_DM_PRODUCT_DE();
-            v_us_product.FillDataset(v_ds_product, " ORDER BY " + DM_PRODUCT.PRODUCT_NAME);
+            v_us_product.FillDataset(v_ds_product, " ORDER BY " + DM_PRODUCT_DE.PRODUCT_NAME);
             v_ds_product.EnforceConstraints = false;
             DataRow v_dr_default = v_ds_product.DM_PRODUCT_DE.NewDM_PRODUCT_DERow();
-            v_dr_default[DM_PRODUCT.ID] = -1;
-            v_dr_default[DM_PRODUCT.PRODUCT_NAME] = "Không có cấp trên";
+            v_dr_default[DM_PRODUCT_DE.ID] = -1;
+            v_dr_default[DM_PRODUCT_DE.PRODUCT_NAME] = "Không có cấp trên";
             v_ds_product.DM_PRODUCT_DE.Rows.InsertAt(v_dr_default, 0);
 
-            m_cbo_product_name.DisplayMember = DM_PRODUCT.PRODUCT_NAME;
-            m_cbo_product_name.ValueMember = DM_PRODUCT.PROVIDER_ID;
+            m_cbo_product_name.DisplayMember = DM_PRODUCT_DE.PRODUCT_NAME;
+            m_cbo_product_name.ValueMember = DM_PRODUCT_DE.PROVIDER_ID;
             m_cbo_product_name.DataSource = v_ds_product.DM_PRODUCT_DE;
 
         }
