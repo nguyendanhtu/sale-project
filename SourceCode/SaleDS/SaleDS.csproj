@@ -1,7 +1,7 @@
 ﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{39DC1A18-A725-4DF1-93CE-467C130CEEF9}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -124,6 +124,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_DM_CUSTOMER_GROUP.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_DM_PRODUCT_DE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_DM_PRODUCT_DE.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_DM_PROVIDER.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -195,6 +200,17 @@
     </None>
     <None Include="DS_DM_CUSTOMER_GROUP.xss">
       <DependentUpon>DS_DM_CUSTOMER_GROUP.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_PRODUCT_DE.xsc">
+      <DependentUpon>DS_DM_PRODUCT_DE.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_PRODUCT_DE.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_DM_PRODUCT_DE.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_DM_PRODUCT_DE.xss">
+      <DependentUpon>DS_DM_PRODUCT_DE.xsd</DependentUpon>
     </None>
     <None Include="DS_DM_PROVIDER.xsc">
       <DependentUpon>DS_DM_PROVIDER.xsd</DependentUpon>
