@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // f321_nhap_so_du_hang_hoa
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(505, 369);
+            this.Name = "f321_nhap_so_du_hang_hoa";
             this.Text = "f321_nhap_so_du_hang_hoa";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
