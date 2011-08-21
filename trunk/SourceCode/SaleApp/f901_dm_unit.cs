@@ -28,7 +28,7 @@ namespace SaleApp
 
 
 
-	public class f901_dm_unit : System.Windows.Forms.Form
+	public class h : System.Windows.Forms.Form
 	{
 		internal System.Windows.Forms.ImageList ImageList;
 		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
@@ -40,7 +40,7 @@ namespace SaleApp
 		internal SIS.Controls.Button.SiSButton m_cmd_view;
 		private System.ComponentModel.IContainer components;
 
-		public f901_dm_unit()
+		public h()
 		{
 			//
 			// Required for Windows Form Designer support
@@ -76,7 +76,7 @@ namespace SaleApp
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f901_dm_unit));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(h));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
@@ -124,10 +124,10 @@ namespace SaleApp
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 404);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 433);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(619, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(585, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
             // 
             // m_cmd_insert
@@ -139,7 +139,7 @@ namespace SaleApp
             this.m_cmd_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_insert.ImageIndex = 2;
             this.m_cmd_insert.ImageList = this.ImageList;
-            this.m_cmd_insert.Location = new System.Drawing.Point(263, 4);
+            this.m_cmd_insert.Location = new System.Drawing.Point(229, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_insert.TabIndex = 12;
@@ -154,7 +154,7 @@ namespace SaleApp
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 3;
             this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(351, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(317, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 13;
@@ -184,7 +184,7 @@ namespace SaleApp
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(439, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(405, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_delete.TabIndex = 14;
@@ -199,7 +199,7 @@ namespace SaleApp
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(527, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(493, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -211,17 +211,18 @@ namespace SaleApp
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.m_fg.Location = new System.Drawing.Point(0, 0);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(619, 404);
+            this.m_fg.Size = new System.Drawing.Size(585, 433);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
+            this.m_fg.Click += new System.EventHandler(this.m_fg_Click);
             // 
-            // f901_dm_unit
+            // h
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(619, 440);
+            this.ClientSize = new System.Drawing.Size(585, 469);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
-            this.Name = "f901_dm_unit";
+            this.Name = "h";
             this.Text = "f901_dm_unit";
             this.Load += new System.EventHandler(this.f901_dm_unit_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
@@ -404,6 +405,11 @@ namespace SaleApp
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
+
+        private void m_fg_Click(object sender, EventArgs e)
+        {
+
+        }
 
         
 
