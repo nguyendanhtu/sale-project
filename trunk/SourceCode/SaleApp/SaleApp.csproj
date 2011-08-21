@@ -418,6 +418,10 @@
       <DependentUpon>f311_product_price.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="f321_nhap_so_du_hang_hoa.resx">
+      <DependentUpon>f321_nhap_so_du_hang_hoa.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="f401_dm_company_info.resx">
       <DependentUpon>f401_dm_company_info.cs</DependentUpon>
       <SubType>Designer</SubType>
