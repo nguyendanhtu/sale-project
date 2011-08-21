@@ -156,6 +156,17 @@ namespace SaleApp
             f901_dm_unit v_frm901 = new f901_dm_unit();
             v_frm901.display();
         }
+        private void show_provider()
+        {
+            if (!CAppContext_201.IsHavingQuyen(IP.Core.IPSystemAdmin.PHAN_QUYEN.IN_BAO_CAO))
+            {
+                BaseMessages.MsgBox_Infor(" Người sử dụng không được phép truy nhập phần này !!! ");
+                return;
+            }
+
+            f701_dm_provider v_frm701 = new f701_dm_provider();
+            v_frm701.display();
+        }
         private void show_repository()
         {
             if (!CAppContext_201.IsHavingQuyen(IP.Core.IPSystemAdmin.PHAN_QUYEN.IN_BAO_CAO))
@@ -295,10 +306,14 @@ namespace SaleApp
         private void mnu_dm_repository_ItemClick(object sender, ItemClickEventArgs e)
         {
 
+        }
+        private void mnu_dm_provider_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
             try
             {
 
-                show_repository();
+                show_provider();
             }
             catch (Exception v_e)
             {
@@ -331,6 +346,7 @@ namespace SaleApp
 
         }
 
+        
     
      
     }
