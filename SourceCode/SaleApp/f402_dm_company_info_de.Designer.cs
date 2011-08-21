@@ -1,6 +1,6 @@
 ﻿namespace SaleApp
 {
-    partial class f402_dm_company_de
+    partial class f402_dm_company_info_de
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f402_dm_company_de));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f402_dm_company_info_de));
             this.m_txt_short_name = new System.Windows.Forms.TextBox();
             this.m_txt_full_name = new System.Windows.Forms.TextBox();
             this.m_txt_address = new System.Windows.Forms.TextBox();
