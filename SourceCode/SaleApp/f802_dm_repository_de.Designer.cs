@@ -48,13 +48,14 @@
             // 
             // m_lbl_add_repository
             // 
-            this.m_lbl_add_repository.AutoSize = true;
+            this.m_lbl_add_repository.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_lbl_add_repository.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_add_repository.Location = new System.Drawing.Point(177, 20);
+            this.m_lbl_add_repository.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_add_repository.Name = "m_lbl_add_repository";
-            this.m_lbl_add_repository.Size = new System.Drawing.Size(189, 25);
+            this.m_lbl_add_repository.Size = new System.Drawing.Size(545, 35);
             this.m_lbl_add_repository.TabIndex = 7;
             this.m_lbl_add_repository.Text = "THÊM KHO HÀNG";
+            this.m_lbl_add_repository.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_lbl_repository_code
             // 

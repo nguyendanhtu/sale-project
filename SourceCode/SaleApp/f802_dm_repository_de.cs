@@ -31,7 +31,6 @@ namespace SaleApp
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             m_us_repository = ip_us_repository;
             this.ShowDialog();
-
         }
         #endregion
 
