@@ -124,10 +124,30 @@
     <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Web, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Data.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.BonusSkins.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Tools\Thu vien devexpress\DevExpress.BonusSkins.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\Tools\Thu vien devexpress\DevExpress.Data.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.OfficeSkins.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Tools\Thu vien devexpress\DevExpress.OfficeSkins.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\Tools\Thu vien devexpress\DevExpress.Utils.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\Tools\Thu vien devexpress\DevExpress.XtraBars.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\Tools\Thu vien devexpress\DevExpress.XtraEditors.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Tools\Thu vien devexpress\DevExpress.XtraLayout.v10.1.dll</HintPath>
+    </Reference>
     <Reference Include="Interop.Excel">
       <Name>Interop.Excel</Name>
       <HintPath>..\DLL\Interop.Excel.dll</HintPath>
@@ -166,6 +186,7 @@
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -239,6 +260,8 @@
     <None Include="App.config" />
     <None Include="bin\Debug\Help\help.chm" />
     <Content Include="App.ico" />
+    <Content Include="Resources\37371-57.jpg" />
+    <Content Include="Resources\BKIndex-icon.PNG" />
     <None Include="Resources\report.jpg" />
     <Compile Include="ApplicationControl.cs">
       <SubType>Code</SubType>
@@ -249,6 +272,7 @@
     <Compile Include="CChartParameter.cs" />
     <Compile Include="ChartDataSourceInterface.cs" />
     <Compile Include="f001_main_form.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="f001_main_form.Designer.cs">
       <DependentUpon>f001_main_form.cs</DependentUpon>
@@ -261,6 +285,21 @@
     </Compile>
     <Compile Include="f202_dm_category_de.Designer.cs">
       <DependentUpon>f202_dm_category_de.cs</DependentUpon>
+    </Compile>
+    <Compile Include="f301_dm_produc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f302_dm_product_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f302_dm_product_de.Designer.cs">
+      <DependentUpon>f302_dm_product_de.cs</DependentUpon>
+    </Compile>
+    <Compile Include="f311_product_price.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f311_product_price.Designer.cs">
+      <DependentUpon>f311_product_price.cs</DependentUpon>
     </Compile>
     <Compile Include="f401_dm_company_info.cs">
       <SubType>Form</SubType>
@@ -351,8 +390,21 @@
       <SubType>Designer</SubType>
       <DependentUpon>f202_dm_category_de.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="f301_dm_produc.resx">
+      <DependentUpon>f301_dm_produc.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f302_dm_product_de.resx">
+      <DependentUpon>f302_dm_product_de.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f311_product_price.resx">
+      <DependentUpon>f311_product_price.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="f401_dm_company_info.resx">
       <DependentUpon>f401_dm_company_info.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="f402_dm_company_de.resx">
       <DependentUpon>f402_dm_company_de.cs</DependentUpon>
@@ -368,6 +420,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="f601_dm_customer_group.resx">
       <DependentUpon>f601_dm_customer_group.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="f602_dm_customer_group_de.resx">
       <DependentUpon>f602_dm_customer_group_de.cs</DependentUpon>
