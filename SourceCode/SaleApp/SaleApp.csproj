@@ -1,7 +1,7 @@
 ﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{78272235-1F54-4999-968E-A24136D4F875}</ProjectGuid>
     <SccProjectName>
@@ -349,6 +349,9 @@
     <Compile Include="f702_dm_provider_de.Designer.cs">
       <DependentUpon>f702_dm_provider_de.cs</DependentUpon>
     </Compile>
+    <Compile Include="f801_dm_repository.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="f802_dm_repository_de.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -453,6 +456,9 @@
     <EmbeddedResource Include="f702_dm_provider_de.resx">
       <DependentUpon>f702_dm_provider_de.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f801_dm_repository.resx">
+      <DependentUpon>f801_dm_repository.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="f802_dm_repository_de.resx">
       <DependentUpon>f802_dm_repository_de.cs</DependentUpon>
