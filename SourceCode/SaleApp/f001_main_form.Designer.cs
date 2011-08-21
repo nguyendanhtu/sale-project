@@ -39,6 +39,7 @@
             this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.mnu_dm_repository = new DevExpress.XtraBars.BarButtonItem();
+            this.mnu_dm_provider = new DevExpress.XtraBars.BarButtonItem();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.hệThốngToolStripMenuItem = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.quanTriHêThôngToolStripMenuItem = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -50,6 +51,7 @@
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.nhậpLiệuToolStripMenuItem = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.báoCáoToolStripMenuItem = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -91,10 +93,11 @@
             this.mnu_license,
             this.barButtonItem5,
             this.barEditItem1,
-            this.mnu_dm_repository});
+            this.mnu_dm_repository,
+            this.mnu_dm_provider});
             this.ribbon.LargeImages = this.imageCollection1;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 17;
+            this.ribbon.MaxItemId = 18;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.hệThốngToolStripMenuItem,
@@ -102,7 +105,7 @@
             this.nhậpLiệuToolStripMenuItem,
             this.báoCáoToolStripMenuItem,
             this.ribbonPage5});
-            this.ribbon.SelectedPage = this.hệThốngToolStripMenuItem;
+            this.ribbon.SelectedPage = this.ribbonPage2;
             this.ribbon.Size = new System.Drawing.Size(1083, 148);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
@@ -267,6 +270,13 @@
             this.mnu_dm_repository.Name = "mnu_dm_repository";
             this.mnu_dm_repository.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_dm_repository_ItemClick);
             // 
+            // mnu_dm_provider
+            // 
+            this.mnu_dm_provider.Caption = "Nhà cung cấp";
+            this.mnu_dm_provider.Id = 17;
+            this.mnu_dm_provider.Name = "mnu_dm_provider";
+            this.mnu_dm_provider.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_dm_provider_ItemClick);
+            // 
             // imageCollection1
             // 
             this.imageCollection1.ImageSize = new System.Drawing.Size(64, 64);
@@ -315,7 +325,8 @@
             this.ribbonPageGroup4,
             this.ribbonPageGroup5,
             this.ribbonPageGroup6,
-            this.ribbonPageGroup10});
+            this.ribbonPageGroup10,
+            this.ribbonPageGroup11});
             this.ribbonPage2.ImageIndex = 14;
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "Quản lý danh mục";
@@ -340,6 +351,12 @@
             this.ribbonPageGroup10.ItemLinks.Add(this.mnu_dm_repository);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             this.ribbonPageGroup10.Text = "ribbonPageGroup10";
+            // 
+            // ribbonPageGroup11
+            // 
+            this.ribbonPageGroup11.ItemLinks.Add(this.mnu_dm_provider);
+            this.ribbonPageGroup11.Name = "ribbonPageGroup11";
+            this.ribbonPageGroup11.Text = "ribbonPageGroup11";
             // 
             // nhậpLiệuToolStripMenuItem
             // 
@@ -461,5 +478,7 @@
         private DevExpress.XtraBars.BarButtonItem mnu_dm_repository;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
         private DevExpress.Utils.ImageCollection imageCollection1;
+        private DevExpress.XtraBars.BarButtonItem mnu_dm_provider;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
     }
 }
