@@ -138,8 +138,8 @@ namespace SaleApp
                 return;
             }
 
-            //f301_dm_product v_frm301 = new f301_dm_product();
-            //v_frm301.display();
+            f301_dm_produc v_frm301 = new f301_dm_produc();
+            v_frm301.display();
         }
 
         /// <summary>
@@ -169,14 +169,14 @@ namespace SaleApp
         }
         private void show_repository()
         {
-            if (!CAppContext_201.IsHavingQuyen(IP.Core.IPSystemAdmin.PHAN_QUYEN.IN_BAO_CAO))
-            {
-                BaseMessages.MsgBox_Infor(" Người sử dụng không được phép truy nhập phần này !!! ");
-                return;
-            }
+            //if (!CAppContext_201.IsHavingQuyen(IP.Core.IPSystemAdmin.PHAN_QUYEN.IN_BAO_CAO))
+            //{
+            //    BaseMessages.MsgBox_Infor(" Người sử dụng không được phép truy nhập phần này !!! ");
+            //    return;
+            //}
 
-            f801_dm_repository v_frm801 = new f801_dm_repository();
-            v_frm801.display();
+            //f801_dm_repository v_frm801 = new f801_dm_repository();
+            //v_frm801.display();
         }
         #endregion
         //
