@@ -43,10 +43,10 @@
             // m_lbl_add_customer_group
             // 
             this.m_lbl_add_customer_group.AutoSize = true;
-            this.m_lbl_add_customer_group.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_add_customer_group.Location = new System.Drawing.Point(66, 20);
+            this.m_lbl_add_customer_group.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_add_customer_group.Location = new System.Drawing.Point(51, 18);
             this.m_lbl_add_customer_group.Name = "m_lbl_add_customer_group";
-            this.m_lbl_add_customer_group.Size = new System.Drawing.Size(287, 25);
+            this.m_lbl_add_customer_group.Size = new System.Drawing.Size(324, 29);
             this.m_lbl_add_customer_group.TabIndex = 8;
             this.m_lbl_add_customer_group.Text = "THÊM NHÓM KHÁCH HÀNG";
             // 
