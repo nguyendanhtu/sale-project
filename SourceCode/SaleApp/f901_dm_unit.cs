@@ -295,9 +295,8 @@ namespace SaleApp
 
 
 		private void insert_dm_unit(){			
-		//	f901_dm_unit_DE v_fDE = new  f901_dm_unit_DE();								
-		//	v_fDE.display();
             f902_dm_uinit_de v_frm902 = new f902_dm_uinit_de();
+            v_frm902.display_for_insert();
 			load_data_2_grid();
 		}
 
@@ -305,8 +304,8 @@ namespace SaleApp
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
 			grid2us_object(m_us, m_fg.Row);
-		//	f901_dm_unit_DE v_fDE = new f901_dm_unit_DE();
-		//	v_fDE.display(m_us);
+            f902_dm_uinit_de v_frm902 = new f902_dm_uinit_de();
+            v_frm902.display_for_update(m_us);
 			load_data_2_grid();
 		}
 				
