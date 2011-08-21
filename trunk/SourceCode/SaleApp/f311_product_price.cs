@@ -40,7 +40,10 @@ namespace SaleApp
         private void setdefineevents()
         {
             this.Load += new EventHandler(f311_product_price_Load);
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
         }
+
+        
 
       
         public void display()
@@ -55,6 +58,19 @@ namespace SaleApp
             {
 
                 load_data_2_cbo();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+        void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+             try
+            {
+
+                this.Close();
             }
             catch (Exception v_e)
             {
