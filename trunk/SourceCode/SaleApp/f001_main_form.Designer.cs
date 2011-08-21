@@ -60,6 +60,7 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.clientPanel = new DevExpress.XtraEditors.PanelControl();
+            this.m_cmd_product_price = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection2)).BeginInit();
@@ -94,10 +95,11 @@
             this.barButtonItem5,
             this.barEditItem1,
             this.mnu_dm_repository,
-            this.mnu_dm_provider});
+            this.mnu_dm_provider,
+            this.m_cmd_product_price});
             this.ribbon.LargeImages = this.imageCollection1;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 18;
+            this.ribbon.MaxItemId = 19;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.hệThốngToolStripMenuItem,
@@ -105,7 +107,7 @@
             this.nhậpLiệuToolStripMenuItem,
             this.báoCáoToolStripMenuItem,
             this.ribbonPage5});
-            this.ribbon.SelectedPage = this.ribbonPage2;
+            this.ribbon.SelectedPage = this.nhậpLiệuToolStripMenuItem;
             this.ribbon.Size = new System.Drawing.Size(1083, 148);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
@@ -368,6 +370,7 @@
             // 
             // ribbonPageGroup7
             // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.m_cmd_product_price);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "ribbonPageGroup7";
             // 
@@ -413,6 +416,13 @@
             this.clientPanel.Name = "clientPanel";
             this.clientPanel.Size = new System.Drawing.Size(1083, 531);
             this.clientPanel.TabIndex = 2;
+            // 
+            // m_cmd_product_price
+            // 
+            this.m_cmd_product_price.Caption = "Cập nhật giá sản phẩm";
+            this.m_cmd_product_price.Id = 18;
+            this.m_cmd_product_price.Name = "m_cmd_product_price";
+            this.m_cmd_product_price.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_product_price_ItemClick);
             // 
             // f001_main_form
             // 
@@ -480,5 +490,6 @@
         private DevExpress.Utils.ImageCollection imageCollection1;
         private DevExpress.XtraBars.BarButtonItem mnu_dm_provider;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
+        private DevExpress.XtraBars.BarButtonItem m_cmd_product_price;
     }
 }

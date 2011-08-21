@@ -91,6 +91,16 @@ namespace SaleApp
             f999_ht_nguoi_su_dung v_frm_999 = new f999_ht_nguoi_su_dung();
             v_frm_999.display();
         }
+        private void show_product_price()
+        {
+            if (!CAppContext_201.IsHavingQuyen(IP.Core.IPSystemAdmin.PHAN_QUYEN.BACK_UP_AND_RESTORE))
+            {
+                BaseMessages.MsgBox_Infor(" Người sử dụng không được quyền truy nhập phần này !!! ");
+                return;
+            }
+            f311_product_price v_frm_311 = new f311_product_price();
+            v_frm_311.display();
+        }
         private void show_introduction()
         {
             if (!CAppContext_201.IsHavingQuyen(IP.Core.IPSystemAdmin.PHAN_QUYEN.IN_BAO_CAO))
@@ -222,6 +232,7 @@ namespace SaleApp
            
         }
 
+
         private void mnu_type_of_directory_ItemClick(object sender, ItemClickEventArgs e)
         {
             try
@@ -322,6 +333,20 @@ namespace SaleApp
             }
         }
 
+        private void m_cmd_product_price_ItemClick(object sender, ItemClickEventArgs e)
+        {
+             try
+            {
+
+                show_product_price();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+           
+        }
 
         private void barEditItem1_EditValueChanged(object sender, EventArgs e)
         {
@@ -346,6 +371,7 @@ namespace SaleApp
 
         }
 
+        
         
     
      
