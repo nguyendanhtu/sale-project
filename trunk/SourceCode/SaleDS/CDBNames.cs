@@ -28,18 +28,21 @@ namespace Sale.CDBNames
         public const string CATEGORY_DESCRIPTION = "CATEGORY_DESCRIPTION";
     }
 
-    public class DM_PRODUCT
+    public class DM_PRODUCT_DE
     {
         public const string ID = "ID";
         public const string PRODUCT_CODE = "PRODUCT_CODE";
         public const string PRODUCT_NAME = "PRODUCT_NAME";
         public const string UNIT_ID = "UNIT_ID";
         public const string CATEGORY_ID = "CATEGORY_ID";
+        public const string CATEGORY_NAME = "CATEGORY_NAME";
+        public const string UNIT_NANE = "UNIT_NANE";
         public const string IMAGE_PATH = "IMAGE_PATH";
         public const string DESCRIPTION = "DESCRIPTION";
         public const string PROVIDER_ID = "PROVIDER_ID";
         public const string CURRENT_PRICE = "CURRENT_PRICE";
     }
+
 
     public class DM_UNIT
     {
@@ -85,18 +88,9 @@ namespace Sale.CDBNames
         public const string ADDRESS = "ADDRESS";
         public const string MOBILE = "MOBILE";
     }
+   
 
-    //public class DM_PROVIDER
-    //{
-    //    public const string ID = "ID";
-    //    public const string PROVIDER_CODE = "PROVIDER_CODE";
-    //    public const string PROVIDER_NAME = "PROVIDER_NAME";
-    //    public const string MOBILE = "MOBILE";
-    //    public const string EMAIL = "EMAIL";
-    //    public const string ADDRESS = "ADDRESS";
-    //    public const string TAX_CODE = "TAX_CODE";
-    //}
-
+   
 }
 
 
