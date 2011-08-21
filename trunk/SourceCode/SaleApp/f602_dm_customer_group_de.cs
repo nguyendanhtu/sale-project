@@ -52,7 +52,7 @@ namespace SaleApp
 
         private void us_object_2_form(US_DM_CUSTOMER_GROUP ip_us_customer_group)
         {
-            m_txt_customer_group_name.Text =CIPConvert.ToStr(ip_us_customer_group.dcID);
+            m_txt_customer_group_name.Text =CIPConvert.ToStr(ip_us_customer_group.strCUSTOMER_GROUP_NAME);
 
         }
 
@@ -162,6 +162,7 @@ namespace SaleApp
 
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+
         }
 
         #endregion
