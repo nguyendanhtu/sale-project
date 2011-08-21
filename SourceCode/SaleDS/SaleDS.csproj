@@ -149,6 +149,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_HT_QUYEN_USER.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_DM_PRODUCT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_DM_PRODUCT.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -255,6 +260,17 @@
     </None>
     <None Include="DS_HT_QUYEN_USER.xss">
       <DependentUpon>DS_HT_QUYEN_USER.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_PRODUCT.xsc">
+      <DependentUpon>DS_DM_PRODUCT.xsd</DependentUpon>
+    </None>
+    <None Include="DS_DM_PRODUCT.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_DM_PRODUCT.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_DM_PRODUCT.xss">
+      <DependentUpon>DS_DM_PRODUCT.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
