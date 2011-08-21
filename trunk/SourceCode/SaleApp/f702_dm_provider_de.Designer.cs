@@ -52,109 +52,110 @@
             // 
             // m_lbl_add__provider
             // 
-            this.m_lbl_add__provider.AutoSize = true;
             this.m_lbl_add__provider.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_add__provider.Location = new System.Drawing.Point(189, 19);
+            this.m_lbl_add__provider.ForeColor = System.Drawing.Color.Blue;
+            this.m_lbl_add__provider.Location = new System.Drawing.Point(0, 19);
             this.m_lbl_add__provider.Name = "m_lbl_add__provider";
-            this.m_lbl_add__provider.Size = new System.Drawing.Size(238, 25);
-            this.m_lbl_add__provider.TabIndex = 9;
+            this.m_lbl_add__provider.Size = new System.Drawing.Size(600, 25);
+            this.m_lbl_add__provider.TabIndex = 0;
             this.m_lbl_add__provider.Text = "THÊM NHÀ CUNG CẤP";
+            this.m_lbl_add__provider.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // m_lbl_provider_code
             // 
             this.m_lbl_provider_code.AutoSize = true;
-            this.m_lbl_provider_code.Location = new System.Drawing.Point(23, 90);
+            this.m_lbl_provider_code.Location = new System.Drawing.Point(32, 74);
             this.m_lbl_provider_code.Name = "m_lbl_provider_code";
             this.m_lbl_provider_code.Size = new System.Drawing.Size(91, 13);
-            this.m_lbl_provider_code.TabIndex = 10;
+            this.m_lbl_provider_code.TabIndex = 1;
             this.m_lbl_provider_code.Text = "Mã nhà cung cấp";
             // 
             // m_lbl_provider_name
             // 
             this.m_lbl_provider_name.AutoSize = true;
-            this.m_lbl_provider_name.Location = new System.Drawing.Point(317, 90);
+            this.m_lbl_provider_name.Location = new System.Drawing.Point(304, 76);
             this.m_lbl_provider_name.Name = "m_lbl_provider_name";
             this.m_lbl_provider_name.Size = new System.Drawing.Size(95, 13);
-            this.m_lbl_provider_name.TabIndex = 11;
+            this.m_lbl_provider_name.TabIndex = 3;
             this.m_lbl_provider_name.Text = "Tên nhà cung cấp";
             // 
             // m_lbl_mobile
             // 
             this.m_lbl_mobile.AutoSize = true;
-            this.m_lbl_mobile.Location = new System.Drawing.Point(23, 147);
+            this.m_lbl_mobile.Location = new System.Drawing.Point(32, 115);
             this.m_lbl_mobile.Name = "m_lbl_mobile";
             this.m_lbl_mobile.Size = new System.Drawing.Size(55, 13);
-            this.m_lbl_mobile.TabIndex = 12;
+            this.m_lbl_mobile.TabIndex = 5;
             this.m_lbl_mobile.Text = "Điện thoại";
             // 
             // m_lbl_email
             // 
             this.m_lbl_email.AutoSize = true;
-            this.m_lbl_email.Location = new System.Drawing.Point(317, 147);
+            this.m_lbl_email.Location = new System.Drawing.Point(32, 152);
             this.m_lbl_email.Name = "m_lbl_email";
             this.m_lbl_email.Size = new System.Drawing.Size(32, 13);
-            this.m_lbl_email.TabIndex = 13;
+            this.m_lbl_email.TabIndex = 7;
             this.m_lbl_email.Text = "Email";
             // 
             // m_lbl_address
             // 
             this.m_lbl_address.AutoSize = true;
-            this.m_lbl_address.Location = new System.Drawing.Point(23, 208);
+            this.m_lbl_address.Location = new System.Drawing.Point(32, 189);
             this.m_lbl_address.Name = "m_lbl_address";
             this.m_lbl_address.Size = new System.Drawing.Size(40, 13);
-            this.m_lbl_address.TabIndex = 14;
+            this.m_lbl_address.TabIndex = 9;
             this.m_lbl_address.Text = "Địa chỉ";
             // 
             // m_lbl_tax_code
             // 
             this.m_lbl_tax_code.AutoSize = true;
-            this.m_lbl_tax_code.Location = new System.Drawing.Point(317, 208);
+            this.m_lbl_tax_code.Location = new System.Drawing.Point(32, 226);
             this.m_lbl_tax_code.Name = "m_lbl_tax_code";
             this.m_lbl_tax_code.Size = new System.Drawing.Size(46, 13);
-            this.m_lbl_tax_code.TabIndex = 15;
+            this.m_lbl_tax_code.TabIndex = 11;
             this.m_lbl_tax_code.Text = "Mã thuế";
             // 
             // m_txt_provider_code
             // 
-            this.m_txt_provider_code.Location = new System.Drawing.Point(131, 87);
+            this.m_txt_provider_code.Location = new System.Drawing.Point(135, 70);
             this.m_txt_provider_code.Name = "m_txt_provider_code";
             this.m_txt_provider_code.Size = new System.Drawing.Size(147, 20);
-            this.m_txt_provider_code.TabIndex = 16;
+            this.m_txt_provider_code.TabIndex = 2;
             // 
             // m_txt_provider_name
             // 
-            this.m_txt_provider_name.Location = new System.Drawing.Point(428, 90);
+            this.m_txt_provider_name.Location = new System.Drawing.Point(407, 70);
             this.m_txt_provider_name.Name = "m_txt_provider_name";
             this.m_txt_provider_name.Size = new System.Drawing.Size(147, 20);
-            this.m_txt_provider_name.TabIndex = 17;
+            this.m_txt_provider_name.TabIndex = 4;
             // 
             // m_txt_mobile
             // 
-            this.m_txt_mobile.Location = new System.Drawing.Point(131, 144);
+            this.m_txt_mobile.Location = new System.Drawing.Point(135, 109);
             this.m_txt_mobile.Name = "m_txt_mobile";
             this.m_txt_mobile.Size = new System.Drawing.Size(147, 20);
-            this.m_txt_mobile.TabIndex = 18;
+            this.m_txt_mobile.TabIndex = 6;
             // 
             // m_txt_email
             // 
-            this.m_txt_email.Location = new System.Drawing.Point(428, 143);
+            this.m_txt_email.Location = new System.Drawing.Point(135, 145);
             this.m_txt_email.Name = "m_txt_email";
-            this.m_txt_email.Size = new System.Drawing.Size(147, 20);
-            this.m_txt_email.TabIndex = 19;
+            this.m_txt_email.Size = new System.Drawing.Size(441, 20);
+            this.m_txt_email.TabIndex = 8;
             // 
             // m_txt_address
             // 
-            this.m_txt_address.Location = new System.Drawing.Point(131, 205);
+            this.m_txt_address.Location = new System.Drawing.Point(135, 181);
             this.m_txt_address.Name = "m_txt_address";
-            this.m_txt_address.Size = new System.Drawing.Size(147, 20);
-            this.m_txt_address.TabIndex = 20;
+            this.m_txt_address.Size = new System.Drawing.Size(441, 20);
+            this.m_txt_address.TabIndex = 10;
             // 
             // m_txt_tax_code
             // 
-            this.m_txt_tax_code.Location = new System.Drawing.Point(428, 208);
+            this.m_txt_tax_code.Location = new System.Drawing.Point(135, 217);
             this.m_txt_tax_code.Name = "m_txt_tax_code";
             this.m_txt_tax_code.Size = new System.Drawing.Size(147, 20);
-            this.m_txt_tax_code.TabIndex = 21;
+            this.m_txt_tax_code.TabIndex = 12;
             // 
             // ImageList
             // 
@@ -188,11 +189,11 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 268);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 266);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(606, 36);
-            this.m_pnl_out_place_dm.TabIndex = 22;
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(597, 36);
+            this.m_pnl_out_place_dm.TabIndex = 13;
             // 
             // m_cmd_save
             // 
@@ -203,10 +204,10 @@
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(426, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(417, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_save.TabIndex = 12;
+            this.m_cmd_save.TabIndex = 0;
             this.m_cmd_save.Text = "&Lưu";
             // 
             // m_cmd_exit
@@ -218,17 +219,17 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(514, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(505, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 11;
+            this.m_cmd_exit.TabIndex = 0;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
             // f702_dm_provider_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 304);
+            this.ClientSize = new System.Drawing.Size(597, 302);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_txt_tax_code);
             this.Controls.Add(this.m_txt_address);
