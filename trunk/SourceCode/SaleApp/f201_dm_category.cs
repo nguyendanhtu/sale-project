@@ -239,7 +239,13 @@ namespace SaleApp
 
 		#region Data Structure
 		private enum e_col_Number{
-			CATEGORY_CODE = 1,DISPLAY_LEVEL = 5,DISPLAY_ORDER = 4,CATEGORY_DESCRIPTION = 6,CATEGORY_PARENT_ID = 3,CATEGORY_NAME = 2
+			CATEGORY_CODE = 1
+,DISPLAY_LEVEL = 5
+,DISPLAY_ORDER = 4
+,CATEGORY_DESCRIPTION = 6
+,CATEGORY_PARENT_ID = 3
+,CATEGORY_NAME = 2
+
 		}			
 		#endregion
 
@@ -262,7 +268,13 @@ namespace SaleApp
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
-			v_htb.Add(DM_CATEGORY.CATEGORY_CODE, e_col_Number.CATEGORY_CODE);			v_htb.Add(DM_CATEGORY.DISPLAY_LEVEL, e_col_Number.DISPLAY_LEVEL);			v_htb.Add(DM_CATEGORY.DISPLAY_ORDER, e_col_Number.DISPLAY_ORDER);			v_htb.Add(DM_CATEGORY.CATEGORY_DESCRIPTION, e_col_Number.CATEGORY_DESCRIPTION);			v_htb.Add(DM_CATEGORY.CATEGORY_PARENT_ID, e_col_Number.CATEGORY_PARENT_ID);			v_htb.Add(DM_CATEGORY.CATEGORY_NAME, e_col_Number.CATEGORY_NAME);									
+			v_htb.Add(DM_CATEGORY.CATEGORY_CODE, e_col_Number.CATEGORY_CODE);
+			v_htb.Add(DM_CATEGORY.DISPLAY_LEVEL, e_col_Number.DISPLAY_LEVEL);
+			v_htb.Add(DM_CATEGORY.DISPLAY_ORDER, e_col_Number.DISPLAY_ORDER);
+			v_htb.Add(DM_CATEGORY.CATEGORY_DESCRIPTION, e_col_Number.CATEGORY_DESCRIPTION);
+			v_htb.Add(DM_CATEGORY.CATEGORY_PARENT_ID, e_col_Number.CATEGORY_PARENT_ID);
+			v_htb.Add(DM_CATEGORY.CATEGORY_NAME, e_col_Number.CATEGORY_NAME);
+									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.DM_CATEGORY.NewRow());
 			return v_obj_trans;			
 		}
