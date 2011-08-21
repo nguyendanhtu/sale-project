@@ -70,6 +70,7 @@
             // 
             this.ribbon.ApplicationButtonDropDownControl = this.applicationMenu1;
             this.ribbon.ApplicationButtonText = null;
+            this.ribbon.ApplicationIcon = global::SaleApp.Properties.Resources.BKIndex_icon;
             // 
             // 
             // 
@@ -101,8 +102,8 @@
             this.nhậpLiệuToolStripMenuItem,
             this.báoCáoToolStripMenuItem,
             this.ribbonPage5});
-            this.ribbon.SelectedPage = this.ribbonPage2;
-            this.ribbon.Size = new System.Drawing.Size(656, 148);
+            this.ribbon.SelectedPage = this.hệThốngToolStripMenuItem;
+            this.ribbon.Size = new System.Drawing.Size(1083, 148);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
             // 
@@ -147,25 +148,28 @@
             // 
             // mnu_user_management
             // 
-            this.mnu_user_management.Caption = "           Người                         sử dụng             ";
+            this.mnu_user_management.Caption = "      Người sử dụng                            ";
             this.mnu_user_management.Id = 6;
             this.mnu_user_management.LargeImageIndex = 0;
+            this.mnu_user_management.LargeWidth = 100;
             this.mnu_user_management.Name = "mnu_user_management";
             this.mnu_user_management.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_user_management_ItemClick);
             // 
             // mnu_directory
             // 
-            this.mnu_directory.Caption = "  Từ điển  ";
+            this.mnu_directory.Caption = "Từ điển ";
             this.mnu_directory.Id = 7;
             this.mnu_directory.LargeImageIndex = 5;
+            this.mnu_directory.LargeWidth = 50;
             this.mnu_directory.Name = "mnu_directory";
             this.mnu_directory.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_directory_ItemClick);
             // 
             // mnu_type_of_directory
             // 
-            this.mnu_type_of_directory.Caption = "  Loại từ điển  ";
+            this.mnu_type_of_directory.Caption = "Loại từ điển";
             this.mnu_type_of_directory.Id = 8;
             this.mnu_type_of_directory.LargeImageIndex = 7;
+            this.mnu_type_of_directory.LargeWidth = 50;
             this.mnu_type_of_directory.Name = "mnu_type_of_directory";
             this.mnu_type_of_directory.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_type_of_directory_ItemClick);
             // 
@@ -265,29 +269,10 @@
             // 
             // imageCollection1
             // 
-            this.imageCollection1.ImageSize = new System.Drawing.Size(30, 30);
+            this.imageCollection1.ImageSize = new System.Drawing.Size(64, 64);
             this.imageCollection1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection1.ImageStream")));
-            this.imageCollection1.Images.SetKeyName(0, "administrator-icon.png");
-            this.imageCollection1.Images.SetKeyName(1, "Apps-kchart-icon.png");
-            this.imageCollection1.Images.SetKeyName(2, "Apps-preferences-contact-list-icon.png");
-            this.imageCollection1.Images.SetKeyName(3, "comment.png");
-            this.imageCollection1.Images.SetKeyName(4, "death_list.png");
-            this.imageCollection1.Images.SetKeyName(5, "dictionary.png");
-            this.imageCollection1.Images.SetKeyName(6, "Dictionary-icon.png");
-            this.imageCollection1.Images.SetKeyName(7, "dictionarys.png");
-            this.imageCollection1.Images.SetKeyName(8, "exit.png");
-            this.imageCollection1.Images.SetKeyName(9, "folder_system.png");
-            this.imageCollection1.Images.SetKeyName(10, "Folder-Group-Folder-icon.png");
-            this.imageCollection1.Images.SetKeyName(11, "info.png");
-            this.imageCollection1.Images.SetKeyName(12, "licence-icon.png");
-            this.imageCollection1.Images.SetKeyName(13, "line_chart.png");
-            this.imageCollection1.Images.SetKeyName(14, "loading.png");
-            this.imageCollection1.Images.SetKeyName(15, "money.png");
-            this.imageCollection1.Images.SetKeyName(16, "picture.png");
-            this.imageCollection1.Images.SetKeyName(17, "reports-icon.png");
-            this.imageCollection1.Images.SetKeyName(18, "search.png");
-            this.imageCollection1.Images.SetKeyName(19, "summer_user.png");
-            this.imageCollection1.Images.SetKeyName(20, "system_preferences.png");
+            this.imageCollection1.Images.SetKeyName(0, "service_manager.png");
+            this.imageCollection1.Images.SetKeyName(1, "service_manager.png");
             // 
             // hệThốngToolStripMenuItem
             // 
@@ -397,30 +382,35 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 491);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 679);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(656, 25);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1083, 25);
             // 
             // clientPanel
             // 
             this.clientPanel.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.clientPanel.ContentImage = global::SaleApp.Properties.Resources._37371_57;
             this.clientPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.clientPanel.Location = new System.Drawing.Point(0, 148);
             this.clientPanel.Name = "clientPanel";
-            this.clientPanel.Size = new System.Drawing.Size(656, 343);
+            this.clientPanel.Size = new System.Drawing.Size(1083, 531);
             this.clientPanel.TabIndex = 2;
             // 
             // f001_main_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 516);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1083, 704);
             this.Controls.Add(this.clientPanel);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
+            this.MaximumSize = new System.Drawing.Size(1200, 800);
+            this.MinimumSize = new System.Drawing.Size(600, 400);
             this.Name = "f001_main_form";
             this.Ribbon = this.ribbon;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "f001 Quản lý bán hàng";
             this.Load += new System.EventHandler(this.f001_main_form_Load);
@@ -463,7 +453,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-        private DevExpress.Utils.ImageCollection imageCollection1;
         private DevExpress.Utils.ImageCollection imageCollection2;
         private DevExpress.XtraBars.BarEditItem barEditItem1;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
@@ -471,5 +460,6 @@
         private DevExpress.XtraBars.Ribbon.ApplicationMenu applicationMenu1;
         private DevExpress.XtraBars.BarButtonItem mnu_dm_repository;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
+        private DevExpress.Utils.ImageCollection imageCollection1;
     }
 }
