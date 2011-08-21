@@ -179,14 +179,14 @@ namespace SaleApp
         }
         private void show_repository()
         {
-            //if (!CAppContext_201.IsHavingQuyen(IP.Core.IPSystemAdmin.PHAN_QUYEN.IN_BAO_CAO))
-            //{
-            //    BaseMessages.MsgBox_Infor(" Người sử dụng không được phép truy nhập phần này !!! ");
-            //    return;
-            //}
+            if (!CAppContext_201.IsHavingQuyen(IP.Core.IPSystemAdmin.PHAN_QUYEN.IN_BAO_CAO))
+            {
+                BaseMessages.MsgBox_Infor(" Người sử dụng không được phép truy nhập phần này !!! ");
+                return;
+            }
 
-            //f801_dm_repository v_frm801 = new f801_dm_repository();
-            //v_frm801.display();
+            f801_dm_repository v_frm801 = new f801_dm_repository();
+            v_frm801.display();
         }
         #endregion
         //
@@ -316,7 +316,14 @@ namespace SaleApp
 
         private void mnu_dm_repository_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            try
+            {
+                show_repository();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
         private void mnu_dm_provider_ItemClick(object sender, ItemClickEventArgs e)
         {
