@@ -163,7 +163,7 @@ namespace SaleApp
                 return;
             }
 
-            h v_frm901 = new h();
+            f901_dm_unit v_frm901 = new f901_dm_unit();
             v_frm901.display();
         }
         private void show_provider()
