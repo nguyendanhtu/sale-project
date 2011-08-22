@@ -40,6 +40,7 @@
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.mnu_dm_repository = new DevExpress.XtraBars.BarButtonItem();
             this.mnu_dm_provider = new DevExpress.XtraBars.BarButtonItem();
+            this.m_cmd_product_price = new DevExpress.XtraBars.BarButtonItem();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.hệThốngToolStripMenuItem = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.quanTriHêThôngToolStripMenuItem = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -60,7 +61,8 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.clientPanel = new DevExpress.XtraEditors.PanelControl();
-            this.m_cmd_product_price = new DevExpress.XtraBars.BarButtonItem();
+            this.mnu_dm_customer_pg = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.mnu_dm_customer = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection2)).BeginInit();
@@ -96,10 +98,11 @@
             this.barEditItem1,
             this.mnu_dm_repository,
             this.mnu_dm_provider,
-            this.m_cmd_product_price});
+            this.m_cmd_product_price,
+            this.mnu_dm_customer});
             this.ribbon.LargeImages = this.imageCollection1;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 19;
+            this.ribbon.MaxItemId = 20;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.hệThốngToolStripMenuItem,
@@ -107,7 +110,7 @@
             this.nhậpLiệuToolStripMenuItem,
             this.báoCáoToolStripMenuItem,
             this.ribbonPage5});
-            this.ribbon.SelectedPage = this.nhậpLiệuToolStripMenuItem;
+            this.ribbon.SelectedPage = this.ribbonPage2;
             this.ribbon.Size = new System.Drawing.Size(1083, 148);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
@@ -279,6 +282,13 @@
             this.mnu_dm_provider.Name = "mnu_dm_provider";
             this.mnu_dm_provider.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_dm_provider_ItemClick);
             // 
+            // m_cmd_product_price
+            // 
+            this.m_cmd_product_price.Caption = "Cập nhật giá sản phẩm";
+            this.m_cmd_product_price.Id = 18;
+            this.m_cmd_product_price.Name = "m_cmd_product_price";
+            this.m_cmd_product_price.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_product_price_ItemClick);
+            // 
             // imageCollection1
             // 
             this.imageCollection1.ImageSize = new System.Drawing.Size(64, 64);
@@ -328,7 +338,8 @@
             this.ribbonPageGroup5,
             this.ribbonPageGroup6,
             this.ribbonPageGroup10,
-            this.ribbonPageGroup11});
+            this.ribbonPageGroup11,
+            this.mnu_dm_customer_pg});
             this.ribbonPage2.ImageIndex = 14;
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "Quản lý danh mục";
@@ -417,12 +428,17 @@
             this.clientPanel.Size = new System.Drawing.Size(1083, 531);
             this.clientPanel.TabIndex = 2;
             // 
-            // m_cmd_product_price
+            // mnu_dm_customer_pg
             // 
-            this.m_cmd_product_price.Caption = "Cập nhật giá sản phẩm";
-            this.m_cmd_product_price.Id = 18;
-            this.m_cmd_product_price.Name = "m_cmd_product_price";
-            this.m_cmd_product_price.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_product_price_ItemClick);
+            this.mnu_dm_customer_pg.ItemLinks.Add(this.mnu_dm_customer);
+            this.mnu_dm_customer_pg.Name = "mnu_dm_customer_pg";
+            // 
+            // mnu_dm_customer
+            // 
+            this.mnu_dm_customer.Caption = "Khách hàng";
+            this.mnu_dm_customer.Id = 19;
+            this.mnu_dm_customer.Name = "mnu_dm_customer";
+            this.mnu_dm_customer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_dm_customer_ItemClick);
             // 
             // f001_main_form
             // 
@@ -491,5 +507,7 @@
         private DevExpress.XtraBars.BarButtonItem mnu_dm_provider;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
         private DevExpress.XtraBars.BarButtonItem m_cmd_product_price;
+        private DevExpress.XtraBars.BarButtonItem mnu_dm_customer;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup mnu_dm_customer_pg;
     }
 }

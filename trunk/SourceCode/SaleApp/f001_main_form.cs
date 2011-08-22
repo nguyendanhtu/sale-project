@@ -188,6 +188,18 @@ namespace SaleApp
             f801_dm_repository v_frm801 = new f801_dm_repository();
             v_frm801.display();
         }
+
+        private void show_customer()
+        {
+            if (!CAppContext_201.IsHavingQuyen(IP.Core.IPSystemAdmin.PHAN_QUYEN.IN_BAO_CAO))
+            {
+                BaseMessages.MsgBox_Infor(" Người sử dụng không được phép truy nhập phần này !!! ");
+                return;
+            }
+
+            f501_dm_customer v_frm501 = new f501_dm_customer();
+            v_frm501.display();
+        }
         #endregion
         //
         //
@@ -376,6 +388,18 @@ namespace SaleApp
         private void ribbon_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void mnu_dm_customer_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                show_customer();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         
