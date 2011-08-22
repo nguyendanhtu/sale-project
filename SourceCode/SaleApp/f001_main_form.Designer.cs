@@ -42,37 +42,6 @@
             this.mnu_dm_provider = new DevExpress.XtraBars.BarButtonItem();
             this.m_cmd_product_price = new DevExpress.XtraBars.BarButtonItem();
             this.mnu_dm_customer = new DevExpress.XtraBars.BarButtonItem();
-            this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
-            this.hệThốngToolStripMenuItem = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.quanTriHêThôngToolStripMenuItem = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.mnu_dm_customer_pg = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.nhậpLiệuToolStripMenuItem = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.báoCáoToolStripMenuItem = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.clientPanel = new DevExpress.XtraEditors.PanelControl();
-            this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup18 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup19 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup20 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup21 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup25 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.mnu_dm_goupcustomer = new DevExpress.XtraBars.BarButtonItem();
             this.mnu_dm_employee = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
@@ -87,10 +56,41 @@
             this.mnu_bc_banhang = new DevExpress.XtraBars.BarButtonItem();
             this.mnu_bc_theohanghoa = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.mnu_cmd_lichsuhanghoa = new DevExpress.XtraBars.BarButtonItem();
             this.mnu_cmd_kiemkehanghoa = new DevExpress.XtraBars.BarButtonItem();
+            this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
+            this.hệThốngToolStripMenuItem = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.quanTriHêThôngToolStripMenuItem = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.mnu_dm_customer_pg = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.nhậpLiệuToolStripMenuItem = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup18 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup19 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup20 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.báoCáoToolStripMenuItem = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup21 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup25 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.clientPanel = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection2)).BeginInit();
@@ -154,7 +154,7 @@
             this.nhậpLiệuToolStripMenuItem,
             this.báoCáoToolStripMenuItem,
             this.ribbonPage5});
-            this.ribbon.SelectedPage = this.báoCáoToolStripMenuItem;
+            this.ribbon.SelectedPage = this.nhậpLiệuToolStripMenuItem;
             this.ribbon.Size = new System.Drawing.Size(1083, 148);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
@@ -340,6 +340,103 @@
             this.mnu_dm_customer.Name = "mnu_dm_customer";
             this.mnu_dm_customer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_dm_customer_ItemClick);
             // 
+            // mnu_dm_goupcustomer
+            // 
+            this.mnu_dm_goupcustomer.Caption = "Nhóm khách hàng";
+            this.mnu_dm_goupcustomer.Id = 20;
+            this.mnu_dm_goupcustomer.Name = "mnu_dm_goupcustomer";
+            // 
+            // mnu_dm_employee
+            // 
+            this.mnu_dm_employee.Caption = "Nhân viên";
+            this.mnu_dm_employee.Id = 21;
+            this.mnu_dm_employee.Name = "mnu_dm_employee";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "barButtonItem4";
+            this.barButtonItem4.Id = 22;
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "barButtonItem6";
+            this.barButtonItem6.Id = 23;
+            this.barButtonItem6.Name = "barButtonItem6";
+            // 
+            // mnu_cmd_sodudau
+            // 
+            this.mnu_cmd_sodudau.Caption = "Số dư đầu ";
+            this.mnu_cmd_sodudau.Id = 24;
+            this.mnu_cmd_sodudau.Name = "mnu_cmd_sodudau";
+            this.mnu_cmd_sodudau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_cmd_sodudau_ItemClick);
+            // 
+            // mnu_cmd_xuatbanhang
+            // 
+            this.mnu_cmd_xuatbanhang.Caption = "Xuất bán hàng";
+            this.mnu_cmd_xuatbanhang.Id = 25;
+            this.mnu_cmd_xuatbanhang.Name = "mnu_cmd_xuatbanhang";
+            // 
+            // mnu_cmd_xuathanhly
+            // 
+            this.mnu_cmd_xuathanhly.Caption = "Xuất thanh lý";
+            this.mnu_cmd_xuathanhly.Id = 26;
+            this.mnu_cmd_xuathanhly.Name = "mnu_cmd_xuathanhly";
+            // 
+            // mnu_cmd_hangnhacungcap
+            // 
+            this.mnu_cmd_hangnhacungcap.Caption = "Hàng nhà cung cấp";
+            this.mnu_cmd_hangnhacungcap.Id = 27;
+            this.mnu_cmd_hangnhacungcap.Name = "mnu_cmd_hangnhacungcap";
+            // 
+            // mnu_cmd_hangtralaikhach
+            // 
+            this.mnu_cmd_hangtralaikhach.Caption = "Hàng trả lại khách";
+            this.mnu_cmd_hangtralaikhach.Id = 28;
+            this.mnu_cmd_hangtralaikhach.Name = "mnu_cmd_hangtralaikhach";
+            // 
+            // mnu_bc_xuatnhapton
+            // 
+            this.mnu_bc_xuatnhapton.Caption = "Xuất nhập tồn";
+            this.mnu_bc_xuatnhapton.Id = 29;
+            this.mnu_bc_xuatnhapton.Name = "mnu_bc_xuatnhapton";
+            // 
+            // mnu_bc_doanhthuki
+            // 
+            this.mnu_bc_doanhthuki.Caption = "Doanh thu bán hàng trong kì";
+            this.mnu_bc_doanhthuki.Id = 30;
+            this.mnu_bc_doanhthuki.Name = "mnu_bc_doanhthuki";
+            // 
+            // mnu_bc_banhang
+            // 
+            this.mnu_bc_banhang.Caption = "Báo cáo bán hàng";
+            this.mnu_bc_banhang.Id = 31;
+            this.mnu_bc_banhang.Name = "mnu_bc_banhang";
+            // 
+            // mnu_bc_theohanghoa
+            // 
+            this.mnu_bc_theohanghoa.Caption = "Báo cáo bán hàng theo hàng hóa";
+            this.mnu_bc_theohanghoa.Id = 32;
+            this.mnu_bc_theohanghoa.Name = "mnu_bc_theohanghoa";
+            // 
+            // barButtonItem16
+            // 
+            this.barButtonItem16.Caption = "Báo cáo tổng hợp xuất nhập tồn";
+            this.barButtonItem16.Id = 33;
+            this.barButtonItem16.Name = "barButtonItem16";
+            // 
+            // mnu_cmd_lichsuhanghoa
+            // 
+            this.mnu_cmd_lichsuhanghoa.Caption = "Lịch sử hàng hóa";
+            this.mnu_cmd_lichsuhanghoa.Id = 34;
+            this.mnu_cmd_lichsuhanghoa.Name = "mnu_cmd_lichsuhanghoa";
+            // 
+            // mnu_cmd_kiemkehanghoa
+            // 
+            this.mnu_cmd_kiemkehanghoa.Caption = "Kiểm kê hàng hóa ";
+            this.mnu_cmd_kiemkehanghoa.Id = 35;
+            this.mnu_cmd_kiemkehanghoa.Name = "mnu_cmd_kiemkehanghoa";
+            // 
             // imageCollection1
             // 
             this.imageCollection1.ImageSize = new System.Drawing.Size(64, 64);
@@ -437,6 +534,18 @@
             this.mnu_dm_customer_pg.Name = "mnu_dm_customer_pg";
             this.mnu_dm_customer_pg.ShowCaptionButton = false;
             // 
+            // ribbonPageGroup12
+            // 
+            this.ribbonPageGroup12.ItemLinks.Add(this.mnu_dm_goupcustomer);
+            this.ribbonPageGroup12.Name = "ribbonPageGroup12";
+            this.ribbonPageGroup12.ShowCaptionButton = false;
+            // 
+            // ribbonPageGroup13
+            // 
+            this.ribbonPageGroup13.ItemLinks.Add(this.mnu_dm_employee);
+            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
+            this.ribbonPageGroup13.ShowCaptionButton = false;
+            // 
             // nhậpLiệuToolStripMenuItem
             // 
             this.nhậpLiệuToolStripMenuItem.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -457,66 +566,6 @@
             this.ribbonPageGroup7.ItemLinks.Add(this.m_cmd_product_price);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.ShowCaptionButton = false;
-            // 
-            // báoCáoToolStripMenuItem
-            // 
-            this.báoCáoToolStripMenuItem.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup8,
-            this.ribbonPageGroup21,
-            this.ribbonPageGroup23,
-            this.ribbonPageGroup25});
-            this.báoCáoToolStripMenuItem.ImageIndex = 1;
-            this.báoCáoToolStripMenuItem.Name = "báoCáoToolStripMenuItem";
-            this.báoCáoToolStripMenuItem.Text = "Báo cáo";
-            // 
-            // ribbonPageGroup8
-            // 
-            this.ribbonPageGroup8.ItemLinks.Add(this.mnu_bc_baocao);
-            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
-            this.ribbonPageGroup8.ShowCaptionButton = false;
-            // 
-            // ribbonPage5
-            // 
-            this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
-            this.ribbonPage5.ImageIndex = 12;
-            this.ribbonPage5.Name = "ribbonPage5";
-            this.ribbonPage5.Text = "Bản quyền";
-            // 
-            // ribbonPageGroup1
-            // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.mnu_license);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.ShowCaptionButton = false;
-            // 
-            // ribbonStatusBar
-            // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 679);
-            this.ribbonStatusBar.Name = "ribbonStatusBar";
-            this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1083, 25);
-            // 
-            // clientPanel
-            // 
-            this.clientPanel.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.clientPanel.ContentImage = global::SaleApp.Properties.Resources._37371_57;
-            this.clientPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.clientPanel.Location = new System.Drawing.Point(0, 148);
-            this.clientPanel.Name = "clientPanel";
-            this.clientPanel.Size = new System.Drawing.Size(1083, 531);
-            this.clientPanel.TabIndex = 2;
-            // 
-            // ribbonPageGroup12
-            // 
-            this.ribbonPageGroup12.ItemLinks.Add(this.mnu_dm_goupcustomer);
-            this.ribbonPageGroup12.Name = "ribbonPageGroup12";
-            this.ribbonPageGroup12.ShowCaptionButton = false;
-            // 
-            // ribbonPageGroup13
-            // 
-            this.ribbonPageGroup13.ItemLinks.Add(this.mnu_dm_employee);
-            this.ribbonPageGroup13.Name = "ribbonPageGroup13";
-            this.ribbonPageGroup13.ShowCaptionButton = false;
             // 
             // ribbonPageGroup16
             // 
@@ -548,6 +597,35 @@
             this.ribbonPageGroup20.Name = "ribbonPageGroup20";
             this.ribbonPageGroup20.ShowCaptionButton = false;
             // 
+            // ribbonPageGroup14
+            // 
+            this.ribbonPageGroup14.ItemLinks.Add(this.mnu_cmd_lichsuhanghoa);
+            this.ribbonPageGroup14.Name = "ribbonPageGroup14";
+            this.ribbonPageGroup14.ShowCaptionButton = false;
+            // 
+            // ribbonPageGroup15
+            // 
+            this.ribbonPageGroup15.ItemLinks.Add(this.mnu_cmd_kiemkehanghoa);
+            this.ribbonPageGroup15.Name = "ribbonPageGroup15";
+            this.ribbonPageGroup15.ShowCaptionButton = false;
+            // 
+            // báoCáoToolStripMenuItem
+            // 
+            this.báoCáoToolStripMenuItem.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup8,
+            this.ribbonPageGroup21,
+            this.ribbonPageGroup23,
+            this.ribbonPageGroup25});
+            this.báoCáoToolStripMenuItem.ImageIndex = 1;
+            this.báoCáoToolStripMenuItem.Name = "báoCáoToolStripMenuItem";
+            this.báoCáoToolStripMenuItem.Text = "Báo cáo";
+            // 
+            // ribbonPageGroup8
+            // 
+            this.ribbonPageGroup8.ItemLinks.Add(this.mnu_bc_baocao);
+            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            this.ribbonPageGroup8.ShowCaptionButton = false;
+            // 
             // ribbonPageGroup21
             // 
             this.ribbonPageGroup21.ItemLinks.Add(this.mnu_bc_xuatnhapton);
@@ -566,113 +644,36 @@
             this.ribbonPageGroup25.Name = "ribbonPageGroup25";
             this.ribbonPageGroup25.ShowCaptionButton = false;
             // 
-            // mnu_dm_goupcustomer
+            // ribbonPage5
             // 
-            this.mnu_dm_goupcustomer.Caption = "Nhóm khách hàng";
-            this.mnu_dm_goupcustomer.Id = 20;
-            this.mnu_dm_goupcustomer.Name = "mnu_dm_goupcustomer";
+            this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup1});
+            this.ribbonPage5.ImageIndex = 12;
+            this.ribbonPage5.Name = "ribbonPage5";
+            this.ribbonPage5.Text = "Bản quyền";
             // 
-            // mnu_dm_employee
+            // ribbonPageGroup1
             // 
-            this.mnu_dm_employee.Caption = "Nhân viên";
-            this.mnu_dm_employee.Id = 21;
-            this.mnu_dm_employee.Name = "mnu_dm_employee";
+            this.ribbonPageGroup1.ItemLinks.Add(this.mnu_license);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.ShowCaptionButton = false;
             // 
-            // barButtonItem4
+            // ribbonStatusBar
             // 
-            this.barButtonItem4.Caption = "barButtonItem4";
-            this.barButtonItem4.Id = 22;
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 679);
+            this.ribbonStatusBar.Name = "ribbonStatusBar";
+            this.ribbonStatusBar.Ribbon = this.ribbon;
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1083, 25);
             // 
-            // barButtonItem6
+            // clientPanel
             // 
-            this.barButtonItem6.Caption = "barButtonItem6";
-            this.barButtonItem6.Id = 23;
-            this.barButtonItem6.Name = "barButtonItem6";
-            // 
-            // mnu_cmd_sodudau
-            // 
-            this.mnu_cmd_sodudau.Caption = "Số dư đầu ";
-            this.mnu_cmd_sodudau.Id = 24;
-            this.mnu_cmd_sodudau.Name = "mnu_cmd_sodudau";
-            // 
-            // mnu_cmd_xuatbanhang
-            // 
-            this.mnu_cmd_xuatbanhang.Caption = "Xuất bán hàng";
-            this.mnu_cmd_xuatbanhang.Id = 25;
-            this.mnu_cmd_xuatbanhang.Name = "mnu_cmd_xuatbanhang";
-            // 
-            // mnu_cmd_xuathanhly
-            // 
-            this.mnu_cmd_xuathanhly.Caption = "Xuất thanh lý";
-            this.mnu_cmd_xuathanhly.Id = 26;
-            this.mnu_cmd_xuathanhly.Name = "mnu_cmd_xuathanhly";
-            // 
-            // mnu_cmd_hangnhacungcap
-            // 
-            this.mnu_cmd_hangnhacungcap.Caption = "Hàng nhà cung cấp";
-            this.mnu_cmd_hangnhacungcap.Id = 27;
-            this.mnu_cmd_hangnhacungcap.Name = "mnu_cmd_hangnhacungcap";
-            // 
-            // mnu_cmd_hangtralaikhach
-            // 
-            this.mnu_cmd_hangtralaikhach.Caption = "Hàng trả lại khách";
-            this.mnu_cmd_hangtralaikhach.Id = 28;
-            this.mnu_cmd_hangtralaikhach.Name = "mnu_cmd_hangtralaikhach";
-            // 
-            // mnu_bc_xuatnhapton
-            // 
-            this.mnu_bc_xuatnhapton.Caption = "Xuất nhập tồn";
-            this.mnu_bc_xuatnhapton.Id = 29;
-            this.mnu_bc_xuatnhapton.Name = "mnu_bc_xuatnhapton";
-            // 
-            // mnu_bc_doanhthuki
-            // 
-            this.mnu_bc_doanhthuki.Caption = "Doanh thu bán hàng trong kì";
-            this.mnu_bc_doanhthuki.Id = 30;
-            this.mnu_bc_doanhthuki.Name = "mnu_bc_doanhthuki";
-            // 
-            // mnu_bc_banhang
-            // 
-            this.mnu_bc_banhang.Caption = "Báo cáo bán hàng";
-            this.mnu_bc_banhang.Id = 31;
-            this.mnu_bc_banhang.Name = "mnu_bc_banhang";
-            // 
-            // mnu_bc_theohanghoa
-            // 
-            this.mnu_bc_theohanghoa.Caption = "Báo cáo bán hàng theo hàng hóa";
-            this.mnu_bc_theohanghoa.Id = 32;
-            this.mnu_bc_theohanghoa.Name = "mnu_bc_theohanghoa";
-            // 
-            // barButtonItem16
-            // 
-            this.barButtonItem16.Caption = "Báo cáo tổng hợp xuất nhập tồn";
-            this.barButtonItem16.Id = 33;
-            this.barButtonItem16.Name = "barButtonItem16";
-            // 
-            // ribbonPageGroup14
-            // 
-            this.ribbonPageGroup14.ItemLinks.Add(this.mnu_cmd_lichsuhanghoa);
-            this.ribbonPageGroup14.Name = "ribbonPageGroup14";
-            this.ribbonPageGroup14.ShowCaptionButton = false;
-            // 
-            // ribbonPageGroup15
-            // 
-            this.ribbonPageGroup15.ItemLinks.Add(this.mnu_cmd_kiemkehanghoa);
-            this.ribbonPageGroup15.Name = "ribbonPageGroup15";
-            this.ribbonPageGroup15.ShowCaptionButton = false;
-            // 
-            // mnu_cmd_lichsuhanghoa
-            // 
-            this.mnu_cmd_lichsuhanghoa.Caption = "Lịch sử hàng hóa";
-            this.mnu_cmd_lichsuhanghoa.Id = 34;
-            this.mnu_cmd_lichsuhanghoa.Name = "mnu_cmd_lichsuhanghoa";
-            // 
-            // mnu_cmd_kiemkehanghoa
-            // 
-            this.mnu_cmd_kiemkehanghoa.Caption = "Kiểm kê hàng hóa ";
-            this.mnu_cmd_kiemkehanghoa.Id = 35;
-            this.mnu_cmd_kiemkehanghoa.Name = "mnu_cmd_kiemkehanghoa";
+            this.clientPanel.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.clientPanel.ContentImage = global::SaleApp.Properties.Resources._37371_57;
+            this.clientPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.clientPanel.Location = new System.Drawing.Point(0, 148);
+            this.clientPanel.Name = "clientPanel";
+            this.clientPanel.Size = new System.Drawing.Size(1083, 531);
+            this.clientPanel.TabIndex = 2;
             // 
             // f001_main_form
             // 

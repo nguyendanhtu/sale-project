@@ -188,6 +188,17 @@ namespace SaleApp
             f801_dm_repository v_frm801 = new f801_dm_repository();
             v_frm801.display();
         }
+        private void show_form_nhap_so_du_dau()
+        {
+            if (!CAppContext_201.IsHavingQuyen(IP.Core.IPSystemAdmin.PHAN_QUYEN.IN_BAO_CAO))
+            {
+                BaseMessages.MsgBox_Infor(" Người sử dụng không được phép truy nhập phần này !!! ");
+                return;
+            }
+
+            f321_nhap_so_du_hang_hoa v_frm321 = new f321_nhap_so_du_hang_hoa();
+            v_frm321.display();
+        }
 
         private void show_customer()
         {
@@ -212,7 +223,7 @@ namespace SaleApp
 
         }
 
-     
+        
 
         private void mnu_user_management_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -398,6 +409,19 @@ namespace SaleApp
             }
             catch (Exception v_e)
             {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void mnu_cmd_sodudau_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                show_form_nhap_so_du_dau();
+            }
+            catch (Exception v_e)
+            {
+                
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
