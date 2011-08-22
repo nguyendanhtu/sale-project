@@ -28,7 +28,7 @@ namespace SaleApp
 
 
 
-	public class h : System.Windows.Forms.Form
+	public class f901_dm_unit : System.Windows.Forms.Form
 	{
 		internal System.Windows.Forms.ImageList ImageList;
 		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
@@ -40,7 +40,7 @@ namespace SaleApp
 		internal SIS.Controls.Button.SiSButton m_cmd_view;
 		private System.ComponentModel.IContainer components;
 
-		public h()
+		public f901_dm_unit()
 		{
 			//
 			// Required for Windows Form Designer support
@@ -76,7 +76,7 @@ namespace SaleApp
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(h));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f901_dm_unit));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
@@ -216,14 +216,14 @@ namespace SaleApp
             this.m_fg.TabIndex = 20;
             this.m_fg.Click += new System.EventHandler(this.m_fg_Click);
             // 
-            // h
+            // f901_dm_unit
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(585, 469);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
-            this.Name = "h";
-            this.Text = "f901_dm_unit";
+            this.Name = "f901_dm_unit";
+            this.Text = "F901 - Danh muc don vi san pham";
             this.Load += new System.EventHandler(this.f901_dm_unit_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();

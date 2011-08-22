@@ -44,46 +44,49 @@
             // 
             // m_lbl_add_unit
             // 
-            this.m_lbl_add_unit.AutoSize = true;
+            this.m_lbl_add_unit.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_lbl_add_unit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_add_unit.Location = new System.Drawing.Point(102, 13);
+            this.m_lbl_add_unit.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_add_unit.Name = "m_lbl_add_unit";
-            this.m_lbl_add_unit.Size = new System.Drawing.Size(203, 25);
+            this.m_lbl_add_unit.Size = new System.Drawing.Size(408, 45);
             this.m_lbl_add_unit.TabIndex = 8;
-            this.m_lbl_add_unit.Text = "THÊM ĐƠN VỊ TÍNH";
+            this.m_lbl_add_unit.Text = "THÊM ĐƠN VỊ HÀNG HÓA";
+            this.m_lbl_add_unit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_lbl_unit_code
             // 
             this.m_lbl_unit_code.AutoSize = true;
-            this.m_lbl_unit_code.Location = new System.Drawing.Point(33, 65);
+            this.m_lbl_unit_code.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_unit_code.Location = new System.Drawing.Point(26, 76);
             this.m_lbl_unit_code.Name = "m_lbl_unit_code";
-            this.m_lbl_unit_code.Size = new System.Drawing.Size(55, 13);
+            this.m_lbl_unit_code.Size = new System.Drawing.Size(66, 16);
             this.m_lbl_unit_code.TabIndex = 9;
             this.m_lbl_unit_code.Text = "Mã đơn vị";
             // 
             // m_lbl__description
             // 
             this.m_lbl__description.AutoSize = true;
-            this.m_lbl__description.Location = new System.Drawing.Point(33, 146);
+            this.m_lbl__description.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl__description.Location = new System.Drawing.Point(26, 157);
             this.m_lbl__description.Name = "m_lbl__description";
-            this.m_lbl__description.Size = new System.Drawing.Size(34, 13);
+            this.m_lbl__description.Size = new System.Drawing.Size(41, 16);
             this.m_lbl__description.TabIndex = 10;
             this.m_lbl__description.Text = "Mô tả";
             // 
             // m_txt_unit_code
             // 
-            this.m_txt_unit_code.Location = new System.Drawing.Point(130, 62);
+            this.m_txt_unit_code.Location = new System.Drawing.Point(123, 73);
             this.m_txt_unit_code.Name = "m_txt_unit_code";
             this.m_txt_unit_code.Size = new System.Drawing.Size(239, 20);
-            this.m_txt_unit_code.TabIndex = 11;
+            this.m_txt_unit_code.TabIndex = 0;
             // 
             // m_txt_description
             // 
-            this.m_txt_description.Location = new System.Drawing.Point(130, 120);
+            this.m_txt_description.Location = new System.Drawing.Point(123, 131);
             this.m_txt_description.Multiline = true;
             this.m_txt_description.Name = "m_txt_description";
             this.m_txt_description.Size = new System.Drawing.Size(239, 74);
-            this.m_txt_description.TabIndex = 12;
+            this.m_txt_description.TabIndex = 1;
             // 
             // ImageList
             // 
@@ -121,7 +124,7 @@
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(408, 36);
-            this.m_pnl_out_place_dm.TabIndex = 23;
+            this.m_pnl_out_place_dm.TabIndex = 2;
             // 
             // m_cmd_save
             // 
@@ -135,7 +138,7 @@
             this.m_cmd_save.Location = new System.Drawing.Point(228, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_save.TabIndex = 12;
+            this.m_cmd_save.TabIndex = 0;
             this.m_cmd_save.Text = "&Lưu";
             // 
             // m_cmd_exit
@@ -150,7 +153,7 @@
             this.m_cmd_exit.Location = new System.Drawing.Point(316, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 11;
+            this.m_cmd_exit.TabIndex = 1;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
             // f902_dm_uinit_de
@@ -165,7 +168,7 @@
             this.Controls.Add(this.m_lbl_unit_code);
             this.Controls.Add(this.m_lbl_add_unit);
             this.Name = "f902_dm_uinit_de";
-            this.Text = "f902 Thêm đơn vị";
+            this.Text = "F902 - Them don vi hang hoa";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
