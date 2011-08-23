@@ -6,6 +6,18 @@ namespace Sale.CDBNames
 	/// Summary description for CDBNames.
 	/// </summary>
 
+    public class RPT_PRODUCT_BALANCE
+    {
+        public const string ID = "ID";
+        public const string PRODUCT_ID = "PRODUCT_ID";
+        public const string PRODUCT_CODE = "PRODUCT_CODE";
+        public const string PRODUCT_NAME = "PRODUCT_NAME";
+        public const string UNIT_ID = "UNIT_ID";
+        public const string UNIT_CODE = "UNIT_CODE";
+        public const string QUANTITY = "QUANTITY";
+    }
+
+
     public class DM_PROVIDER
     {
         public const string ID = "ID";
