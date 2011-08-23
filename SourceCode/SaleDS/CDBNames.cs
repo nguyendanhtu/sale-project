@@ -101,7 +101,26 @@ namespace Sale.CDBNames
         public const string CURRENT_PRICE = "CURRENT_PRICE";
     }
 
-   
+    public class GD_BILL
+    {
+        public const string ID = "ID";
+        public const string BILL_SERI = "BILL_SERI";
+        public const string CUSTOMER_ID = "CUSTOMER_ID";
+        public const string BILL_DATE = "BILL_DATE";
+        public const string TAX_RATE = "TAX_RATE";
+        public const string AMMOUNT = "AMMOUNT";
+        public const string USER_ID = "USER_ID";
+    }
+
+    public class GD_BILL_DETAIL
+    {
+        public const string ID = "ID";
+        public const string BILL_ID = "BILL_ID";
+        public const string PRODUCT_ID = "PRODUCT_ID";
+        public const string QUANTITY = "QUANTITY";
+        public const string UNIT_PRICE = "UNIT_PRICE";
+    }
+
 
    
 }
