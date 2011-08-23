@@ -211,6 +211,28 @@ namespace SaleApp
             f501_dm_customer v_frm501 = new f501_dm_customer();
             v_frm501.display();
         }
+        private void show_customer_group()
+        {
+            if (!CAppContext_201.IsHavingQuyen(IP.Core.IPSystemAdmin.PHAN_QUYEN.IN_BAO_CAO))
+            {
+                BaseMessages.MsgBox_Infor(" Người sử dụng không được phép truy nhập phần này !!! ");
+                return;
+            }
+
+            f601_dm_customer_group v_frm601 = new f601_dm_customer_group();
+            v_frm601.display();
+        }
+        private void show_company_info()
+        {
+            if (!CAppContext_201.IsHavingQuyen(IP.Core.IPSystemAdmin.PHAN_QUYEN.IN_BAO_CAO))
+            {
+                BaseMessages.MsgBox_Infor(" Người sử dụng không được phép truy nhập phần này !!! ");
+                return;
+            }
+
+            f401_dm_company_info v_frm401 = new f401_dm_company_info();
+            v_frm401.display();
+        }
         #endregion
         //
         //
@@ -422,6 +444,32 @@ namespace SaleApp
             catch (Exception v_e)
             {
                 
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void mnu_dm_goupcustomer_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                show_customer_group();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void mnu_dm_employee_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                show_company_info();
+            }
+            catch (Exception v_e)
+            {
+
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }

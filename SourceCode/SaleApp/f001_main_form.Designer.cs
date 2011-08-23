@@ -365,6 +365,7 @@
             this.mnu_dm_goupcustomer.LargeImageIndex = 0;
             this.mnu_dm_goupcustomer.LargeWidth = 63;
             this.mnu_dm_goupcustomer.Name = "mnu_dm_goupcustomer";
+            this.mnu_dm_goupcustomer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_dm_goupcustomer_ItemClick);
             // 
             // mnu_dm_employee
             // 
@@ -373,6 +374,7 @@
             this.mnu_dm_employee.LargeImageIndex = 0;
             this.mnu_dm_employee.LargeWidth = 60;
             this.mnu_dm_employee.Name = "mnu_dm_employee";
+            this.mnu_dm_employee.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_dm_employee_ItemClick);
             // 
             // barButtonItem4
             // 
