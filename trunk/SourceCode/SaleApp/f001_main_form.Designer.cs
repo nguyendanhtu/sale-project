@@ -154,7 +154,7 @@
             this.nhậpLiệuToolStripMenuItem,
             this.báoCáoToolStripMenuItem,
             this.ribbonPage5});
-            this.ribbon.SelectedPage = this.hệThốngToolStripMenuItem;
+            this.ribbon.SelectedPage = this.ribbonPage2;
             this.ribbon.Size = new System.Drawing.Size(1083, 148);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
@@ -360,10 +360,10 @@
             // 
             // mnu_dm_goupcustomer
             // 
-            this.mnu_dm_goupcustomer.Caption = "Nhóm khách hàng";
+            this.mnu_dm_goupcustomer.Caption = "Nhóm  khách hàng";
             this.mnu_dm_goupcustomer.Id = 20;
             this.mnu_dm_goupcustomer.LargeImageIndex = 0;
-            this.mnu_dm_goupcustomer.LargeWidth = 60;
+            this.mnu_dm_goupcustomer.LargeWidth = 63;
             this.mnu_dm_goupcustomer.Name = "mnu_dm_goupcustomer";
             // 
             // mnu_dm_employee
