@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -22,11 +23,23 @@ namespace SaleApp
         public f321_nhap_so_du_hang_hoa()
         {
             InitializeComponent();
-            set_initial_form_load();
-            set_define_events();
+            format_controls();
+            
         }
 
         #region Members
+
+        ITransferDataRow m_obj_trans;
+        #endregion
+
+        #region Data Structure
+        private enum ecolNumber
+        {
+            colProductCode = 1
+            , colProductName = 2
+            , colProductUnit = 3
+            , colQuantity = 4
+        }
         #endregion
 
         #region Public Interfaces
@@ -37,24 +50,58 @@ namespace SaleApp
         #endregion
 
         #region Private Methods
-        private void set_define_events()
+
+        private void format_controls()
         {
-            m_dtime_ngay_nhap.EditValueChanged += new EventHandler(m_date_time_picker_EditValueChanged);
-            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
-            m_cbo_product.SelectedIndexChanged += new EventHandler(m_cbo_product_SelectedIndexChanged);
-            m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
+            CControlFormat.setFormStyle(this);
+            CControlFormat.setC1FlexFormat(m_fg);
+            m_fg.AllowEditing = true;
+            set_define_events();
         }
 
-        
-        private void Load_data_to_string_to_cbo()
+        private ITransferDataRow get_mapping_grid_col()
         {
-            US_DM_PRODUCT v_us_dm_product = new US_DM_PRODUCT();
-            DS_DM_PRODUCT v_ds_dm__product = new DS_DM_PRODUCT();
+            Hashtable v_obj_hst = new Hashtable();
+            v_obj_hst.Add(RPT_PRODUCT_BALANCE.PRODUCT_CODE, ecolNumber.colProductCode);
+            v_obj_hst.Add(RPT_PRODUCT_BALANCE.PRODUCT_NAME, ecolNumber.colProductName);
+            v_obj_hst.Add(RPT_PRODUCT_BALANCE.UNIT_CODE, ecolNumber.colProductUnit);
+            v_obj_hst.Add(RPT_PRODUCT_BALANCE.QUANTITY, ecolNumber.colQuantity);
 
-            v_us_dm_product.FillDataset(v_ds_dm__product,"ORDER BY "+DM_PRODUCT.CATEGORY_ID);
-            m_cbo_product.DisplayMember = DM_PRODUCT.PRODUCT_NAME;
-            m_cbo_product.ValueMember = DM_PRODUCT.ID;
-            m_cbo_product.DataSource = v_ds_dm__product.DM_PRODUCT;
+            DS_RPT_PRODUCT_BALANCE v_ds_rpt_producdt_balace = new DS_RPT_PRODUCT_BALANCE();
+
+            return new CC1TransferDataRow(m_fg, v_obj_hst, v_ds_rpt_producdt_balace.RPT_PRODUCT_BALANCE.NewRPT_PRODUCT_BALANCERow());
+
+        }
+
+
+        private void load_data_2_grid()
+        {
+            if (m_cbo_category.SelectedValue == null) return;
+
+            US_RPT_PRODUCT_BALANCE v_us_rpt_product_balance = new US_RPT_PRODUCT_BALANCE();
+            DS_RPT_PRODUCT_BALANCE v_ds_rpt_product_balance = new DS_RPT_PRODUCT_BALANCE();
+            //v_ds_rpt_product_balance.EnforceConstraints = false;
+            v_us_rpt_product_balance.FillDataset(
+                v_ds_rpt_product_balance
+                , m_dat_ngay_nhap.Value.Date
+                , CIPConvert.ToDecimal( m_cbo_category.SelectedValue)
+                , 1 // ID repository Mai LinhDH phai them combox
+                );
+
+            CGridUtils.Dataset2C1Grid(v_ds_rpt_product_balance, m_fg, m_obj_trans);
+        }
+
+        private void load_data_to_cbo_category()
+        {
+            US_DM_CATEGORY v_us_dm_category = new US_DM_CATEGORY();
+            DS_DM_CATEGORY v_ds_dm_category = new DS_DM_CATEGORY();
+
+            v_us_dm_category.FillDataset(v_ds_dm_category,"ORDER BY "+ DM_CATEGORY.DISPLAY_ORDER);
+            m_cbo_category.SelectedIndexChanged -= new EventHandler(m_cbo_product_SelectedIndexChanged);
+            m_cbo_category.DisplayMember = DM_CATEGORY.CATEGORY_NAME;
+            m_cbo_category.ValueMember = DM_PRODUCT.ID;
+            m_cbo_category.DataSource = v_ds_dm_category.DM_CATEGORY;
+            m_cbo_category.SelectedIndexChanged += new EventHandler(m_cbo_product_SelectedIndexChanged);
         }
         private DS_DM_PRODUCT Load_product_by_id(int ip_i_product_id)
         {
@@ -67,39 +114,65 @@ namespace SaleApp
 
         private void set_initial_form_load()
         {
-            CControlFormat.setFormStyle(this);
-            Load_data_to_string_to_cbo();
+            m_obj_trans = get_mapping_grid_col();
 
-            US_DM_UNIT v_us_dm_unit = new US_DM_UNIT();
-            DS_DM_UNIT v_ds_unit = new DS_DM_UNIT();
-            
-            v_us_dm_unit.FillDataset(v_ds_unit);
-            m_fg.Cols[2].ComboList = "";
-            
-            for (int i = 0; i < v_ds_unit.DM_UNIT.Rows.Count; i++)
-            {
-                m_fg.Cols["unit_code"].ComboList += v_ds_unit.DM_UNIT.Rows[i]["UNIT_CODE"].ToString() + "|";
-            }
+            load_data_to_cbo_category();
+
+            load_data_2_grid();
+
         }
         private void check_data_validate()
         {
            
         }
-        #endregion
 
-        #region Events      
-        void m_date_time_picker_EditValueChanged(object sender, EventArgs e)
+        private void grid_2_us_object(int i_grid_row, US_RPT_PRODUCT_BALANCE ip_us_product_balace)
+        {
+            DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
+            m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
+            ip_us_product_balace.DataRow2Me(v_dr);
+        }
+
+
+        private void save_data()
+        {
+            
+            US_RPT_PRODUCT_BALANCE v_us_product_balance = new US_RPT_PRODUCT_BALANCE();
+            for (int v_i_cur_row = m_fg.Rows.Fixed; v_i_cur_row < m_fg.Rows.Count; v_i_cur_row++)
+            {
+                grid_2_us_object(v_i_cur_row, v_us_product_balance);
+                v_us_product_balance.Insert();
+            }
+            BaseMessages.MsgBox_Infor(10);
+
+
+        }
+
+        private void set_define_events()
+        {
+
+            m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
+            m_cbo_category.SelectedIndexChanged += new EventHandler(m_cbo_product_SelectedIndexChanged);
+            m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
+            this.Load += new EventHandler(f321_nhap_so_du_hang_hoa_Load);
+        }
+        #endregion
+        void f321_nhap_so_du_hang_hoa_Load(object sender, EventArgs e)
         {
             try
             {
+
+                set_initial_form_load();
             }
             catch (Exception v_e)
             {
-                
                 CSystemLog_301.ExceptionHandle(v_e);
             }
-
         }
+       
+
+        #region Events      
+    
         void m_cmd_exit_Click(object sender, EventArgs e)
         {
             try
@@ -116,12 +189,8 @@ namespace SaleApp
         {
             try
             {
-                var v_i_product_id =  int.Parse(m_cbo_product.SelectedValue.ToString());
-                DS_DM_PRODUCT v_ds_dm_product = new DS_DM_PRODUCT();
-                v_ds_dm_product= this.Load_product_by_id(v_i_product_id);
-                object[] v_obj_items = new object[2];
-                v_obj_items[0] = v_ds_dm_product.DM_PRODUCT.Rows[0][0];
-                v_obj_items[1] = v_ds_dm_product.DM_PRODUCT.Rows[0][1];
+                
+                load_data_2_grid();
                 
             }
             catch (Exception v_e)
@@ -134,8 +203,9 @@ namespace SaleApp
         {
             try
             {
-                BaseMessages.MsgBox_Infor(10);
-                this.Close();
+                save_data();
+                
+                
             }
             catch (Exception v_e)
             {

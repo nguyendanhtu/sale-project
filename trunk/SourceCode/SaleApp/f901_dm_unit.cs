@@ -337,6 +337,7 @@ namespace SaleApp
 		//	f901_dm_unit_DE v_fDE = new f901_dm_unit_DE();			
 		//	v_fDE.display(m_us);
 		}
+
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
