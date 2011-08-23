@@ -47,6 +47,11 @@
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +59,7 @@
             // 
             this.m_cbo_category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_category.FormattingEnabled = true;
-            this.m_cbo_category.Location = new System.Drawing.Point(111, 114);
+            this.m_cbo_category.Location = new System.Drawing.Point(113, 47);
             this.m_cbo_category.Name = "m_cbo_category";
             this.m_cbo_category.Size = new System.Drawing.Size(431, 21);
             this.m_cbo_category.TabIndex = 6;
@@ -63,7 +68,7 @@
             // 
             this.m_lbl_categories.AutoSize = true;
             this.m_lbl_categories.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_lbl_categories.Location = new System.Drawing.Point(26, 119);
+            this.m_lbl_categories.Location = new System.Drawing.Point(14, 47);
             this.m_lbl_categories.Name = "m_lbl_categories";
             this.m_lbl_categories.Size = new System.Drawing.Size(67, 13);
             this.m_lbl_categories.TabIndex = 5;
@@ -71,7 +76,7 @@
             // 
             // m_txt_description
             // 
-            this.m_txt_description.Location = new System.Drawing.Point(114, 198);
+            this.m_txt_description.Location = new System.Drawing.Point(113, 213);
             this.m_txt_description.Multiline = true;
             this.m_txt_description.Name = "m_txt_description";
             this.m_txt_description.Size = new System.Drawing.Size(428, 73);
@@ -81,7 +86,7 @@
             // 
             this.m_lblproduct_description.AutoSize = true;
             this.m_lblproduct_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_lblproduct_description.Location = new System.Drawing.Point(26, 198);
+            this.m_lblproduct_description.Location = new System.Drawing.Point(14, 213);
             this.m_lblproduct_description.Name = "m_lblproduct_description";
             this.m_lblproduct_description.Size = new System.Drawing.Size(34, 13);
             this.m_lblproduct_description.TabIndex = 11;
@@ -91,7 +96,7 @@
             // 
             this.m_lblproduct_unit.AutoSize = true;
             this.m_lblproduct_unit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_lblproduct_unit.Location = new System.Drawing.Point(26, 152);
+            this.m_lblproduct_unit.Location = new System.Drawing.Point(14, 161);
             this.m_lblproduct_unit.Name = "m_lblproduct_unit";
             this.m_lblproduct_unit.Size = new System.Drawing.Size(60, 13);
             this.m_lblproduct_unit.TabIndex = 7;
@@ -99,7 +104,7 @@
             // 
             // m_txt_product_name
             // 
-            this.m_txt_product_name.Location = new System.Drawing.Point(112, 82);
+            this.m_txt_product_name.Location = new System.Drawing.Point(111, 118);
             this.m_txt_product_name.Name = "m_txt_product_name";
             this.m_txt_product_name.Size = new System.Drawing.Size(430, 20);
             this.m_txt_product_name.TabIndex = 4;
@@ -108,7 +113,7 @@
             // 
             this.m_lblproduct_name.AutoSize = true;
             this.m_lblproduct_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_lblproduct_name.Location = new System.Drawing.Point(26, 86);
+            this.m_lblproduct_name.Location = new System.Drawing.Point(14, 117);
             this.m_lblproduct_name.Name = "m_lblproduct_name";
             this.m_lblproduct_name.Size = new System.Drawing.Size(74, 13);
             this.m_lblproduct_name.TabIndex = 3;
@@ -116,7 +121,7 @@
             // 
             // m_txt_product_code
             // 
-            this.m_txt_product_code.Location = new System.Drawing.Point(114, 50);
+            this.m_txt_product_code.Location = new System.Drawing.Point(113, 86);
             this.m_txt_product_code.Name = "m_txt_product_code";
             this.m_txt_product_code.Size = new System.Drawing.Size(149, 20);
             this.m_txt_product_code.TabIndex = 2;
@@ -125,7 +130,7 @@
             // 
             this.m_lblproduct_code.AutoSize = true;
             this.m_lblproduct_code.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_lblproduct_code.Location = new System.Drawing.Point(26, 53);
+            this.m_lblproduct_code.Location = new System.Drawing.Point(14, 84);
             this.m_lblproduct_code.Name = "m_lblproduct_code";
             this.m_lblproduct_code.Size = new System.Drawing.Size(70, 13);
             this.m_lblproduct_code.TabIndex = 1;
@@ -138,7 +143,7 @@
             this.mlbl_add_product.ForeColor = System.Drawing.Color.Blue;
             this.mlbl_add_product.Location = new System.Drawing.Point(0, 0);
             this.mlbl_add_product.Name = "mlbl_add_product";
-            this.mlbl_add_product.Size = new System.Drawing.Size(569, 25);
+            this.mlbl_add_product.Size = new System.Drawing.Size(553, 25);
             this.mlbl_add_product.TabIndex = 0;
             this.mlbl_add_product.Text = "THÊM HÀNG HÓA";
             this.mlbl_add_product.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -147,16 +152,16 @@
             // 
             this.m_cbo_unit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_unit.FormattingEnabled = true;
-            this.m_cbo_unit.Location = new System.Drawing.Point(112, 147);
+            this.m_cbo_unit.Location = new System.Drawing.Point(111, 161);
             this.m_cbo_unit.Name = "m_cbo_unit";
             this.m_cbo_unit.Size = new System.Drawing.Size(150, 21);
             this.m_cbo_unit.TabIndex = 8;
             // 
             // m_txt_price
             // 
-            this.m_txt_price.Location = new System.Drawing.Point(406, 149);
+            this.m_txt_price.Location = new System.Drawing.Point(378, 162);
             this.m_txt_price.Name = "m_txt_price";
-            this.m_txt_price.Size = new System.Drawing.Size(136, 20);
+            this.m_txt_price.Size = new System.Drawing.Size(154, 20);
             this.m_txt_price.TabIndex = 10;
             this.m_txt_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -164,7 +169,7 @@
             // 
             this.m_lbl_price.AutoSize = true;
             this.m_lbl_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_lbl_price.Location = new System.Drawing.Point(311, 152);
+            this.m_lbl_price.Location = new System.Drawing.Point(279, 162);
             this.m_lbl_price.Name = "m_lbl_price";
             this.m_lbl_price.Size = new System.Drawing.Size(81, 13);
             this.m_lbl_price.TabIndex = 9;
@@ -196,16 +201,17 @@
             this.ImageList.Images.SetKeyName(19, "");
             this.ImageList.Images.SetKeyName(20, "");
             this.ImageList.Images.SetKeyName(21, "");
+            this.ImageList.Images.SetKeyName(22, "load_upload.png");
             // 
             // m_pnl_out_place_dm
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 298);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 318);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(569, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(553, 36);
             this.m_pnl_out_place_dm.TabIndex = 13;
             // 
             // m_cmd_save
@@ -217,7 +223,7 @@
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(389, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(373, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 0;
@@ -232,17 +238,72 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(477, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(461, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 1;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(83, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(17, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "(*)";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(83, 84);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(17, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "(*)";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(84, 117);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(17, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "(*)";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(84, 161);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(17, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "(*)";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label5.Location = new System.Drawing.Point(359, 162);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(17, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "(*)";
+            // 
             // f302_dm_product_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(569, 334);
+            this.ClientSize = new System.Drawing.Size(553, 354);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_txt_price);
             this.Controls.Add(this.m_lbl_price);
@@ -250,6 +311,11 @@
             this.Controls.Add(this.m_cbo_category);
             this.Controls.Add(this.m_lbl_categories);
             this.Controls.Add(this.m_txt_description);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.m_lblproduct_description);
             this.Controls.Add(this.m_lblproduct_unit);
             this.Controls.Add(this.m_txt_product_name);
@@ -284,5 +350,10 @@
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         internal SIS.Controls.Button.SiSButton m_cmd_save;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
