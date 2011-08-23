@@ -92,7 +92,7 @@ namespace SaleApp
             {
                 return false;
             }
-            if (!CValidateTextBox.IsValid(m_txt_tax_code, DataType.StringType, allowNull.NO, true))
+            if (!CValidateTextBox.IsValid(m_txt_tax_code, DataType.StringType, allowNull.YES, true))
             {
                 return false;
             }
