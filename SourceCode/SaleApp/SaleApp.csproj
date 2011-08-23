@@ -1,7 +1,7 @@
 ﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{78272235-1F54-4999-968E-A24136D4F875}</ProjectGuid>
     <SccProjectName>
@@ -315,12 +315,6 @@
     <Compile Include="f321_nhap_so_du_hang_hoa.Designer.cs">
       <DependentUpon>f321_nhap_so_du_hang_hoa.cs</DependentUpon>
     </Compile>
-    <Compile Include="f331_xuat_ban_hang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="f331_xuat_ban_hang.Designer.cs">
-      <DependentUpon>f331_xuat_ban_hang.cs</DependentUpon>
-    </Compile>
     <Compile Include="f401_dm_company_info.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -431,10 +425,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="f321_nhap_so_du_hang_hoa.resx">
       <DependentUpon>f321_nhap_so_du_hang_hoa.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="f331_xuat_ban_hang.resx">
-      <DependentUpon>f331_xuat_ban_hang.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="f401_dm_company_info.resx">

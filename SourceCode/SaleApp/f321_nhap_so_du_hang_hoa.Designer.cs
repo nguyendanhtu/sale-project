@@ -30,9 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f321_nhap_so_du_hang_hoa));
-            this.m_dtime_ngay_nhap = new DevExpress.XtraEditors.DateEdit();
             this.m_lbl_ngay_nhap = new System.Windows.Forms.Label();
-            this.m_cbo_product = new System.Windows.Forms.ComboBox();
+            this.m_cbo_category = new System.Windows.Forms.ComboBox();
             this.m_lbl_product = new System.Windows.Forms.Label();
             this.m_lbl_header = new System.Windows.Forms.Label();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
@@ -40,24 +39,10 @@
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dtime_ngay_nhap.Properties.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dtime_ngay_nhap.Properties)).BeginInit();
+            this.m_dat_ngay_nhap = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // m_dtime_ngay_nhap
-            // 
-            this.m_dtime_ngay_nhap.EditValue = new System.DateTime(2011, 8, 22, 17, 20, 2, 0);
-            this.m_dtime_ngay_nhap.Location = new System.Drawing.Point(102, 65);
-            this.m_dtime_ngay_nhap.Name = "m_dtime_ngay_nhap";
-            this.m_dtime_ngay_nhap.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.m_dtime_ngay_nhap.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.m_dtime_ngay_nhap.Size = new System.Drawing.Size(166, 20);
-            this.m_dtime_ngay_nhap.TabIndex = 0;
-            this.m_dtime_ngay_nhap.ToolTip = "Ngày nhập số dư đầu";
             // 
             // m_lbl_ngay_nhap
             // 
@@ -68,23 +53,23 @@
             this.m_lbl_ngay_nhap.TabIndex = 2;
             this.m_lbl_ngay_nhap.Text = "Ngày nhập";
             // 
-            // m_cbo_product
+            // m_cbo_category
             // 
-            this.m_cbo_product.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_product.FormattingEnabled = true;
-            this.m_cbo_product.Location = new System.Drawing.Point(376, 64);
-            this.m_cbo_product.Name = "m_cbo_product";
-            this.m_cbo_product.Size = new System.Drawing.Size(292, 21);
-            this.m_cbo_product.TabIndex = 3;
+            this.m_cbo_category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_category.FormattingEnabled = true;
+            this.m_cbo_category.Location = new System.Drawing.Point(376, 64);
+            this.m_cbo_category.Name = "m_cbo_category";
+            this.m_cbo_category.Size = new System.Drawing.Size(292, 21);
+            this.m_cbo_category.TabIndex = 3;
             // 
             // m_lbl_product
             // 
             this.m_lbl_product.AutoSize = true;
-            this.m_lbl_product.Location = new System.Drawing.Point(313, 68);
+            this.m_lbl_product.Location = new System.Drawing.Point(287, 67);
             this.m_lbl_product.Name = "m_lbl_product";
-            this.m_lbl_product.Size = new System.Drawing.Size(54, 13);
+            this.m_lbl_product.Size = new System.Drawing.Size(83, 13);
             this.m_lbl_product.TabIndex = 4;
-            this.m_lbl_product.Text = "Hàng hóa";
+            this.m_lbl_product.Text = "Nhóm hàng hóa";
             // 
             // m_lbl_header
             // 
@@ -175,22 +160,29 @@
             this.m_cmd_exit.TabIndex = 12;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
+            // m_dat_ngay_nhap
+            // 
+            this.m_dat_ngay_nhap.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_ngay_nhap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_ngay_nhap.Location = new System.Drawing.Point(92, 62);
+            this.m_dat_ngay_nhap.Name = "m_dat_ngay_nhap";
+            this.m_dat_ngay_nhap.Size = new System.Drawing.Size(145, 20);
+            this.m_dat_ngay_nhap.TabIndex = 23;
+            // 
             // f321_nhap_so_du_hang_hoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(689, 449);
+            this.Controls.Add(this.m_dat_ngay_nhap);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_lbl_header);
             this.Controls.Add(this.m_lbl_product);
-            this.Controls.Add(this.m_cbo_product);
+            this.Controls.Add(this.m_cbo_category);
             this.Controls.Add(this.m_lbl_ngay_nhap);
-            this.Controls.Add(this.m_dtime_ngay_nhap);
             this.Name = "f321_nhap_so_du_hang_hoa";
             this.Text = "F321 - Nhập số dư đầu hàng hóa";
-            ((System.ComponentModel.ISupportInitialize)(this.m_dtime_ngay_nhap.Properties.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.m_dtime_ngay_nhap.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -200,9 +192,8 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.DateEdit m_dtime_ngay_nhap;
         private System.Windows.Forms.Label m_lbl_ngay_nhap;
-        private System.Windows.Forms.ComboBox m_cbo_product;
+        private System.Windows.Forms.ComboBox m_cbo_category;
         private System.Windows.Forms.Label m_lbl_product;
         private System.Windows.Forms.Label m_lbl_header;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
@@ -210,5 +201,6 @@
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         internal System.Windows.Forms.ImageList ImageList;
         internal SIS.Controls.Button.SiSButton m_cmd_save;
+        private System.Windows.Forms.DateTimePicker m_dat_ngay_nhap;
     }
 }
