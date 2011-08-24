@@ -8,6 +8,7 @@
 /// </summary>
 
 
+using System;
 using SaleDS;
 using IP.Core.IPCommon;
 using IP.Core.IPUserService;
@@ -214,6 +215,20 @@ public class US_V_RPT_GD_BILL : US_Object
 	}
 #endregion
 
+    #region Addtional Methods
+    public void FillDataset(DS_V_RPT_GD_BILL op_ds_rpt_gd_bill
+     , DateTime ip_dat_from_date
+     , DateTime ip_dat_to_date)
+    {
+        CStoredProc v_obj_procedure = new CStoredProc("pr_V_RPT_GD_BILL_Select");
+        v_obj_procedure.addDatetimeInputParam("@ip_dat_from_date", ip_dat_from_date);
+        v_obj_procedure.addDecimalInputParam("@ip_dat_to_date", ip_dat_to_date);
+        
 
-  }
+        v_obj_procedure.fillDataSetByCommand(this, op_ds_rpt_gd_bill);
+    }
+    #endregion
+
+
+}
 }
