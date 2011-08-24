@@ -61,6 +61,7 @@
             this.m_cbo_category.Name = "m_cbo_category";
             this.m_cbo_category.Size = new System.Drawing.Size(292, 21);
             this.m_cbo_category.TabIndex = 3;
+          
             // 
             // m_lbl_product
             // 
