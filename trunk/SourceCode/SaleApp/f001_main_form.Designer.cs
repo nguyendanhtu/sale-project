@@ -154,7 +154,7 @@
             this.nhậpLiệuToolStripMenuItem,
             this.báoCáoToolStripMenuItem,
             this.ribbonPage5});
-            this.ribbon.SelectedPage = this.ribbonPage2;
+            this.ribbon.SelectedPage = this.nhậpLiệuToolStripMenuItem;
             this.ribbon.Size = new System.Drawing.Size(1083, 148);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
@@ -404,6 +404,7 @@
             this.mnu_cmd_xuatbanhang.LargeImageIndex = 0;
             this.mnu_cmd_xuatbanhang.LargeWidth = 60;
             this.mnu_cmd_xuatbanhang.Name = "mnu_cmd_xuatbanhang";
+            this.mnu_cmd_xuatbanhang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_cmd_xuatbanhang_ItemClick);
             // 
             // mnu_cmd_xuathanhly
             // 
