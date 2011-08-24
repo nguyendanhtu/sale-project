@@ -233,6 +233,18 @@ namespace SaleApp
             f401_dm_company_info v_frm401 = new f401_dm_company_info();
             v_frm401.display();
         }
+
+        private void show_form_ban_hang()
+        {
+            if (!CAppContext_201.IsHavingQuyen(IP.Core.IPSystemAdmin.PHAN_QUYEN.IN_BAO_CAO)))
+            {
+                BaseMessages.MsgBox_Infor(" Người sử dụng không đươc phép truy nhập phần này !!! ");
+                return;
+            }
+
+            f331_xuat_ban_hang v_frm331 = new f331_xuat_ban_hang();
+            v_frm331.display();
+        }
         #endregion
         //
         //
@@ -470,6 +482,19 @@ namespace SaleApp
             catch (Exception v_e)
             {
 
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void mnu_cmd_xuatbanhang_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+
+                show_form_ban_hang();
+            }
+            catch (Exception v_e)
+            {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
