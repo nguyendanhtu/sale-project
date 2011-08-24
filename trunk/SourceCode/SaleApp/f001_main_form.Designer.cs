@@ -154,7 +154,7 @@
             this.nhậpLiệuToolStripMenuItem,
             this.báoCáoToolStripMenuItem,
             this.ribbonPage5});
-            this.ribbon.SelectedPage = this.nhậpLiệuToolStripMenuItem;
+            this.ribbon.SelectedPage = this.báoCáoToolStripMenuItem;
             this.ribbon.Size = new System.Drawing.Size(1083, 148);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
@@ -451,6 +451,7 @@
             this.mnu_bc_banhang.LargeImageIndex = 0;
             this.mnu_bc_banhang.LargeWidth = 60;
             this.mnu_bc_banhang.Name = "mnu_bc_banhang";
+            this.mnu_bc_banhang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_bc_banhang_ItemClick);
             // 
             // mnu_bc_theohanghoa
             // 
