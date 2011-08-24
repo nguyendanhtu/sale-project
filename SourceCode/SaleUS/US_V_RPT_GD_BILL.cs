@@ -222,7 +222,7 @@ public class US_V_RPT_GD_BILL : US_Object
     {
         CStoredProc v_obj_procedure = new CStoredProc("pr_V_RPT_GD_BILL_Select");
         v_obj_procedure.addDatetimeInputParam("@ip_dat_from_date", ip_dat_from_date);
-        v_obj_procedure.addDecimalInputParam("@ip_dat_to_date", ip_dat_to_date);
+        v_obj_procedure.addDatetimeInputParam("@ip_dat_to_date", ip_dat_to_date);
         
 
         v_obj_procedure.fillDataSetByCommand(this, op_ds_rpt_gd_bill);
