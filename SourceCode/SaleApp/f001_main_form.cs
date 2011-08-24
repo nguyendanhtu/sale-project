@@ -245,6 +245,12 @@ namespace SaleApp
             f331_xuat_ban_hang v_frm331 = new f331_xuat_ban_hang();
             v_frm331.display();
         }
+
+        private void show_rpt_doanh_thu_ban_hang_theo_ky()
+        {
+            f932_bao_cao_doanh_thu_theo_ky v_frm932 = new f932_bao_cao_doanh_thu_theo_ky();
+            v_frm932.display();
+        }
         #endregion
         //
         //
@@ -495,6 +501,19 @@ namespace SaleApp
             }
             catch (Exception v_e)
             {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void mnu_bc_banhang_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                show_rpt_doanh_thu_ban_hang_theo_ky();
+            }
+            catch (Exception v_e)
+            {
+
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
