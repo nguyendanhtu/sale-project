@@ -208,7 +208,6 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(121, 20);
             this.textBox4.TabIndex = 14;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label5
             // 
@@ -219,7 +218,6 @@
             this.label5.Size = new System.Drawing.Size(62, 16);
             this.label5.TabIndex = 13;
             this.label5.Text = "Giảm giá";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // f331_xuat_ban_hang
             // 
@@ -239,7 +237,6 @@
             this.Controls.Add(this.label1);
             this.Name = "f331_xuat_ban_hang";
             this.Text = "F331- Hoa don ban hang";
-            this.Load += new System.EventHandler(this.f331_xuat_ban_hang_Load_1);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.groupBox1.ResumeLayout(false);
