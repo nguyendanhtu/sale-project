@@ -5,6 +5,17 @@ namespace Sale.CDBNames
 	/// <summary>
 	/// Summary description for CDBNames.
 	/// </summary>
+    public class V_RPT_GD_BILL
+    {
+        public const string ID = "ID";
+        public const string BILL_SERI = "BILL_SERI";
+        public const string CUSTOMER_ID = "CUSTOMER_ID";
+        public const string BILL_DATE = "BILL_DATE";
+        public const string TAX_RATE = "TAX_RATE";
+        public const string AMMOUNT = "AMMOUNT";
+        public const string USER_ID = "USER_ID";
+        public const string CUSTOMER_NAME = "CUSTOMER_NAME";
+    }
 
     public class RPT_PRODUCT_BALANCE
     {
