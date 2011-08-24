@@ -13,6 +13,7 @@ using IP.Core.IPCommon;
 using IP.Core.IPUserService;
 using System.Data.SqlClient;
 using System.Data;
+using System;
 
 
 namespace SaleUS
@@ -82,8 +83,8 @@ public class US_GD_BILL : US_Object
 		pm_objDR["CUSTOMER_ID"] = System.Convert.DBNull;
 	}
 
-	public DateTime datBILL_DATE
-	}
+	public DateTime datBILL_DATE()
+	{
 		get   
 		{
 			return CNull.RowNVLDate(pm_objDR, "BILL_DATE", IPConstants.c_DefaultDate);
