@@ -166,7 +166,7 @@
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
-            // f311_product_price2
+            // f311_product_price
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -178,7 +178,7 @@
             this.Controls.Add(this.m_cbo_product_name);
             this.Controls.Add(this.mlbl_add_category);
             this.Controls.Add(this.m_fg);
-            this.Name = "f311_product_price2";
+            this.Name = "f311_product_price";
             this.Text = "F311-Cập nhật giá sản phẩm";
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.m_pnl_out_place_dm.ResumeLayout(false);

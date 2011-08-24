@@ -51,16 +51,10 @@ namespace SaleApp
         }
 
 
-        #region Private Methods
-
-       
-       
       
-
-      
-
+ 
         #endregion
-      
+        #region pulic
         public void display()
         {
             this.ShowDialog();
