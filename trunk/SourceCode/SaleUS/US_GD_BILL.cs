@@ -83,17 +83,17 @@ public class US_GD_BILL : US_Object
 		pm_objDR["CUSTOMER_ID"] = System.Convert.DBNull;
 	}
 
-	public DateTime datBILL_DATE()
-	{
-		get   
-		{
-			return CNull.RowNVLDate(pm_objDR, "BILL_DATE", IPConstants.c_DefaultDate);
-		}
-		set   
-		{
-			pm_objDR["BILL_DATE"] = value;
-		}
-	}
+    public DateTime datBILL_DATE
+    {
+        get
+        {
+            return CNull.RowNVLDate(pm_objDR, "BILL_DATE", IPConstants.c_DefaultDate);
+        }
+        set
+        {
+            pm_objDR["BILL_DATE"] = value;
+        }
+    }
 
 	public bool IsBILL_DATENull()
 	{
