@@ -236,7 +236,7 @@ namespace SaleApp
 
         private void show_form_ban_hang()
         {
-            if (!CAppContext_201.IsHavingQuyen(IP.Core.IPSystemAdmin.PHAN_QUYEN.IN_BAO_CAO)))
+            if (!CAppContext_201.IsHavingQuyen(IP.Core.IPSystemAdmin.PHAN_QUYEN.IN_BAO_CAO))
             {
                 BaseMessages.MsgBox_Infor(" Người sử dụng không đươc phép truy nhập phần này !!! ");
                 return;
