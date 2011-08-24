@@ -49,7 +49,7 @@
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Location = new System.Drawing.Point(12, 132);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(552, 206);
+            this.m_fg.Size = new System.Drawing.Size(778, 206);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 21;
             // 
@@ -57,7 +57,7 @@
             // 
             this.mlbl_add_category.AutoSize = true;
             this.mlbl_add_category.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mlbl_add_category.Location = new System.Drawing.Point(174, 9);
+            this.mlbl_add_category.Location = new System.Drawing.Point(290, 9);
             this.mlbl_add_category.Name = "mlbl_add_category";
             this.mlbl_add_category.Size = new System.Drawing.Size(235, 25);
             this.mlbl_add_category.TabIndex = 22;
@@ -66,7 +66,7 @@
             // m_cbo_product_name
             // 
             this.m_cbo_product_name.FormattingEnabled = true;
-            this.m_cbo_product_name.Location = new System.Drawing.Point(195, 55);
+            this.m_cbo_product_name.Location = new System.Drawing.Point(311, 55);
             this.m_cbo_product_name.Name = "m_cbo_product_name";
             this.m_cbo_product_name.Size = new System.Drawing.Size(318, 21);
             this.m_cbo_product_name.TabIndex = 23;
@@ -75,7 +75,7 @@
             // 
             this.m_dat_price_date.CustomFormat = "dd/MM/yyyy";
             this.m_dat_price_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_price_date.Location = new System.Drawing.Point(321, 93);
+            this.m_dat_price_date.Location = new System.Drawing.Point(437, 93);
             this.m_dat_price_date.Name = "m_dat_price_date";
             this.m_dat_price_date.Size = new System.Drawing.Size(192, 20);
             this.m_dat_price_date.TabIndex = 24;
@@ -83,7 +83,7 @@
             // m_lbl_product_name
             // 
             this.m_lbl_product_name.AutoSize = true;
-            this.m_lbl_product_name.Location = new System.Drawing.Point(79, 58);
+            this.m_lbl_product_name.Location = new System.Drawing.Point(195, 58);
             this.m_lbl_product_name.Name = "m_lbl_product_name";
             this.m_lbl_product_name.Size = new System.Drawing.Size(74, 13);
             this.m_lbl_product_name.TabIndex = 25;
@@ -92,7 +92,7 @@
             // m_lbl_price_date
             // 
             this.m_lbl_price_date.AutoSize = true;
-            this.m_lbl_price_date.Location = new System.Drawing.Point(79, 100);
+            this.m_lbl_price_date.Location = new System.Drawing.Point(195, 100);
             this.m_lbl_price_date.Name = "m_lbl_price_date";
             this.m_lbl_price_date.Size = new System.Drawing.Size(77, 13);
             this.m_lbl_price_date.TabIndex = 26;
@@ -106,7 +106,7 @@
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 398);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(640, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(802, 36);
             this.m_pnl_out_place_dm.TabIndex = 27;
             // 
             // m_cmd_save
@@ -118,7 +118,7 @@
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(460, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(622, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 12;
@@ -160,7 +160,7 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(548, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(710, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -170,7 +170,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 434);
+            this.ClientSize = new System.Drawing.Size(802, 434);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_lbl_price_date);
             this.Controls.Add(this.m_lbl_product_name);
