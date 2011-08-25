@@ -13,7 +13,7 @@ namespace SaleApp
     public partial class f331_xuat_ban_hang : Form
     {
         public f331_xuat_ban_hang()
-        {
+        {   
             InitializeComponent();
             format_control();
             set_define_event();
