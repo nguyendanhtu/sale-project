@@ -274,7 +274,15 @@ namespace SaleDS {
             
             private global::System.Data.DataColumn columnUNIT_PRICE;
             
-            private global::System.Data.DataColumn columnCOST;
+            private global::System.Data.DataColumn columnAMMOUNT;
+            
+            private global::System.Data.DataColumn columnBILL_DATE;
+            
+            private global::System.Data.DataColumn columnTAX_RATE;
+            
+            private global::System.Data.DataColumn columnUSER_ID;
+            
+            private global::System.Data.DataColumn columnCUSTOMER_ID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public RPT_BILL_DETAIL_SALESDataTable() {
@@ -349,9 +357,37 @@ namespace SaleDS {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn COSTColumn {
+            public global::System.Data.DataColumn AMMOUNTColumn {
                 get {
-                    return this.columnCOST;
+                    return this.columnAMMOUNT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn BILL_DATEColumn {
+                get {
+                    return this.columnBILL_DATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn TAX_RATEColumn {
+                get {
+                    return this.columnTAX_RATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn USER_IDColumn {
+                get {
+                    return this.columnUSER_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn CUSTOMER_IDColumn {
+                get {
+                    return this.columnCUSTOMER_ID;
                 }
             }
             
@@ -384,7 +420,7 @@ namespace SaleDS {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public RPT_BILL_DETAIL_SALESRow AddRPT_BILL_DETAIL_SALESRow(decimal ID, decimal PRODUCT_ID, string PRODUCT_CODE, string PRODUCT_NAME, decimal QUANTITY, decimal UNIT_PRICE, decimal COST) {
+            public RPT_BILL_DETAIL_SALESRow AddRPT_BILL_DETAIL_SALESRow(decimal ID, decimal PRODUCT_ID, string PRODUCT_CODE, string PRODUCT_NAME, decimal QUANTITY, decimal UNIT_PRICE, decimal AMMOUNT, System.DateTime BILL_DATE, decimal TAX_RATE, decimal USER_ID, decimal CUSTOMER_ID) {
                 RPT_BILL_DETAIL_SALESRow rowRPT_BILL_DETAIL_SALESRow = ((RPT_BILL_DETAIL_SALESRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
@@ -393,7 +429,11 @@ namespace SaleDS {
                         PRODUCT_NAME,
                         QUANTITY,
                         UNIT_PRICE,
-                        COST};
+                        AMMOUNT,
+                        BILL_DATE,
+                        TAX_RATE,
+                        USER_ID,
+                        CUSTOMER_ID};
                 rowRPT_BILL_DETAIL_SALESRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRPT_BILL_DETAIL_SALESRow);
                 return rowRPT_BILL_DETAIL_SALESRow;
@@ -430,7 +470,11 @@ namespace SaleDS {
                 this.columnPRODUCT_NAME = base.Columns["PRODUCT_NAME"];
                 this.columnQUANTITY = base.Columns["QUANTITY"];
                 this.columnUNIT_PRICE = base.Columns["UNIT_PRICE"];
-                this.columnCOST = base.Columns["COST"];
+                this.columnAMMOUNT = base.Columns["AMMOUNT"];
+                this.columnBILL_DATE = base.Columns["BILL_DATE"];
+                this.columnTAX_RATE = base.Columns["TAX_RATE"];
+                this.columnUSER_ID = base.Columns["USER_ID"];
+                this.columnCUSTOMER_ID = base.Columns["CUSTOMER_ID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -447,8 +491,16 @@ namespace SaleDS {
                 base.Columns.Add(this.columnQUANTITY);
                 this.columnUNIT_PRICE = new global::System.Data.DataColumn("UNIT_PRICE", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUNIT_PRICE);
-                this.columnCOST = new global::System.Data.DataColumn("COST", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCOST);
+                this.columnAMMOUNT = new global::System.Data.DataColumn("AMMOUNT", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAMMOUNT);
+                this.columnBILL_DATE = new global::System.Data.DataColumn("BILL_DATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBILL_DATE);
+                this.columnTAX_RATE = new global::System.Data.DataColumn("TAX_RATE", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTAX_RATE);
+                this.columnUSER_ID = new global::System.Data.DataColumn("USER_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUSER_ID);
+                this.columnCUSTOMER_ID = new global::System.Data.DataColumn("CUSTOMER_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCUSTOMER_ID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
@@ -672,17 +724,77 @@ namespace SaleDS {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public decimal COST {
+            public decimal AMMOUNT {
                 get {
                     try {
-                        return ((decimal)(this[this.tableRPT_BILL_DETAIL_SALES.COSTColumn]));
+                        return ((decimal)(this[this.tableRPT_BILL_DETAIL_SALES.AMMOUNTColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'COST\' in table \'RPT_BILL_DETAIL_SALES\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'AMMOUNT\' in table \'RPT_BILL_DETAIL_SALES\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRPT_BILL_DETAIL_SALES.COSTColumn] = value;
+                    this[this.tableRPT_BILL_DETAIL_SALES.AMMOUNTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public System.DateTime BILL_DATE {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableRPT_BILL_DETAIL_SALES.BILL_DATEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'BILL_DATE\' in table \'RPT_BILL_DETAIL_SALES\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRPT_BILL_DETAIL_SALES.BILL_DATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public decimal TAX_RATE {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableRPT_BILL_DETAIL_SALES.TAX_RATEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TAX_RATE\' in table \'RPT_BILL_DETAIL_SALES\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRPT_BILL_DETAIL_SALES.TAX_RATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public decimal USER_ID {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableRPT_BILL_DETAIL_SALES.USER_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'USER_ID\' in table \'RPT_BILL_DETAIL_SALES\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRPT_BILL_DETAIL_SALES.USER_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public decimal CUSTOMER_ID {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableRPT_BILL_DETAIL_SALES.CUSTOMER_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CUSTOMER_ID\' in table \'RPT_BILL_DETAIL_SALES\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRPT_BILL_DETAIL_SALES.CUSTOMER_IDColumn] = value;
                 }
             }
             
@@ -737,13 +849,53 @@ namespace SaleDS {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsCOSTNull() {
-                return this.IsNull(this.tableRPT_BILL_DETAIL_SALES.COSTColumn);
+            public bool IsAMMOUNTNull() {
+                return this.IsNull(this.tableRPT_BILL_DETAIL_SALES.AMMOUNTColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetCOSTNull() {
-                this[this.tableRPT_BILL_DETAIL_SALES.COSTColumn] = global::System.Convert.DBNull;
+            public void SetAMMOUNTNull() {
+                this[this.tableRPT_BILL_DETAIL_SALES.AMMOUNTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsBILL_DATENull() {
+                return this.IsNull(this.tableRPT_BILL_DETAIL_SALES.BILL_DATEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetBILL_DATENull() {
+                this[this.tableRPT_BILL_DETAIL_SALES.BILL_DATEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsTAX_RATENull() {
+                return this.IsNull(this.tableRPT_BILL_DETAIL_SALES.TAX_RATEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetTAX_RATENull() {
+                this[this.tableRPT_BILL_DETAIL_SALES.TAX_RATEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsUSER_IDNull() {
+                return this.IsNull(this.tableRPT_BILL_DETAIL_SALES.USER_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetUSER_IDNull() {
+                this[this.tableRPT_BILL_DETAIL_SALES.USER_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsCUSTOMER_IDNull() {
+                return this.IsNull(this.tableRPT_BILL_DETAIL_SALES.CUSTOMER_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetCUSTOMER_IDNull() {
+                this[this.tableRPT_BILL_DETAIL_SALES.CUSTOMER_IDColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -903,11 +1055,15 @@ namespace SaleDS.DS_RPT_BILL_DETAIL_SALESTableAdapters {
             tableMapping.ColumnMappings.Add("PRODUCT_NAME", "PRODUCT_NAME");
             tableMapping.ColumnMappings.Add("QUANTITY", "QUANTITY");
             tableMapping.ColumnMappings.Add("UNIT_PRICE", "UNIT_PRICE");
-            tableMapping.ColumnMappings.Add("COST", "COST");
+            tableMapping.ColumnMappings.Add("AMMOUNT", "AMMOUNT");
+            tableMapping.ColumnMappings.Add("BILL_DATE", "BILL_DATE");
+            tableMapping.ColumnMappings.Add("TAX_RATE", "TAX_RATE");
+            tableMapping.ColumnMappings.Add("USER_ID", "USER_ID");
+            tableMapping.ColumnMappings.Add("CUSTOMER_ID", "CUSTOMER_ID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[RPT_BILL_DETAIL_SALES] WHERE (([ID] = @Original_ID) AND ((@IsNull_PRODUCT_ID = 1 AND [PRODUCT_ID] IS NULL) OR ([PRODUCT_ID] = @Original_PRODUCT_ID)) AND ((@IsNull_PRODUCT_CODE = 1 AND [PRODUCT_CODE] IS NULL) OR ([PRODUCT_CODE] = @Original_PRODUCT_CODE)) AND ((@IsNull_PRODUCT_NAME = 1 AND [PRODUCT_NAME] IS NULL) OR ([PRODUCT_NAME] = @Original_PRODUCT_NAME)) AND ((@IsNull_QUANTITY = 1 AND [QUANTITY] IS NULL) OR ([QUANTITY] = @Original_QUANTITY)) AND ((@IsNull_UNIT_PRICE = 1 AND [UNIT_PRICE] IS NULL) OR ([UNIT_PRICE] = @Original_UNIT_PRICE)) AND ((@IsNull_COST = 1 AND [COST] IS NULL) OR ([COST] = @Original_COST)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[RPT_BILL_DETAIL_SALES] WHERE (([ID] = @Original_ID) AND ((@IsNull_PRODUCT_ID = 1 AND [PRODUCT_ID] IS NULL) OR ([PRODUCT_ID] = @Original_PRODUCT_ID)) AND ((@IsNull_PRODUCT_CODE = 1 AND [PRODUCT_CODE] IS NULL) OR ([PRODUCT_CODE] = @Original_PRODUCT_CODE)) AND ((@IsNull_PRODUCT_NAME = 1 AND [PRODUCT_NAME] IS NULL) OR ([PRODUCT_NAME] = @Original_PRODUCT_NAME)) AND ((@IsNull_QUANTITY = 1 AND [QUANTITY] IS NULL) OR ([QUANTITY] = @Original_QUANTITY)) AND ((@IsNull_UNIT_PRICE = 1 AND [UNIT_PRICE] IS NULL) OR ([UNIT_PRICE] = @Original_UNIT_PRICE)) AND ((@IsNull_AMMOUNT = 1 AND [AMMOUNT] IS NULL) OR ([AMMOUNT] = @Original_AMMOUNT)) AND ((@IsNull_BILL_DATE = 1 AND [BILL_DATE] IS NULL) OR ([BILL_DATE] = @Original_BILL_DATE)) AND ((@IsNull_TAX_RATE = 1 AND [TAX_RATE] IS NULL) OR ([TAX_RATE] = @Original_TAX_RATE)) AND ((@IsNull_USER_ID = 1 AND [USER_ID] IS NULL) OR ([USER_ID] = @Original_USER_ID)) AND ((@IsNull_CUSTOMER_ID = 1 AND [CUSTOMER_ID] IS NULL) OR ([CUSTOMER_ID] = @Original_CUSTOMER_ID)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PRODUCT_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PRODUCT_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -920,12 +1076,20 @@ namespace SaleDS.DS_RPT_BILL_DETAIL_SALESTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_QUANTITY", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 4, 0, "QUANTITY", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_UNIT_PRICE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UNIT_PRICE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UNIT_PRICE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "UNIT_PRICE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_COST", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "COST", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_COST", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "COST", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AMMOUNT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AMMOUNT", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AMMOUNT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "AMMOUNT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BILL_DATE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BILL_DATE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BILL_DATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BILL_DATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TAX_RATE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TAX_RATE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TAX_RATE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "TAX_RATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_USER_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "USER_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_USER_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "USER_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CUSTOMER_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CUSTOMER_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CUSTOMER_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CUSTOMER_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[RPT_BILL_DETAIL_SALES] ([ID], [PRODUCT_ID], [PRODUCT_CODE], [PRODUCT_NAME], [QUANTITY], [UNIT_PRICE], [COST]) VALUES (@ID, @PRODUCT_ID, @PRODUCT_CODE, @PRODUCT_NAME, @QUANTITY, @UNIT_PRICE, @COST);
-SELECT ID, PRODUCT_ID, PRODUCT_CODE, PRODUCT_NAME, QUANTITY, UNIT_PRICE, COST FROM RPT_BILL_DETAIL_SALES WHERE (ID = @ID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[RPT_BILL_DETAIL_SALES] ([ID], [PRODUCT_ID], [PRODUCT_CODE], [PRODUCT_NAME], [QUANTITY], [UNIT_PRICE], [AMMOUNT], [BILL_DATE], [TAX_RATE], [USER_ID], [CUSTOMER_ID]) VALUES (@ID, @PRODUCT_ID, @PRODUCT_CODE, @PRODUCT_NAME, @QUANTITY, @UNIT_PRICE, @AMMOUNT, @BILL_DATE, @TAX_RATE, @USER_ID, @CUSTOMER_ID);
+SELECT ID, PRODUCT_ID, PRODUCT_CODE, PRODUCT_NAME, QUANTITY, UNIT_PRICE, AMMOUNT, BILL_DATE, TAX_RATE, USER_ID, CUSTOMER_ID FROM RPT_BILL_DETAIL_SALES WHERE (ID = @ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PRODUCT_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "PRODUCT_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -933,11 +1097,15 @@ SELECT ID, PRODUCT_ID, PRODUCT_CODE, PRODUCT_NAME, QUANTITY, UNIT_PRICE, COST FR
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PRODUCT_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PRODUCT_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@QUANTITY", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 4, 0, "QUANTITY", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UNIT_PRICE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "UNIT_PRICE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@COST", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "COST", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AMMOUNT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "AMMOUNT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BILL_DATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BILL_DATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TAX_RATE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "TAX_RATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@USER_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "USER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CUSTOMER_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CUSTOMER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[RPT_BILL_DETAIL_SALES] SET [ID] = @ID, [PRODUCT_ID] = @PRODUCT_ID, [PRODUCT_CODE] = @PRODUCT_CODE, [PRODUCT_NAME] = @PRODUCT_NAME, [QUANTITY] = @QUANTITY, [UNIT_PRICE] = @UNIT_PRICE, [COST] = @COST WHERE (([ID] = @Original_ID) AND ((@IsNull_PRODUCT_ID = 1 AND [PRODUCT_ID] IS NULL) OR ([PRODUCT_ID] = @Original_PRODUCT_ID)) AND ((@IsNull_PRODUCT_CODE = 1 AND [PRODUCT_CODE] IS NULL) OR ([PRODUCT_CODE] = @Original_PRODUCT_CODE)) AND ((@IsNull_PRODUCT_NAME = 1 AND [PRODUCT_NAME] IS NULL) OR ([PRODUCT_NAME] = @Original_PRODUCT_NAME)) AND ((@IsNull_QUANTITY = 1 AND [QUANTITY] IS NULL) OR ([QUANTITY] = @Original_QUANTITY)) AND ((@IsNull_UNIT_PRICE = 1 AND [UNIT_PRICE] IS NULL) OR ([UNIT_PRICE] = @Original_UNIT_PRICE)) AND ((@IsNull_COST = 1 AND [COST] IS NULL) OR ([COST] = @Original_COST)));
-SELECT ID, PRODUCT_ID, PRODUCT_CODE, PRODUCT_NAME, QUANTITY, UNIT_PRICE, COST FROM RPT_BILL_DETAIL_SALES WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[RPT_BILL_DETAIL_SALES] SET [ID] = @ID, [PRODUCT_ID] = @PRODUCT_ID, [PRODUCT_CODE] = @PRODUCT_CODE, [PRODUCT_NAME] = @PRODUCT_NAME, [QUANTITY] = @QUANTITY, [UNIT_PRICE] = @UNIT_PRICE, [AMMOUNT] = @AMMOUNT, [BILL_DATE] = @BILL_DATE, [TAX_RATE] = @TAX_RATE, [USER_ID] = @USER_ID, [CUSTOMER_ID] = @CUSTOMER_ID WHERE (([ID] = @Original_ID) AND ((@IsNull_PRODUCT_ID = 1 AND [PRODUCT_ID] IS NULL) OR ([PRODUCT_ID] = @Original_PRODUCT_ID)) AND ((@IsNull_PRODUCT_CODE = 1 AND [PRODUCT_CODE] IS NULL) OR ([PRODUCT_CODE] = @Original_PRODUCT_CODE)) AND ((@IsNull_PRODUCT_NAME = 1 AND [PRODUCT_NAME] IS NULL) OR ([PRODUCT_NAME] = @Original_PRODUCT_NAME)) AND ((@IsNull_QUANTITY = 1 AND [QUANTITY] IS NULL) OR ([QUANTITY] = @Original_QUANTITY)) AND ((@IsNull_UNIT_PRICE = 1 AND [UNIT_PRICE] IS NULL) OR ([UNIT_PRICE] = @Original_UNIT_PRICE)) AND ((@IsNull_AMMOUNT = 1 AND [AMMOUNT] IS NULL) OR ([AMMOUNT] = @Original_AMMOUNT)) AND ((@IsNull_BILL_DATE = 1 AND [BILL_DATE] IS NULL) OR ([BILL_DATE] = @Original_BILL_DATE)) AND ((@IsNull_TAX_RATE = 1 AND [TAX_RATE] IS NULL) OR ([TAX_RATE] = @Original_TAX_RATE)) AND ((@IsNull_USER_ID = 1 AND [USER_ID] IS NULL) OR ([USER_ID] = @Original_USER_ID)) AND ((@IsNull_CUSTOMER_ID = 1 AND [CUSTOMER_ID] IS NULL) OR ([CUSTOMER_ID] = @Original_CUSTOMER_ID)));
+SELECT ID, PRODUCT_ID, PRODUCT_CODE, PRODUCT_NAME, QUANTITY, UNIT_PRICE, AMMOUNT, BILL_DATE, TAX_RATE, USER_ID, CUSTOMER_ID FROM RPT_BILL_DETAIL_SALES WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PRODUCT_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "PRODUCT_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -945,7 +1113,11 @@ SELECT ID, PRODUCT_ID, PRODUCT_CODE, PRODUCT_NAME, QUANTITY, UNIT_PRICE, COST FR
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PRODUCT_NAME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PRODUCT_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@QUANTITY", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 4, 0, "QUANTITY", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UNIT_PRICE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "UNIT_PRICE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@COST", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "COST", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AMMOUNT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "AMMOUNT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BILL_DATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BILL_DATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TAX_RATE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "TAX_RATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@USER_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "USER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CUSTOMER_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CUSTOMER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PRODUCT_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PRODUCT_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PRODUCT_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "PRODUCT_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -957,8 +1129,16 @@ SELECT ID, PRODUCT_ID, PRODUCT_CODE, PRODUCT_NAME, QUANTITY, UNIT_PRICE, COST FR
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_QUANTITY", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 4, 0, "QUANTITY", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_UNIT_PRICE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UNIT_PRICE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UNIT_PRICE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "UNIT_PRICE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_COST", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "COST", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_COST", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "COST", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AMMOUNT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AMMOUNT", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AMMOUNT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "AMMOUNT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BILL_DATE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BILL_DATE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BILL_DATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BILL_DATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TAX_RATE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TAX_RATE", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TAX_RATE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 21, 3, "TAX_RATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_USER_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "USER_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_USER_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "USER_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CUSTOMER_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CUSTOMER_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CUSTOMER_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CUSTOMER_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -972,8 +1152,8 @@ SELECT ID, PRODUCT_ID, PRODUCT_CODE, PRODUCT_NAME, QUANTITY, UNIT_PRICE, COST FR
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, PRODUCT_ID, PRODUCT_CODE, PRODUCT_NAME, QUANTITY, UNIT_PRICE, COST FRO" +
-                "M dbo.RPT_BILL_DETAIL_SALES";
+            this._commandCollection[0].CommandText = "SELECT ID, PRODUCT_ID, PRODUCT_CODE, PRODUCT_NAME, QUANTITY, UNIT_PRICE, AMMOUNT," +
+                " BILL_DATE, TAX_RATE, USER_ID, CUSTOMER_ID FROM dbo.RPT_BILL_DETAIL_SALES";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1027,7 +1207,7 @@ SELECT ID, PRODUCT_ID, PRODUCT_CODE, PRODUCT_NAME, QUANTITY, UNIT_PRICE, COST FR
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(decimal Original_ID, global::System.Nullable<decimal> Original_PRODUCT_ID, string Original_PRODUCT_CODE, string Original_PRODUCT_NAME, global::System.Nullable<decimal> Original_QUANTITY, global::System.Nullable<decimal> Original_UNIT_PRICE, global::System.Nullable<decimal> Original_COST) {
+        public virtual int Delete(decimal Original_ID, global::System.Nullable<decimal> Original_PRODUCT_ID, string Original_PRODUCT_CODE, string Original_PRODUCT_NAME, global::System.Nullable<decimal> Original_QUANTITY, global::System.Nullable<decimal> Original_UNIT_PRICE, global::System.Nullable<decimal> Original_AMMOUNT, global::System.Nullable<global::System.DateTime> Original_BILL_DATE, global::System.Nullable<decimal> Original_TAX_RATE, global::System.Nullable<decimal> Original_USER_ID, global::System.Nullable<decimal> Original_CUSTOMER_ID) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_ID));
             if ((Original_PRODUCT_ID.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -1069,13 +1249,45 @@ SELECT ID, PRODUCT_ID, PRODUCT_CODE, PRODUCT_NAME, QUANTITY, UNIT_PRICE, COST FR
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Original_COST.HasValue == true)) {
+            if ((Original_AMMOUNT.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((decimal)(Original_COST.Value));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((decimal)(Original_AMMOUNT.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Original_BILL_DATE.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((System.DateTime)(Original_BILL_DATE.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((Original_TAX_RATE.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((decimal)(Original_TAX_RATE.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((Original_USER_ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((decimal)(Original_USER_ID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CUSTOMER_ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((decimal)(Original_CUSTOMER_ID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1096,7 +1308,7 @@ SELECT ID, PRODUCT_ID, PRODUCT_CODE, PRODUCT_NAME, QUANTITY, UNIT_PRICE, COST FR
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(decimal ID, global::System.Nullable<decimal> PRODUCT_ID, string PRODUCT_CODE, string PRODUCT_NAME, global::System.Nullable<decimal> QUANTITY, global::System.Nullable<decimal> UNIT_PRICE, global::System.Nullable<decimal> COST) {
+        public virtual int Insert(decimal ID, global::System.Nullable<decimal> PRODUCT_ID, string PRODUCT_CODE, string PRODUCT_NAME, global::System.Nullable<decimal> QUANTITY, global::System.Nullable<decimal> UNIT_PRICE, global::System.Nullable<decimal> AMMOUNT, global::System.Nullable<global::System.DateTime> BILL_DATE, global::System.Nullable<decimal> TAX_RATE, global::System.Nullable<decimal> USER_ID, global::System.Nullable<decimal> CUSTOMER_ID) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(ID));
             if ((PRODUCT_ID.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(PRODUCT_ID.Value));
@@ -1128,11 +1340,35 @@ SELECT ID, PRODUCT_ID, PRODUCT_CODE, PRODUCT_NAME, QUANTITY, UNIT_PRICE, COST FR
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((COST.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((decimal)(COST.Value));
+            if ((AMMOUNT.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((decimal)(AMMOUNT.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((BILL_DATE.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(BILL_DATE.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((TAX_RATE.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((decimal)(TAX_RATE.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((USER_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((decimal)(USER_ID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((CUSTOMER_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((decimal)(CUSTOMER_ID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1153,7 +1389,29 @@ SELECT ID, PRODUCT_ID, PRODUCT_CODE, PRODUCT_NAME, QUANTITY, UNIT_PRICE, COST FR
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(decimal ID, global::System.Nullable<decimal> PRODUCT_ID, string PRODUCT_CODE, string PRODUCT_NAME, global::System.Nullable<decimal> QUANTITY, global::System.Nullable<decimal> UNIT_PRICE, global::System.Nullable<decimal> COST, decimal Original_ID, global::System.Nullable<decimal> Original_PRODUCT_ID, string Original_PRODUCT_CODE, string Original_PRODUCT_NAME, global::System.Nullable<decimal> Original_QUANTITY, global::System.Nullable<decimal> Original_UNIT_PRICE, global::System.Nullable<decimal> Original_COST) {
+        public virtual int Update(
+                    decimal ID, 
+                    global::System.Nullable<decimal> PRODUCT_ID, 
+                    string PRODUCT_CODE, 
+                    string PRODUCT_NAME, 
+                    global::System.Nullable<decimal> QUANTITY, 
+                    global::System.Nullable<decimal> UNIT_PRICE, 
+                    global::System.Nullable<decimal> AMMOUNT, 
+                    global::System.Nullable<global::System.DateTime> BILL_DATE, 
+                    global::System.Nullable<decimal> TAX_RATE, 
+                    global::System.Nullable<decimal> USER_ID, 
+                    global::System.Nullable<decimal> CUSTOMER_ID, 
+                    decimal Original_ID, 
+                    global::System.Nullable<decimal> Original_PRODUCT_ID, 
+                    string Original_PRODUCT_CODE, 
+                    string Original_PRODUCT_NAME, 
+                    global::System.Nullable<decimal> Original_QUANTITY, 
+                    global::System.Nullable<decimal> Original_UNIT_PRICE, 
+                    global::System.Nullable<decimal> Original_AMMOUNT, 
+                    global::System.Nullable<global::System.DateTime> Original_BILL_DATE, 
+                    global::System.Nullable<decimal> Original_TAX_RATE, 
+                    global::System.Nullable<decimal> Original_USER_ID, 
+                    global::System.Nullable<decimal> Original_CUSTOMER_ID) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((decimal)(ID));
             if ((PRODUCT_ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(PRODUCT_ID.Value));
@@ -1185,60 +1443,116 @@ SELECT ID, PRODUCT_ID, PRODUCT_CODE, PRODUCT_NAME, QUANTITY, UNIT_PRICE, COST FR
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((COST.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(COST.Value));
+            if ((AMMOUNT.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(AMMOUNT.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(Original_ID));
-            if ((Original_PRODUCT_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(Original_PRODUCT_ID.Value));
+            if ((BILL_DATE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(BILL_DATE.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((TAX_RATE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(TAX_RATE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((USER_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(USER_ID.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((Original_PRODUCT_CODE == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            if ((CUSTOMER_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(CUSTOMER_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_PRODUCT_CODE));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Original_PRODUCT_NAME == null)) {
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(Original_ID));
+            if ((Original_PRODUCT_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(Original_PRODUCT_ID.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_PRODUCT_NAME));
-            }
-            if ((Original_QUANTITY.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((decimal)(Original_QUANTITY.Value));
-            }
-            else {
+            if ((Original_PRODUCT_CODE == null)) {
                 this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            if ((Original_UNIT_PRICE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((decimal)(Original_UNIT_PRICE.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_PRODUCT_CODE));
+            }
+            if ((Original_PRODUCT_NAME == null)) {
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
-            if ((Original_COST.HasValue == true)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_PRODUCT_NAME));
+            }
+            if ((Original_QUANTITY.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((decimal)(Original_COST.Value));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((decimal)(Original_QUANTITY.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((Original_UNIT_PRICE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((decimal)(Original_UNIT_PRICE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            if ((Original_AMMOUNT.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((decimal)(Original_AMMOUNT.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            if ((Original_BILL_DATE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((System.DateTime)(Original_BILL_DATE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            if ((Original_TAX_RATE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((decimal)(Original_TAX_RATE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+            }
+            if ((Original_USER_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((decimal)(Original_USER_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CUSTOMER_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((decimal)(Original_CUSTOMER_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1259,8 +1573,29 @@ SELECT ID, PRODUCT_ID, PRODUCT_CODE, PRODUCT_NAME, QUANTITY, UNIT_PRICE, COST FR
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<decimal> PRODUCT_ID, string PRODUCT_CODE, string PRODUCT_NAME, global::System.Nullable<decimal> QUANTITY, global::System.Nullable<decimal> UNIT_PRICE, global::System.Nullable<decimal> COST, decimal Original_ID, global::System.Nullable<decimal> Original_PRODUCT_ID, string Original_PRODUCT_CODE, string Original_PRODUCT_NAME, global::System.Nullable<decimal> Original_QUANTITY, global::System.Nullable<decimal> Original_UNIT_PRICE, global::System.Nullable<decimal> Original_COST) {
-            return this.Update(Original_ID, PRODUCT_ID, PRODUCT_CODE, PRODUCT_NAME, QUANTITY, UNIT_PRICE, COST, Original_ID, Original_PRODUCT_ID, Original_PRODUCT_CODE, Original_PRODUCT_NAME, Original_QUANTITY, Original_UNIT_PRICE, Original_COST);
+        public virtual int Update(
+                    global::System.Nullable<decimal> PRODUCT_ID, 
+                    string PRODUCT_CODE, 
+                    string PRODUCT_NAME, 
+                    global::System.Nullable<decimal> QUANTITY, 
+                    global::System.Nullable<decimal> UNIT_PRICE, 
+                    global::System.Nullable<decimal> AMMOUNT, 
+                    global::System.Nullable<global::System.DateTime> BILL_DATE, 
+                    global::System.Nullable<decimal> TAX_RATE, 
+                    global::System.Nullable<decimal> USER_ID, 
+                    global::System.Nullable<decimal> CUSTOMER_ID, 
+                    decimal Original_ID, 
+                    global::System.Nullable<decimal> Original_PRODUCT_ID, 
+                    string Original_PRODUCT_CODE, 
+                    string Original_PRODUCT_NAME, 
+                    global::System.Nullable<decimal> Original_QUANTITY, 
+                    global::System.Nullable<decimal> Original_UNIT_PRICE, 
+                    global::System.Nullable<decimal> Original_AMMOUNT, 
+                    global::System.Nullable<global::System.DateTime> Original_BILL_DATE, 
+                    global::System.Nullable<decimal> Original_TAX_RATE, 
+                    global::System.Nullable<decimal> Original_USER_ID, 
+                    global::System.Nullable<decimal> Original_CUSTOMER_ID) {
+            return this.Update(Original_ID, PRODUCT_ID, PRODUCT_CODE, PRODUCT_NAME, QUANTITY, UNIT_PRICE, AMMOUNT, BILL_DATE, TAX_RATE, USER_ID, CUSTOMER_ID, Original_ID, Original_PRODUCT_ID, Original_PRODUCT_CODE, Original_PRODUCT_NAME, Original_QUANTITY, Original_UNIT_PRICE, Original_AMMOUNT, Original_BILL_DATE, Original_TAX_RATE, Original_USER_ID, Original_CUSTOMER_ID);
         }
     }
     
