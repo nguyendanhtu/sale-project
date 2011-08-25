@@ -17,6 +17,22 @@ namespace Sale.CDBNames
         public const string COST = "COST";
     }
 
+    public class V_RPT_GD_BILL_DETAIL
+    {
+        public const string ID = "ID";
+        public const string BILL_ID = "BILL_ID";
+        public const string PRODUCT_ID = "PRODUCT_ID";
+        public const string QUANTITY = "QUANTITY";
+        public const string BILL_SERI = "BILL_SERI";
+        public const string CUSTOMER_ID = "CUSTOMER_ID";
+        public const string BILL_DATE = "BILL_DATE";
+        public const string CUSTOMER_NAME = "CUSTOMER_NAME";
+        public const string PRODUCT_NAME = "PRODUCT_NAME";
+        public const string PRODUCT_CODE = "PRODUCT_CODE";
+        public const string CATEGORY_NAME = "CATEGORY_NAME";
+        public const string CURRENT_PRICE = "CURRENT_PRICE";
+        public const string AMOUNT = "AMOUNT";
+    }
 
     public class V_RPT_GD_BILL
     {
