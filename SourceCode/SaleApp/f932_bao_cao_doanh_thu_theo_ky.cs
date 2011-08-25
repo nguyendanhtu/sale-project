@@ -29,56 +29,56 @@ namespace SaleApp
 
 
 
-	public class f932_bao_cao_doanh_thu_theo_ky : System.Windows.Forms.Form
-	{
-		internal System.Windows.Forms.ImageList ImageList;
-		internal System.Windows.Forms.Panel m_pnl_out_place_dm;
+    public class f932_bao_cao_doanh_thu_theo_ky : System.Windows.Forms.Form
+    {
+        internal System.Windows.Forms.ImageList ImageList;
+        internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
-		internal SIS.Controls.Button.SiSButton m_cmd_exit;
-		internal SIS.Controls.Button.SiSButton m_cmd_export_excel;
+        internal SIS.Controls.Button.SiSButton m_cmd_exit;
+        internal SIS.Controls.Button.SiSButton m_cmd_export_excel;
         private GroupBox groupBox1;
         private DateTimePicker m_dat_to_date;
         private Label label2;
         private DateTimePicker m_dat_from_date;
         private Label label1;
         internal SIS.Controls.Button.SiSButton m_cmd_view;
-		private System.ComponentModel.IContainer components;
+        private System.ComponentModel.IContainer components;
 
-		public f932_bao_cao_doanh_thu_theo_ky()
-		{
-			//
-			// Required for Windows Form Designer support
-			//
-			InitializeComponent();
+        public f932_bao_cao_doanh_thu_theo_ky()
+        {
+            //
+            // Required for Windows Form Designer support
+            //
+            InitializeComponent();
 
-			//
-			// TODO: Add any constructor code after InitializeComponent call
-			//
-			format_controls();
-		}
+            //
+            // TODO: Add any constructor code after InitializeComponent call
+            //
+            format_controls();
+        }
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		protected override void Dispose( bool disposing )
-		{
-			if( disposing )
-			{
-				if(components != null)
-				{
-					components.Dispose();
-				}
-			}
-			base.Dispose( disposing );
-		}
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (components != null)
+                {
+                    components.Dispose();
+                }
+            }
+            base.Dispose(disposing);
+        }
 
-		#region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
+        #region Windows Form Designer generated code
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f932_bao_cao_doanh_thu_theo_ky));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
@@ -257,100 +257,111 @@ namespace SaleApp
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
-		}
-		#endregion
+        }
+        #endregion
 
-		#region Public Interface
-		public void display(){			
-			this.ShowDialog();
-		}
-		#endregion
+        #region Public Interface
+        public void display()
+        {
+            this.ShowDialog();
+        }
+        #endregion
 
-		#region Data Structure
-		private enum e_col_Number{
-			BILL_DATE = 1
-,CUSTOMER_NAME = 3
-,BILL_SERI = 2
-,AMMOUNT = 4
+        #region Data Structure
+        private enum e_col_Number
+        {
+            BILL_DATE = 1
+,
+            CUSTOMER_NAME = 3
+                ,
+            BILL_SERI = 2
+                , AMMOUNT = 4
 
-		}			
-		#endregion
+        }
+        #endregion
 
-		#region Members
-		ITransferDataRow m_obj_trans;		
-		DS_V_RPT_GD_BILL m_ds = new DS_V_RPT_GD_BILL();
-		US_V_RPT_GD_BILL m_us = new US_V_RPT_GD_BILL();
-		#endregion
+        #region Members
+        ITransferDataRow m_obj_trans;
+        DS_V_RPT_GD_BILL m_ds = new DS_V_RPT_GD_BILL();
+        US_V_RPT_GD_BILL m_us = new US_V_RPT_GD_BILL();
+        #endregion
 
-		#region Private Methods
-		private void format_controls(){
-			CControlFormat.setFormStyle(this);
-			CControlFormat.setC1FlexFormat(m_fg);
+        #region Private Methods
+        private void format_controls()
+        {
+            CControlFormat.setFormStyle(this);
+            CControlFormat.setC1FlexFormat(m_fg);
             CGridUtils.AddSave_Excel_Handlers(m_fg);
             CGridUtils.AddSearch_Handlers(m_fg);
 
-			set_define_events();
-			this.KeyPreview = true;		
-		}
-		private void set_initial_form_load(){						
-			m_obj_trans = get_trans_object(m_fg);
-			load_data_2_grid();		
-		}	
-		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
-			Hashtable v_htb = new Hashtable();
-			v_htb.Add(V_RPT_GD_BILL.BILL_DATE, e_col_Number.BILL_DATE);
-			v_htb.Add(V_RPT_GD_BILL.CUSTOMER_NAME, e_col_Number.CUSTOMER_NAME);
-			v_htb.Add(V_RPT_GD_BILL.BILL_SERI, e_col_Number.BILL_SERI);
-			v_htb.Add(V_RPT_GD_BILL.AMMOUNT, e_col_Number.AMMOUNT);
-									
-			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_RPT_GD_BILL.NewRow());
-			return v_obj_trans;			
-		}
-		private void load_data_2_grid(){						
-			m_ds = new DS_V_RPT_GD_BILL();			
-			m_us.FillDataset(m_ds, m_dat_from_date.Value.Date, m_dat_to_date.Value.Date);
-			m_fg.Redraw = false;
-			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            set_define_events();
+            this.KeyPreview = true;
+        }
+        private void set_initial_form_load()
+        {
+            m_obj_trans = get_trans_object(m_fg);
+            load_data_2_grid();
+        }
+        private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
+        {
+            Hashtable v_htb = new Hashtable();
+            v_htb.Add(V_RPT_GD_BILL.BILL_DATE, e_col_Number.BILL_DATE);
+            v_htb.Add(V_RPT_GD_BILL.CUSTOMER_NAME, e_col_Number.CUSTOMER_NAME);
+            v_htb.Add(V_RPT_GD_BILL.BILL_SERI, e_col_Number.BILL_SERI);
+            v_htb.Add(V_RPT_GD_BILL.AMMOUNT, e_col_Number.AMMOUNT);
+
+            ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.V_RPT_GD_BILL.NewRow());
+            return v_obj_trans;
+        }
+        private void load_data_2_grid()
+        {
+            m_ds = new DS_V_RPT_GD_BILL();
+            m_us.FillDataset(m_ds, m_dat_from_date.Value.Date, m_dat_to_date.Value.Date);
+            m_fg.Redraw = false;
+            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Subtotal(AggregateEnum.Sum, 0, -1, (int)e_col_Number.AMMOUNT, "Tổng tiền bán hàng");
 
-			m_fg.Redraw = true;
-		}
-		private void grid2us_object(US_V_RPT_GD_BILL i_us
-			, int i_grid_row) {
-			DataRow v_dr;
-			v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
-			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
-			i_us.DataRow2Me(v_dr);
-		}
+            m_fg.Redraw = true;
+        }
+        private void grid2us_object(US_V_RPT_GD_BILL i_us
+            , int i_grid_row)
+        {
+            DataRow v_dr;
+            v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
+            m_obj_trans.GridRow2DataRow(i_grid_row, v_dr);
+            i_us.DataRow2Me(v_dr);
+        }
 
-	
-		private void us_object2grid(US_V_RPT_GD_BILL i_us
-			, int i_grid_row) {
-			DataRow v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
-			i_us.Me2DataRow(v_dr);
-			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
-		}
 
-		private void view_v_rpt_gd_bill(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			grid2us_object(m_us, m_fg.Row);
-		//	f932_bao_cao_doanh_thu_theo_ky_DE v_fDE = new f932_bao_cao_doanh_thu_theo_ky_DE();			
-		//	v_fDE.display(m_us);
-		}
+        private void us_object2grid(US_V_RPT_GD_BILL i_us
+            , int i_grid_row)
+        {
+            DataRow v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
+            i_us.Me2DataRow(v_dr);
+            m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
+        }
+
+        private void view_v_rpt_gd_bill()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us, m_fg.Row);
+            //	f932_bao_cao_doanh_thu_theo_ky_DE v_fDE = new f932_bao_cao_doanh_thu_theo_ky_DE();			
+            //	v_fDE.display(m_us);
+        }
 
         private void export_excel()
         {
             CExcelReport v_obj_export_excel = new CExcelReport("f932_rpt_bao_cao_doanh_thu_ban_hang_theo_ky.xlsx", 6, 1);
-            v_obj_export_excel.AddFindAndReplaceItem("</TU_NGAY>",  m_dat_from_date.Value.Date.ToString("dd/MM/yyyy"));
-            v_obj_export_excel.AddFindAndReplaceItem("</DEN_NGAY>",  m_dat_to_date.Value.Date.ToString("dd/MM/yyyy"));
+            v_obj_export_excel.AddFindAndReplaceItem("</TU_NGAY>", m_dat_from_date.Value.Date.ToString("dd/MM/yyyy"));
+            v_obj_export_excel.AddFindAndReplaceItem("</DEN_NGAY>", m_dat_to_date.Value.Date.ToString("dd/MM/yyyy"));
             v_obj_export_excel.FindAndReplace(false);
             v_obj_export_excel.Export2ExcelWithoutFixedRows(m_fg, (int)e_col_Number.BILL_DATE, m_fg.Cols.Count - 1, true);
 
 
         }
-	
-		#endregion
+
+        #endregion
         private void set_define_events()
         {
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
@@ -371,43 +382,51 @@ namespace SaleApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-//
-		//
-		//		EVENT HANLDERS
-		//
-		//
-		private void f932_bao_cao_doanh_thu_theo_ky_Load(object sender, System.EventArgs e) {
-			try{
-				set_initial_form_load();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		
-		}
+        //
+        //
+        //		EVENT HANLDERS
+        //
+        //
+        private void f932_bao_cao_doanh_thu_theo_ky_Load(object sender, System.EventArgs e)
+        {
+            try
+            {
+                set_initial_form_load();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
 
-		private void m_cmd_exit_Click(object sender, EventArgs e) {
-			try{
-				this.Close();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+        }
+
+        private void m_cmd_exit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Close();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
 
 
 
         private void m_cmd_export_excel_Click(object sender, EventArgs e)
         {
-			try{
+            try
+            {
                 export_excel();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
-	}
+    }
 }
 
