@@ -1,7 +1,7 @@
 ﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{A6E36F4B-6825-44A8-9396-C5BBD8630CB0}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -127,6 +127,7 @@
     <Compile Include="US_RPT_BILL_DETAIL_SALES.cs" />
     <Compile Include="US_RPT_PRODUCT_BALANCE.cs" />
     <Compile Include="US_V_RPT_GD_BILL.cs" />
+    <Compile Include="US_V_RPT_GD_BILL_DETAIL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
