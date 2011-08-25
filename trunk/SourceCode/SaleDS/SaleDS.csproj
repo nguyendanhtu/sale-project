@@ -1,7 +1,7 @@
 ﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{39DC1A18-A725-4DF1-93CE-467C130CEEF9}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -164,6 +164,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_DM_PRODUCT.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_RPT_BILL_DETAIL_SALES.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_RPT_BILL_DETAIL_SALES.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_RPT_PRODUCT_BALANCE.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -313,6 +318,17 @@
     </None>
     <None Include="DS_DM_PRODUCT.xss">
       <DependentUpon>DS_DM_PRODUCT.xsd</DependentUpon>
+    </None>
+    <None Include="DS_RPT_BILL_DETAIL_SALES.xsc">
+      <DependentUpon>DS_RPT_BILL_DETAIL_SALES.xsd</DependentUpon>
+    </None>
+    <None Include="DS_RPT_BILL_DETAIL_SALES.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_RPT_BILL_DETAIL_SALES.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_RPT_BILL_DETAIL_SALES.xss">
+      <DependentUpon>DS_RPT_BILL_DETAIL_SALES.xsd</DependentUpon>
     </None>
     <None Include="DS_RPT_PRODUCT_BALANCE.xsc">
       <DependentUpon>DS_RPT_PRODUCT_BALANCE.xsd</DependentUpon>
