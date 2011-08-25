@@ -108,5 +108,16 @@ namespace SaleDS.Properties {
                 return ((string)(this["QuanLyBanHangConnectionString2"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=VUNB-PC\\SQLEXPRESS;Initial Catalog=QuanLyBanHang;Persist Security Inf" +
+            "o=True;User ID=sa;Password=sa")]
+        public string QuanLyBanHangConnectionString3 {
+            get {
+                return ((string)(this["QuanLyBanHangConnectionString3"]));
+            }
+        }
     }
 }
