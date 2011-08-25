@@ -145,7 +145,6 @@ namespace SaleApp
             }
             BaseMessages.MsgBox_Infor(10);
 
-
         }
 
         private void set_define_events()
