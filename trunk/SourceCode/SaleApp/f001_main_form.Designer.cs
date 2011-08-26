@@ -58,6 +58,7 @@
             this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
             this.mnu_cmd_lichsuhanghoa = new DevExpress.XtraBars.BarButtonItem();
             this.mnu_cmd_kiemkehanghoa = new DevExpress.XtraBars.BarButtonItem();
+            this.m_mnu_bc_theo_hang = new DevExpress.XtraBars.BarButtonItem();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.hệThốngToolStripMenuItem = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.quanTriHêThôngToolStripMenuItem = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -87,6 +88,7 @@
             this.ribbonPageGroup21 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup25 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup22 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
@@ -143,10 +145,11 @@
             this.mnu_bc_theohanghoa,
             this.barButtonItem16,
             this.mnu_cmd_lichsuhanghoa,
-            this.mnu_cmd_kiemkehanghoa});
+            this.mnu_cmd_kiemkehanghoa,
+            this.m_mnu_bc_theo_hang});
             this.ribbon.LargeImages = this.imageCollection1;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 36;
+            this.ribbon.MaxItemId = 37;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.hệThốngToolStripMenuItem,
@@ -154,7 +157,7 @@
             this.nhậpLiệuToolStripMenuItem,
             this.báoCáoToolStripMenuItem,
             this.ribbonPage5});
-            this.ribbon.SelectedPage = this.báoCáoToolStripMenuItem;
+            this.ribbon.SelectedPage = this.ribbonPage2;
             this.ribbon.Size = new System.Drawing.Size(1083, 148);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
@@ -203,7 +206,7 @@
             this.mnu_user_management.Caption = "      Người            sử dụng    ";
             this.mnu_user_management.CloseSubMenuOnClick = false;
             this.mnu_user_management.Id = 6;
-            this.mnu_user_management.LargeImageIndex = 0;
+            this.mnu_user_management.LargeImageIndex = 11;
             this.mnu_user_management.LargeWidth = 60;
             this.mnu_user_management.Name = "mnu_user_management";
             this.mnu_user_management.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
@@ -215,7 +218,7 @@
             // 
             this.mnu_directory.Caption = "Từ điển ";
             this.mnu_directory.Id = 7;
-            this.mnu_directory.LargeImageIndex = 0;
+            this.mnu_directory.LargeImageIndex = 31;
             this.mnu_directory.LargeWidth = 60;
             this.mnu_directory.Name = "mnu_directory";
             this.mnu_directory.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_directory_ItemClick);
@@ -224,7 +227,7 @@
             // 
             this.mnu_type_of_directory.Caption = "Loại từ điển";
             this.mnu_type_of_directory.Id = 8;
-            this.mnu_type_of_directory.LargeImageIndex = 0;
+            this.mnu_type_of_directory.LargeImageIndex = 32;
             this.mnu_type_of_directory.LargeWidth = 60;
             this.mnu_type_of_directory.Name = "mnu_type_of_directory";
             this.mnu_type_of_directory.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_type_of_directory_ItemClick);
@@ -233,7 +236,7 @@
             // 
             this.mnu_exit.Caption = "Thoát";
             this.mnu_exit.Id = 9;
-            this.mnu_exit.LargeImageIndex = 0;
+            this.mnu_exit.LargeImageIndex = 30;
             this.mnu_exit.LargeWidth = 50;
             this.mnu_exit.Name = "mnu_exit";
             this.mnu_exit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_exit_ItemClick);
@@ -242,7 +245,7 @@
             // 
             this.mnu_category.Caption = "Nhóm sản phẩm";
             this.mnu_category.Id = 10;
-            this.mnu_category.LargeImageIndex = 0;
+            this.mnu_category.LargeImageIndex = 25;
             this.mnu_category.LargeWidth = 60;
             this.mnu_category.Name = "mnu_category";
             this.mnu_category.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_category_ItemClick);
@@ -251,7 +254,7 @@
             // 
             this.mnu_product.Caption = "Sản phẩm";
             this.mnu_product.Id = 11;
-            this.mnu_product.LargeImageIndex = 0;
+            this.mnu_product.LargeImageIndex = 26;
             this.mnu_product.LargeWidth = 60;
             this.mnu_product.Name = "mnu_product";
             this.mnu_product.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_product_ItemClick);
@@ -260,7 +263,7 @@
             // 
             this.mnu_dm_unit_product.Caption = "Đơn vị sản phẩm";
             this.mnu_dm_unit_product.Id = 12;
-            this.mnu_dm_unit_product.LargeImageIndex = 0;
+            this.mnu_dm_unit_product.LargeImageIndex = 71;
             this.mnu_dm_unit_product.LargeWidth = 60;
             this.mnu_dm_unit_product.Name = "mnu_dm_unit_product";
             this.mnu_dm_unit_product.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_dm_unit_product_ItemClick);
@@ -269,7 +272,7 @@
             // 
             this.mnu_license.Caption = "License";
             this.mnu_license.Id = 13;
-            this.mnu_license.LargeImageIndex = 0;
+            this.mnu_license.LargeImageIndex = 5;
             this.mnu_license.LargeWidth = 60;
             this.mnu_license.Name = "mnu_license";
             this.mnu_license.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_license_ItemClick);
@@ -278,7 +281,7 @@
             // 
             this.mnu_bc_baocao.Caption = "Báo cáo";
             this.mnu_bc_baocao.Id = 14;
-            this.mnu_bc_baocao.LargeImageIndex = 1;
+            this.mnu_bc_baocao.LargeImageIndex = 10;
             this.mnu_bc_baocao.LargeWidth = 60;
             this.mnu_bc_baocao.Name = "mnu_bc_baocao";
             // 
@@ -292,6 +295,8 @@
             // 
             // repositoryItemComboBox1
             // 
+            this.repositoryItemComboBox1.Appearance.Image = global::SaleApp.Properties.Resources.BKIndex_icon;
+            this.repositoryItemComboBox1.Appearance.Options.UseImage = true;
             this.repositoryItemComboBox1.AutoHeight = false;
             this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -326,7 +331,7 @@
             // 
             this.mnu_dm_repository.Caption = "Kho";
             this.mnu_dm_repository.Id = 16;
-            this.mnu_dm_repository.LargeImageIndex = 0;
+            this.mnu_dm_repository.LargeImageIndex = 4;
             this.mnu_dm_repository.LargeWidth = 60;
             this.mnu_dm_repository.Name = "mnu_dm_repository";
             this.mnu_dm_repository.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_dm_repository_ItemClick);
@@ -335,7 +340,7 @@
             // 
             this.mnu_dm_provider.Caption = "Nhà cung cấp";
             this.mnu_dm_provider.Id = 17;
-            this.mnu_dm_provider.LargeImageIndex = 0;
+            this.mnu_dm_provider.LargeImageIndex = 74;
             this.mnu_dm_provider.LargeWidth = 60;
             this.mnu_dm_provider.Name = "mnu_dm_provider";
             this.mnu_dm_provider.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_dm_provider_ItemClick);
@@ -344,7 +349,7 @@
             // 
             this.m_cmd_product_price.Caption = "Cập nhật  giá sản phẩm";
             this.m_cmd_product_price.Id = 18;
-            this.m_cmd_product_price.LargeImageIndex = 0;
+            this.m_cmd_product_price.LargeImageIndex = 9;
             this.m_cmd_product_price.LargeWidth = 70;
             this.m_cmd_product_price.Name = "m_cmd_product_price";
             this.m_cmd_product_price.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_cmd_product_price_ItemClick);
@@ -353,7 +358,7 @@
             // 
             this.mnu_dm_customer.Caption = "Khách hàng";
             this.mnu_dm_customer.Id = 19;
-            this.mnu_dm_customer.LargeImageIndex = 0;
+            this.mnu_dm_customer.LargeImageIndex = 58;
             this.mnu_dm_customer.LargeWidth = 60;
             this.mnu_dm_customer.Name = "mnu_dm_customer";
             this.mnu_dm_customer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_dm_customer_ItemClick);
@@ -362,7 +367,7 @@
             // 
             this.mnu_dm_goupcustomer.Caption = "Nhóm  khách hàng";
             this.mnu_dm_goupcustomer.Id = 20;
-            this.mnu_dm_goupcustomer.LargeImageIndex = 0;
+            this.mnu_dm_goupcustomer.LargeImageIndex = 49;
             this.mnu_dm_goupcustomer.LargeWidth = 63;
             this.mnu_dm_goupcustomer.Name = "mnu_dm_goupcustomer";
             this.mnu_dm_goupcustomer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_dm_goupcustomer_ItemClick);
@@ -371,7 +376,7 @@
             // 
             this.mnu_dm_employee.Caption = "Nhân viên";
             this.mnu_dm_employee.Id = 21;
-            this.mnu_dm_employee.LargeImageIndex = 0;
+            this.mnu_dm_employee.LargeImageIndex = 80;
             this.mnu_dm_employee.LargeWidth = 60;
             this.mnu_dm_employee.Name = "mnu_dm_employee";
             this.mnu_dm_employee.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_dm_employee_ItemClick);
@@ -392,7 +397,7 @@
             // 
             this.mnu_cmd_sodudau.Caption = "Số dư đầu ";
             this.mnu_cmd_sodudau.Id = 24;
-            this.mnu_cmd_sodudau.LargeImageIndex = 0;
+            this.mnu_cmd_sodudau.LargeImageIndex = 43;
             this.mnu_cmd_sodudau.LargeWidth = 60;
             this.mnu_cmd_sodudau.Name = "mnu_cmd_sodudau";
             this.mnu_cmd_sodudau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_cmd_sodudau_ItemClick);
@@ -401,7 +406,7 @@
             // 
             this.mnu_cmd_xuatbanhang.Caption = "Xuất bán hàng";
             this.mnu_cmd_xuatbanhang.Id = 25;
-            this.mnu_cmd_xuatbanhang.LargeImageIndex = 0;
+            this.mnu_cmd_xuatbanhang.LargeImageIndex = 21;
             this.mnu_cmd_xuatbanhang.LargeWidth = 60;
             this.mnu_cmd_xuatbanhang.Name = "mnu_cmd_xuatbanhang";
             this.mnu_cmd_xuatbanhang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_cmd_xuatbanhang_ItemClick);
@@ -410,7 +415,7 @@
             // 
             this.mnu_cmd_xuathanhly.Caption = "Xuất  thanh lý";
             this.mnu_cmd_xuathanhly.Id = 26;
-            this.mnu_cmd_xuathanhly.LargeImageIndex = 1;
+            this.mnu_cmd_xuathanhly.LargeImageIndex = 36;
             this.mnu_cmd_xuathanhly.LargeWidth = 60;
             this.mnu_cmd_xuathanhly.Name = "mnu_cmd_xuathanhly";
             // 
@@ -418,7 +423,7 @@
             // 
             this.mnu_cmd_hangnhacungcap.Caption = "Hàng nhà cung cấp";
             this.mnu_cmd_hangnhacungcap.Id = 27;
-            this.mnu_cmd_hangnhacungcap.LargeImageIndex = 0;
+            this.mnu_cmd_hangnhacungcap.LargeImageIndex = 78;
             this.mnu_cmd_hangnhacungcap.LargeWidth = 60;
             this.mnu_cmd_hangnhacungcap.Name = "mnu_cmd_hangnhacungcap";
             // 
@@ -426,7 +431,7 @@
             // 
             this.mnu_cmd_hangtralaikhach.Caption = "Hàng trả lại khách";
             this.mnu_cmd_hangtralaikhach.Id = 28;
-            this.mnu_cmd_hangtralaikhach.LargeImageIndex = 0;
+            this.mnu_cmd_hangtralaikhach.LargeImageIndex = 19;
             this.mnu_cmd_hangtralaikhach.LargeWidth = 60;
             this.mnu_cmd_hangtralaikhach.Name = "mnu_cmd_hangtralaikhach";
             // 
@@ -434,7 +439,7 @@
             // 
             this.mnu_bc_xuatnhapton.Caption = "Xuất  nhập tồn";
             this.mnu_bc_xuatnhapton.Id = 29;
-            this.mnu_bc_xuatnhapton.LargeImageIndex = 0;
+            this.mnu_bc_xuatnhapton.LargeImageIndex = 39;
             this.mnu_bc_xuatnhapton.LargeWidth = 60;
             this.mnu_bc_xuatnhapton.Name = "mnu_bc_xuatnhapton";
             // 
@@ -448,7 +453,7 @@
             // 
             this.mnu_bc_banhang.Caption = "Báo cáo bán hàng";
             this.mnu_bc_banhang.Id = 31;
-            this.mnu_bc_banhang.LargeImageIndex = 0;
+            this.mnu_bc_banhang.LargeImageIndex = 54;
             this.mnu_bc_banhang.LargeWidth = 60;
             this.mnu_bc_banhang.Name = "mnu_bc_banhang";
             this.mnu_bc_banhang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_bc_banhang_ItemClick);
@@ -463,7 +468,7 @@
             // 
             this.barButtonItem16.Caption = "Tổng xuất nhập tồn";
             this.barButtonItem16.Id = 33;
-            this.barButtonItem16.LargeImageIndex = 0;
+            this.barButtonItem16.LargeImageIndex = 71;
             this.barButtonItem16.LargeWidth = 60;
             this.barButtonItem16.Name = "barButtonItem16";
             // 
@@ -471,7 +476,7 @@
             // 
             this.mnu_cmd_lichsuhanghoa.Caption = "Lịch sử hàng hóa";
             this.mnu_cmd_lichsuhanghoa.Id = 34;
-            this.mnu_cmd_lichsuhanghoa.LargeImageIndex = 0;
+            this.mnu_cmd_lichsuhanghoa.LargeImageIndex = 76;
             this.mnu_cmd_lichsuhanghoa.LargeWidth = 60;
             this.mnu_cmd_lichsuhanghoa.Name = "mnu_cmd_lichsuhanghoa";
             // 
@@ -479,9 +484,18 @@
             // 
             this.mnu_cmd_kiemkehanghoa.Caption = "Kiểm kê hàng hóa ";
             this.mnu_cmd_kiemkehanghoa.Id = 35;
-            this.mnu_cmd_kiemkehanghoa.LargeImageIndex = 0;
+            this.mnu_cmd_kiemkehanghoa.LargeImageIndex = 8;
             this.mnu_cmd_kiemkehanghoa.LargeWidth = 60;
             this.mnu_cmd_kiemkehanghoa.Name = "mnu_cmd_kiemkehanghoa";
+            // 
+            // m_mnu_bc_theo_hang
+            // 
+            this.m_mnu_bc_theo_hang.Caption = "Báo cáo theo hàng";
+            this.m_mnu_bc_theo_hang.Id = 36;
+            this.m_mnu_bc_theo_hang.LargeImageIndex = 6;
+            this.m_mnu_bc_theo_hang.LargeWidth = 60;
+            this.m_mnu_bc_theo_hang.Name = "m_mnu_bc_theo_hang";
+            this.m_mnu_bc_theo_hang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_mnu_bc_theo_hang_ItemClick);
             // 
             // imageCollection1
             // 
@@ -489,6 +503,88 @@
             this.imageCollection1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection1.ImageStream")));
             this.imageCollection1.Images.SetKeyName(0, "service_manager.png");
             this.imageCollection1.Images.SetKeyName(1, "service_manager.png");
+            this.imageCollection1.Images.SetKeyName(2, "1.png");
+            this.imageCollection1.Images.SetKeyName(3, "5.png");
+            this.imageCollection1.Images.SetKeyName(4, "7.png");
+            this.imageCollection1.Images.SetKeyName(5, "9.png");
+            this.imageCollection1.Images.SetKeyName(6, "10.png");
+            this.imageCollection1.Images.SetKeyName(7, "11.png");
+            this.imageCollection1.Images.SetKeyName(8, "accessories_calculator.png");
+            this.imageCollection1.Images.SetKeyName(9, "add_notes.png");
+            this.imageCollection1.Images.SetKeyName(10, "address_book.png");
+            this.imageCollection1.Images.SetKeyName(11, "administrator-icon.png");
+            this.imageCollection1.Images.SetKeyName(12, "advertising.png");
+            this.imageCollection1.Images.SetKeyName(13, "apple_time_machine_alt.png");
+            this.imageCollection1.Images.SetKeyName(14, "applications_graphics.png");
+            this.imageCollection1.Images.SetKeyName(15, "applications_system.png");
+            this.imageCollection1.Images.SetKeyName(16, "Apps-kchart-icon.png");
+            this.imageCollection1.Images.SetKeyName(17, "Apps-preferences-contact-list-icon.png");
+            this.imageCollection1.Images.SetKeyName(18, "bank.png");
+            this.imageCollection1.Images.SetKeyName(19, "cabinet.png");
+            this.imageCollection1.Images.SetKeyName(20, "cashbox.png");
+            this.imageCollection1.Images.SetKeyName(21, "ccsm.png");
+            this.imageCollection1.Images.SetKeyName(22, "checkout.png");
+            this.imageCollection1.Images.SetKeyName(23, "coding.png");
+            this.imageCollection1.Images.SetKeyName(24, "comment.png");
+            this.imageCollection1.Images.SetKeyName(25, "database.png");
+            this.imageCollection1.Images.SetKeyName(26, "database_add.png");
+            this.imageCollection1.Images.SetKeyName(27, "database_x.png");
+            this.imageCollection1.Images.SetKeyName(28, "death_list.png");
+            this.imageCollection1.Images.SetKeyName(29, "delete_notes.png");
+            this.imageCollection1.Images.SetKeyName(30, "dialog_error.png");
+            this.imageCollection1.Images.SetKeyName(31, "dictionary.png");
+            this.imageCollection1.Images.SetKeyName(32, "Dictionary-icon.png");
+            this.imageCollection1.Images.SetKeyName(33, "dictionarys.png");
+            this.imageCollection1.Images.SetKeyName(34, "discount.png");
+            this.imageCollection1.Images.SetKeyName(35, "document_save.png");
+            this.imageCollection1.Images.SetKeyName(36, "dropbox.png");
+            this.imageCollection1.Images.SetKeyName(37, "empty_shopping_cart.png");
+            this.imageCollection1.Images.SetKeyName(38, "exit.png");
+            this.imageCollection1.Images.SetKeyName(39, "file_roller.png");
+            this.imageCollection1.Images.SetKeyName(40, "folder_system.png");
+            this.imageCollection1.Images.SetKeyName(41, "Folder-Group-Folder-icon.png");
+            this.imageCollection1.Images.SetKeyName(42, "gnome_sticky_notes_applet.png");
+            this.imageCollection1.Images.SetKeyName(43, "gnome_sudoku.png");
+            this.imageCollection1.Images.SetKeyName(44, "history.png");
+            this.imageCollection1.Images.SetKeyName(45, "icontexto_webdev_commerce.png");
+            this.imageCollection1.Images.SetKeyName(46, "illustrations.png");
+            this.imageCollection1.Images.SetKeyName(47, "industry.png");
+            this.imageCollection1.Images.SetKeyName(48, "info.png");
+            this.imageCollection1.Images.SetKeyName(49, "jabber_group.png");
+            this.imageCollection1.Images.SetKeyName(50, "licence-icon.png");
+            this.imageCollection1.Images.SetKeyName(51, "line_chart.png");
+            this.imageCollection1.Images.SetKeyName(52, "loading.png");
+            this.imageCollection1.Images.SetKeyName(53, "mi_scare_report.png");
+            this.imageCollection1.Images.SetKeyName(54, "money.png");
+            this.imageCollection1.Images.SetKeyName(55, "new.png");
+            this.imageCollection1.Images.SetKeyName(56, "notes.png");
+            this.imageCollection1.Images.SetKeyName(57, "paper_arrow.png");
+            this.imageCollection1.Images.SetKeyName(58, "people.png");
+            this.imageCollection1.Images.SetKeyName(59, "picture.png");
+            this.imageCollection1.Images.SetKeyName(60, "piggy_bank.png");
+            this.imageCollection1.Images.SetKeyName(61, "preferences_system_windows.png");
+            this.imageCollection1.Images.SetKeyName(62, "reports.png");
+            this.imageCollection1.Images.SetKeyName(63, "reports-icon.png");
+            this.imageCollection1.Images.SetKeyName(64, "search.png");
+            this.imageCollection1.Images.SetKeyName(65, "secure_payment.png");
+            this.imageCollection1.Images.SetKeyName(66, "send_user.png");
+            this.imageCollection1.Images.SetKeyName(67, "service_manager.png");
+            this.imageCollection1.Images.SetKeyName(68, "shopping_bag.png");
+            this.imageCollection1.Images.SetKeyName(69, "shopping_cart.png");
+            this.imageCollection1.Images.SetKeyName(70, "software_properties.png");
+            this.imageCollection1.Images.SetKeyName(71, "summer_user.png");
+            this.imageCollection1.Images.SetKeyName(72, "system_preferences.png");
+            this.imageCollection1.Images.SetKeyName(73, "system_search.png");
+            this.imageCollection1.Images.SetKeyName(74, "tech_support.png");
+            this.imageCollection1.Images.SetKeyName(75, "text_plain.png");
+            this.imageCollection1.Images.SetKeyName(76, "time_machine.png");
+            this.imageCollection1.Images.SetKeyName(77, "time_machine_shaped.png");
+            this.imageCollection1.Images.SetKeyName(78, "trash_full_alt2(1).png");
+            this.imageCollection1.Images.SetKeyName(79, "trash_full_alt2.png");
+            this.imageCollection1.Images.SetKeyName(80, "user(1).png");
+            this.imageCollection1.Images.SetKeyName(81, "user(2).png");
+            this.imageCollection1.Images.SetKeyName(82, "user.png");
+            this.imageCollection1.Images.SetKeyName(83, "wine_winecfg.png");
             // 
             // hệThốngToolStripMenuItem
             // 
@@ -661,7 +757,8 @@
             this.ribbonPageGroup8,
             this.ribbonPageGroup21,
             this.ribbonPageGroup23,
-            this.ribbonPageGroup25});
+            this.ribbonPageGroup25,
+            this.ribbonPageGroup22});
             this.báoCáoToolStripMenuItem.ImageIndex = 1;
             this.báoCáoToolStripMenuItem.Name = "báoCáoToolStripMenuItem";
             this.báoCáoToolStripMenuItem.Text = "Báo cáo";
@@ -689,6 +786,12 @@
             this.ribbonPageGroup25.ItemLinks.Add(this.barButtonItem16);
             this.ribbonPageGroup25.Name = "ribbonPageGroup25";
             this.ribbonPageGroup25.ShowCaptionButton = false;
+            // 
+            // ribbonPageGroup22
+            // 
+            this.ribbonPageGroup22.ItemLinks.Add(this.m_mnu_bc_theo_hang);
+            this.ribbonPageGroup22.Name = "ribbonPageGroup22";
+            this.ribbonPageGroup22.ShowCaptionButton = false;
             // 
             // ribbonPage5
             // 
@@ -818,5 +921,7 @@
         private DevExpress.XtraBars.BarButtonItem mnu_cmd_kiemkehanghoa;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup15;
+        private DevExpress.XtraBars.BarButtonItem m_mnu_bc_theo_hang;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup22;
     }
 }
