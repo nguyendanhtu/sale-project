@@ -143,7 +143,8 @@
             this.mlbl_add_product.ForeColor = System.Drawing.Color.Blue;
             this.mlbl_add_product.Location = new System.Drawing.Point(0, 0);
             this.mlbl_add_product.Name = "mlbl_add_product";
-            this.mlbl_add_product.Size = new System.Drawing.Size(553, 25);
+            this.mlbl_add_product.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.mlbl_add_product.Size = new System.Drawing.Size(553, 36);
             this.mlbl_add_product.TabIndex = 0;
             this.mlbl_add_product.Text = "THÊM HÀNG HÓA";
             this.mlbl_add_product.TextAlign = System.Drawing.ContentAlignment.TopCenter;
