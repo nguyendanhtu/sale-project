@@ -18,7 +18,7 @@ using System.Data;
 
 namespace SaleUS
 {
-    public class US_RPT_BILL_DETAIL_SALES : US_Object
+    public class US_RPT_BILL_DETAIL_SALES : US_Object 
     {
         private const string c_TableName = "RPT_BILL_DETAIL_SALES";
         #region Public Properties
