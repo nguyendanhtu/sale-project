@@ -60,6 +60,13 @@ namespace SaleApp.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap _1920х1200_12_ {
+            get {
+                object obj = ResourceManager.GetObject("1920х1200(12)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap _37371_57 {
             get {
                 object obj = ResourceManager.GetObject("37371-57", resourceCulture);
