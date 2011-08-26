@@ -66,6 +66,12 @@ namespace SaleApp
             label3.ForeColor = Color.Red;
             label4.ForeColor = Color.Red;
             label5.ForeColor = Color.Red;
+            m_lbl_categories.Font = new Font("Arial", 9);
+            m_lbl_price.Font = new Font("Arial", 9);
+            m_lblproduct_code.Font = new Font("Arial", 9);
+            m_lblproduct_description.Font = new Font("Arial", 9);
+            m_lblproduct_name.Font = new Font("Arial", 9);
+            m_lblproduct_unit.Font = new Font("Arial", 9);
         }
 
         private void load_data_2_unit_cbo()

@@ -64,7 +64,7 @@
             // 
             this.m_lblcategory_code.AutoSize = true;
             this.m_lblcategory_code.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_lblcategory_code.Location = new System.Drawing.Point(41, 78);
+            this.m_lblcategory_code.Location = new System.Drawing.Point(34, 78);
             this.m_lblcategory_code.Name = "m_lblcategory_code";
             this.m_lblcategory_code.Size = new System.Drawing.Size(78, 13);
             this.m_lblcategory_code.TabIndex = 1;
@@ -88,7 +88,7 @@
             // 
             this.m_lblcategory_display_order.AutoSize = true;
             this.m_lblcategory_display_order.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_lblcategory_display_order.Location = new System.Drawing.Point(41, 187);
+            this.m_lblcategory_display_order.Location = new System.Drawing.Point(34, 187);
             this.m_lblcategory_display_order.Name = "m_lblcategory_display_order";
             this.m_lblcategory_display_order.Size = new System.Drawing.Size(75, 13);
             this.m_lblcategory_display_order.TabIndex = 5;
@@ -105,7 +105,7 @@
             // 
             this.m_lblcategory_display_level.AutoSize = true;
             this.m_lblcategory_display_level.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_lblcategory_display_level.Location = new System.Drawing.Point(317, 77);
+            this.m_lblcategory_display_level.Location = new System.Drawing.Point(311, 77);
             this.m_lblcategory_display_level.Name = "m_lblcategory_display_level";
             this.m_lblcategory_display_level.Size = new System.Drawing.Size(63, 13);
             this.m_lblcategory_display_level.TabIndex = 7;
@@ -123,7 +123,7 @@
             // 
             this.m_lblcategory_description.AutoSize = true;
             this.m_lblcategory_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_lblcategory_description.Location = new System.Drawing.Point(41, 256);
+            this.m_lblcategory_description.Location = new System.Drawing.Point(34, 256);
             this.m_lblcategory_description.Name = "m_lblcategory_description";
             this.m_lblcategory_description.Size = new System.Drawing.Size(34, 13);
             this.m_lblcategory_description.TabIndex = 9;
@@ -201,7 +201,7 @@
             // 
             this.m_lblcategory_name.AutoSize = true;
             this.m_lblcategory_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_lblcategory_name.Location = new System.Drawing.Point(41, 138);
+            this.m_lblcategory_name.Location = new System.Drawing.Point(34, 138);
             this.m_lblcategory_name.Name = "m_lblcategory_name";
             this.m_lblcategory_name.Size = new System.Drawing.Size(82, 13);
             this.m_lblcategory_name.TabIndex = 3;
@@ -218,7 +218,7 @@
             // 
             this.m_lbl_parent_name.AutoSize = true;
             this.m_lbl_parent_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_lbl_parent_name.Location = new System.Drawing.Point(317, 141);
+            this.m_lbl_parent_name.Location = new System.Drawing.Point(311, 141);
             this.m_lbl_parent_name.Name = "m_lbl_parent_name";
             this.m_lbl_parent_name.Size = new System.Drawing.Size(76, 13);
             this.m_lbl_parent_name.TabIndex = 21;
@@ -232,7 +232,7 @@
             this.m_cbo_parent_name.Size = new System.Drawing.Size(151, 21);
             this.m_cbo_parent_name.TabIndex = 23;
             // 
-            // f202_dm_category
+            // f202_dm_category_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -251,7 +251,7 @@
             this.Controls.Add(this.m_txt_category_code);
             this.Controls.Add(this.m_lblcategory_code);
             this.Controls.Add(this.mlbl_add_category);
-            this.Name = "f202_dm_category";
+            this.Name = "f202_dm_category_de";
             this.Text = "f202_dm_category";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);
