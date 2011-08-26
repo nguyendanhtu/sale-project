@@ -318,14 +318,14 @@ public class US_V_RPT_GD_BILL_DETAIL : US_Object
 #endregion
     #region Addtional Methods
     public void FillDataset(DS_V_RPT_GD_BILL_DETAIL op_ds_rpt_gd_bill
-    ,string ip_dc_product_name
+    ,decimal ip_dc_product_id
      , DateTime ip_dat_from_date
      , DateTime ip_dat_to_date)
     {
         CStoredProc v_obj_procedure = new CStoredProc("pr_V_RPT_GD_BILL_DETAIL_Select");
         v_obj_procedure.addDatetimeInputParam("@ip_dat_from_dat", ip_dat_from_date);
         v_obj_procedure.addDatetimeInputParam("@ip_dat_to_dat", ip_dat_to_date);
-        v_obj_procedure.addNVarcharInputParam("@ip_dc_product_name", ip_dc_product_name);
+        v_obj_procedure.addDecimalInputParam("@ip_dc_product_id", ip_dc_product_id);
 
         //v_obj_procedure.addDecimalInputParam("@ip_dc_product_id", ip_dc_ten_mat_hang);
 
