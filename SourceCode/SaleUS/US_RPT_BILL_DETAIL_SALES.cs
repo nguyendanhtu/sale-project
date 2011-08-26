@@ -15,6 +15,7 @@ using System.Data.SqlClient;
 using System.Data;
 
 
+
 namespace SaleUS
 {
     public class US_RPT_BILL_DETAIL_SALES : US_Object
