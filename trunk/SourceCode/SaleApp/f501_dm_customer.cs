@@ -265,6 +265,7 @@ namespace SaleApp
             set_define_events();
             this.KeyPreview = true;
         }
+
         private void set_initial_form_load()
         {
             m_obj_trans = get_trans_object(m_fg);
