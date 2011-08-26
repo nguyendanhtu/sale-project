@@ -562,9 +562,10 @@ namespace SaleApp
             }
         }
 
-        
-        
-    
-     
+        private void mnu_cmd_kiemkehanghoa_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
     }
 }
