@@ -59,6 +59,7 @@
             this.mnu_cmd_lichsuhanghoa = new DevExpress.XtraBars.BarButtonItem();
             this.mnu_cmd_kiemkehanghoa = new DevExpress.XtraBars.BarButtonItem();
             this.m_mnu_bc_theo_hang = new DevExpress.XtraBars.BarButtonItem();
+            this.mnu_cmd_employee = new DevExpress.XtraBars.BarButtonItem();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.hệThốngToolStripMenuItem = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.quanTriHêThôngToolStripMenuItem = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -93,7 +94,6 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.s = new DevExpress.XtraEditors.PanelControl();
-            this.mnu_cmd_employee = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection2)).BeginInit();
@@ -159,7 +159,7 @@
             this.nhậpLiệuToolStripMenuItem,
             this.báoCáoToolStripMenuItem,
             this.ribbonPage5});
-            this.ribbon.SelectedPage = this.ribbonPage2;
+            this.ribbon.SelectedPage = this.nhậpLiệuToolStripMenuItem;
             this.ribbon.Size = new System.Drawing.Size(1083, 148);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
@@ -489,6 +489,7 @@
             this.mnu_cmd_kiemkehanghoa.LargeImageIndex = 8;
             this.mnu_cmd_kiemkehanghoa.LargeWidth = 60;
             this.mnu_cmd_kiemkehanghoa.Name = "mnu_cmd_kiemkehanghoa";
+            this.mnu_cmd_kiemkehanghoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_cmd_kiemkehanghoa_ItemClick);
             // 
             // m_mnu_bc_theo_hang
             // 
@@ -498,6 +499,14 @@
             this.m_mnu_bc_theo_hang.LargeWidth = 60;
             this.m_mnu_bc_theo_hang.Name = "m_mnu_bc_theo_hang";
             this.m_mnu_bc_theo_hang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_mnu_bc_theo_hang_ItemClick);
+            // 
+            // mnu_cmd_employee
+            // 
+            this.mnu_cmd_employee.Caption = "Nhân viên";
+            this.mnu_cmd_employee.Id = 37;
+            this.mnu_cmd_employee.LargeImageIndex = 80;
+            this.mnu_cmd_employee.Name = "mnu_cmd_employee";
+            this.mnu_cmd_employee.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_cmd_employee_ItemClick);
             // 
             // imageCollection1
             // 
@@ -825,14 +834,6 @@
             this.s.Name = "s";
             this.s.Size = new System.Drawing.Size(1083, 531);
             this.s.TabIndex = 2;
-            // 
-            // mnu_cmd_employee
-            // 
-            this.mnu_cmd_employee.Caption = "Nhân viên";
-            this.mnu_cmd_employee.Id = 37;
-            this.mnu_cmd_employee.LargeImageIndex = 80;
-            this.mnu_cmd_employee.Name = "mnu_cmd_employee";
-            this.mnu_cmd_employee.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_cmd_employee_ItemClick);
             // 
             // f001_main_form
             // 
