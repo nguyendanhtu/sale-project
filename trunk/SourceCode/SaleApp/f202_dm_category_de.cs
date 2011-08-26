@@ -50,6 +50,14 @@ namespace SaleApp
         {
             CControlFormat.setFormStyle(this);
             this.KeyPreview = true;
+            this.mlbl_add_category.ForeColor = Color.Blue;
+            mlbl_add_category.Font = new Font("Arial", 16);
+            m_lbl_parent_name.Font = new Font("Arial", 9);
+            m_lblcategory_code.Font = new Font("Arial", 9);
+            m_lblcategory_description.Font = new Font("Arial", 9);
+            m_lblcategory_display_level.Font = new Font("Arial", 9);
+            m_lblcategory_display_order.Font = new Font("Arial", 9);
+           m_lblcategory_name.Font = new Font("Arial", 9);
         }
 
         private void load_data_2_cbo()
