@@ -294,7 +294,14 @@ namespace SaleApp
 
 		#region Data Structure
 		private enum e_col_Number{
-			QUANTITY = 6            ,BILL_DATE = 2            ,CUSTOMER_NAME = 4            ,AMOUNT = 7            ,CURRENT_PRICE = 5            ,BILL_SERI = 1            ,CATEGORY_NAME = 3
+			QUANTITY = 6
+            ,BILL_DATE = 2
+            ,CUSTOMER_NAME = 4
+            ,AMOUNT = 7
+            ,CURRENT_PRICE = 5
+            ,BILL_SERI = 1
+            ,CATEGORY_NAME = 3
+
 		}			
 		#endregion
 
@@ -323,7 +330,14 @@ namespace SaleApp
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
-			v_htb.Add(V_RPT_GD_BILL_DETAIL.QUANTITY, e_col_Number.QUANTITY);			v_htb.Add(V_RPT_GD_BILL_DETAIL.BILL_DATE, e_col_Number.BILL_DATE);			v_htb.Add(V_RPT_GD_BILL_DETAIL.CUSTOMER_NAME, e_col_Number.CUSTOMER_NAME);			v_htb.Add(V_RPT_GD_BILL_DETAIL.AMOUNT, e_col_Number.AMOUNT);			v_htb.Add(V_RPT_GD_BILL_DETAIL.CURRENT_PRICE, e_col_Number.CURRENT_PRICE);			v_htb.Add(V_RPT_GD_BILL_DETAIL.BILL_SERI, e_col_Number.BILL_SERI);			v_htb.Add(V_RPT_GD_BILL_DETAIL.CATEGORY_NAME, e_col_Number.CATEGORY_NAME);									
+			v_htb.Add(V_RPT_GD_BILL_DETAIL.QUANTITY, e_col_Number.QUANTITY);
+			v_htb.Add(V_RPT_GD_BILL_DETAIL.BILL_DATE, e_col_Number.BILL_DATE);
+			v_htb.Add(V_RPT_GD_BILL_DETAIL.CUSTOMER_NAME, e_col_Number.CUSTOMER_NAME);
+			v_htb.Add(V_RPT_GD_BILL_DETAIL.AMOUNT, e_col_Number.AMOUNT);
+			v_htb.Add(V_RPT_GD_BILL_DETAIL.CURRENT_PRICE, e_col_Number.CURRENT_PRICE);
+			v_htb.Add(V_RPT_GD_BILL_DETAIL.BILL_SERI, e_col_Number.BILL_SERI);
+			v_htb.Add(V_RPT_GD_BILL_DETAIL.CATEGORY_NAME, e_col_Number.CATEGORY_NAME);
+									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_RPT_GD_BILL_DETAIL.NewRow());
 			return v_obj_trans;			
 		}
