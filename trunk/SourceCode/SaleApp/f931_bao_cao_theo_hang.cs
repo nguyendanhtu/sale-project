@@ -86,6 +86,7 @@ namespace SaleApp
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_grb_thong_tin_ban_hang = new System.Windows.Forms.GroupBox();
+            this.m_cbo_ten_mat_hang = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.m_dat_to_date = new System.Windows.Forms.DateTimePicker();
             this.m_cmd_view = new SIS.Controls.Button.SiSButton();
@@ -95,7 +96,6 @@ namespace SaleApp
             this.m_cmd_export_excel = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-            this.m_cbo_ten_mat_hang = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.m_grb_thong_tin_ban_hang.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
@@ -135,6 +135,7 @@ namespace SaleApp
             this.m_fg.Location = new System.Drawing.Point(0, 119);
             this.m_fg.Name = "m_fg";
             this.m_fg.Size = new System.Drawing.Size(765, 342);
+            this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
             // m_grb_thong_tin_ban_hang
@@ -153,6 +154,17 @@ namespace SaleApp
             this.m_grb_thong_tin_ban_hang.TabIndex = 21;
             this.m_grb_thong_tin_ban_hang.TabStop = false;
             this.m_grb_thong_tin_ban_hang.Text = "Thông tin bán hàng";
+            // 
+            // m_cbo_ten_mat_hang
+            // 
+            this.m_cbo_ten_mat_hang.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.m_cbo_ten_mat_hang.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.m_cbo_ten_mat_hang.FormattingEnabled = true;
+            this.m_cbo_ten_mat_hang.Location = new System.Drawing.Point(132, 81);
+            this.m_cbo_ten_mat_hang.MaxDropDownItems = 5;
+            this.m_cbo_ten_mat_hang.Name = "m_cbo_ten_mat_hang";
+            this.m_cbo_ten_mat_hang.Size = new System.Drawing.Size(200, 21);
+            this.m_cbo_ten_mat_hang.TabIndex = 31;
             // 
             // label3
             // 
@@ -227,7 +239,7 @@ namespace SaleApp
             this.m_cmd_export_excel.Name = "m_cmd_export_excel";
             this.m_cmd_export_excel.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_export_excel.TabIndex = 21;
-            this.m_cmd_export_excel.Text = "In báo cáo";
+            this.m_cmd_export_excel.Text = "Xuất excel";
             // 
             // m_pnl_out_place_dm
             // 
@@ -254,15 +266,6 @@ namespace SaleApp
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
-            // 
-            // m_cbo_ten_mat_hang
-            // 
-            this.m_cbo_ten_mat_hang.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.m_cbo_ten_mat_hang.FormattingEnabled = true;
-            this.m_cbo_ten_mat_hang.Location = new System.Drawing.Point(132, 81);
-            this.m_cbo_ten_mat_hang.Name = "m_cbo_ten_mat_hang";
-            this.m_cbo_ten_mat_hang.Size = new System.Drawing.Size(200, 21);
-            this.m_cbo_ten_mat_hang.TabIndex = 31;
             // 
             // f931_bao_cao_theo_hang
             // 
@@ -314,7 +317,9 @@ namespace SaleApp
 		private void set_initial_form_load(){
            
 			m_obj_trans = get_trans_object(m_fg);
-			load_data_2_grid();		
+            load_data_to_m_cbo_ten_mat_hang();
+			load_data_2_grid();
+          
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -324,7 +329,7 @@ namespace SaleApp
 		}
 		private void load_data_2_grid(){						
 			m_ds = new DS_V_RPT_GD_BILL_DETAIL();
-            m_us.FillDataset(m_ds,m_cbo_ten_mat_hang.Text,m_dat_from_date.Value.Date,m_dat_to_date.Value.Date);
+            m_us.FillDataset(m_ds,decimal.Parse(m_cbo_ten_mat_hang.SelectedValue.ToString()),m_dat_from_date.Value.Date,m_dat_to_date.Value.Date);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
 			m_fg.Redraw = true;
@@ -341,12 +346,10 @@ namespace SaleApp
             US_DM_PRODUCT v_us_dm_product = new US_DM_PRODUCT();
             DS_DM_PRODUCT v_ds_dm_product = new DS_DM_PRODUCT();
             v_us_dm_product.FillDataset(v_ds_dm_product);
-
-            // Add vào dic
-            for (int i = 0; i < v_ds_dm_product.DM_PRODUCT.Rows.Count; i++)
-			{
-                m_cbo_ten_mat_hang.Items.Add(v_ds_dm_product.DM_PRODUCT.Rows[i]["PRODUCT_NAME"].ToString());
-			}
+            v_ds_dm_product.EnforceConstraints = false;
+            m_cbo_ten_mat_hang.DisplayMember = DM_PRODUCT.PRODUCT_NAME;
+            m_cbo_ten_mat_hang.ValueMember = DM_PRODUCT.ID;
+            m_cbo_ten_mat_hang.DataSource = v_ds_dm_product.DM_PRODUCT;
             
         }
 		private void us_object2grid(US_V_RPT_GD_BILL_DETAIL i_us
@@ -379,10 +382,6 @@ namespace SaleApp
 
 
         }
-      
-        
-       
-
        
 		#endregion
         private void set_define_events()
