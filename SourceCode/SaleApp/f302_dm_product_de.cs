@@ -59,6 +59,13 @@ namespace SaleApp
         {
             CControlFormat.setFormStyle(this);
             this.KeyPreview = true;
+            mlbl_add_product.Font = new Font("Arial", 16);
+            label1.ForeColor = Color.Red;
+            mlbl_add_product.ForeColor = Color.Blue;
+            label2.ForeColor = Color.Red;
+            label3.ForeColor = Color.Red;
+            label4.ForeColor = Color.Red;
+            label5.ForeColor = Color.Red;
         }
 
         private void load_data_2_unit_cbo()
