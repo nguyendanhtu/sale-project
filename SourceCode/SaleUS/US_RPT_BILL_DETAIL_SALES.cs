@@ -7,7 +7,7 @@
 /// Create User Service Class for RPT_BILL_DETAIL_SALES
 /// </summary>
 
-
+using System; 
 using SaleDS;
 using IP.Core.IPCommon;
 using IP.Core.IPUserService;
