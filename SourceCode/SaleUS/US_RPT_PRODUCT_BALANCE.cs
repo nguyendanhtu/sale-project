@@ -273,7 +273,17 @@ public class US_RPT_PRODUCT_BALANCE : US_Object
 
         v_obj_procedure.fillDataSetByCommand(this, op_ds_product_balance);
     }
-         
+
+    public void FillDataset(DS_RPT_PRODUCT_BALANCE op_ds_product_balance
+        , DateTime ip_dat_balance_date
+        , decimal ip_repository_id)
+    {
+        CStoredProc v_obj_procedure = new CStoredProc("pr_RPT_PRODUCT_BALANCE_Select_all_categories");
+        v_obj_procedure.addDatetimeInputParam("@ip_balance_date", ip_dat_balance_date);
+        v_obj_procedure.addDecimalInputParam("@ip_repository_id", ip_repository_id);
+
+        v_obj_procedure.fillDataSetByCommand(this, op_ds_product_balance);
+    }
 #endregion
 
   }
