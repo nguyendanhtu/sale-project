@@ -92,13 +92,14 @@
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.clientPanel = new DevExpress.XtraEditors.PanelControl();
+            this.s = new DevExpress.XtraEditors.PanelControl();
+            this.mnu_cmd_employee = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientPanel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.s)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -146,10 +147,11 @@
             this.barButtonItem16,
             this.mnu_cmd_lichsuhanghoa,
             this.mnu_cmd_kiemkehanghoa,
-            this.m_mnu_bc_theo_hang});
+            this.m_mnu_bc_theo_hang,
+            this.mnu_cmd_employee});
             this.ribbon.LargeImages = this.imageCollection1;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 37;
+            this.ribbon.MaxItemId = 38;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.hệThốngToolStripMenuItem,
@@ -374,9 +376,9 @@
             // 
             // mnu_dm_employee
             // 
-            this.mnu_dm_employee.Caption = "Nhân viên";
+            this.mnu_dm_employee.Caption = "Cửa hàng\r\n";
             this.mnu_dm_employee.Id = 21;
-            this.mnu_dm_employee.LargeImageIndex = 80;
+            this.mnu_dm_employee.LargeImageIndex = 47;
             this.mnu_dm_employee.LargeWidth = 60;
             this.mnu_dm_employee.Name = "mnu_dm_employee";
             this.mnu_dm_employee.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_dm_employee_ItemClick);
@@ -814,15 +816,23 @@
             this.ribbonStatusBar.Ribbon = this.ribbon;
             this.ribbonStatusBar.Size = new System.Drawing.Size(1083, 25);
             // 
-            // clientPanel
+            // s
             // 
-            this.clientPanel.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.clientPanel.ContentImage = global::SaleApp.Properties.Resources._37371_57;
-            this.clientPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.clientPanel.Location = new System.Drawing.Point(0, 148);
-            this.clientPanel.Name = "clientPanel";
-            this.clientPanel.Size = new System.Drawing.Size(1083, 531);
-            this.clientPanel.TabIndex = 2;
+            this.s.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.s.ContentImage = global::SaleApp.Properties.Resources._37371_57;
+            this.s.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.s.Location = new System.Drawing.Point(0, 148);
+            this.s.Name = "s";
+            this.s.Size = new System.Drawing.Size(1083, 531);
+            this.s.TabIndex = 2;
+            // 
+            // mnu_cmd_employee
+            // 
+            this.mnu_cmd_employee.Caption = "Nhân viên";
+            this.mnu_cmd_employee.Id = 37;
+            this.mnu_cmd_employee.LargeImageIndex = 80;
+            this.mnu_cmd_employee.Name = "mnu_cmd_employee";
+            this.mnu_cmd_employee.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_cmd_employee_ItemClick);
             // 
             // f001_main_form
             // 
@@ -830,7 +840,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1083, 704);
-            this.Controls.Add(this.clientPanel);
+            this.Controls.Add(this.s);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.MaximumSize = new System.Drawing.Size(1200, 800);
@@ -846,7 +856,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientPanel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.s)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -857,7 +867,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage hệThốngToolStripMenuItem;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup quanTriHêThôngToolStripMenuItem;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
-        private DevExpress.XtraEditors.PanelControl clientPanel;
+        private DevExpress.XtraEditors.PanelControl s;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
@@ -923,5 +933,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup15;
         private DevExpress.XtraBars.BarButtonItem m_mnu_bc_theo_hang;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup22;
+        private DevExpress.XtraBars.BarButtonItem mnu_cmd_employee;
     }
 }

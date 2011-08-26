@@ -256,6 +256,18 @@ namespace SaleApp
             f931_bao_cao_theo_hang v_frm931 = new f931_bao_cao_theo_hang();
             v_frm931.display();
         }
+
+        private void show_employee()
+        {
+            if (!CAppContext_201.IsHavingQuyen(IP.Core.IPSystemAdmin.PHAN_QUYEN.IN_BAO_CAO))
+            {
+                BaseMessages.MsgBox_Infor(" Người sử dụng không được phép truy nhập phần này !!! ");
+                return;
+            }
+
+            f401_dm_company_info v_frm401 = new f401_dm_company_info();
+            v_frm401.display();
+        }
         #endregion
         //
         //
@@ -471,6 +483,7 @@ namespace SaleApp
             }
         }
 
+
         private void mnu_dm_goupcustomer_ItemClick(object sender, ItemClickEventArgs e)
         {
             try
@@ -532,6 +545,19 @@ namespace SaleApp
             catch (Exception v_e)
             {
 
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void mnu_cmd_employee_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                show_employee();
+            }
+            catch (Exception v_e)
+            {
+                
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
