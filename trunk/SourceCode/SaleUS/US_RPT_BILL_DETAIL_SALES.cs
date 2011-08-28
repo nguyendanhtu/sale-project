@@ -339,5 +339,19 @@ namespace SaleUS
         #endregion
 
 
+        #region Addition
+        public void FillDataset(DS_RPT_BILL_DETAIL_SALES op_ds_rpt_bill_detail_sales
+            , decimal ip_repository_id
+            , DateTime ip_date_current)
+        {
+            CStoredProc v_obj_procedure = new CStoredProc("pr_RPT_BILL_DETAIL_SALES_Select");
+            v_obj_procedure.addDecimalInputParam("@repository_id", ip_repository_id);
+            v_obj_procedure.addDatetimeInputParam("@date_cur", ip_date_current);
+
+            v_obj_procedure.fillDataSetByCommand(this, op_ds_rpt_bill_detail_sales);
+        }
+        #endregion
+
+
     }
 }
