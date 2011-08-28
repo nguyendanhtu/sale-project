@@ -37,12 +37,12 @@ namespace SaleApp
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private GroupBox groupBox1;
         private Label m_lbl_header;
-        private Label label2;
-        private ComboBox comboBox1;
-        private Label label1;
-        private TextBox textBox1;
-        private Label label3;
-        private TextBox textBox2;
+        private Label m_lbl_applied_date;
+        private ComboBox m_cbo_product;
+        private Label m_lbl_product;
+        private Label m_lbl_price;
+        private TextBox m_txt_price;
+        private DateTimePicker m_dat_applied_date;
 		private System.ComponentModel.IContainer components;
 
 		public f311_gd_product_price()
@@ -89,12 +89,12 @@ namespace SaleApp
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.m_lbl_header = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.m_lbl_product = new System.Windows.Forms.Label();
+            this.m_cbo_product = new System.Windows.Forms.ComboBox();
+            this.m_lbl_applied_date = new System.Windows.Forms.Label();
+            this.m_lbl_price = new System.Windows.Forms.Label();
+            this.m_txt_price = new System.Windows.Forms.TextBox();
+            this.m_dat_applied_date = new System.Windows.Forms.DateTimePicker();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -180,12 +180,12 @@ namespace SaleApp
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.m_dat_applied_date);
+            this.groupBox1.Controls.Add(this.m_lbl_price);
+            this.groupBox1.Controls.Add(this.m_txt_price);
+            this.groupBox1.Controls.Add(this.m_lbl_applied_date);
+            this.groupBox1.Controls.Add(this.m_cbo_product);
+            this.groupBox1.Controls.Add(this.m_lbl_product);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 32);
             this.groupBox1.Name = "groupBox1";
@@ -205,54 +205,58 @@ namespace SaleApp
             this.m_lbl_header.Text = "CẬP NHẬT GIÁ BÁN SẢN PHẨM";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // m_lbl_product
             // 
-            this.textBox1.Location = new System.Drawing.Point(544, 70);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.m_lbl_product.AutoSize = true;
+            this.m_lbl_product.Location = new System.Drawing.Point(45, 36);
+            this.m_lbl_product.Name = "m_lbl_product";
+            this.m_lbl_product.Size = new System.Drawing.Size(55, 13);
+            this.m_lbl_product.TabIndex = 1;
+            this.m_lbl_product.Text = "Sản phẩm";
             // 
-            // label1
+            // m_cbo_product
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.m_cbo_product.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_cbo_product.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.m_cbo_product.FormattingEnabled = true;
+            this.m_cbo_product.Location = new System.Drawing.Point(119, 33);
+            this.m_cbo_product.Name = "m_cbo_product";
+            this.m_cbo_product.Size = new System.Drawing.Size(545, 21);
+            this.m_cbo_product.TabIndex = 2;
             // 
-            // comboBox1
+            // m_lbl_applied_date
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(99, 33);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(545, 21);
-            this.comboBox1.TabIndex = 2;
+            this.m_lbl_applied_date.AutoSize = true;
+            this.m_lbl_applied_date.Location = new System.Drawing.Point(369, 76);
+            this.m_lbl_applied_date.Name = "m_lbl_applied_date";
+            this.m_lbl_applied_date.Size = new System.Drawing.Size(59, 13);
+            this.m_lbl_applied_date.TabIndex = 3;
+            this.m_lbl_applied_date.Text = "Áp dụng từ";
             // 
-            // label2
+            // m_lbl_price
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(490, 73);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "label2";
+            this.m_lbl_price.AutoSize = true;
+            this.m_lbl_price.Location = new System.Drawing.Point(45, 76);
+            this.m_lbl_price.Name = "m_lbl_price";
+            this.m_lbl_price.Size = new System.Drawing.Size(44, 13);
+            this.m_lbl_price.TabIndex = 5;
+            this.m_lbl_price.Text = "Giá bán";
             // 
-            // label3
+            // m_txt_price
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(45, 76);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "label3";
+            this.m_txt_price.Location = new System.Drawing.Point(119, 73);
+            this.m_txt_price.Name = "m_txt_price";
+            this.m_txt_price.Size = new System.Drawing.Size(191, 20);
+            this.m_txt_price.TabIndex = 2;
             // 
-            // textBox2
+            // m_dat_applied_date
             // 
-            this.textBox2.Location = new System.Drawing.Point(99, 73);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 4;
+            this.m_dat_applied_date.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_applied_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_applied_date.Location = new System.Drawing.Point(471, 73);
+            this.m_dat_applied_date.Name = "m_dat_applied_date";
+            this.m_dat_applied_date.Size = new System.Drawing.Size(193, 20);
+            this.m_dat_applied_date.TabIndex = 6;
             // 
             // f311_gd_product_price
             // 
@@ -380,9 +384,6 @@ namespace SaleApp
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
-			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
-			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
 		}
 		#endregion
 
@@ -413,33 +414,6 @@ namespace SaleApp
 		private void m_cmd_insert_Click(object sender, EventArgs e) {
 			try{
 				insert_v_gd_product_price();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
-
-		private void m_cmd_update_Click(object sender, EventArgs e) {
-			try{
-				update_v_gd_product_price();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
-
-		private void m_cmd_delete_Click(object sender, EventArgs e) {
-			try{
-				delete_v_gd_product_price();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
-
-		private void m_cmd_view_Click(object sender, EventArgs e) {
-			try{
-				view_v_gd_product_price();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
