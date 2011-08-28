@@ -16,6 +16,17 @@ namespace Sale.CDBNames
         public const string UNIT_PRICE = "UNIT_PRICE";
         public const string COST = "COST";
     }
+    public class V_GD_PRODUCT_PRICE
+    {
+        public const string ID = "ID";
+        public const string PRODUCT_ID = "PRODUCT_ID";
+        public const string PRODUCT_NAME = "PRODUCT_NAME";
+        public const string APPLY_DATE = "APPLY_DATE";
+        public const string PRICE = "PRICE";
+        public const string UNIT_ID = "UNIT_ID";
+        public const string UNIT_CODE = "UNIT_CODE";
+        public const string DESCRIPTION = "DESCRIPTION";
+    }
 
     public class V_RPT_GD_BILL_DETAIL
     {
