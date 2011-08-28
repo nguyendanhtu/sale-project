@@ -88,13 +88,13 @@ namespace SaleApp
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.m_lbl_header = new System.Windows.Forms.Label();
-            this.m_lbl_product = new System.Windows.Forms.Label();
-            this.m_cbo_product = new System.Windows.Forms.ComboBox();
-            this.m_lbl_applied_date = new System.Windows.Forms.Label();
+            this.m_dat_applied_date = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_price = new System.Windows.Forms.Label();
             this.m_txt_price = new System.Windows.Forms.TextBox();
-            this.m_dat_applied_date = new System.Windows.Forms.DateTimePicker();
+            this.m_lbl_applied_date = new System.Windows.Forms.Label();
+            this.m_cbo_product = new System.Windows.Forms.ComboBox();
+            this.m_lbl_product = new System.Windows.Forms.Label();
+            this.m_lbl_header = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -194,44 +194,14 @@ namespace SaleApp
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin cập nhật";
             // 
-            // m_lbl_header
+            // m_dat_applied_date
             // 
-            this.m_lbl_header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
-            this.m_lbl_header.Name = "m_lbl_header";
-            this.m_lbl_header.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.m_lbl_header.Size = new System.Drawing.Size(757, 32);
-            this.m_lbl_header.TabIndex = 22;
-            this.m_lbl_header.Text = "CẬP NHẬT GIÁ BÁN SẢN PHẨM";
-            this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // m_lbl_product
-            // 
-            this.m_lbl_product.AutoSize = true;
-            this.m_lbl_product.Location = new System.Drawing.Point(45, 36);
-            this.m_lbl_product.Name = "m_lbl_product";
-            this.m_lbl_product.Size = new System.Drawing.Size(55, 13);
-            this.m_lbl_product.TabIndex = 1;
-            this.m_lbl_product.Text = "Sản phẩm";
-            // 
-            // m_cbo_product
-            // 
-            this.m_cbo_product.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.m_cbo_product.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.m_cbo_product.FormattingEnabled = true;
-            this.m_cbo_product.Location = new System.Drawing.Point(119, 33);
-            this.m_cbo_product.Name = "m_cbo_product";
-            this.m_cbo_product.Size = new System.Drawing.Size(545, 21);
-            this.m_cbo_product.TabIndex = 2;
-            // 
-            // m_lbl_applied_date
-            // 
-            this.m_lbl_applied_date.AutoSize = true;
-            this.m_lbl_applied_date.Location = new System.Drawing.Point(369, 76);
-            this.m_lbl_applied_date.Name = "m_lbl_applied_date";
-            this.m_lbl_applied_date.Size = new System.Drawing.Size(59, 13);
-            this.m_lbl_applied_date.TabIndex = 3;
-            this.m_lbl_applied_date.Text = "Áp dụng từ";
+            this.m_dat_applied_date.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_applied_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_applied_date.Location = new System.Drawing.Point(471, 73);
+            this.m_dat_applied_date.Name = "m_dat_applied_date";
+            this.m_dat_applied_date.Size = new System.Drawing.Size(193, 20);
+            this.m_dat_applied_date.TabIndex = 6;
             // 
             // m_lbl_price
             // 
@@ -249,14 +219,44 @@ namespace SaleApp
             this.m_txt_price.Size = new System.Drawing.Size(191, 20);
             this.m_txt_price.TabIndex = 2;
             // 
-            // m_dat_applied_date
+            // m_lbl_applied_date
             // 
-            this.m_dat_applied_date.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_applied_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_applied_date.Location = new System.Drawing.Point(471, 73);
-            this.m_dat_applied_date.Name = "m_dat_applied_date";
-            this.m_dat_applied_date.Size = new System.Drawing.Size(193, 20);
-            this.m_dat_applied_date.TabIndex = 6;
+            this.m_lbl_applied_date.AutoSize = true;
+            this.m_lbl_applied_date.Location = new System.Drawing.Point(369, 76);
+            this.m_lbl_applied_date.Name = "m_lbl_applied_date";
+            this.m_lbl_applied_date.Size = new System.Drawing.Size(59, 13);
+            this.m_lbl_applied_date.TabIndex = 3;
+            this.m_lbl_applied_date.Text = "Áp dụng từ";
+            // 
+            // m_cbo_product
+            // 
+            this.m_cbo_product.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_cbo_product.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.m_cbo_product.FormattingEnabled = true;
+            this.m_cbo_product.Location = new System.Drawing.Point(119, 33);
+            this.m_cbo_product.Name = "m_cbo_product";
+            this.m_cbo_product.Size = new System.Drawing.Size(545, 21);
+            this.m_cbo_product.TabIndex = 2;
+            // 
+            // m_lbl_product
+            // 
+            this.m_lbl_product.AutoSize = true;
+            this.m_lbl_product.Location = new System.Drawing.Point(45, 36);
+            this.m_lbl_product.Name = "m_lbl_product";
+            this.m_lbl_product.Size = new System.Drawing.Size(55, 13);
+            this.m_lbl_product.TabIndex = 1;
+            this.m_lbl_product.Text = "Sản phẩm";
+            // 
+            // m_lbl_header
+            // 
+            this.m_lbl_header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
+            this.m_lbl_header.Name = "m_lbl_header";
+            this.m_lbl_header.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
+            this.m_lbl_header.Size = new System.Drawing.Size(757, 32);
+            this.m_lbl_header.TabIndex = 22;
+            this.m_lbl_header.Text = "CẬP NHẬT GIÁ BÁN SẢN PHẨM";
+            this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // f311_gd_product_price
             // 
@@ -286,7 +286,7 @@ namespace SaleApp
 
 		#region Data Structure
 		private enum e_col_Number{
-			APPLY_DATE = 3,UNIT_CODE = 4,PRODUCT_NAME = 1,PRICE = 2
+			APPLY_DATE = 3            ,UNIT_CODE = 4            ,PRODUCT_NAME = 1            ,PRICE = 2
 		}			
 		#endregion
 
@@ -303,10 +303,26 @@ namespace SaleApp
 			CGridUtils.AddSave_Excel_Handlers(m_fg);
 			CGridUtils.AddSearch_Handlers(m_fg);
 			set_define_events();
-			this.KeyPreview = true;		
+			this.KeyPreview = true;
+            m_lbl_header.Font = new Font("Arial", 16);
+            m_lbl_header.ForeColor = Color.Blue;
+            CControlFormat.setLabelStyle(m_lbl_applied_date, CControlFormat.LabelStyle.Title_Info);
+            CControlFormat.setLabelStyle(m_lbl_price, CControlFormat.LabelStyle.Title_Info);
+            CControlFormat.setLabelStyle(m_lbl_product, CControlFormat.LabelStyle.Title_Info);
 		}
+        private void load_data_2_product_cbo()
+        {
+            US_V_GD_PRODUCT_PRICE v_us_product_price = new US_V_GD_PRODUCT_PRICE();
+            DS_V_GD_PRODUCT_PRICE v_ds_product_price = new DS_V_GD_PRODUCT_PRICE();
+            v_us_product_price.FillDataset(v_ds_product_price);
+
+            m_cbo_product.DisplayMember = V_GD_PRODUCT_PRICE.PRODUCT_NAME;
+            m_cbo_product.ValueMember = V_GD_PRODUCT_PRICE.PRODUCT_ID;
+            m_cbo_product.DataSource = v_ds_product_price.V_GD_PRODUCT_PRICE;
+        }
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
+            load_data_2_product_cbo();
 			load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
@@ -345,46 +361,12 @@ namespace SaleApp
 			load_data_2_grid();
 		}
 
-		private void update_v_gd_product_price(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
-			grid2us_object(m_us, m_fg.Row);
-		//	f311_gd_product_price_DE v_fDE = new f311_gd_product_price_DE();
-		//	v_fDE.display(m_us);
-			load_data_2_grid();
-		}
-				
-		private void delete_v_gd_product_price(){
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
-			US_V_GD_PRODUCT_PRICE v_us = new US_V_GD_PRODUCT_PRICE();
-			grid2us_object(v_us, m_fg.Row);
-			try {			
-				v_us.BeginTransaction();    											
-				v_us.Delete();                      								
-				v_us.CommitTransaction();
-				m_fg.Rows.Remove(m_fg.Row);				
-			}
-			catch (Exception v_e) {
-				v_us.Rollback();
-				CDBExceptionHandler v_objErrHandler = new CDBExceptionHandler(v_e,
-					new CDBClientDBExceptionInterpret());
-				v_objErrHandler.showErrorMessage();
-			}
-		}
-
-		private void view_v_gd_product_price(){			
-			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			grid2us_object(m_us, m_fg.Row);
-		//	f311_gd_product_price_DE v_fDE = new f311_gd_product_price_DE();			
-		//	v_fDE.display(m_us);
-		}
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
+            m_txt_price.Leave += new EventHandler(m_txt_price_Leave);
 		}
+
 		#endregion
 
 //
@@ -419,6 +401,21 @@ namespace SaleApp
 				CSystemLog_301.ExceptionHandle(v_e);
 			}
 		}
+
+        void m_txt_price_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CIPConvert.is_valid_number(m_txt_price.Text))
+                    m_txt_price.Text = CIPConvert.ToStr(
+                                        CIPConvert.ToDecimal(m_txt_price.Text), "#,###");
+            }
+            catch (Exception v_e)
+            {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
 	}
 }
