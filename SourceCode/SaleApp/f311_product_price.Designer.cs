@@ -42,6 +42,8 @@
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_cbo_catalogy = new System.Windows.Forms.ComboBox();
             this.m_lbl_catalogy = new System.Windows.Forms.Label();
+            this.m_lbl_price = new System.Windows.Forms.Label();
+            this.m_txt_price = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
@@ -57,27 +59,30 @@
             // 
             // mlbl_add_category
             // 
-            this.mlbl_add_category.AutoSize = true;
             this.mlbl_add_category.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mlbl_add_category.Location = new System.Drawing.Point(290, 9);
+            this.mlbl_add_category.Location = new System.Drawing.Point(0, 9);
             this.mlbl_add_category.Name = "mlbl_add_category";
-            this.mlbl_add_category.Size = new System.Drawing.Size(235, 25);
+            this.mlbl_add_category.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
+            this.mlbl_add_category.Size = new System.Drawing.Size(798, 39);
             this.mlbl_add_category.TabIndex = 22;
             this.mlbl_add_category.Text = "CẬP NHẬT GIÁ SẢN PHẨM";
+            this.mlbl_add_category.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_cbo_product_name
             // 
+            this.m_cbo_product_name.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_cbo_product_name.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.m_cbo_product_name.FormattingEnabled = true;
-            this.m_cbo_product_name.Location = new System.Drawing.Point(311, 99);
+            this.m_cbo_product_name.Location = new System.Drawing.Point(162, 92);
             this.m_cbo_product_name.Name = "m_cbo_product_name";
-            this.m_cbo_product_name.Size = new System.Drawing.Size(318, 21);
+            this.m_cbo_product_name.Size = new System.Drawing.Size(488, 21);
             this.m_cbo_product_name.TabIndex = 23;
             // 
             // m_dat_price_date
             // 
             this.m_dat_price_date.CustomFormat = "dd/MM/yyyy";
             this.m_dat_price_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_price_date.Location = new System.Drawing.Point(437, 137);
+            this.m_dat_price_date.Location = new System.Drawing.Point(458, 129);
             this.m_dat_price_date.Name = "m_dat_price_date";
             this.m_dat_price_date.Size = new System.Drawing.Size(192, 20);
             this.m_dat_price_date.TabIndex = 24;
@@ -85,7 +90,7 @@
             // m_lbl_product_name
             // 
             this.m_lbl_product_name.AutoSize = true;
-            this.m_lbl_product_name.Location = new System.Drawing.Point(195, 102);
+            this.m_lbl_product_name.Location = new System.Drawing.Point(46, 95);
             this.m_lbl_product_name.Name = "m_lbl_product_name";
             this.m_lbl_product_name.Size = new System.Drawing.Size(74, 13);
             this.m_lbl_product_name.TabIndex = 25;
@@ -94,7 +99,7 @@
             // m_lbl_price_date
             // 
             this.m_lbl_price_date.AutoSize = true;
-            this.m_lbl_price_date.Location = new System.Drawing.Point(195, 144);
+            this.m_lbl_price_date.Location = new System.Drawing.Point(368, 133);
             this.m_lbl_price_date.Name = "m_lbl_price_date";
             this.m_lbl_price_date.Size = new System.Drawing.Size(77, 13);
             this.m_lbl_price_date.TabIndex = 26;
@@ -170,26 +175,47 @@
             // 
             // m_cbo_catalogy
             // 
+            this.m_cbo_catalogy.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_cbo_catalogy.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.m_cbo_catalogy.FormattingEnabled = true;
-            this.m_cbo_catalogy.Location = new System.Drawing.Point(409, 61);
+            this.m_cbo_catalogy.Location = new System.Drawing.Point(162, 57);
             this.m_cbo_catalogy.Name = "m_cbo_catalogy";
-            this.m_cbo_catalogy.Size = new System.Drawing.Size(220, 21);
+            this.m_cbo_catalogy.Size = new System.Drawing.Size(488, 21);
             this.m_cbo_catalogy.TabIndex = 23;
             // 
             // m_lbl_catalogy
             // 
             this.m_lbl_catalogy.AutoSize = true;
-            this.m_lbl_catalogy.Location = new System.Drawing.Point(195, 64);
+            this.m_lbl_catalogy.Location = new System.Drawing.Point(46, 57);
             this.m_lbl_catalogy.Name = "m_lbl_catalogy";
             this.m_lbl_catalogy.Size = new System.Drawing.Size(65, 13);
             this.m_lbl_catalogy.TabIndex = 25;
             this.m_lbl_catalogy.Text = "Nhóm hàng ";
+            // 
+            // m_lbl_price
+            // 
+            this.m_lbl_price.AutoSize = true;
+            this.m_lbl_price.Location = new System.Drawing.Point(46, 135);
+            this.m_lbl_price.Name = "m_lbl_price";
+            this.m_lbl_price.Size = new System.Drawing.Size(68, 13);
+            this.m_lbl_price.TabIndex = 28;
+            this.m_lbl_price.Text = "Giá cập nhật";
+            // 
+            // m_txt_price
+            // 
+            this.m_txt_price.Location = new System.Drawing.Point(162, 129);
+            this.m_txt_price.Name = "m_txt_price";
+            this.m_txt_price.Size = new System.Drawing.Size(195, 20);
+            this.m_txt_price.TabIndex = 29;
+            this.m_txt_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // f311_product_price
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 463);
+            this.Controls.Add(this.m_txt_price);
+            this.Controls.Add(this.m_lbl_price);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_lbl_price_date);
             this.Controls.Add(this.m_lbl_catalogy);
@@ -222,5 +248,7 @@
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private System.Windows.Forms.ComboBox m_cbo_catalogy;
         private System.Windows.Forms.Label m_lbl_catalogy;
+        private System.Windows.Forms.Label m_lbl_price;
+        private System.Windows.Forms.TextBox m_txt_price;
     }
 }
