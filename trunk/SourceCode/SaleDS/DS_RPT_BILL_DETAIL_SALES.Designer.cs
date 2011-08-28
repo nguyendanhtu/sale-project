@@ -460,12 +460,6 @@ namespace SaleDS {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public RPT_BILL_DETAIL_SALESRow FindByID(decimal ID) {
-                return ((RPT_BILL_DETAIL_SALESRow)(this.Rows.Find(new object[] {
-                            ID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public virtual global::System.Collections.IEnumerator GetEnumerator() {
                 return this.Rows.GetEnumerator();
             }
@@ -527,10 +521,7 @@ namespace SaleDS {
                 base.Columns.Add(this.columnCUSTOMER_ID);
                 this.columnREPOSITORY_ID = new global::System.Data.DataColumn("REPOSITORY_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnREPOSITORY_ID);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID}, true));
                 this.columnID.AllowDBNull = false;
-                this.columnID.Unique = true;
                 this.columnBILL_SERI.MaxLength = 10;
                 this.columnPRODUCT_CODE.MaxLength = 50;
                 this.columnPRODUCT_NAME.MaxLength = 250;
@@ -1740,38 +1731,6 @@ SELECT ID, BILL_SERI, PRODUCT_ID, PRODUCT_CODE, PRODUCT_NAME, QUANTITY, UNIT_PRI
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string BILL_SERI, 
-                    global::System.Nullable<decimal> PRODUCT_ID, 
-                    string PRODUCT_CODE, 
-                    string PRODUCT_NAME, 
-                    global::System.Nullable<decimal> QUANTITY, 
-                    global::System.Nullable<decimal> UNIT_PRICE, 
-                    global::System.Nullable<decimal> AMMOUNT, 
-                    global::System.Nullable<global::System.DateTime> BILL_DATE, 
-                    global::System.Nullable<decimal> TAX_RATE, 
-                    global::System.Nullable<decimal> USER_ID, 
-                    global::System.Nullable<decimal> CUSTOMER_ID, 
-                    global::System.Nullable<decimal> REPOSITORY_ID, 
-                    decimal Original_ID, 
-                    string Original_BILL_SERI, 
-                    global::System.Nullable<decimal> Original_PRODUCT_ID, 
-                    string Original_PRODUCT_CODE, 
-                    string Original_PRODUCT_NAME, 
-                    global::System.Nullable<decimal> Original_QUANTITY, 
-                    global::System.Nullable<decimal> Original_UNIT_PRICE, 
-                    global::System.Nullable<decimal> Original_AMMOUNT, 
-                    global::System.Nullable<global::System.DateTime> Original_BILL_DATE, 
-                    global::System.Nullable<decimal> Original_TAX_RATE, 
-                    global::System.Nullable<decimal> Original_USER_ID, 
-                    global::System.Nullable<decimal> Original_CUSTOMER_ID, 
-                    global::System.Nullable<decimal> Original_REPOSITORY_ID) {
-            return this.Update(Original_ID, BILL_SERI, PRODUCT_ID, PRODUCT_CODE, PRODUCT_NAME, QUANTITY, UNIT_PRICE, AMMOUNT, BILL_DATE, TAX_RATE, USER_ID, CUSTOMER_ID, REPOSITORY_ID, Original_ID, Original_BILL_SERI, Original_PRODUCT_ID, Original_PRODUCT_CODE, Original_PRODUCT_NAME, Original_QUANTITY, Original_UNIT_PRICE, Original_AMMOUNT, Original_BILL_DATE, Original_TAX_RATE, Original_USER_ID, Original_CUSTOMER_ID, Original_REPOSITORY_ID);
         }
     }
     
