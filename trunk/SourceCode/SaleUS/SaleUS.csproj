@@ -123,7 +123,6 @@
     <Compile Include="US_DM_UNIT.cs" />
     <Compile Include="US_GD_BILL.cs" />
     <Compile Include="US_GD_BILL_DETAIL.cs" />
-    <Compile Include="US_GD_PRODUCT_PRICE.cs" />
     <Compile Include="US_HT_QUYEN_USER.cs" />
     <Compile Include="US_RPT_BILL_DETAIL_SALES.cs" />
     <Compile Include="US_RPT_PRODUCT_BALANCE.cs" />
