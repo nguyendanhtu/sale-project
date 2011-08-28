@@ -157,7 +157,7 @@ namespace SaleApp
             // 
             // m_cbo_ten_mat_hang
             // 
-            this.m_cbo_ten_mat_hang.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.m_cbo_ten_mat_hang.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.m_cbo_ten_mat_hang.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.m_cbo_ten_mat_hang.FormattingEnabled = true;
             this.m_cbo_ten_mat_hang.Location = new System.Drawing.Point(132, 81);
