@@ -309,7 +309,7 @@ namespace SaleApp
 		ITransferDataRow m_obj_trans;		
 		DS_V_RPT_GD_BILL_DETAIL m_ds = new DS_V_RPT_GD_BILL_DETAIL();
 		US_V_RPT_GD_BILL_DETAIL m_us = new US_V_RPT_GD_BILL_DETAIL();
-        System.Collections.Generic.Dictionary<decimal,string> m_dct_product = new System.Collections.Generic.Dictionary<decimal,string>();
+        //System.Collections.Generic.Dictionary<decimal,string> m_dct_product = new System.Collections.Generic.Dictionary<decimal,string>();
 		#endregion
 
 		#region Private Methods
@@ -350,7 +350,7 @@ namespace SaleApp
 		}
 		private void grid2us_object(US_V_RPT_GD_BILL_DETAIL i_us, int i_grid_row) {
 			DataRow v_dr;
-			v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
+			v_dr = (DataRow)m_fg.Rows[i_grid_row].UserData;
 			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
 			i_us.DataRow2Me(v_dr);
 		}
@@ -366,8 +366,7 @@ namespace SaleApp
             m_cbo_ten_mat_hang.DataSource = v_ds_dm_product.DM_PRODUCT;
             
         }
-		private void us_object2grid(US_V_RPT_GD_BILL_DETAIL i_us
-			, int i_grid_row) {
+		private void us_object2grid(US_V_RPT_GD_BILL_DETAIL i_us, int i_grid_row) {
 			DataRow v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
 			i_us.Me2DataRow(v_dr);
 			m_obj_trans.DataRow2GridRow(v_dr, i_grid_row);
@@ -375,14 +374,11 @@ namespace SaleApp
 
 
         
-		private void view_v_rpt_gd_bill_detail(){
-            m_ds = new DS_V_RPT_GD_BILL_DETAIL();
-           
-            m_fg.Redraw = false;
-            CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-            m_fg.Subtotal(AggregateEnum.Sum, 0, -1, (int)e_col_Number.AMOUNT, "Tổng tiền bán hàng");
-
-            m_fg.Redraw = true;
+		private void view_v_rpt_gd_bill_detail()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            grid2us_object(m_us, m_fg.Row);
 		}
 		
 
@@ -402,11 +398,13 @@ namespace SaleApp
         {
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
-            
+            m_cmd_export_excel.Click += new EventHandler(m_cmd_export_excel_Click);
             m_cbo_ten_mat_hang.SelectedIndexChanged += new EventHandler(m_cbo_ten_mat_hang_SelectedIndexChanged);
             m_dat_to_date.ValueChanged += new EventHandler(m_dat_to_date_ValueChanged);
             m_dat_from_date.ValueChanged += new EventHandler(m_dat_from_date_ValueChanged);
         }
+
+        
 //
 		//
 		//		EVENT HANLDERS
@@ -497,7 +495,17 @@ namespace SaleApp
             }
         }
 
-
+        void m_cmd_export_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                export_excel();
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 
 	}
 }
