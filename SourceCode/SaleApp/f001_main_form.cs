@@ -98,7 +98,7 @@ namespace SaleApp
                 BaseMessages.MsgBox_Infor(" Người sử dụng không được quyền truy nhập phần này !!! ");
                 return;
             }
-            f311_product_price v_frm_311 = new f311_product_price();
+            f311_gd_product_price v_frm_311 = new f311_gd_product_price();
             v_frm_311.display();
         }
         private void show_introduction()
