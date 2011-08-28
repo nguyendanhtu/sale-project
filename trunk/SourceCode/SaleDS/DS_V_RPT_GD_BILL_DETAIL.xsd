@@ -40,10 +40,10 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DS_V_RPT_GD_BILL_DETAIL" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="DS_V_RPT_GD_BILL_DETAIL" msprop:Generator_UserDSName="DS_V_RPT_GD_BILL_DETAIL" msprop:EnableTableAdapterManager="true">
+  <xs:element name="DS_V_RPT_GD_BILL_DETAIL" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DS_V_RPT_GD_BILL_DETAIL" msprop:Generator_DataSetName="DS_V_RPT_GD_BILL_DETAIL" msprop:EnableTableAdapterManager="true">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="V_RPT_GD_BILL_DETAIL" msprop:Generator_UserTableName="V_RPT_GD_BILL_DETAIL" msprop:Generator_RowDeletedName="V_RPT_GD_BILL_DETAILRowDeleted" msprop:Generator_TableClassName="V_RPT_GD_BILL_DETAILDataTable" msprop:Generator_RowChangedName="V_RPT_GD_BILL_DETAILRowChanged" msprop:Generator_RowClassName="V_RPT_GD_BILL_DETAILRow" msprop:Generator_RowChangingName="V_RPT_GD_BILL_DETAILRowChanging" msprop:Generator_RowEvArgName="V_RPT_GD_BILL_DETAILRowChangeEvent" msprop:Generator_RowEvHandlerName="V_RPT_GD_BILL_DETAILRowChangeEventHandler" msprop:Generator_TablePropName="V_RPT_GD_BILL_DETAIL" msprop:Generator_TableVarName="tableV_RPT_GD_BILL_DETAIL" msprop:Generator_RowDeletingName="V_RPT_GD_BILL_DETAILRowDeleting">
+        <xs:element name="V_RPT_GD_BILL_DETAIL" msprop:Generator_UserTableName="V_RPT_GD_BILL_DETAIL" msprop:Generator_RowDeletedName="V_RPT_GD_BILL_DETAILRowDeleted" msprop:Generator_RowChangedName="V_RPT_GD_BILL_DETAILRowChanged" msprop:Generator_RowClassName="V_RPT_GD_BILL_DETAILRow" msprop:Generator_RowChangingName="V_RPT_GD_BILL_DETAILRowChanging" msprop:Generator_RowEvArgName="V_RPT_GD_BILL_DETAILRowChangeEvent" msprop:Generator_RowEvHandlerName="V_RPT_GD_BILL_DETAILRowChangeEventHandler" msprop:Generator_TableClassName="V_RPT_GD_BILL_DETAILDataTable" msprop:Generator_TableVarName="tableV_RPT_GD_BILL_DETAIL" msprop:Generator_RowDeletingName="V_RPT_GD_BILL_DETAILRowDeleting" msprop:Generator_TablePropName="V_RPT_GD_BILL_DETAIL">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInTable="IDColumn" type="xs:decimal" />
@@ -94,9 +94,5 @@
         </xs:element>
       </xs:choice>
     </xs:complexType>
-    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:V_RPT_GD_BILL_DETAIL" />
-      <xs:field xpath="mstns:ID" />
-    </xs:unique>
   </xs:element>
 </xs:schema>
