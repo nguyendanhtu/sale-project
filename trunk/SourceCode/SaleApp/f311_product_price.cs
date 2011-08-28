@@ -23,9 +23,14 @@ namespace SaleApp
         public f311_product_price()
         {
             InitializeComponent();
+            //Format controls
             format_controls();
-            setdefineevents();
         }
+        #region Members
+        US_GD_PRODUCT_PRICE m_us_product_price = new US_GD_PRODUCT_PRICE();
+        DS_GD_PRODUCT_PRICE m_ds_product_price = new DS_GD_PRODUCT_PRICE();
+        #endregion
+
         #region Private Method
         private void format_controls()
         {
@@ -36,12 +41,25 @@ namespace SaleApp
             CControlFormat.setLabelStyle(m_lbl_product_name, CControlFormat.LabelStyle.Title_Info);
             mlbl_add_category.ForeColor = Color.Blue;
             mlbl_add_category.Font = new Font("Arial", 16);
+            setdefineevents();
         }
+        private void save_data()
+        {
+            if (!check_data_is_ok()) return;
+            form_2_us_object();
+        }
+        private bool check_data_is_ok()
+        {
+            if(!CValidateTextBox.IsValid(m_txt_price, DataType.NumberType,allowNull.NO,true))
+                return false;
+            return true;
+        }
+        
         private void load_data_2_cbo_product()
         {
             US_DM_PRODUCT v_us_product = new US_DM_PRODUCT();
             DS_DM_PRODUCT v_ds_product = new DS_DM_PRODUCT();
-            v_us_product.FillDataset(v_ds_product, " ORDER BY " + DM_PRODUCT.ID);
+            v_us_product.FillDataset(v_ds_product," ORDER BY " + DM_PRODUCT.ID);
             v_ds_product.EnforceConstraints = false;
 
             m_cbo_product_name.DisplayMember = DM_PRODUCT_DE.PRODUCT_NAME;
@@ -72,6 +90,11 @@ namespace SaleApp
             this.Load += new EventHandler(f311_product_price_Load);
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_txt_price.Leave += new EventHandler(m_txt_price_Leave);
+            m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
+        }
+        private void form_2_us_object()
+        {
+            save_data();
         }
 
         #endregion
@@ -111,8 +134,17 @@ namespace SaleApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
+        void m_cmd_save_Click(object sender, EventArgs e)
+        {
+            try
+            {
 
-
+            }
+            catch (Exception v_e)
+            {
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
         void m_txt_price_Leave(object sender, EventArgs e)
         {
             try
