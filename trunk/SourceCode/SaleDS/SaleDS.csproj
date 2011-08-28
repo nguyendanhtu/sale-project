@@ -154,11 +154,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_GD_BILL_DETAIL.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DS_GD_PRODUCT_PRICE.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DS_GD_PRODUCT_PRICE.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DS_HT_QUYEN_USER.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -306,17 +301,6 @@
     </None>
     <None Include="DS_GD_BILL_DETAIL.xss">
       <DependentUpon>DS_GD_BILL_DETAIL.xsd</DependentUpon>
-    </None>
-    <None Include="DS_GD_PRODUCT_PRICE.xsc">
-      <DependentUpon>DS_GD_PRODUCT_PRICE.xsd</DependentUpon>
-    </None>
-    <None Include="DS_GD_PRODUCT_PRICE.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DS_GD_PRODUCT_PRICE.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DS_GD_PRODUCT_PRICE.xss">
-      <DependentUpon>DS_GD_PRODUCT_PRICE.xsd</DependentUpon>
     </None>
     <None Include="DS_HT_QUYEN_USER.xsc">
       <DependentUpon>DS_HT_QUYEN_USER.xsd</DependentUpon>
