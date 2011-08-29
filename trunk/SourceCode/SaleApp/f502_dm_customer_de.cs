@@ -47,13 +47,13 @@ namespace SaleApp
             this.KeyPreview = true;
             m_lbl_add_customer.ForeColor = Color.Blue;
             m_lbl_add_customer.Font = new Font("Arial", 16);
-            CControlFormat.setLabelStyle(m_lbl_address, CControlFormat.LabelStyle.Title_Info);
-            CControlFormat.setLabelStyle(m_lbl_customer_group_name, CControlFormat.LabelStyle.Title_Info);
-            CControlFormat.setLabelStyle(m_lbl_customer_name, CControlFormat.LabelStyle.Title_Info);
-            CControlFormat.setLabelStyle(m_lbl_email, CControlFormat.LabelStyle.Title_Info);
-            CControlFormat.setLabelStyle(m_lbl_mobile_phone, CControlFormat.LabelStyle.Title_Info);
-            CControlFormat.setLabelStyle(m_lbl_tax_code, CControlFormat.LabelStyle.Title_Info);
-            CControlFormat.setLabelStyle(m_lbl_website, CControlFormat.LabelStyle.Title_Info);
+            m_lbl_address.Font = new Font("Arial", 9);
+            m_lbl_customer_group_name.Font = new Font("Arial", 9);
+            m_lbl_email.Font = new Font("Arial", 9);
+            m_lbl_customer_name.Font = new Font("Arial", 9);
+            m_lbl_mobile_phone.Font = new Font("Arial", 9);
+            m_lbl_tax_code.Font = new Font("Arial", 9);
+            m_lbl_website.Font = new Font("Arial", 9);
             label1.ForeColor = Color.Red;
         }
 

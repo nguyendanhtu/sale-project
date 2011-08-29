@@ -49,7 +49,7 @@ namespace SaleApp
             this.KeyPreview = true;
             m_lbl_add_customer_group.ForeColor = Color.Blue;
             m_lbl_add_customer_group.Font = new Font("Arial", 16);
-            CControlFormat.setLabelStyle(m_lbl_customer_group_name, CControlFormat.LabelStyle.Title_Info);
+            m_lbl_customer_group_name.Font = new Font("Arial", 9);
             label1.ForeColor = Color.Red;
         }
 
