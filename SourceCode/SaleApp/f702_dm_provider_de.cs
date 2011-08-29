@@ -48,6 +48,16 @@ namespace SaleApp
         {
             CControlFormat.setFormStyle(this);
             this.KeyPreview = true;
+            m_lbl_add__provider.ForeColor = Color.Blue;
+            m_lbl_add__provider.Font = new Font("Arial", 16);
+            CControlFormat.setLabelStyle(m_lbl_address, CControlFormat.LabelStyle.Title_Info);
+            CControlFormat.setLabelStyle(m_lbl_email,CControlFormat.LabelStyle.Title_Info);
+            CControlFormat.setLabelStyle(m_lbl_mobile, CControlFormat.LabelStyle.Title_Info);
+            CControlFormat.setLabelStyle(m_lbl_provider_code, CControlFormat.LabelStyle.Title_Info);
+            CControlFormat.setLabelStyle(m_lbl_provider_name, CControlFormat.LabelStyle.Title_Info);
+            CControlFormat.setLabelStyle(m_lbl_tax_code, CControlFormat.LabelStyle.Title_Info);
+            label1.ForeColor = Color.Red;
+            label2.ForeColor = Color.Red;
         }
         private void us_object_2_form(US_DM_PROVIDER ip_us_provider)
         {
