@@ -533,7 +533,6 @@ namespace SaleDS {
                 this.columnBILL_SERI.MaxLength = 50;
                 this.columnCUSTOMER_ID.AllowDBNull = false;
                 this.columnBILL_DATE.AllowDBNull = false;
-                this.columnCUSTOMER_NAME.AllowDBNull = false;
                 this.columnCUSTOMER_NAME.MaxLength = 250;
                 this.columnPRODUCT_NAME.AllowDBNull = false;
                 this.columnPRODUCT_NAME.MaxLength = 250;
@@ -747,7 +746,12 @@ namespace SaleDS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public string CUSTOMER_NAME {
                 get {
-                    return ((string)(this[this.tableV_RPT_GD_BILL_DETAIL.CUSTOMER_NAMEColumn]));
+                    try {
+                        return ((string)(this[this.tableV_RPT_GD_BILL_DETAIL.CUSTOMER_NAMEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CUSTOMER_NAME\' in table \'V_RPT_GD_BILL_DETAIL\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_RPT_GD_BILL_DETAIL.CUSTOMER_NAMEColumn] = value;
@@ -807,6 +811,16 @@ namespace SaleDS {
                 set {
                     this[this.tableV_RPT_GD_BILL_DETAIL.AMOUNTColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsCUSTOMER_NAMENull() {
+                return this.IsNull(this.tableV_RPT_GD_BILL_DETAIL.CUSTOMER_NAMEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetCUSTOMER_NAMENull() {
+                this[this.tableV_RPT_GD_BILL_DETAIL.CUSTOMER_NAMEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
