@@ -460,6 +460,12 @@ namespace SaleDS {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public V_RPT_GD_BILL_DETAILRow FindByID(decimal ID) {
+                return ((V_RPT_GD_BILL_DETAILRow)(this.Rows.Find(new object[] {
+                            ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public virtual global::System.Collections.IEnumerator GetEnumerator() {
                 return this.Rows.GetEnumerator();
             }
@@ -521,11 +527,14 @@ namespace SaleDS {
                 base.Columns.Add(this.columnCURRENT_PRICE);
                 this.columnAMOUNT = new global::System.Data.DataColumn("AMOUNT", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAMOUNT);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID}, true));
                 this.columnID.AutoIncrement = true;
                 this.columnID.AutoIncrementSeed = -1;
                 this.columnID.AutoIncrementStep = -1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.ReadOnly = true;
+                this.columnID.Unique = true;
                 this.columnBILL_ID.AllowDBNull = false;
                 this.columnPRODUCT_ID.AllowDBNull = false;
                 this.columnQUANTITY.AllowDBNull = false;
