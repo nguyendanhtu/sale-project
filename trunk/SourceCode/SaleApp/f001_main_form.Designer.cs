@@ -159,7 +159,7 @@
             this.nhậpLiệuToolStripMenuItem,
             this.báoCáoToolStripMenuItem,
             this.ribbonPage5});
-            this.ribbon.SelectedPage = this.nhậpLiệuToolStripMenuItem;
+            this.ribbon.SelectedPage = this.ribbonPage2;
             this.ribbon.Size = new System.Drawing.Size(1083, 148);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
@@ -416,6 +416,7 @@
             // mnu_cmd_xuathanhly
             // 
             this.mnu_cmd_xuathanhly.Caption = "Xuất  thanh lý";
+            this.mnu_cmd_xuathanhly.Enabled = false;
             this.mnu_cmd_xuathanhly.Id = 26;
             this.mnu_cmd_xuathanhly.LargeImageIndex = 36;
             this.mnu_cmd_xuathanhly.LargeWidth = 60;
@@ -423,7 +424,7 @@
             // 
             // mnu_cmd_hangnhacungcap
             // 
-            this.mnu_cmd_hangnhacungcap.Caption = "Hàng nhà cung cấp";
+            this.mnu_cmd_hangnhacungcap.Caption = "Nhập hàng   NCC";
             this.mnu_cmd_hangnhacungcap.Id = 27;
             this.mnu_cmd_hangnhacungcap.LargeImageIndex = 78;
             this.mnu_cmd_hangnhacungcap.LargeWidth = 60;
@@ -432,6 +433,7 @@
             // mnu_cmd_hangtralaikhach
             // 
             this.mnu_cmd_hangtralaikhach.Caption = "Hàng trả lại khách";
+            this.mnu_cmd_hangtralaikhach.Enabled = false;
             this.mnu_cmd_hangtralaikhach.Id = 28;
             this.mnu_cmd_hangtralaikhach.LargeImageIndex = 19;
             this.mnu_cmd_hangtralaikhach.LargeWidth = 60;
