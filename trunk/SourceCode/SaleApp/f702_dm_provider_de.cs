@@ -50,12 +50,12 @@ namespace SaleApp
             this.KeyPreview = true;
             m_lbl_add__provider.ForeColor = Color.Blue;
             m_lbl_add__provider.Font = new Font("Arial", 16);
-            CControlFormat.setLabelStyle(m_lbl_address, CControlFormat.LabelStyle.Title_Info);
-            CControlFormat.setLabelStyle(m_lbl_email,CControlFormat.LabelStyle.Title_Info);
-            CControlFormat.setLabelStyle(m_lbl_mobile, CControlFormat.LabelStyle.Title_Info);
-            CControlFormat.setLabelStyle(m_lbl_provider_code, CControlFormat.LabelStyle.Title_Info);
-            CControlFormat.setLabelStyle(m_lbl_provider_name, CControlFormat.LabelStyle.Title_Info);
-            CControlFormat.setLabelStyle(m_lbl_tax_code, CControlFormat.LabelStyle.Title_Info);
+            m_lbl_address.Font = new Font("Arial", 9);
+            m_lbl_email.Font = new Font("Arial", 9);
+            m_lbl_mobile.Font = new Font("Arial", 9);
+            m_lbl_provider_code.Font = new Font("Arial", 9);
+            m_lbl_provider_name.Font = new Font("Arial", 9);
+            m_lbl_tax_code.Font = new Font("Arial", 9);
             label1.ForeColor = Color.Red;
             label2.ForeColor = Color.Red;
         }
