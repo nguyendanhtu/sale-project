@@ -222,7 +222,7 @@ namespace SaleApp
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f401_dm_company_info";
-            this.Text = "f401_dm_company_info";
+            this.Text = "F401 - Danh mục thông tin cửa hàng";
             this.Load += new System.EventHandler(this.f401_dm_company_info_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
