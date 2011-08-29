@@ -46,6 +46,10 @@ namespace SaleApp
         {
             CControlFormat.setFormStyle(this);
             this.KeyPreview = true;
+            m_lbl_add_repository.ForeColor = Color.Blue;
+            m_lbl_add_repository.Font = new Font("Arial", 16);
+            label1.ForeColor = Color.Red;
+            label2.ForeColor = Color.Red;
         }
 
         private void us_object_2_form(US_DM_REPOSITORY ip_us_repository)
