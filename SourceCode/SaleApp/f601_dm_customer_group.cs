@@ -223,7 +223,7 @@ namespace SaleApp
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f601_dm_customer_group";
-            this.Text = "f601_dm_customer_group";
+            this.Text = "F601 - Danh mục nhóm khách hàng";
             this.Load += new System.EventHandler(this.f601_dm_customer_group_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
