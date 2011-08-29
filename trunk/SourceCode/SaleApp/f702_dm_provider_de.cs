@@ -18,7 +18,7 @@ namespace SaleApp
         public f702_dm_provider_de()
         {
             InitializeComponent();
-            set_define_events();
+            format_controls();
         }
         #region Public Interface
         public void display_for_insert()
@@ -48,6 +48,7 @@ namespace SaleApp
         {
             CControlFormat.setFormStyle(this);
             this.KeyPreview = true;
+            set_define_events();
             m_lbl_add__provider.ForeColor = Color.Blue;
             m_lbl_add__provider.Font = new Font("Arial", 16);
             m_lbl_address.Font = new Font("Arial", 9);
