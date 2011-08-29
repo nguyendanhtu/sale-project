@@ -47,24 +47,26 @@
             this.m_txt_category_name = new System.Windows.Forms.TextBox();
             this.m_lbl_parent_name = new System.Windows.Forms.Label();
             this.m_cbo_parent_name = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
             // mlbl_add_category
             // 
-            this.mlbl_add_category.AutoSize = true;
             this.mlbl_add_category.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mlbl_add_category.Location = new System.Drawing.Point(170, 9);
+            this.mlbl_add_category.Location = new System.Drawing.Point(0, 9);
             this.mlbl_add_category.Name = "mlbl_add_category";
-            this.mlbl_add_category.Size = new System.Drawing.Size(221, 25);
+            this.mlbl_add_category.Size = new System.Drawing.Size(612, 25);
             this.mlbl_add_category.TabIndex = 0;
             this.mlbl_add_category.Text = "THÊM NHÓM HÀNG HÓA";
+            this.mlbl_add_category.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_lblcategory_code
             // 
             this.m_lblcategory_code.AutoSize = true;
             this.m_lblcategory_code.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_lblcategory_code.Location = new System.Drawing.Point(34, 78);
+            this.m_lblcategory_code.Location = new System.Drawing.Point(35, 78);
             this.m_lblcategory_code.Name = "m_lblcategory_code";
             this.m_lblcategory_code.Size = new System.Drawing.Size(78, 13);
             this.m_lblcategory_code.TabIndex = 1;
@@ -72,14 +74,14 @@
             // 
             // m_txt_category_code
             // 
-            this.m_txt_category_code.Location = new System.Drawing.Point(132, 75);
+            this.m_txt_category_code.Location = new System.Drawing.Point(155, 75);
             this.m_txt_category_code.Name = "m_txt_category_code";
             this.m_txt_category_code.Size = new System.Drawing.Size(149, 20);
             this.m_txt_category_code.TabIndex = 2;
             // 
             // m_txt_category_display_order
             // 
-            this.m_txt_category_display_order.Location = new System.Drawing.Point(132, 184);
+            this.m_txt_category_display_order.Location = new System.Drawing.Point(155, 199);
             this.m_txt_category_display_order.Name = "m_txt_category_display_order";
             this.m_txt_category_display_order.Size = new System.Drawing.Size(149, 20);
             this.m_txt_category_display_order.TabIndex = 6;
@@ -88,7 +90,7 @@
             // 
             this.m_lblcategory_display_order.AutoSize = true;
             this.m_lblcategory_display_order.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_lblcategory_display_order.Location = new System.Drawing.Point(34, 187);
+            this.m_lblcategory_display_order.Location = new System.Drawing.Point(35, 202);
             this.m_lblcategory_display_order.Name = "m_lblcategory_display_order";
             this.m_lblcategory_display_order.Size = new System.Drawing.Size(75, 13);
             this.m_lblcategory_display_order.TabIndex = 5;
@@ -96,7 +98,7 @@
             // 
             // m_txt_category_display_level
             // 
-            this.m_txt_category_display_level.Location = new System.Drawing.Point(403, 74);
+            this.m_txt_category_display_level.Location = new System.Drawing.Point(426, 74);
             this.m_txt_category_display_level.Name = "m_txt_category_display_level";
             this.m_txt_category_display_level.Size = new System.Drawing.Size(151, 20);
             this.m_txt_category_display_level.TabIndex = 8;
@@ -105,7 +107,7 @@
             // 
             this.m_lblcategory_display_level.AutoSize = true;
             this.m_lblcategory_display_level.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_lblcategory_display_level.Location = new System.Drawing.Point(311, 77);
+            this.m_lblcategory_display_level.Location = new System.Drawing.Point(334, 77);
             this.m_lblcategory_display_level.Name = "m_lblcategory_display_level";
             this.m_lblcategory_display_level.Size = new System.Drawing.Size(63, 13);
             this.m_lblcategory_display_level.TabIndex = 7;
@@ -113,7 +115,7 @@
             // 
             // m_txt_description
             // 
-            this.m_txt_description.Location = new System.Drawing.Point(127, 239);
+            this.m_txt_description.Location = new System.Drawing.Point(162, 245);
             this.m_txt_description.Multiline = true;
             this.m_txt_description.Name = "m_txt_description";
             this.m_txt_description.Size = new System.Drawing.Size(427, 66);
@@ -123,7 +125,7 @@
             // 
             this.m_lblcategory_description.AutoSize = true;
             this.m_lblcategory_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_lblcategory_description.Location = new System.Drawing.Point(34, 256);
+            this.m_lblcategory_description.Location = new System.Drawing.Point(35, 262);
             this.m_lblcategory_description.Name = "m_lblcategory_description";
             this.m_lblcategory_description.Size = new System.Drawing.Size(34, 13);
             this.m_lblcategory_description.TabIndex = 9;
@@ -161,10 +163,10 @@
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_save);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 328);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 369);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(616, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(607, 36);
             this.m_pnl_out_place_dm.TabIndex = 20;
             // 
             // m_cmd_save
@@ -176,7 +178,7 @@
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(436, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(427, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 12;
@@ -191,7 +193,7 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(524, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(515, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -201,7 +203,7 @@
             // 
             this.m_lblcategory_name.AutoSize = true;
             this.m_lblcategory_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_lblcategory_name.Location = new System.Drawing.Point(34, 138);
+            this.m_lblcategory_name.Location = new System.Drawing.Point(35, 122);
             this.m_lblcategory_name.Name = "m_lblcategory_name";
             this.m_lblcategory_name.Size = new System.Drawing.Size(82, 13);
             this.m_lblcategory_name.TabIndex = 3;
@@ -209,16 +211,16 @@
             // 
             // m_txt_category_name
             // 
-            this.m_txt_category_name.Location = new System.Drawing.Point(132, 135);
+            this.m_txt_category_name.Location = new System.Drawing.Point(155, 119);
             this.m_txt_category_name.Name = "m_txt_category_name";
-            this.m_txt_category_name.Size = new System.Drawing.Size(149, 20);
+            this.m_txt_category_name.Size = new System.Drawing.Size(422, 20);
             this.m_txt_category_name.TabIndex = 4;
             // 
             // m_lbl_parent_name
             // 
             this.m_lbl_parent_name.AutoSize = true;
             this.m_lbl_parent_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_lbl_parent_name.Location = new System.Drawing.Point(311, 141);
+            this.m_lbl_parent_name.Location = new System.Drawing.Point(35, 162);
             this.m_lbl_parent_name.Name = "m_lbl_parent_name";
             this.m_lbl_parent_name.Size = new System.Drawing.Size(76, 13);
             this.m_lbl_parent_name.TabIndex = 21;
@@ -226,17 +228,39 @@
             // 
             // m_cbo_parent_name
             // 
+            this.m_cbo_parent_name.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_cbo_parent_name.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.m_cbo_parent_name.FormattingEnabled = true;
-            this.m_cbo_parent_name.Location = new System.Drawing.Point(403, 138);
+            this.m_cbo_parent_name.Location = new System.Drawing.Point(155, 159);
             this.m_cbo_parent_name.Name = "m_cbo_parent_name";
-            this.m_cbo_parent_name.Size = new System.Drawing.Size(151, 21);
+            this.m_cbo_parent_name.Size = new System.Drawing.Size(422, 21);
             this.m_cbo_parent_name.TabIndex = 23;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(122, 79);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(17, 13);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "(*)";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(122, 122);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(17, 13);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "(*)";
             // 
             // f202_dm_category_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 364);
+            this.ClientSize = new System.Drawing.Size(607, 405);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.m_cbo_parent_name);
             this.Controls.Add(this.m_lbl_parent_name);
             this.Controls.Add(this.m_pnl_out_place_dm);
@@ -252,7 +276,7 @@
             this.Controls.Add(this.m_lblcategory_code);
             this.Controls.Add(this.mlbl_add_category);
             this.Name = "f202_dm_category_de";
-            this.Text = "f202_dm_category";
+            this.Text = "F202 - Thêm danh mục nhóm hàng hóa";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -278,5 +302,7 @@
         private System.Windows.Forms.TextBox m_txt_category_name;
         private System.Windows.Forms.Label m_lbl_parent_name;
         private System.Windows.Forms.ComboBox m_cbo_parent_name;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
