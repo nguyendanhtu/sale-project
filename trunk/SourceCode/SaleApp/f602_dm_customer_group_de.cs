@@ -47,6 +47,10 @@ namespace SaleApp
         {
             CControlFormat.setFormStyle(this);
             this.KeyPreview = true;
+            m_lbl_add_customer_group.ForeColor = Color.Blue;
+            m_lbl_add_customer_group.Font = new Font("Arial", 16);
+            CControlFormat.setLabelStyle(m_lbl_customer_group_name, CControlFormat.LabelStyle.Title_Info);
+            label1.ForeColor = Color.Red;
         }
 
 

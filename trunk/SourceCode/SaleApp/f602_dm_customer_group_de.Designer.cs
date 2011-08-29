@@ -37,18 +37,19 @@
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_lbl_add_customer_group
             // 
-            this.m_lbl_add_customer_group.AutoSize = true;
             this.m_lbl_add_customer_group.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_add_customer_group.Location = new System.Drawing.Point(51, 18);
+            this.m_lbl_add_customer_group.Location = new System.Drawing.Point(0, 18);
             this.m_lbl_add_customer_group.Name = "m_lbl_add_customer_group";
-            this.m_lbl_add_customer_group.Size = new System.Drawing.Size(324, 29);
+            this.m_lbl_add_customer_group.Size = new System.Drawing.Size(481, 29);
             this.m_lbl_add_customer_group.TabIndex = 8;
             this.m_lbl_add_customer_group.Text = "THÊM NHÓM KHÁCH HÀNG";
+            this.m_lbl_add_customer_group.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_lbl_customer_group_name
             // 
@@ -61,9 +62,9 @@
             // 
             // m_txt_customer_group_name
             // 
-            this.m_txt_customer_group_name.Location = new System.Drawing.Point(189, 72);
+            this.m_txt_customer_group_name.Location = new System.Drawing.Point(166, 72);
             this.m_txt_customer_group_name.Name = "m_txt_customer_group_name";
-            this.m_txt_customer_group_name.Size = new System.Drawing.Size(203, 20);
+            this.m_txt_customer_group_name.Size = new System.Drawing.Size(307, 20);
             this.m_txt_customer_group_name.TabIndex = 10;
             // 
             // ImageList
@@ -101,7 +102,7 @@
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 121);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(417, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(485, 36);
             this.m_pnl_out_place_dm.TabIndex = 23;
             // 
             // m_cmd_save
@@ -113,7 +114,7 @@
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(237, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(305, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 12;
@@ -129,18 +130,28 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(325, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(393, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             this.m_cmd_exit.Click += new System.EventHandler(this.m_cmd_exit_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(142, 76);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(17, 13);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "(*)";
+            // 
             // f602_dm_customer_group_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(417, 157);
+            this.ClientSize = new System.Drawing.Size(485, 157);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_txt_customer_group_name);
             this.Controls.Add(this.m_lbl_customer_group_name);
@@ -163,5 +174,6 @@
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         internal SIS.Controls.Button.SiSButton m_cmd_save;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
+        private System.Windows.Forms.Label label1;
     }
 }
