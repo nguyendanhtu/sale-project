@@ -66,7 +66,7 @@
             // m_lbl_provider_code
             // 
             this.m_lbl_provider_code.AutoSize = true;
-            this.m_lbl_provider_code.Location = new System.Drawing.Point(27, 74);
+            this.m_lbl_provider_code.Location = new System.Drawing.Point(23, 74);
             this.m_lbl_provider_code.Name = "m_lbl_provider_code";
             this.m_lbl_provider_code.Size = new System.Drawing.Size(91, 13);
             this.m_lbl_provider_code.TabIndex = 1;
@@ -75,7 +75,7 @@
             // m_lbl_provider_name
             // 
             this.m_lbl_provider_name.AutoSize = true;
-            this.m_lbl_provider_name.Location = new System.Drawing.Point(27, 113);
+            this.m_lbl_provider_name.Location = new System.Drawing.Point(23, 113);
             this.m_lbl_provider_name.Name = "m_lbl_provider_name";
             this.m_lbl_provider_name.Size = new System.Drawing.Size(95, 13);
             this.m_lbl_provider_name.TabIndex = 3;
@@ -84,7 +84,7 @@
             // m_lbl_mobile
             // 
             this.m_lbl_mobile.AutoSize = true;
-            this.m_lbl_mobile.Location = new System.Drawing.Point(27, 152);
+            this.m_lbl_mobile.Location = new System.Drawing.Point(23, 152);
             this.m_lbl_mobile.Name = "m_lbl_mobile";
             this.m_lbl_mobile.Size = new System.Drawing.Size(55, 13);
             this.m_lbl_mobile.TabIndex = 5;
@@ -93,7 +93,7 @@
             // m_lbl_email
             // 
             this.m_lbl_email.AutoSize = true;
-            this.m_lbl_email.Location = new System.Drawing.Point(27, 189);
+            this.m_lbl_email.Location = new System.Drawing.Point(23, 189);
             this.m_lbl_email.Name = "m_lbl_email";
             this.m_lbl_email.Size = new System.Drawing.Size(32, 13);
             this.m_lbl_email.TabIndex = 7;
@@ -102,7 +102,7 @@
             // m_lbl_address
             // 
             this.m_lbl_address.AutoSize = true;
-            this.m_lbl_address.Location = new System.Drawing.Point(27, 226);
+            this.m_lbl_address.Location = new System.Drawing.Point(23, 226);
             this.m_lbl_address.Name = "m_lbl_address";
             this.m_lbl_address.Size = new System.Drawing.Size(40, 13);
             this.m_lbl_address.TabIndex = 9;
@@ -111,7 +111,7 @@
             // m_lbl_tax_code
             // 
             this.m_lbl_tax_code.AutoSize = true;
-            this.m_lbl_tax_code.Location = new System.Drawing.Point(27, 263);
+            this.m_lbl_tax_code.Location = new System.Drawing.Point(23, 263);
             this.m_lbl_tax_code.Name = "m_lbl_tax_code";
             this.m_lbl_tax_code.Size = new System.Drawing.Size(46, 13);
             this.m_lbl_tax_code.TabIndex = 11;
