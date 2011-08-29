@@ -43,6 +43,8 @@ namespace SaleApp
         private Label m_lbl_price;
         private TextBox m_txt_price;
         private DateTimePicker m_dat_applied_date;
+        private Label m_lbl_unit;
+        private TextBox m_txt_unit;
 		private System.ComponentModel.IContainer components;
 
 		public f311_gd_product_price()
@@ -95,6 +97,8 @@ namespace SaleApp
             this.m_cbo_product = new System.Windows.Forms.ComboBox();
             this.m_lbl_product = new System.Windows.Forms.Label();
             this.m_lbl_header = new System.Windows.Forms.Label();
+            this.m_lbl_unit = new System.Windows.Forms.Label();
+            this.m_txt_unit = new System.Windows.Forms.TextBox();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -132,7 +136,7 @@ namespace SaleApp
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 405);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 432);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(757, 36);
@@ -150,7 +154,7 @@ namespace SaleApp
             this.m_cmd_insert.Location = new System.Drawing.Point(577, 4);
             this.m_cmd_insert.Name = "m_cmd_insert";
             this.m_cmd_insert.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_insert.TabIndex = 12;
+            this.m_cmd_insert.TabIndex = 0;
             this.m_cmd_insert.Text = "&Lưu";
             // 
             // m_cmd_exit
@@ -165,21 +169,23 @@ namespace SaleApp
             this.m_cmd_exit.Location = new System.Drawing.Point(665, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_exit.TabIndex = 11;
+            this.m_cmd_exit.TabIndex = 1;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
             // m_fg
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 158);
+            this.m_fg.Location = new System.Drawing.Point(0, 184);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(757, 247);
+            this.m_fg.Size = new System.Drawing.Size(757, 248);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 20;
+            this.m_fg.TabIndex = 1;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.m_lbl_unit);
+            this.groupBox1.Controls.Add(this.m_txt_unit);
             this.groupBox1.Controls.Add(this.m_dat_applied_date);
             this.groupBox1.Controls.Add(this.m_lbl_price);
             this.groupBox1.Controls.Add(this.m_txt_price);
@@ -189,7 +195,7 @@ namespace SaleApp
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 32);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(757, 126);
+            this.groupBox1.Size = new System.Drawing.Size(757, 152);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin cập nhật";
@@ -198,10 +204,10 @@ namespace SaleApp
             // 
             this.m_dat_applied_date.CustomFormat = "dd/MM/yyyy";
             this.m_dat_applied_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_applied_date.Location = new System.Drawing.Point(471, 73);
+            this.m_dat_applied_date.Location = new System.Drawing.Point(119, 115);
             this.m_dat_applied_date.Name = "m_dat_applied_date";
-            this.m_dat_applied_date.Size = new System.Drawing.Size(193, 20);
-            this.m_dat_applied_date.TabIndex = 6;
+            this.m_dat_applied_date.Size = new System.Drawing.Size(184, 20);
+            this.m_dat_applied_date.TabIndex = 7;
             // 
             // m_lbl_price
             // 
@@ -209,23 +215,23 @@ namespace SaleApp
             this.m_lbl_price.Location = new System.Drawing.Point(45, 76);
             this.m_lbl_price.Name = "m_lbl_price";
             this.m_lbl_price.Size = new System.Drawing.Size(44, 13);
-            this.m_lbl_price.TabIndex = 5;
+            this.m_lbl_price.TabIndex = 2;
             this.m_lbl_price.Text = "Giá bán";
             // 
             // m_txt_price
             // 
             this.m_txt_price.Location = new System.Drawing.Point(119, 73);
             this.m_txt_price.Name = "m_txt_price";
-            this.m_txt_price.Size = new System.Drawing.Size(191, 20);
-            this.m_txt_price.TabIndex = 2;
+            this.m_txt_price.Size = new System.Drawing.Size(223, 20);
+            this.m_txt_price.TabIndex = 3;
             // 
             // m_lbl_applied_date
             // 
             this.m_lbl_applied_date.AutoSize = true;
-            this.m_lbl_applied_date.Location = new System.Drawing.Point(369, 76);
+            this.m_lbl_applied_date.Location = new System.Drawing.Point(17, 118);
             this.m_lbl_applied_date.Name = "m_lbl_applied_date";
             this.m_lbl_applied_date.Size = new System.Drawing.Size(59, 13);
-            this.m_lbl_applied_date.TabIndex = 3;
+            this.m_lbl_applied_date.TabIndex = 6;
             this.m_lbl_applied_date.Text = "Áp dụng từ";
             // 
             // m_cbo_product
@@ -236,7 +242,7 @@ namespace SaleApp
             this.m_cbo_product.Location = new System.Drawing.Point(119, 33);
             this.m_cbo_product.Name = "m_cbo_product";
             this.m_cbo_product.Size = new System.Drawing.Size(545, 21);
-            this.m_cbo_product.TabIndex = 2;
+            this.m_cbo_product.TabIndex = 1;
             // 
             // m_lbl_product
             // 
@@ -244,7 +250,7 @@ namespace SaleApp
             this.m_lbl_product.Location = new System.Drawing.Point(45, 36);
             this.m_lbl_product.Name = "m_lbl_product";
             this.m_lbl_product.Size = new System.Drawing.Size(55, 13);
-            this.m_lbl_product.TabIndex = 1;
+            this.m_lbl_product.TabIndex = 0;
             this.m_lbl_product.Text = "Sản phẩm";
             // 
             // m_lbl_header
@@ -258,10 +264,28 @@ namespace SaleApp
             this.m_lbl_header.Text = "CẬP NHẬT GIÁ BÁN SẢN PHẨM";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // m_lbl_unit
+            // 
+            this.m_lbl_unit.AutoSize = true;
+            this.m_lbl_unit.Location = new System.Drawing.Point(399, 76);
+            this.m_lbl_unit.Name = "m_lbl_unit";
+            this.m_lbl_unit.Size = new System.Drawing.Size(38, 13);
+            this.m_lbl_unit.TabIndex = 4;
+            this.m_lbl_unit.Text = "Đơn vị";
+            // 
+            // m_txt_unit
+            // 
+            this.m_txt_unit.Enabled = false;
+            this.m_txt_unit.Location = new System.Drawing.Point(473, 73);
+            this.m_txt_unit.Name = "m_txt_unit";
+            this.m_txt_unit.Size = new System.Drawing.Size(191, 20);
+            this.m_txt_unit.TabIndex = 5;
+            this.m_txt_unit.Text = "CAI";
+            // 
             // f311_gd_product_price
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(757, 441);
+            this.ClientSize = new System.Drawing.Size(757, 468);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_lbl_header);
@@ -309,16 +333,17 @@ namespace SaleApp
             CControlFormat.setLabelStyle(m_lbl_applied_date, CControlFormat.LabelStyle.Title_Info);
             CControlFormat.setLabelStyle(m_lbl_price, CControlFormat.LabelStyle.Title_Info);
             CControlFormat.setLabelStyle(m_lbl_product, CControlFormat.LabelStyle.Title_Info);
+            CControlFormat.setLabelStyle(m_lbl_unit, CControlFormat.LabelStyle.Title_Info);
 		}
         private void load_data_2_product_cbo()
         {
-            US_V_GD_PRODUCT_PRICE v_us_product_price = new US_V_GD_PRODUCT_PRICE();
-            DS_V_GD_PRODUCT_PRICE v_ds_product_price = new DS_V_GD_PRODUCT_PRICE();
+            US_DM_PRODUCT v_us_product_price = new US_DM_PRODUCT();
+            DS_DM_PRODUCT v_ds_product_price = new DS_DM_PRODUCT();
             v_us_product_price.FillDataset(v_ds_product_price);
 
-            m_cbo_product.DisplayMember = V_GD_PRODUCT_PRICE.PRODUCT_NAME;
-            m_cbo_product.ValueMember = V_GD_PRODUCT_PRICE.PRODUCT_ID;
-            m_cbo_product.DataSource = v_ds_product_price.V_GD_PRODUCT_PRICE;
+            m_cbo_product.DisplayMember = DM_PRODUCT.PRODUCT_NAME;
+            m_cbo_product.ValueMember = DM_PRODUCT.ID;
+            m_cbo_product.DataSource = v_ds_product_price.DM_PRODUCT;
         }
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
@@ -345,8 +370,26 @@ namespace SaleApp
 			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
 			i_us.DataRow2Me(v_dr);
 		}
-
-	
+        private bool check_data_is_ok()
+        {
+            if (!CValidateTextBox.IsValid(m_txt_price, DataType.NumberType, allowNull.NO, true))
+                return false;
+            return true;
+        }
+        private void save_data()
+        {
+            if (!check_data_is_ok()) return;
+            form_2_us_object(m_us);
+            m_us.Insert_to_product_price(m_us.dcPRODUCT_ID, m_us.datAPPLY_DATE, m_us.dcPRICE, m_us.dcUNIT_ID);
+            BaseMessages.MsgBox_Infor(10);
+        }
+        private void form_2_us_object(US_V_GD_PRODUCT_PRICE op_us_gd_product_price)
+        {
+            op_us_gd_product_price.dcPRODUCT_ID = decimal.Parse(m_cbo_product.SelectedValue.ToString());
+            op_us_gd_product_price.dcPRICE = decimal.Parse(m_txt_price.Text);
+            op_us_gd_product_price.datAPPLY_DATE = m_dat_applied_date.Value.Date;
+            op_us_gd_product_price.dcUNIT_ID = 1;
+        }
 		private void us_object2grid(US_V_GD_PRODUCT_PRICE i_us
 			, int i_grid_row) {
 			DataRow v_dr = (DataRow) m_fg.Rows[i_grid_row].UserData;
@@ -355,9 +398,8 @@ namespace SaleApp
 		}
 
 
-		private void insert_v_gd_product_price(){			
-		//	f311_gd_product_price_DE v_fDE = new  f311_gd_product_price_DE();								
-		//	v_fDE.display();
+		private void insert_v_gd_product_price(){
+            save_data();
 			load_data_2_grid();
 		}
 
