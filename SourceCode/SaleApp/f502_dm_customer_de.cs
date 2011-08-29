@@ -45,6 +45,16 @@ namespace SaleApp
         {
             CControlFormat.setFormStyle(this);
             this.KeyPreview = true;
+            m_lbl_add_customer.ForeColor = Color.Blue;
+            m_lbl_add_customer.Font = new Font("Arial", 16);
+            CControlFormat.setLabelStyle(m_lbl_address, CControlFormat.LabelStyle.Title_Info);
+            CControlFormat.setLabelStyle(m_lbl_customer_group_name, CControlFormat.LabelStyle.Title_Info);
+            CControlFormat.setLabelStyle(m_lbl_customer_name, CControlFormat.LabelStyle.Title_Info);
+            CControlFormat.setLabelStyle(m_lbl_email, CControlFormat.LabelStyle.Title_Info);
+            CControlFormat.setLabelStyle(m_lbl_mobile_phone, CControlFormat.LabelStyle.Title_Info);
+            CControlFormat.setLabelStyle(m_lbl_tax_code, CControlFormat.LabelStyle.Title_Info);
+            CControlFormat.setLabelStyle(m_lbl_website, CControlFormat.LabelStyle.Title_Info);
+            label1.ForeColor = Color.Red;
         }
 
         private void set_define_event()
@@ -84,6 +94,10 @@ namespace SaleApp
                 return false;
             }
             if (!CValidateTextBox.IsValid(m_txt_tax_code,DataType.StringType, allowNull.YES, true) )
+            {
+                return false;
+            }
+            if (!CValidateTextBox.IsValid(m_txt_mobile_phone, DataType.NumberTypengType, allowNull.YES, true))
             {
                 return false;
             }
