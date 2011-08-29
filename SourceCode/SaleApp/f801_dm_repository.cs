@@ -223,7 +223,7 @@ namespace SaleApp
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f801_dm_repository";
-            this.Text = "F801 Danh muc kho";
+            this.Text = "F801 - Danh muc kho";
             this.Load += new System.EventHandler(this.f801_dm_repository_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
