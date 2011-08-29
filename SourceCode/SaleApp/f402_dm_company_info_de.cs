@@ -45,6 +45,17 @@ namespace SaleApp
         {
             CControlFormat.setFormStyle(this);
             this.KeyPreview = true;
+            m_lbl_add_company.Font = new Font("Arial", 16);
+            m_lbl_add_company.ForeColor = Color.Blue;
+            label1.ForeColor = Color.Red;
+            label2.ForeColor = Color.Red;
+            m_lbl_address.Font = new Font("Arial", 9);
+            m_lbl_email.Font = new Font("Arial", 9);
+            m_lbl_mobile.Font = new Font("Arial", 9);
+            m_lbl_full_name.Font = new Font("Arial", 9);
+            m_lbl_short_name.Font = new Font("Arial", 9);
+            m_lbl_tax_code.Font = new Font("Arial", 9);
+            m_txt_address.Font = new Font("Arial", 9);
         }
 
 
@@ -84,7 +95,7 @@ namespace SaleApp
             {
                 return false;
             }
-            if (!CValidateTextBox.IsValid(m_txt_mobile, DataType.StringType, allowNull.YES, true))
+            if (!CValidateTextBox.IsValid(m_txt_mobile, DataType.NumberType, allowNull.YES, true))
             {
                 return false;
             }
@@ -92,7 +103,7 @@ namespace SaleApp
             {
                 return false;
             }
-            if (!CValidateTextBox.IsValid(m_txt_tax_code, DataType.StringType, allowNull.YES, true))
+            if (!CValidateTextBox.IsValid(m_txt_tax_code, DataType.NumberType, allowNull.YES, true))
             {
                 return false;
             }
