@@ -66,7 +66,7 @@
             // 
             this.m_lblcategory_code.AutoSize = true;
             this.m_lblcategory_code.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_lblcategory_code.Location = new System.Drawing.Point(35, 78);
+            this.m_lblcategory_code.Location = new System.Drawing.Point(25, 78);
             this.m_lblcategory_code.Name = "m_lblcategory_code";
             this.m_lblcategory_code.Size = new System.Drawing.Size(78, 13);
             this.m_lblcategory_code.TabIndex = 1;
@@ -90,7 +90,7 @@
             // 
             this.m_lblcategory_display_order.AutoSize = true;
             this.m_lblcategory_display_order.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_lblcategory_display_order.Location = new System.Drawing.Point(35, 202);
+            this.m_lblcategory_display_order.Location = new System.Drawing.Point(25, 202);
             this.m_lblcategory_display_order.Name = "m_lblcategory_display_order";
             this.m_lblcategory_display_order.Size = new System.Drawing.Size(75, 13);
             this.m_lblcategory_display_order.TabIndex = 5;
@@ -125,7 +125,7 @@
             // 
             this.m_lblcategory_description.AutoSize = true;
             this.m_lblcategory_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_lblcategory_description.Location = new System.Drawing.Point(35, 262);
+            this.m_lblcategory_description.Location = new System.Drawing.Point(25, 262);
             this.m_lblcategory_description.Name = "m_lblcategory_description";
             this.m_lblcategory_description.Size = new System.Drawing.Size(34, 13);
             this.m_lblcategory_description.TabIndex = 9;
@@ -203,7 +203,7 @@
             // 
             this.m_lblcategory_name.AutoSize = true;
             this.m_lblcategory_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_lblcategory_name.Location = new System.Drawing.Point(35, 122);
+            this.m_lblcategory_name.Location = new System.Drawing.Point(25, 122);
             this.m_lblcategory_name.Name = "m_lblcategory_name";
             this.m_lblcategory_name.Size = new System.Drawing.Size(82, 13);
             this.m_lblcategory_name.TabIndex = 3;
@@ -220,7 +220,7 @@
             // 
             this.m_lbl_parent_name.AutoSize = true;
             this.m_lbl_parent_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.m_lbl_parent_name.Location = new System.Drawing.Point(35, 162);
+            this.m_lbl_parent_name.Location = new System.Drawing.Point(25, 162);
             this.m_lbl_parent_name.Name = "m_lbl_parent_name";
             this.m_lbl_parent_name.Size = new System.Drawing.Size(76, 13);
             this.m_lbl_parent_name.TabIndex = 21;
