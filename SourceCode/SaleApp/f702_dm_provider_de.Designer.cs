@@ -54,13 +54,14 @@
             // 
             // m_lbl_add__provider
             // 
+            this.m_lbl_add__provider.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_lbl_add__provider.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_add__provider.ForeColor = System.Drawing.Color.Blue;
-            this.m_lbl_add__provider.Location = new System.Drawing.Point(0, 19);
+            this.m_lbl_add__provider.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_add__provider.Name = "m_lbl_add__provider";
-            this.m_lbl_add__provider.Size = new System.Drawing.Size(600, 25);
+            this.m_lbl_add__provider.Size = new System.Drawing.Size(614, 25);
             this.m_lbl_add__provider.TabIndex = 0;
-            this.m_lbl_add__provider.Text = "THÊM NHÀ CUNG CẤP";
+            this.m_lbl_add__provider.Text = "CẬP NHẬT THÔNG TIN  NHÀ CUNG CẤP";
             this.m_lbl_add__provider.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // m_lbl_provider_code
@@ -267,7 +268,7 @@
             this.Controls.Add(this.m_lbl_provider_code);
             this.Controls.Add(this.m_lbl_add__provider);
             this.Name = "f702_dm_provider_de";
-            this.Text = "f702 Thêm nhà cung cấp";
+            this.Text = "F702 - Cập nhật thông tin nhà cung cấp";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
