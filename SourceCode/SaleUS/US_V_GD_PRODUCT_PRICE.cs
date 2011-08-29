@@ -215,6 +215,17 @@ public class US_V_GD_PRODUCT_PRICE : US_Object
 	}
 #endregion
 
-
-  }
+    #region Additional Function
+    public void Insert_to_product_price(decimal ip_dc_product_id,
+                                        DateTime ip_dat_applied_date, decimal ip_dc_price, decimal ip_dc_unit_id)
+    {
+        CStoredProc v_store = new CStoredProc("pr_V_GD_PRODUCT_PRICE_Insert");
+        v_store.addDecimalInputParam("@PRODUCT_ID",ip_dc_product_id);
+        v_store.addDatetimeInputParam("@APPLY_DATE", ip_dat_applied_date);
+        v_store.addDecimalInputParam("@PRICE", ip_dc_price);
+        v_store.addDecimalInputParam("@UNIT_ID", ip_dc_unit_id);
+        v_store.ExecuteCommand(this);
+    }
+    #endregion
+}
 }
