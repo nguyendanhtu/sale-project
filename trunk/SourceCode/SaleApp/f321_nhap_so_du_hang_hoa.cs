@@ -56,6 +56,8 @@ namespace SaleApp
             CControlFormat.setFormStyle(this);
             CControlFormat.setC1FlexFormat(m_fg);
             m_fg.AllowEditing = true;
+            m_lbl_header.ForeColor = Color.Blue;
+            m_lbl_header.Font = new Font("Arial", 16);
             set_define_events();
         }
 
