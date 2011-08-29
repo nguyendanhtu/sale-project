@@ -54,7 +54,7 @@
             // m_lbl_customer_group_name
             // 
             this.m_lbl_customer_group_name.AutoSize = true;
-            this.m_lbl_customer_group_name.Location = new System.Drawing.Point(26, 75);
+            this.m_lbl_customer_group_name.Location = new System.Drawing.Point(17, 75);
             this.m_lbl_customer_group_name.Name = "m_lbl_customer_group_name";
             this.m_lbl_customer_group_name.Size = new System.Drawing.Size(115, 13);
             this.m_lbl_customer_group_name.TabIndex = 9;
