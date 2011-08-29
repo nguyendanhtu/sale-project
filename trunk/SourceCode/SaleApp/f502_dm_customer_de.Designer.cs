@@ -49,6 +49,7 @@
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_save = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +57,7 @@
             // 
             this.m_lbl_customer_group_name.AutoSize = true;
             this.m_lbl_customer_group_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_customer_group_name.Location = new System.Drawing.Point(370, 124);
+            this.m_lbl_customer_group_name.Location = new System.Drawing.Point(349, 124);
             this.m_lbl_customer_group_name.Name = "m_lbl_customer_group_name";
             this.m_lbl_customer_group_name.Size = new System.Drawing.Size(82, 16);
             this.m_lbl_customer_group_name.TabIndex = 7;
@@ -86,7 +87,7 @@
             // 
             this.m_lbl_email.AutoSize = true;
             this.m_lbl_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_email.Location = new System.Drawing.Point(370, 175);
+            this.m_lbl_email.Location = new System.Drawing.Point(349, 175);
             this.m_lbl_email.Name = "m_lbl_email";
             this.m_lbl_email.Size = new System.Drawing.Size(42, 16);
             this.m_lbl_email.TabIndex = 8;
@@ -106,7 +107,7 @@
             // 
             this.m_lbl_website.AutoSize = true;
             this.m_lbl_website.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_website.Location = new System.Drawing.Point(370, 231);
+            this.m_lbl_website.Location = new System.Drawing.Point(24, 274);
             this.m_lbl_website.Name = "m_lbl_website";
             this.m_lbl_website.Size = new System.Drawing.Size(76, 16);
             this.m_lbl_website.TabIndex = 13;
@@ -129,7 +130,7 @@
             this.m_lbl_add_customer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.m_lbl_add_customer.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_add_customer.Name = "m_lbl_add_customer";
-            this.m_lbl_add_customer.Size = new System.Drawing.Size(715, 55);
+            this.m_lbl_add_customer.Size = new System.Drawing.Size(693, 55);
             this.m_lbl_add_customer.TabIndex = 6;
             this.m_lbl_add_customer.Text = "THÊM KHÁCH HÀNG";
             this.m_lbl_add_customer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -138,49 +139,49 @@
             // 
             this.m_cbo_customer_group_name.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_cbo_customer_group_name.FormattingEnabled = true;
-            this.m_cbo_customer_group_name.Location = new System.Drawing.Point(492, 119);
+            this.m_cbo_customer_group_name.Location = new System.Drawing.Point(449, 119);
             this.m_cbo_customer_group_name.Name = "m_cbo_customer_group_name";
             this.m_cbo_customer_group_name.Size = new System.Drawing.Size(211, 21);
             this.m_cbo_customer_group_name.TabIndex = 2;
             // 
             // m_txt_customer_name
             // 
-            this.m_txt_customer_name.Location = new System.Drawing.Point(134, 73);
+            this.m_txt_customer_name.Location = new System.Drawing.Point(148, 73);
             this.m_txt_customer_name.Name = "m_txt_customer_name";
-            this.m_txt_customer_name.Size = new System.Drawing.Size(218, 20);
+            this.m_txt_customer_name.Size = new System.Drawing.Size(512, 20);
             this.m_txt_customer_name.TabIndex = 0;
             // 
             // m_txt_mobile_phone
             // 
-            this.m_txt_mobile_phone.Location = new System.Drawing.Point(134, 172);
+            this.m_txt_mobile_phone.Location = new System.Drawing.Point(148, 172);
             this.m_txt_mobile_phone.Name = "m_txt_mobile_phone";
-            this.m_txt_mobile_phone.Size = new System.Drawing.Size(150, 20);
+            this.m_txt_mobile_phone.Size = new System.Drawing.Size(171, 20);
             this.m_txt_mobile_phone.TabIndex = 3;
             // 
             // m_txt_email
             // 
-            this.m_txt_email.Location = new System.Drawing.Point(492, 172);
+            this.m_txt_email.Location = new System.Drawing.Point(449, 174);
             this.m_txt_email.Name = "m_txt_email";
-            this.m_txt_email.Size = new System.Drawing.Size(177, 20);
+            this.m_txt_email.Size = new System.Drawing.Size(211, 20);
             this.m_txt_email.TabIndex = 5;
             // 
             // m_txt_address
             // 
-            this.m_txt_address.Location = new System.Drawing.Point(134, 228);
+            this.m_txt_address.Location = new System.Drawing.Point(148, 227);
             this.m_txt_address.Name = "m_txt_address";
-            this.m_txt_address.Size = new System.Drawing.Size(218, 20);
+            this.m_txt_address.Size = new System.Drawing.Size(512, 20);
             this.m_txt_address.TabIndex = 4;
             // 
             // m_txt_website
             // 
-            this.m_txt_website.Location = new System.Drawing.Point(492, 224);
+            this.m_txt_website.Location = new System.Drawing.Point(148, 270);
             this.m_txt_website.Name = "m_txt_website";
-            this.m_txt_website.Size = new System.Drawing.Size(141, 20);
+            this.m_txt_website.Size = new System.Drawing.Size(314, 20);
             this.m_txt_website.TabIndex = 6;
             // 
             // m_txt_tax_code
             // 
-            this.m_txt_tax_code.Location = new System.Drawing.Point(134, 120);
+            this.m_txt_tax_code.Location = new System.Drawing.Point(148, 119);
             this.m_txt_tax_code.Name = "m_txt_tax_code";
             this.m_txt_tax_code.Size = new System.Drawing.Size(171, 20);
             this.m_txt_tax_code.TabIndex = 1;
@@ -220,7 +221,7 @@
             this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 307);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(715, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(693, 36);
             this.m_pnl_out_place_dm.TabIndex = 7;
             // 
             // m_cmd_save
@@ -232,7 +233,7 @@
             this.m_cmd_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_save.ImageIndex = 10;
             this.m_cmd_save.ImageList = this.ImageList;
-            this.m_cmd_save.Location = new System.Drawing.Point(535, 4);
+            this.m_cmd_save.Location = new System.Drawing.Point(513, 4);
             this.m_cmd_save.Name = "m_cmd_save";
             this.m_cmd_save.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_save.TabIndex = 0;
@@ -247,17 +248,28 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(623, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(601, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 1;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(127, 76);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(21, 16);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "(*)";
+            // 
             // f502_dm_customer_de
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 343);
+            this.ClientSize = new System.Drawing.Size(693, 343);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_txt_tax_code);
             this.Controls.Add(this.m_txt_website);
@@ -275,7 +287,7 @@
             this.Controls.Add(this.m_lbl_customer_name);
             this.Controls.Add(this.m_lbl_customer_group_name);
             this.Name = "f502_dm_customer_de";
-            this.Text = "f502 Thêm khách hàng";
+            this.Text = "F502 - Thêm khách hàng";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -303,5 +315,6 @@
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         internal SIS.Controls.Button.SiSButton m_cmd_save;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
+        private System.Windows.Forms.Label label1;
     }
 }
