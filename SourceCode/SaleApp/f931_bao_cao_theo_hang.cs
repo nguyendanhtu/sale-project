@@ -163,7 +163,7 @@ namespace SaleApp
             this.m_cbo_ten_mat_hang.Location = new System.Drawing.Point(132, 81);
             this.m_cbo_ten_mat_hang.MaxDropDownItems = 5;
             this.m_cbo_ten_mat_hang.Name = "m_cbo_ten_mat_hang";
-            this.m_cbo_ten_mat_hang.Size = new System.Drawing.Size(200, 21);
+            this.m_cbo_ten_mat_hang.Size = new System.Drawing.Size(483, 21);
             this.m_cbo_ten_mat_hang.TabIndex = 31;
             // 
             // label3
@@ -354,7 +354,6 @@ namespace SaleApp
 			m_obj_trans.GridRow2DataRow(i_grid_row,v_dr);
 			i_us.DataRow2Me(v_dr);
 		}
-
         private void load_data_to_m_cbo_ten_mat_hang()
         {
             US_DM_PRODUCT v_us_dm_product = new US_DM_PRODUCT();
@@ -455,7 +454,8 @@ namespace SaleApp
 		
         private void m_cmd_view_Click(object sender, EventArgs e) {
 			try{
-				view_v_rpt_gd_bill_detail();
+                //view_v_rpt_gd_bill_detail();
+                load_data_2_grid();
 			}
 			catch (Exception v_e){
 				CSystemLog_301.ExceptionHandle(v_e);
