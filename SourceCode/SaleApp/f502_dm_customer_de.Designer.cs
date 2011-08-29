@@ -60,7 +60,7 @@
             this.m_lbl_customer_group_name.Location = new System.Drawing.Point(355, 124);
             this.m_lbl_customer_group_name.Name = "m_lbl_customer_group_name";
             this.m_lbl_customer_group_name.Size = new System.Drawing.Size(82, 16);
-            this.m_lbl_customer_group_name.TabIndex = 7;
+            this.m_lbl_customer_group_name.TabIndex = 6;
             this.m_lbl_customer_group_name.Text = "Thuộc nhóm";
             // 
             // m_lbl_customer_name
@@ -70,7 +70,7 @@
             this.m_lbl_customer_name.Location = new System.Drawing.Point(24, 76);
             this.m_lbl_customer_name.Name = "m_lbl_customer_name";
             this.m_lbl_customer_name.Size = new System.Drawing.Size(104, 16);
-            this.m_lbl_customer_name.TabIndex = 0;
+            this.m_lbl_customer_name.TabIndex = 1;
             this.m_lbl_customer_name.Text = "Tên khách hàng";
             // 
             // m_lbl_mobile_phone
@@ -80,7 +80,7 @@
             this.m_lbl_mobile_phone.Location = new System.Drawing.Point(24, 175);
             this.m_lbl_mobile_phone.Name = "m_lbl_mobile_phone";
             this.m_lbl_mobile_phone.Size = new System.Drawing.Size(67, 16);
-            this.m_lbl_mobile_phone.TabIndex = 4;
+            this.m_lbl_mobile_phone.TabIndex = 8;
             this.m_lbl_mobile_phone.Text = "Điện thoại";
             // 
             // m_lbl_email
@@ -90,7 +90,7 @@
             this.m_lbl_email.Location = new System.Drawing.Point(355, 175);
             this.m_lbl_email.Name = "m_lbl_email";
             this.m_lbl_email.Size = new System.Drawing.Size(42, 16);
-            this.m_lbl_email.TabIndex = 8;
+            this.m_lbl_email.TabIndex = 10;
             this.m_lbl_email.Text = "Email";
             // 
             // m_lbl_address
@@ -100,7 +100,7 @@
             this.m_lbl_address.Location = new System.Drawing.Point(24, 231);
             this.m_lbl_address.Name = "m_lbl_address";
             this.m_lbl_address.Size = new System.Drawing.Size(48, 16);
-            this.m_lbl_address.TabIndex = 11;
+            this.m_lbl_address.TabIndex = 12;
             this.m_lbl_address.Text = "Địa chỉ";
             // 
             // m_lbl_website
@@ -110,7 +110,7 @@
             this.m_lbl_website.Location = new System.Drawing.Point(24, 274);
             this.m_lbl_website.Name = "m_lbl_website";
             this.m_lbl_website.Size = new System.Drawing.Size(76, 16);
-            this.m_lbl_website.TabIndex = 13;
+            this.m_lbl_website.TabIndex = 14;
             this.m_lbl_website.Text = "Trang Web";
             // 
             // m_lbl_tax_code
@@ -120,7 +120,7 @@
             this.m_lbl_tax_code.Location = new System.Drawing.Point(24, 123);
             this.m_lbl_tax_code.Name = "m_lbl_tax_code";
             this.m_lbl_tax_code.Size = new System.Drawing.Size(55, 16);
-            this.m_lbl_tax_code.TabIndex = 2;
+            this.m_lbl_tax_code.TabIndex = 4;
             this.m_lbl_tax_code.Text = "Mã thuế";
             // 
             // m_lbl_add_customer
@@ -131,8 +131,8 @@
             this.m_lbl_add_customer.Location = new System.Drawing.Point(0, 0);
             this.m_lbl_add_customer.Name = "m_lbl_add_customer";
             this.m_lbl_add_customer.Size = new System.Drawing.Size(693, 55);
-            this.m_lbl_add_customer.TabIndex = 6;
-            this.m_lbl_add_customer.Text = "THÊM KHÁCH HÀNG";
+            this.m_lbl_add_customer.TabIndex = 0;
+            this.m_lbl_add_customer.Text = "CẬP NHẬT THÔNG TIN KHÁCH HÀNG";
             this.m_lbl_add_customer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_cbo_customer_group_name
@@ -142,49 +142,49 @@
             this.m_cbo_customer_group_name.Location = new System.Drawing.Point(455, 119);
             this.m_cbo_customer_group_name.Name = "m_cbo_customer_group_name";
             this.m_cbo_customer_group_name.Size = new System.Drawing.Size(211, 21);
-            this.m_cbo_customer_group_name.TabIndex = 2;
+            this.m_cbo_customer_group_name.TabIndex = 7;
             // 
             // m_txt_customer_name
             // 
             this.m_txt_customer_name.Location = new System.Drawing.Point(154, 73);
             this.m_txt_customer_name.Name = "m_txt_customer_name";
             this.m_txt_customer_name.Size = new System.Drawing.Size(512, 20);
-            this.m_txt_customer_name.TabIndex = 0;
+            this.m_txt_customer_name.TabIndex = 3;
             // 
             // m_txt_mobile_phone
             // 
             this.m_txt_mobile_phone.Location = new System.Drawing.Point(154, 172);
             this.m_txt_mobile_phone.Name = "m_txt_mobile_phone";
             this.m_txt_mobile_phone.Size = new System.Drawing.Size(171, 20);
-            this.m_txt_mobile_phone.TabIndex = 3;
+            this.m_txt_mobile_phone.TabIndex = 9;
             // 
             // m_txt_email
             // 
             this.m_txt_email.Location = new System.Drawing.Point(455, 174);
             this.m_txt_email.Name = "m_txt_email";
             this.m_txt_email.Size = new System.Drawing.Size(211, 20);
-            this.m_txt_email.TabIndex = 5;
+            this.m_txt_email.TabIndex = 11;
             // 
             // m_txt_address
             // 
             this.m_txt_address.Location = new System.Drawing.Point(154, 227);
             this.m_txt_address.Name = "m_txt_address";
             this.m_txt_address.Size = new System.Drawing.Size(512, 20);
-            this.m_txt_address.TabIndex = 4;
+            this.m_txt_address.TabIndex = 13;
             // 
             // m_txt_website
             // 
             this.m_txt_website.Location = new System.Drawing.Point(154, 270);
             this.m_txt_website.Name = "m_txt_website";
             this.m_txt_website.Size = new System.Drawing.Size(314, 20);
-            this.m_txt_website.TabIndex = 6;
+            this.m_txt_website.TabIndex = 15;
             // 
             // m_txt_tax_code
             // 
             this.m_txt_tax_code.Location = new System.Drawing.Point(154, 119);
             this.m_txt_tax_code.Name = "m_txt_tax_code";
             this.m_txt_tax_code.Size = new System.Drawing.Size(171, 20);
-            this.m_txt_tax_code.TabIndex = 1;
+            this.m_txt_tax_code.TabIndex = 5;
             // 
             // ImageList
             // 
@@ -222,7 +222,7 @@
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(693, 36);
-            this.m_pnl_out_place_dm.TabIndex = 7;
+            this.m_pnl_out_place_dm.TabIndex = 16;
             // 
             // m_cmd_save
             // 
@@ -261,7 +261,7 @@
             this.label1.Location = new System.Drawing.Point(129, 76);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(21, 16);
-            this.label1.TabIndex = 14;
+            this.label1.TabIndex = 2;
             this.label1.Text = "(*)";
             // 
             // f502_dm_customer_de
@@ -287,7 +287,7 @@
             this.Controls.Add(this.m_lbl_customer_name);
             this.Controls.Add(this.m_lbl_customer_group_name);
             this.Name = "f502_dm_customer_de";
-            this.Text = "F502 - Thêm khách hàng";
+            this.Text = "F502 - Cập nhật thông tin khách hàng";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

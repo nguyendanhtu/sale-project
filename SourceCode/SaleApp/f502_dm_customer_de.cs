@@ -97,7 +97,7 @@ namespace SaleApp
             {
                 return false;
             }
-            if (!CValidateTextBox.IsValid(m_txt_mobile_phone, DataType.NumberType, allowNull.YES, true))
+            if (!CValidateTextBox.IsValid(m_txt_mobile_phone, DataType.StringType, allowNull.YES, true))
             {
                 return false;
             }
