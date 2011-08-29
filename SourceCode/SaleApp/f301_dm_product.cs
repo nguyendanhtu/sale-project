@@ -241,10 +241,10 @@ namespace SaleApp
 		private enum e_col_Number{
 			DESCRIPTION = 5
             ,CURRENT_PRICE = 6
-            ,UNIT_NANE = 3
-            ,PRODUCT_NAME = 2
-            ,PRODUCT_CODE = 1
-            ,CATEGORY_NAME = 4
+            ,UNIT_NANE = 4
+            ,PRODUCT_NAME = 3
+            ,PRODUCT_CODE = 2
+            ,CATEGORY_NAME = 1
 
 		}			
 		#endregion
@@ -260,6 +260,11 @@ namespace SaleApp
 		private void format_controls(){
 			CControlFormat.setFormStyle(this);
 			CControlFormat.setC1FlexFormat(m_fg);
+            m_fg.Tree.Column = (int)e_col_Number.PRODUCT_CODE;
+            m_fg.Tree.Style = TreeStyleFlags.SimpleLeaf;
+            m_fg.Cols[(int)e_col_Number.CATEGORY_NAME].Visible = false;
+            mapping_col_dvt();
+
 			set_define_events();
 			this.KeyPreview = true;		
 		}
@@ -279,12 +284,33 @@ namespace SaleApp
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.DM_PRODUCT_DE.NewRow());
 			return v_obj_trans;			
 		}
+
+        private void mapping_col_dvt()
+        {
+            Hashtable v_hst = new Hashtable();
+            DS_DM_UNIT v_ds_unit = new DS_DM_UNIT();
+            US_DM_UNIT v_us_unit = new US_DM_UNIT();
+            v_us_unit.FillDataset(v_ds_unit);
+            foreach (DataRow v_dr in v_ds_unit.DM_UNIT.Rows)
+            {
+                v_hst.Add(v_dr[DM_UNIT.UNIT_CODE], v_dr[DM_UNIT.DESCRIPTION]);
+            }
+            m_fg.Cols[(int)e_col_Number.UNIT_NANE].DataMap = v_hst;
+        }
+
+
 		private void load_data_2_grid(){						
 			m_ds = new DS_DM_PRODUCT_DE();
             m_ds.EnforceConstraints = false;
 			m_us_product_detail.FillDatasetByProcedure(m_ds);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+
+            m_fg.Subtotal(AggregateEnum.Count
+                , 0
+                , (int)e_col_Number.CATEGORY_NAME
+                , (int)e_col_Number.PRODUCT_NAME
+                , "{0}");
 			m_fg.Redraw = true;
 		}
 		private void grid2us_object(US_DM_PRODUCT_DE i_us
@@ -314,6 +340,7 @@ namespace SaleApp
 		private void update_dm_product_de(){			
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            if (m_fg.Rows[m_fg.Row].IsNode == true) return;
             grid2us_object(m_us_product_detail, m_fg.Row);
             f302_dm_product_de v_fDE = new f302_dm_product_de();
             v_fDE.display_for_update(m_us_product_detail);
@@ -323,6 +350,7 @@ namespace SaleApp
 		private void delete_dm_product_de(){
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            if (m_fg.Rows[m_fg.Row].IsNode == true) return;
 			if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted)  return;
 			US_DM_PRODUCT_DE v_us_product_detail = new US_DM_PRODUCT_DE();
             grid2us_object(v_us_product_detail, m_fg.Row);
