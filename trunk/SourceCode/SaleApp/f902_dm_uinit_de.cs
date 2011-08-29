@@ -55,7 +55,7 @@ namespace SaleApp
             CControlFormat.setFormStyle(this);
             this.KeyPreview = true;
             m_lbl__description.Font = new Font("Arial", 9);
-            m_lbl_unit_code.ForeColor = new Font("Arial", 9);
+            m_lbl_unit_code.Font = new Font("Arial", 9);
             m_lbl_add_unit.ForeColor = Color.Blue;
             m_lbl_add_unit.Font = new Font("Arial", 16);
             label1.ForeColor = Color.Red; 
