@@ -93,6 +93,8 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.s = new DevExpress.XtraEditors.PanelControl();
+            this.ribbonPageGroup24 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.mnu_bao_cao_theo_nhom = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection2)).BeginInit();
@@ -147,10 +149,11 @@
             this.mnu_cmd_lichsuhanghoa,
             this.mnu_cmd_kiemkehanghoa,
             this.m_mnu_bc_theo_hang,
-            this.mnu_cmd_employee});
+            this.mnu_cmd_employee,
+            this.mnu_bao_cao_theo_nhom});
             this.ribbon.LargeImages = this.imageCollection1;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 38;
+            this.ribbon.MaxItemId = 39;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.hệThốngToolStripMenuItem,
@@ -769,7 +772,8 @@
             this.ribbonPageGroup8,
             this.ribbonPageGroup21,
             this.ribbonPageGroup23,
-            this.ribbonPageGroup22});
+            this.ribbonPageGroup22,
+            this.ribbonPageGroup24});
             this.báoCáoToolStripMenuItem.ImageIndex = 1;
             this.báoCáoToolStripMenuItem.Name = "báoCáoToolStripMenuItem";
             this.báoCáoToolStripMenuItem.Text = "Báo cáo";
@@ -828,6 +832,21 @@
             this.s.Name = "s";
             this.s.Size = new System.Drawing.Size(1083, 531);
             this.s.TabIndex = 2;
+            // 
+            // ribbonPageGroup24
+            // 
+            this.ribbonPageGroup24.ItemLinks.Add(this.mnu_bao_cao_theo_nhom);
+            this.ribbonPageGroup24.Name = "ribbonPageGroup24";
+            this.ribbonPageGroup24.ShowCaptionButton = false;
+            // 
+            // mnu_bao_cao_theo_nhom
+            // 
+            this.mnu_bao_cao_theo_nhom.Caption = "Báo cáo theo nhóm";
+            this.mnu_bao_cao_theo_nhom.Id = 38;
+            this.mnu_bao_cao_theo_nhom.LargeImageIndex = 12;
+            this.mnu_bao_cao_theo_nhom.LargeWidth = 60;
+            this.mnu_bao_cao_theo_nhom.Name = "mnu_bao_cao_theo_nhom";
+            this.mnu_bao_cao_theo_nhom.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_bao_cao_theo_nhom_ItemClick);
             // 
             // f001_main_form
             // 
@@ -928,5 +947,7 @@
         private DevExpress.XtraBars.BarButtonItem m_mnu_bc_theo_hang;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup22;
         private DevExpress.XtraBars.BarButtonItem mnu_cmd_employee;
+        private DevExpress.XtraBars.BarButtonItem mnu_bao_cao_theo_nhom;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup24;
     }
 }

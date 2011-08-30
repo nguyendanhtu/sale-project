@@ -233,7 +233,17 @@ namespace SaleApp
             f401_dm_company_info v_frm401 = new f401_dm_company_info();
             v_frm401.display();
         }
+        private void show_bao_cao_theo_nhom()
+        {
+            if (!CAppContext_201.IsHavingQuyen(IP.Core.IPSystemAdmin.PHAN_QUYEN.IN_BAO_CAO))
+            {
+                BaseMessages.MsgBox_Infor(" Người sử dụng không được phép truy nhập phần này !!! ");
+                return;
+            }
 
+            f921_bao_cao_theo_nhom v_frm921 = new f921_bao_cao_theo_nhom();
+            v_frm921.display();
+        }
         private void show_form_ban_hang()
         {
             if (!CAppContext_201.IsHavingQuyen(IP.Core.IPSystemAdmin.PHAN_QUYEN.IN_BAO_CAO))
@@ -565,6 +575,19 @@ namespace SaleApp
         private void mnu_cmd_kiemkehanghoa_ItemClick(object sender, ItemClickEventArgs e)
         {
 
+        }
+
+        private void mnu_bao_cao_theo_nhom_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                show_bao_cao_theo_nhom();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
     }
