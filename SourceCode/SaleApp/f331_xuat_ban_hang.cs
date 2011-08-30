@@ -190,6 +190,7 @@ namespace SaleApp
             op_us_gd_delivery_order.datDELIVERY_ORDER_DATE = m_dat_bill_date.Value.Date;
             op_us_gd_delivery_order.dcREPOSITORY_ID = CIPConvert.ToDecimal(m_cbo_repository.SelectedValue);
             op_us_gd_delivery_order.dcUSER_ID = CAppContext_201.getCurrentUserID();
+            op_us_gd_delivery_order.strIN_OUT_YN = "N";// Xuất hàng
         }
 
         private bool is_validate_grid_row(int i_grid_row)
