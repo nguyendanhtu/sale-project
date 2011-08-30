@@ -340,6 +340,9 @@ namespace SaleApp
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
+            load_data_to_m_cbo_repository();
+            load_data_to_m_cbo_ten_mat_hang();
+
 			load_data_2_grid();		
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
@@ -369,7 +372,9 @@ namespace SaleApp
             m_cbo_repository.DataSource = v_ds_dm_product.DM_REPOSITORY;
         
         }
-		private void load_data_2_grid(){						
+		private void load_data_2_grid(){
+            if (m_cbo_repository.SelectedValue == null) return;
+            if (m_cbo_ten_mat_hang.SelectedValue == null) return;
 			m_ds = new DS_V_RPT_DELIVERY_ODER();			
 			m_us.FillDataset(
                 m_ds
