@@ -274,6 +274,8 @@ namespace SaleDS {
             
             private global::System.Data.DataColumn columnCUSTOMER_ID;
             
+            private global::System.Data.DataColumn columnIN_OUT_YN;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public GD_DELIVERY_ORDERDataTable() {
                 this.TableName = "GD_DELIVERY_ORDER";
@@ -347,6 +349,13 @@ namespace SaleDS {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn IN_OUT_YNColumn {
+                get {
+                    return this.columnIN_OUT_YN;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -375,7 +384,7 @@ namespace SaleDS {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public GD_DELIVERY_ORDERRow AddGD_DELIVERY_ORDERRow(string DELIVERY_ORDER_CODE, System.DateTime DELIVERY_ORDER_DATE, decimal REPOSITORY_ID, decimal USER_ID, decimal CUSTOMER_ID) {
+            public GD_DELIVERY_ORDERRow AddGD_DELIVERY_ORDERRow(string DELIVERY_ORDER_CODE, System.DateTime DELIVERY_ORDER_DATE, decimal REPOSITORY_ID, decimal USER_ID, decimal CUSTOMER_ID, string IN_OUT_YN) {
                 GD_DELIVERY_ORDERRow rowGD_DELIVERY_ORDERRow = ((GD_DELIVERY_ORDERRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -383,7 +392,8 @@ namespace SaleDS {
                         DELIVERY_ORDER_DATE,
                         REPOSITORY_ID,
                         USER_ID,
-                        CUSTOMER_ID};
+                        CUSTOMER_ID,
+                        IN_OUT_YN};
                 rowGD_DELIVERY_ORDERRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowGD_DELIVERY_ORDERRow);
                 return rowGD_DELIVERY_ORDERRow;
@@ -420,6 +430,7 @@ namespace SaleDS {
                 this.columnREPOSITORY_ID = base.Columns["REPOSITORY_ID"];
                 this.columnUSER_ID = base.Columns["USER_ID"];
                 this.columnCUSTOMER_ID = base.Columns["CUSTOMER_ID"];
+                this.columnIN_OUT_YN = base.Columns["IN_OUT_YN"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -436,6 +447,8 @@ namespace SaleDS {
                 base.Columns.Add(this.columnUSER_ID);
                 this.columnCUSTOMER_ID = new global::System.Data.DataColumn("CUSTOMER_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCUSTOMER_ID);
+                this.columnIN_OUT_YN = new global::System.Data.DataColumn("IN_OUT_YN", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIN_OUT_YN);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -448,6 +461,8 @@ namespace SaleDS {
                 this.columnDELIVERY_ORDER_CODE.MaxLength = 50;
                 this.columnDELIVERY_ORDER_DATE.AllowDBNull = false;
                 this.columnREPOSITORY_ID.AllowDBNull = false;
+                this.columnIN_OUT_YN.AllowDBNull = false;
+                this.columnIN_OUT_YN.MaxLength = 1;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -650,6 +665,16 @@ namespace SaleDS {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string IN_OUT_YN {
+                get {
+                    return ((string)(this[this.tableGD_DELIVERY_ORDER.IN_OUT_YNColumn]));
+                }
+                set {
+                    this[this.tableGD_DELIVERY_ORDER.IN_OUT_YNColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public bool IsUSER_IDNull() {
                 return this.IsNull(this.tableGD_DELIVERY_ORDER.USER_IDColumn);
             }
@@ -826,10 +851,11 @@ namespace SaleDS.DS_GD_DELIVERY_ORDERTableAdapters {
             tableMapping.ColumnMappings.Add("REPOSITORY_ID", "REPOSITORY_ID");
             tableMapping.ColumnMappings.Add("USER_ID", "USER_ID");
             tableMapping.ColumnMappings.Add("CUSTOMER_ID", "CUSTOMER_ID");
+            tableMapping.ColumnMappings.Add("IN_OUT_YN", "IN_OUT_YN");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[GD_DELIVERY_ORDER] WHERE (([ID] = @Original_ID) AND ([DELIVERY_ORDER_CODE] = @Original_DELIVERY_ORDER_CODE) AND ([DELIVERY_ORDER_DATE] = @Original_DELIVERY_ORDER_DATE) AND ([REPOSITORY_ID] = @Original_REPOSITORY_ID) AND ((@IsNull_USER_ID = 1 AND [USER_ID] IS NULL) OR ([USER_ID] = @Original_USER_ID)) AND ((@IsNull_CUSTOMER_ID = 1 AND [CUSTOMER_ID] IS NULL) OR ([CUSTOMER_ID] = @Original_CUSTOMER_ID)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[GD_DELIVERY_ORDER] WHERE (([ID] = @Original_ID) AND ([DELIVERY_ORDER_CODE] = @Original_DELIVERY_ORDER_CODE) AND ([DELIVERY_ORDER_DATE] = @Original_DELIVERY_ORDER_DATE) AND ([REPOSITORY_ID] = @Original_REPOSITORY_ID) AND ((@IsNull_USER_ID = 1 AND [USER_ID] IS NULL) OR ([USER_ID] = @Original_USER_ID)) AND ((@IsNull_CUSTOMER_ID = 1 AND [CUSTOMER_ID] IS NULL) OR ([CUSTOMER_ID] = @Original_CUSTOMER_ID)) AND ([IN_OUT_YN] = @Original_IN_OUT_YN))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DELIVERY_ORDER_CODE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DELIVERY_ORDER_CODE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -839,26 +865,29 @@ namespace SaleDS.DS_GD_DELIVERY_ORDERTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_USER_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "USER_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CUSTOMER_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CUSTOMER_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CUSTOMER_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CUSTOMER_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IN_OUT_YN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IN_OUT_YN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[GD_DELIVERY_ORDER] ([DELIVERY_ORDER_CODE], [DELIVERY_ORDER_DATE], [REPOSITORY_ID], [USER_ID], [CUSTOMER_ID]) VALUES (@DELIVERY_ORDER_CODE, @DELIVERY_ORDER_DATE, @REPOSITORY_ID, @USER_ID, @CUSTOMER_ID);
-SELECT ID, DELIVERY_ORDER_CODE, DELIVERY_ORDER_DATE, REPOSITORY_ID, USER_ID, CUSTOMER_ID FROM GD_DELIVERY_ORDER WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[GD_DELIVERY_ORDER] ([DELIVERY_ORDER_CODE], [DELIVERY_ORDER_DATE], [REPOSITORY_ID], [USER_ID], [CUSTOMER_ID], [IN_OUT_YN]) VALUES (@DELIVERY_ORDER_CODE, @DELIVERY_ORDER_DATE, @REPOSITORY_ID, @USER_ID, @CUSTOMER_ID, @IN_OUT_YN);
+SELECT ID, DELIVERY_ORDER_CODE, DELIVERY_ORDER_DATE, REPOSITORY_ID, USER_ID, CUSTOMER_ID, IN_OUT_YN FROM GD_DELIVERY_ORDER WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DELIVERY_ORDER_CODE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DELIVERY_ORDER_CODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DELIVERY_ORDER_DATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DELIVERY_ORDER_DATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@REPOSITORY_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "REPOSITORY_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@USER_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "USER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CUSTOMER_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CUSTOMER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IN_OUT_YN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IN_OUT_YN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[GD_DELIVERY_ORDER] SET [DELIVERY_ORDER_CODE] = @DELIVERY_ORDER_CODE, [DELIVERY_ORDER_DATE] = @DELIVERY_ORDER_DATE, [REPOSITORY_ID] = @REPOSITORY_ID, [USER_ID] = @USER_ID, [CUSTOMER_ID] = @CUSTOMER_ID WHERE (([ID] = @Original_ID) AND ([DELIVERY_ORDER_CODE] = @Original_DELIVERY_ORDER_CODE) AND ([DELIVERY_ORDER_DATE] = @Original_DELIVERY_ORDER_DATE) AND ([REPOSITORY_ID] = @Original_REPOSITORY_ID) AND ((@IsNull_USER_ID = 1 AND [USER_ID] IS NULL) OR ([USER_ID] = @Original_USER_ID)) AND ((@IsNull_CUSTOMER_ID = 1 AND [CUSTOMER_ID] IS NULL) OR ([CUSTOMER_ID] = @Original_CUSTOMER_ID)));
-SELECT ID, DELIVERY_ORDER_CODE, DELIVERY_ORDER_DATE, REPOSITORY_ID, USER_ID, CUSTOMER_ID FROM GD_DELIVERY_ORDER WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[GD_DELIVERY_ORDER] SET [DELIVERY_ORDER_CODE] = @DELIVERY_ORDER_CODE, [DELIVERY_ORDER_DATE] = @DELIVERY_ORDER_DATE, [REPOSITORY_ID] = @REPOSITORY_ID, [USER_ID] = @USER_ID, [CUSTOMER_ID] = @CUSTOMER_ID, [IN_OUT_YN] = @IN_OUT_YN WHERE (([ID] = @Original_ID) AND ([DELIVERY_ORDER_CODE] = @Original_DELIVERY_ORDER_CODE) AND ([DELIVERY_ORDER_DATE] = @Original_DELIVERY_ORDER_DATE) AND ([REPOSITORY_ID] = @Original_REPOSITORY_ID) AND ((@IsNull_USER_ID = 1 AND [USER_ID] IS NULL) OR ([USER_ID] = @Original_USER_ID)) AND ((@IsNull_CUSTOMER_ID = 1 AND [CUSTOMER_ID] IS NULL) OR ([CUSTOMER_ID] = @Original_CUSTOMER_ID)) AND ([IN_OUT_YN] = @Original_IN_OUT_YN));
+SELECT ID, DELIVERY_ORDER_CODE, DELIVERY_ORDER_DATE, REPOSITORY_ID, USER_ID, CUSTOMER_ID, IN_OUT_YN FROM GD_DELIVERY_ORDER WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DELIVERY_ORDER_CODE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DELIVERY_ORDER_CODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DELIVERY_ORDER_DATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DELIVERY_ORDER_DATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@REPOSITORY_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "REPOSITORY_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@USER_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "USER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CUSTOMER_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CUSTOMER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IN_OUT_YN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IN_OUT_YN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DELIVERY_ORDER_CODE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DELIVERY_ORDER_CODE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DELIVERY_ORDER_DATE", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DELIVERY_ORDER_DATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -867,6 +896,7 @@ SELECT ID, DELIVERY_ORDER_CODE, DELIVERY_ORDER_DATE, REPOSITORY_ID, USER_ID, CUS
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_USER_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "USER_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CUSTOMER_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CUSTOMER_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CUSTOMER_ID", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CUSTOMER_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IN_OUT_YN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IN_OUT_YN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -882,7 +912,7 @@ SELECT ID, DELIVERY_ORDER_CODE, DELIVERY_ORDER_DATE, REPOSITORY_ID, USER_ID, CUS
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, DELIVERY_ORDER_CODE, DELIVERY_ORDER_DATE, REPOSITORY_ID, USER_ID, CUST" +
-                "OMER_ID FROM dbo.GD_DELIVERY_ORDER";
+                "OMER_ID, IN_OUT_YN FROM dbo.GD_DELIVERY_ORDER";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -936,7 +966,7 @@ SELECT ID, DELIVERY_ORDER_CODE, DELIVERY_ORDER_DATE, REPOSITORY_ID, USER_ID, CUS
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(decimal Original_ID, string Original_DELIVERY_ORDER_CODE, System.DateTime Original_DELIVERY_ORDER_DATE, decimal Original_REPOSITORY_ID, global::System.Nullable<decimal> Original_USER_ID, global::System.Nullable<decimal> Original_CUSTOMER_ID) {
+        public virtual int Delete(decimal Original_ID, string Original_DELIVERY_ORDER_CODE, System.DateTime Original_DELIVERY_ORDER_DATE, decimal Original_REPOSITORY_ID, global::System.Nullable<decimal> Original_USER_ID, global::System.Nullable<decimal> Original_CUSTOMER_ID, string Original_IN_OUT_YN) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_ID));
             if ((Original_DELIVERY_ORDER_CODE == null)) {
                 throw new global::System.ArgumentNullException("Original_DELIVERY_ORDER_CODE");
@@ -962,6 +992,12 @@ SELECT ID, DELIVERY_ORDER_CODE, DELIVERY_ORDER_DATE, REPOSITORY_ID, USER_ID, CUS
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
+            if ((Original_IN_OUT_YN == null)) {
+                throw new global::System.ArgumentNullException("Original_IN_OUT_YN");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_IN_OUT_YN));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -981,7 +1017,7 @@ SELECT ID, DELIVERY_ORDER_CODE, DELIVERY_ORDER_DATE, REPOSITORY_ID, USER_ID, CUS
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string DELIVERY_ORDER_CODE, System.DateTime DELIVERY_ORDER_DATE, decimal REPOSITORY_ID, global::System.Nullable<decimal> USER_ID, global::System.Nullable<decimal> CUSTOMER_ID) {
+        public virtual int Insert(string DELIVERY_ORDER_CODE, System.DateTime DELIVERY_ORDER_DATE, decimal REPOSITORY_ID, global::System.Nullable<decimal> USER_ID, global::System.Nullable<decimal> CUSTOMER_ID, string IN_OUT_YN) {
             if ((DELIVERY_ORDER_CODE == null)) {
                 throw new global::System.ArgumentNullException("DELIVERY_ORDER_CODE");
             }
@@ -1002,6 +1038,12 @@ SELECT ID, DELIVERY_ORDER_CODE, DELIVERY_ORDER_DATE, REPOSITORY_ID, USER_ID, CUS
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
+            if ((IN_OUT_YN == null)) {
+                throw new global::System.ArgumentNullException("IN_OUT_YN");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(IN_OUT_YN));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1021,7 +1063,7 @@ SELECT ID, DELIVERY_ORDER_CODE, DELIVERY_ORDER_DATE, REPOSITORY_ID, USER_ID, CUS
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string DELIVERY_ORDER_CODE, System.DateTime DELIVERY_ORDER_DATE, decimal REPOSITORY_ID, global::System.Nullable<decimal> USER_ID, global::System.Nullable<decimal> CUSTOMER_ID, decimal Original_ID, string Original_DELIVERY_ORDER_CODE, System.DateTime Original_DELIVERY_ORDER_DATE, decimal Original_REPOSITORY_ID, global::System.Nullable<decimal> Original_USER_ID, global::System.Nullable<decimal> Original_CUSTOMER_ID, decimal ID) {
+        public virtual int Update(string DELIVERY_ORDER_CODE, System.DateTime DELIVERY_ORDER_DATE, decimal REPOSITORY_ID, global::System.Nullable<decimal> USER_ID, global::System.Nullable<decimal> CUSTOMER_ID, string IN_OUT_YN, decimal Original_ID, string Original_DELIVERY_ORDER_CODE, System.DateTime Original_DELIVERY_ORDER_DATE, decimal Original_REPOSITORY_ID, global::System.Nullable<decimal> Original_USER_ID, global::System.Nullable<decimal> Original_CUSTOMER_ID, string Original_IN_OUT_YN, decimal ID) {
             if ((DELIVERY_ORDER_CODE == null)) {
                 throw new global::System.ArgumentNullException("DELIVERY_ORDER_CODE");
             }
@@ -1042,32 +1084,44 @@ SELECT ID, DELIVERY_ORDER_CODE, DELIVERY_ORDER_DATE, REPOSITORY_ID, USER_ID, CUS
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(Original_ID));
+            if ((IN_OUT_YN == null)) {
+                throw new global::System.ArgumentNullException("IN_OUT_YN");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(IN_OUT_YN));
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(Original_ID));
             if ((Original_DELIVERY_ORDER_CODE == null)) {
                 throw new global::System.ArgumentNullException("Original_DELIVERY_ORDER_CODE");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_DELIVERY_ORDER_CODE));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_DELIVERY_ORDER_CODE));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_DELIVERY_ORDER_DATE));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(Original_REPOSITORY_ID));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_DELIVERY_ORDER_DATE));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(Original_REPOSITORY_ID));
             if ((Original_USER_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(Original_USER_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(Original_USER_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             if ((Original_CUSTOMER_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((decimal)(Original_CUSTOMER_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(Original_CUSTOMER_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(ID));
+            if ((Original_IN_OUT_YN == null)) {
+                throw new global::System.ArgumentNullException("Original_IN_OUT_YN");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_IN_OUT_YN));
+            }
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((decimal)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1087,8 +1141,8 @@ SELECT ID, DELIVERY_ORDER_CODE, DELIVERY_ORDER_DATE, REPOSITORY_ID, USER_ID, CUS
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string DELIVERY_ORDER_CODE, System.DateTime DELIVERY_ORDER_DATE, decimal REPOSITORY_ID, global::System.Nullable<decimal> USER_ID, global::System.Nullable<decimal> CUSTOMER_ID, decimal Original_ID, string Original_DELIVERY_ORDER_CODE, System.DateTime Original_DELIVERY_ORDER_DATE, decimal Original_REPOSITORY_ID, global::System.Nullable<decimal> Original_USER_ID, global::System.Nullable<decimal> Original_CUSTOMER_ID) {
-            return this.Update(DELIVERY_ORDER_CODE, DELIVERY_ORDER_DATE, REPOSITORY_ID, USER_ID, CUSTOMER_ID, Original_ID, Original_DELIVERY_ORDER_CODE, Original_DELIVERY_ORDER_DATE, Original_REPOSITORY_ID, Original_USER_ID, Original_CUSTOMER_ID, Original_ID);
+        public virtual int Update(string DELIVERY_ORDER_CODE, System.DateTime DELIVERY_ORDER_DATE, decimal REPOSITORY_ID, global::System.Nullable<decimal> USER_ID, global::System.Nullable<decimal> CUSTOMER_ID, string IN_OUT_YN, decimal Original_ID, string Original_DELIVERY_ORDER_CODE, System.DateTime Original_DELIVERY_ORDER_DATE, decimal Original_REPOSITORY_ID, global::System.Nullable<decimal> Original_USER_ID, global::System.Nullable<decimal> Original_CUSTOMER_ID, string Original_IN_OUT_YN) {
+            return this.Update(DELIVERY_ORDER_CODE, DELIVERY_ORDER_DATE, REPOSITORY_ID, USER_ID, CUSTOMER_ID, IN_OUT_YN, Original_ID, Original_DELIVERY_ORDER_CODE, Original_DELIVERY_ORDER_DATE, Original_REPOSITORY_ID, Original_USER_ID, Original_CUSTOMER_ID, Original_IN_OUT_YN, Original_ID);
         }
     }
     
