@@ -58,10 +58,10 @@
             this.m_lbl_depository = new System.Windows.Forms.Label();
             this.m_cbo_repository = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.m_txt_total_price = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.m_cmd_remove_row = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -245,7 +245,7 @@
             this.m_fg.KeyActionTab = C1.Win.C1FlexGrid.KeyActionEnum.MoveAcrossOut;
             this.m_fg.Location = new System.Drawing.Point(0, 231);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Rows.Count = 4;
+            this.m_fg.Rows.Count = 3;
             this.m_fg.Size = new System.Drawing.Size(832, 296);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 18;
@@ -403,6 +403,17 @@
             this.panel2.Size = new System.Drawing.Size(832, 49);
             this.panel2.TabIndex = 19;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(146, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(20, 16);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "%";
+            this.label2.Visible = false;
+            // 
             // m_txt_total_price
             // 
             this.m_txt_total_price.BackColor = System.Drawing.SystemColors.Info;
@@ -433,17 +444,6 @@
             this.m_cmd_remove_row.Size = new System.Drawing.Size(32, 22);
             this.m_cmd_remove_row.TabIndex = 21;
             this.m_cmd_remove_row.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(146, 11);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(20, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "%";
-            this.label2.Visible = false;
             // 
             // f331_xuat_ban_hang
             // 

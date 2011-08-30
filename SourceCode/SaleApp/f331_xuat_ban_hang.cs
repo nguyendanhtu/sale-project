@@ -42,6 +42,9 @@ namespace SaleApp
         US_GD_BILL m_us_gd_bill = new US_GD_BILL();
         US_GD_DELIVERY_ORDER m_us_gd_delivery_order = new US_GD_DELIVERY_ORDER();
 
+        Hashtable m_hst_mapping_code_2_id_product = new Hashtable();
+        Hashtable m_hst_mapping_id_2_code_product = new Hashtable();
+
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
 
         #endregion
@@ -53,7 +56,8 @@ namespace SaleApp
             PRODUCT_NAME = 2,
             QUANTITY = 4,
             UNIT_PRICE = 3,
-            AMMOUNT = 5
+            AMMOUNT = 5,
+            PRODUCT_ID = 6
         }
 
         #endregion
@@ -79,12 +83,14 @@ namespace SaleApp
             m_lbl_noi_ban.Font = new Font("Arial", 9);
             m_lbl_order_number.Font = new Font("Arial", 9);
             m_lbl_date.Font = new Font("Arial", 9);
+
+            m_fg.Cols[(int)e_col_Number.PRODUCT_ID].Visible = false;
         }
 
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
             Hashtable v_htb = new Hashtable();
-            v_htb.Add(GD_BILL_DETAIL.PRODUCT_ID, e_col_Number.PRODUCT_CODE);
+            v_htb.Add(GD_BILL_DETAIL.PRODUCT_ID, e_col_Number.PRODUCT_ID);
             v_htb.Add(GD_BILL_DETAIL.QUANTITY, e_col_Number.QUANTITY);
             v_htb.Add(GD_BILL_DETAIL.UNIT_PRICE, e_col_Number.UNIT_PRICE);
             DS_GD_BILL_DETAIL v_ds_gd_bill_detail = new DS_GD_BILL_DETAIL();
@@ -116,16 +122,20 @@ namespace SaleApp
         private void mapping_col_product_code()
         {
             US_DM_PRODUCT v_us_product = new US_DM_PRODUCT();
-            DS_DM_PRODUCT v_ds_product = new DS_DM_PRODUCT();
-            v_us_product.FillDataset(v_ds_product, "ORDER BY " + DM_PRODUCT.PRODUCT_CODE);
-            Hashtable v_hst = new Hashtable();
-            foreach (DataRow v_dr in v_ds_product.DM_PRODUCT.Rows)
+            m_ds_product.DM_PRODUCT.Clear();
+
+            v_us_product.FillDataset(m_ds_product, "ORDER BY " + DM_PRODUCT.PRODUCT_CODE);
+            m_hst_mapping_code_2_id_product.Clear();
+            m_hst_mapping_id_2_code_product.Clear();
+            foreach (DataRow v_dr in m_ds_product.DM_PRODUCT.Rows)
             {
-                v_hst.Add(v_dr[DM_PRODUCT.ID], v_dr[DM_PRODUCT.PRODUCT_CODE]);
+                m_hst_mapping_code_2_id_product.Add(v_dr[DM_PRODUCT.PRODUCT_CODE], v_dr[DM_PRODUCT.ID]);
+                m_hst_mapping_id_2_code_product.Add( v_dr[DM_PRODUCT.ID], v_dr[DM_PRODUCT.PRODUCT_CODE]);
             }
 
-            m_fg.Cols[(int)e_col_Number.PRODUCT_CODE].DataMap = v_hst;
-            m_ds_product = (DS_DM_PRODUCT)v_ds_product.Copy();
+            
+
+           
 
         }
        
@@ -147,16 +157,19 @@ namespace SaleApp
             return true;
         }
 
+        
+
+
         private void grid_2_us_object(int i_grid_row, US_GD_BILL_DETAIL op_us_gd_bill_detail, US_GD_DELIVERY_ORDER_DETAIL op_us_gd_delivery_order_detail)
         {
             //1. grid 2 us gd bill detail
             op_us_gd_bill_detail.dcBILL_ID = m_us_gd_bill.dcID;
-            op_us_gd_bill_detail.dcPRODUCT_ID = CIPConvert.ToDecimal(m_fg[i_grid_row, (int)e_col_Number.PRODUCT_CODE]);
+            op_us_gd_bill_detail.dcPRODUCT_ID = CIPConvert.ToDecimal(m_hst_mapping_code_2_id_product[m_fg[i_grid_row, (int)e_col_Number.PRODUCT_CODE]]);
             op_us_gd_bill_detail.dcQUANTITY = CIPConvert.ToDecimal(m_fg[i_grid_row, (int)e_col_Number.QUANTITY]);
             op_us_gd_bill_detail.dcUNIT_PRICE = CIPConvert.ToDecimal(m_fg[i_grid_row, (int)e_col_Number.UNIT_PRICE]);
             //2. grid 2 us gd delivery order detail
             op_us_gd_delivery_order_detail.dcDELIVERY_ORDER_ID = m_us_gd_delivery_order.dcID;
-            op_us_gd_delivery_order_detail.dcPRODUCT_ID = CIPConvert.ToDecimal(m_fg[i_grid_row, (int)e_col_Number.PRODUCT_CODE]);
+            op_us_gd_delivery_order_detail.dcPRODUCT_ID = op_us_gd_bill_detail.dcPRODUCT_ID;
             op_us_gd_delivery_order_detail.dcQUANTITY = CIPConvert.ToDecimal(m_fg[i_grid_row, (int)e_col_Number.QUANTITY]);
             
         }
@@ -272,6 +285,12 @@ namespace SaleApp
             v_us_gd_bill_detail.FillDataset(v_ds_gd_bill_detail," WHERE " + GD_BILL_DETAIL.BILL_ID +"="+ ip_us_gd_bill.dcID.ToString());
             CGridUtils.ClearDataInGrid(m_fg);
             CGridUtils.Dataset2C1Grid(v_ds_gd_bill_detail, m_fg, m_obj_trans);
+            for (int v_i_cur_row = m_fg.Rows.Fixed; v_i_cur_row < m_fg.Rows.Count-1; v_i_cur_row++)
+            {
+                if (m_fg[v_i_cur_row, (int)e_col_Number.PRODUCT_ID] == null) continue;
+
+                m_fg[v_i_cur_row, (int)e_col_Number.PRODUCT_CODE] = m_hst_mapping_id_2_code_product[m_fg[v_i_cur_row, (int)e_col_Number.PRODUCT_ID]];
+            }
 
         }
 
@@ -339,12 +358,16 @@ namespace SaleApp
                   // Nếu cột có dữ liệu thay đổi là Cột product_code
                 if (e.Col == (int)e_col_Number.PRODUCT_CODE)
                 {
-                    DataRow[] v_dr_product = m_ds_product.DM_PRODUCT.Select(DM_PRODUCT.ID + " = " + m_fg[e.Row, (int)e_col_Number.PRODUCT_CODE].ToString());
-                    if (v_dr_product.Length == 0) return;// Neu khong co' trong ban PRODUCT thi phai thoat luon? Nhung cha'c cha'n la sai do'
+                    m_fg[e.Row, (int)e_col_Number.PRODUCT_CODE] = m_fg[e.Row, (int)e_col_Number.PRODUCT_CODE].ToString().ToUpper();
+                    DataRow[] v_dr_product = m_ds_product.DM_PRODUCT.Select(DM_PRODUCT.PRODUCT_CODE + " = '" + m_fg[e.Row, (int)e_col_Number.PRODUCT_CODE].ToString()+"'");
+                    if (v_dr_product.Length == 0)
+                    {
+                        BaseMessages.MsgBox_Warning("Không có mặt hàng có mã này");
+                        return;// Neu khong co' trong ban PRODUCT thi phai thoat luon? Nhung cha'c cha'n la sai do'
+                    }
                     m_fg[e.Row, (int)e_col_Number.PRODUCT_NAME] = v_dr_product[0][DM_PRODUCT.PRODUCT_NAME];
                     m_fg[e.Row, (int)e_col_Number.UNIT_PRICE] = v_dr_product[0][DM_PRODUCT.CURRENT_PRICE];
                     // Focus vào cột nào(tương ứng với dòng nào)
-                    m_fg.Col = (int)e_col_Number.QUANTITY;
                 }
 
                 if (m_fg[e.Row, (int)e_col_Number.UNIT_PRICE] == null) return;
@@ -360,7 +383,7 @@ namespace SaleApp
                 calculate_total_amount();
             }
             catch (Exception v_e)
-            {
+            {                
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
