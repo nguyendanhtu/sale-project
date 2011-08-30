@@ -493,7 +493,6 @@ namespace SaleApp
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
-
         void m_cmd_export_excel_Click(object sender, EventArgs e)
         {
             try
