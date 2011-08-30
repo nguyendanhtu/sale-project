@@ -81,6 +81,17 @@ namespace SaleApp
             set_define_events();
         }
 
+        private void show_bao_cao_xuat_nhap_theo_ky()
+        {
+            if (!CAppContext_201.IsHavingQuyen(IP.Core.IPSystemAdmin.PHAN_QUYEN.BACK_UP_AND_RESTORE))
+            {
+                BaseMessages.MsgBox_Infor(" Người sử dụng không được quyền truy nhập phần này !!! ");
+                return;
+            }
+            f961_bao_cao_xuat_nhap_trong_ky v_frm_961 = new f961_bao_cao_xuat_nhap_trong_ky();
+            v_frm_961.display();
+        }
+
         private void show_manager_user()
         {
             if (!CAppContext_201.IsHavingQuyen(IP.Core.IPSystemAdmin.PHAN_QUYEN.BACK_UP_AND_RESTORE))
@@ -605,6 +616,19 @@ namespace SaleApp
             catch (Exception v_e)
             {
                 
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void mnu_bc_xuatnhapton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                show_bao_cao_xuat_nhap_theo_ky();
+            }
+            catch (Exception v_e)
+            {
+
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
