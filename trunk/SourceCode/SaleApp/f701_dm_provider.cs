@@ -36,8 +36,8 @@ namespace SaleApp
 		internal SIS.Controls.Button.SiSButton m_cmd_delete;
 		internal SIS.Controls.Button.SiSButton m_cmd_update;
 		internal SIS.Controls.Button.SiSButton m_cmd_insert;
-		internal SIS.Controls.Button.SiSButton m_cmd_exit;
-		internal SIS.Controls.Button.SiSButton m_cmd_view;
+        internal SIS.Controls.Button.SiSButton m_cmd_exit;
+        internal SIS.Controls.Button.SiSButton m_cmd_select_provider;
 		private System.ComponentModel.IContainer components;
 
 		public f701_dm_provider()
@@ -79,9 +79,9 @@ namespace SaleApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f701_dm_provider));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_select_provider = new SIS.Controls.Button.SiSButton();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_view = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
@@ -118,9 +118,9 @@ namespace SaleApp
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_select_provider);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -128,7 +128,22 @@ namespace SaleApp
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(951, 36);
-            this.m_pnl_out_place_dm.TabIndex = 19;
+            this.m_pnl_out_place_dm.TabIndex = 1;
+            // 
+            // m_cmd_select_provider
+            // 
+            this.m_cmd_select_provider.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_select_provider.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_select_provider.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_select_provider.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_select_provider.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_select_provider.ImageIndex = 14;
+            this.m_cmd_select_provider.ImageList = this.ImageList;
+            this.m_cmd_select_provider.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_select_provider.Name = "m_cmd_select_provider";
+            this.m_cmd_select_provider.Size = new System.Drawing.Size(123, 28);
+            this.m_cmd_select_provider.TabIndex = 22;
+            this.m_cmd_select_provider.Text = "Chọn khách hàng";
             // 
             // m_cmd_insert
             // 
@@ -159,21 +174,6 @@ namespace SaleApp
             this.m_cmd_update.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_update.TabIndex = 13;
             this.m_cmd_update.Text = "&Sửa";
-            // 
-            // m_cmd_view
-            // 
-            this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_view.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_view.ImageIndex = 18;
-            this.m_cmd_view.ImageList = this.ImageList;
-            this.m_cmd_view.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_view.Name = "m_cmd_view";
-            this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_view.TabIndex = 21;
-            this.m_cmd_view.Text = "Xem";
             // 
             // m_cmd_delete
             // 
@@ -213,7 +213,7 @@ namespace SaleApp
             this.m_fg.Name = "m_fg";
             this.m_fg.Size = new System.Drawing.Size(951, 419);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 20;
+            this.m_fg.TabIndex = 0;
             // 
             // f701_dm_provider
             // 
@@ -232,9 +232,16 @@ namespace SaleApp
 		#endregion
 
 		#region Public Interface
-		public void display(){			
+		public void display(){
+            m_e_form_mode = DataEntryFormMode.ViewDataState;
 			this.ShowDialog();
 		}
+        public void select_provider(ref US_DM_PROVIDER op_us_provider)
+        {
+            m_e_form_mode = DataEntryFormMode.SelectDataState;
+            this.ShowDialog();
+            op_us_provider = m_us_provider;
+        }
 		#endregion
 
 		#region Data Structure
@@ -252,19 +259,38 @@ namespace SaleApp
 		#region Members
 		ITransferDataRow m_obj_trans;		
 		DS_DM_PROVIDER m_ds = new DS_DM_PROVIDER();
-		US_DM_PROVIDER m_us = new US_DM_PROVIDER();
+		US_DM_PROVIDER m_us_provider = new US_DM_PROVIDER();
+
+        DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
 		#endregion
 
 		#region Private Methods
 		private void format_controls(){
 			CControlFormat.setFormStyle(this);
 			CControlFormat.setC1FlexFormat(m_fg);
+            m_fg.AutoSearch = AutoSearchEnum.None;
 			set_define_events();
 			this.KeyPreview = true;		
 		}
 		private void set_initial_form_load(){						
 			m_obj_trans = get_trans_object(m_fg);
-			load_data_2_grid();		
+			load_data_2_grid();
+            switch (m_e_form_mode)
+            {
+                case DataEntryFormMode.InsertDataState:
+                    break;
+                case DataEntryFormMode.SelectDataState:
+                    m_cmd_insert.Visible = false;
+                    m_cmd_update.Visible = false;
+                    m_cmd_delete.Visible = false;
+                    break;
+                case DataEntryFormMode.UpdateDataState:
+                    break;
+                case DataEntryFormMode.ViewDataState:
+                    break;
+                default:
+                    break;
+            }
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
@@ -281,7 +307,7 @@ namespace SaleApp
 		private void load_data_2_grid(){
             m_ds = new DS_DM_PROVIDER();
             m_ds.EnforceConstraints = false;
-			m_us.FillDataset(m_ds);
+			m_us_provider.FillDataset(m_ds);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
 			m_fg.Redraw = true;
@@ -312,9 +338,9 @@ namespace SaleApp
 		private void update_dm_provider(){			
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;			
-			grid2us_object(m_us, m_fg.Row);
+			grid2us_object(m_us_provider, m_fg.Row);
             f702_dm_provider_de v_fDE = new f702_dm_provider_de();
-            v_fDE.display_for_update(m_us);
+            v_fDE.display_for_update(m_us_provider);
             load_data_2_grid();
 		}
 				
@@ -341,17 +367,72 @@ namespace SaleApp
 		private void view_dm_provider(){			
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			grid2us_object(m_us, m_fg.Row);
+			grid2us_object(m_us_provider, m_fg.Row);
 		//	f701_DM_PROVIDER_DE v_fDE = new f701_DM_PROVIDER_DE();			
 		//	v_fDE.display(m_us);
 		}
+        private void select_provider()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            if (m_fg.Rows[m_fg.Row].IsNode == true) return;
+            grid2us_object(m_us_provider, m_fg.Row);
+            this.Close();
+        }
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
 			m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
 			m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
 			m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_cmd_select_provider.Click += new EventHandler(m_cmd_select_provider_Click);
+            this.KeyDown += new KeyEventHandler(f701_dm_provider_KeyDown);
+            m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
+			
 		}
+
+        void m_fg_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                 select_provider();
+            }
+            catch (Exception v_e)
+            {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void f701_dm_provider_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.Enter:
+                        select_provider();
+                        break;
+                }
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_select_provider_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                select_provider();
+            }
+            catch (Exception v_e)
+            {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
 		#endregion
 
 //
@@ -405,15 +486,7 @@ namespace SaleApp
 			}
 		}
 
-		private void m_cmd_view_Click(object sender, EventArgs e) {
-			try{
-				view_dm_provider();
-			}
-			catch (Exception v_e){
-				CSystemLog_301.ExceptionHandle(v_e);
-			}
-		}
-
+		
 	}
 }
 

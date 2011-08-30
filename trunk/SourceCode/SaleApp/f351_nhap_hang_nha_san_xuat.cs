@@ -37,9 +37,9 @@ namespace SaleApp
         #region Members
         ITransferDataRow m_obj_trans;
         DS_DM_PRODUCT m_ds_product = new DS_DM_PRODUCT();
-        US_DM_CUSTOMER m_us_customer = new US_DM_CUSTOMER();
+        US_DM_PROVIDER m_us_provider = new US_DM_PROVIDER();
 
-        US_GD_BILL m_us_gd_bill = new US_GD_BILL();
+      
         US_GD_DELIVERY_ORDER m_us_gd_delivery_order = new US_GD_DELIVERY_ORDER();
 
         Hashtable m_hst_mapping_code_2_id_product = new Hashtable();
@@ -54,10 +54,9 @@ namespace SaleApp
         {
             PRODUCT_CODE = 1,
             PRODUCT_NAME = 2,
-            QUANTITY = 4,
-            UNIT_PRICE = 3,
-            AMMOUNT = 5,
-            PRODUCT_ID = 6
+            QUANTITY = 3,
+          
+            PRODUCT_ID = 4
         }
 
         #endregion
@@ -79,7 +78,7 @@ namespace SaleApp
             //m_lbl_company_info_address.Font = new Font("Arial", 9);
             
             m_lbl_depository.Font = new Font("Arial", 9);
-            m_lbl_customer.Font = new Font("Arial", 9);
+            m_lbl_provider.Font = new Font("Arial", 9);
             m_lbl_noi_ban.Font = new Font("Arial", 9);
             
             m_lbl_date.Font = new Font("Arial", 9);
@@ -91,8 +90,7 @@ namespace SaleApp
         {
             Hashtable v_htb = new Hashtable();
             v_htb.Add(GD_BILL_DETAIL.PRODUCT_ID, e_col_Number.PRODUCT_ID);
-            v_htb.Add(GD_BILL_DETAIL.QUANTITY, e_col_Number.QUANTITY);
-            v_htb.Add(GD_BILL_DETAIL.UNIT_PRICE, e_col_Number.UNIT_PRICE);
+            v_htb.Add(GD_BILL_DETAIL.QUANTITY, e_col_Number.QUANTITY);    
             DS_GD_BILL_DETAIL v_ds_gd_bill_detail = new DS_GD_BILL_DETAIL();
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, v_ds_gd_bill_detail.GD_BILL_DETAIL.NewRow());
             return v_obj_trans;
@@ -143,8 +141,8 @@ namespace SaleApp
         private bool is_check_validate_data_ok()
         {
             if (!CValidateTextBox.IsValid(m_txt_delivery_code, DataType.StringType, allowNull.NO, true)) return false;
-            if (!CValidateTextBox.IsValid(m_txt_customer, DataType.StringType, allowNull.NO, true)) return false;
-            if (!CValidateTextBox.IsValid(m_txt_total_price, DataType.NumberType, allowNull.NO, true)) return false;
+            if (!CValidateTextBox.IsValid(m_txt_provider, DataType.StringType, allowNull.NO, true)) return false;
+            
 
             if (m_cbo_repository.SelectedValue == null)
             {
@@ -160,44 +158,34 @@ namespace SaleApp
         
 
 
-        private void grid_2_us_object(int i_grid_row, US_GD_BILL_DETAIL op_us_gd_bill_detail, US_GD_DELIVERY_ORDER_DETAIL op_us_gd_delivery_order_detail)
+        private void grid_2_us_object(int i_grid_row, US_GD_DELIVERY_ORDER_DETAIL op_us_gd_delivery_order_detail)
         {
-            //1. grid 2 us gd bill detail
-            op_us_gd_bill_detail.dcBILL_ID = m_us_gd_bill.dcID;
-            op_us_gd_bill_detail.dcPRODUCT_ID = CIPConvert.ToDecimal(m_hst_mapping_code_2_id_product[m_fg[i_grid_row, (int)e_col_Number.PRODUCT_CODE]]);
-            op_us_gd_bill_detail.dcQUANTITY = CIPConvert.ToDecimal(m_fg[i_grid_row, (int)e_col_Number.QUANTITY]);
-            op_us_gd_bill_detail.dcUNIT_PRICE = CIPConvert.ToDecimal(m_fg[i_grid_row, (int)e_col_Number.UNIT_PRICE]);
+
             //2. grid 2 us gd delivery order detail
             op_us_gd_delivery_order_detail.dcDELIVERY_ORDER_ID = m_us_gd_delivery_order.dcID;
-            op_us_gd_delivery_order_detail.dcPRODUCT_ID = op_us_gd_bill_detail.dcPRODUCT_ID;
-            op_us_gd_delivery_order_detail.dcQUANTITY = op_us_gd_bill_detail.dcQUANTITY * (-1);
+            op_us_gd_delivery_order_detail.dcPRODUCT_ID = CIPConvert.ToDecimal(m_hst_mapping_code_2_id_product[m_fg[i_grid_row, (int)e_col_Number.PRODUCT_CODE]]);
+            op_us_gd_delivery_order_detail.dcQUANTITY = CIPConvert.ToDecimal(m_fg[i_grid_row, (int)e_col_Number.QUANTITY]);
             
         }
 
-        private void form_2_us_object(US_GD_BILL op_us_gd_bill, US_GD_DELIVERY_ORDER op_us_gd_delivery_order)
+        private void form_2_us_object(US_GD_DELIVERY_ORDER op_us_gd_delivery_order)
         {
-            //1. form 2 us bill
-            op_us_gd_bill.strBILL_SERI = m_txt_delivery_code.Text;
-            op_us_gd_bill.dcCUSTOMER_ID = m_us_customer.dcID;
-            op_us_gd_bill.datBILL_DATE = m_dat_bill_date.Value.Date;          
-            op_us_gd_bill.SetTAX_RATENull(); // Chương trình chưa xử lý phần thuế
-            op_us_gd_bill.dcAMMOUNT = CIPConvert.ToDecimal(m_txt_total_price.Text);
-            op_us_gd_bill.dcUSER_ID = CAppContext_201.getCurrentUserID();
 
             //1. form 2 us delivery
             op_us_gd_delivery_order.strDELIVERY_ORDER_CODE = m_txt_delivery_code.Text;
-            op_us_gd_delivery_order.dcCUSTOMER_ID = m_us_customer.dcID;
-            op_us_gd_delivery_order.datDELIVERY_ORDER_DATE = m_dat_bill_date.Value.Date;
+            op_us_gd_delivery_order.dcCUSTOMER_ID = m_us_provider.dcID;
+            op_us_gd_delivery_order.datDELIVERY_ORDER_DATE = m_dat_delivery_date.Value.Date;
             op_us_gd_delivery_order.dcREPOSITORY_ID = CIPConvert.ToDecimal(m_cbo_repository.SelectedValue);
             op_us_gd_delivery_order.dcUSER_ID = CAppContext_201.getCurrentUserID();
+            op_us_gd_delivery_order.strIN_OUT_YN = "Y";
         }
 
         private bool is_validate_grid_row(int i_grid_row)
         {
             if (m_fg[i_grid_row, (int)e_col_Number.PRODUCT_CODE] == null) return false;
-            if (m_fg[i_grid_row, (int)e_col_Number.UNIT_PRICE] == null) return false;
+         
             if (m_fg[i_grid_row, (int)e_col_Number.QUANTITY] == null) return false;
-            if (CIPConvert.is_valid_number(m_fg[i_grid_row, (int)e_col_Number.UNIT_PRICE]) == false) return false;
+         
             if (CIPConvert.is_valid_number(m_fg[i_grid_row, (int)e_col_Number.QUANTITY]) == false) return false; 
             return true;
         }
@@ -208,26 +196,24 @@ namespace SaleApp
         private void save_data()
         {
             if (!is_check_validate_data_ok())    return;
-            form_2_us_object(m_us_gd_bill, m_us_gd_delivery_order);
-            US_GD_BILL_DETAIL v_us_gd_bill_detail = new US_GD_BILL_DETAIL();
+            form_2_us_object( m_us_gd_delivery_order);
+            
             US_GD_DELIVERY_ORDER_DETAIL v_us_gd_delivery_order_detail = new US_GD_DELIVERY_ORDER_DETAIL();
             try
             {
-                m_us_gd_bill.BeginTransaction();
+                m_us_gd_delivery_order.BeginTransaction();
                 switch (m_e_form_mode)
                 {
                     case DataEntryFormMode.InsertDataState:
-                        m_us_gd_bill.Insert();
-                        m_us_gd_delivery_order.UseTransOfUSObject(m_us_gd_bill);
+                       
                         m_us_gd_delivery_order.Insert();
 
-                        v_us_gd_bill_detail.UseTransOfUSObject(m_us_gd_bill);
-                        v_us_gd_delivery_order_detail.UseTransOfUSObject(m_us_gd_bill);
+
+                        v_us_gd_delivery_order_detail.UseTransOfUSObject(m_us_gd_delivery_order);
                         for (int v_i_cur_row = m_fg.Rows.Fixed; v_i_cur_row < m_fg.Rows.Count; v_i_cur_row++)
                         {
                             if (is_validate_grid_row(v_i_cur_row) == false) continue;
-                            grid_2_us_object(v_i_cur_row, v_us_gd_bill_detail, v_us_gd_delivery_order_detail);
-                            v_us_gd_bill_detail.Insert();
+                            grid_2_us_object(v_i_cur_row,  v_us_gd_delivery_order_detail);
                             v_us_gd_delivery_order_detail.Insert();
                         }
 
@@ -238,53 +224,38 @@ namespace SaleApp
                         break;
                 }
 
-                m_us_gd_bill.CommitTransaction();
+                m_us_gd_delivery_order.CommitTransaction();
 
                 BaseMessages.MsgBox_Infor(10);
 
             }
             catch (Exception v_e)
             {
-                if (m_us_gd_bill.is_having_transaction())
+                if (m_us_gd_delivery_order.is_having_transaction())
                 {
-                    m_us_gd_bill.Rollback();
+                    m_us_gd_delivery_order.Rollback();
                 }
                 throw;
             }
         }
 
-        private void calculate_total_amount()
-        {
-            decimal v_dc_total_price = 0;
-            for (int v_i_cur_row = m_fg.Rows.Fixed; v_i_cur_row < m_fg.Rows.Count; v_i_cur_row++)
-            {
-                if (m_fg[v_i_cur_row, (int)e_col_Number.AMMOUNT] == null) continue;
-                if (CIPConvert.is_valid_number(m_fg[v_i_cur_row, (int)e_col_Number.AMMOUNT]) == false) continue;
-                v_dc_total_price += CIPConvert.ToDecimal(m_fg[v_i_cur_row, (int)e_col_Number.AMMOUNT]);
-            }
-            m_txt_total_price.Text = CIPConvert.ToStr(v_dc_total_price, "#,###");
-        }
 
-        private void us_gd_bill_2_form(US_GD_BILL ip_us_gd_bill)
+
+        private void us_gd_delivery_2_form(US_GD_DELIVERY_ORDER ip_us_gd_delivery)
         {
             //1. us gd bill 2 form
-            m_txt_delivery_code.Text = ip_us_gd_bill.strBILL_SERI;
-            m_us_customer = new US_DM_CUSTOMER(ip_us_gd_bill.dcCUSTOMER_ID);
-            m_txt_customer.Text = m_us_customer.strCUSTOMER_NAME;
-            m_dat_bill_date.Value = ip_us_gd_bill.datBILL_DATE;
-            //op_us_gd_bill.SetTAX_RATENull(); // Chương trình chưa xử lý phần thuế
-            m_txt_total_price.Text = CIPConvert.ToStr(ip_us_gd_bill.dcAMMOUNT, "#,###");
-
-            //2. load us gd delivery 2 form
-            m_us_gd_delivery_order.InitByDELIVERY_CODE(ip_us_gd_bill.strBILL_SERI);
+            m_txt_delivery_code.Text = ip_us_gd_delivery.strDELIVERY_ORDER_CODE;
+            m_us_provider = new US_DM_PROVIDER(ip_us_gd_delivery.dcCUSTOMER_ID);
+            m_txt_provider.Text = m_us_provider.strPROVIDER_NAME;
+            m_dat_delivery_date.Value = ip_us_gd_delivery.datDELIVERY_ORDER_DATE;
             m_cbo_repository.SelectedValue = m_us_gd_delivery_order.dcREPOSITORY_ID;
 
             //3. load us gd bill detail 2 grid
-            US_GD_BILL_DETAIL v_us_gd_bill_detail = new US_GD_BILL_DETAIL();
-            DS_GD_BILL_DETAIL v_ds_gd_bill_detail = new DS_GD_BILL_DETAIL();
-            v_us_gd_bill_detail.FillDataset(v_ds_gd_bill_detail," WHERE " + GD_BILL_DETAIL.BILL_ID +"="+ ip_us_gd_bill.dcID.ToString());
+            US_GD_DELIVERY_ORDER_DETAIL v_us_gd_delivery_detail = new US_GD_DELIVERY_ORDER_DETAIL();
+            DS_GD_DELIVERY_ORDER_DETAIL v_ds_gd_delivery_detail = new DS_GD_DELIVERY_ORDER_DETAIL();
+            v_us_gd_delivery_detail.FillDataset(v_ds_gd_delivery_detail," WHERE " + GD_DELIVERY_ORDER_DETAIL.DELIVERY_ORDER_ID +"="+ ip_us_gd_delivery.dcID.ToString());
             CGridUtils.ClearDataInGrid(m_fg);
-            CGridUtils.Dataset2C1Grid(v_ds_gd_bill_detail, m_fg, m_obj_trans);
+            CGridUtils.Dataset2C1Grid(v_ds_gd_delivery_detail, m_fg, m_obj_trans);
             for (int v_i_cur_row = m_fg.Rows.Fixed; v_i_cur_row < m_fg.Rows.Count-1; v_i_cur_row++)
             {
                 if (m_fg[v_i_cur_row, (int)e_col_Number.PRODUCT_ID] == null) continue;
@@ -294,13 +265,13 @@ namespace SaleApp
 
         }
 
-        private void select_hoa_don()
+        private void select_delivery()
         {
-            f932_bao_cao_doanh_thu_theo_ky v_frm932 = new f932_bao_cao_doanh_thu_theo_ky();
-            if (v_frm932.select_gd_bill(ref m_us_gd_bill) == DialogResult.OK)
-            {
-                us_gd_bill_2_form(m_us_gd_bill);
-            }
+            //f932_bao_cao_doanh_thu_theo_ky v_frm932 = new f932_bao_cao_doanh_thu_theo_ky();
+            //if (v_frm932.select_gd_bill(ref m_us_gd_bill) == DialogResult.OK)
+            //{
+            //    us_gd_bill_2_form(m_us_gd_bill);
+            //}
         }
         #endregion
 
@@ -311,20 +282,33 @@ namespace SaleApp
         {
             this.Load += new EventHandler(f351_nhap_hang_nha_san_xuat_Load);
             this.m_fg.CellChanged += new C1.Win.C1FlexGrid.RowColEventHandler(this.m_fg_CellChanged);
-            m_cmd_add_customer.Click += new EventHandler(m_cmd_add_customer_Click);
+            m_cmd_add_provider.Click += new EventHandler(m_cmd_add_provider_Click);
             m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
             this.m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);            
             this.m_cmd_remove_row.Click += new EventHandler(m_cmd_remove_row_Click);
 
-            this.m_cmd_ds_hoa_don.Click += new EventHandler(m_cmd_ds_hoa_don_Click);
+            this.m_cmd_ds_phieu_nhap.Click += new EventHandler(m_cmd_ds_phieu_nhap_Click);
 
+        }
+
+        void m_cmd_ds_phieu_nhap_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                select_delivery();
+            }
+            catch (Exception v_e)
+            {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_ds_hoa_don_Click(object sender, EventArgs e)
         {
             try
             {
-                select_hoa_don();
+                select_delivery();
             }
             catch (Exception v_e)
             {
@@ -340,7 +324,7 @@ namespace SaleApp
             try
             {
                 m_fg.Rows.Remove(m_fg.Row);
-                calculate_total_amount();
+               
             }
             catch (Exception v_e)
             {
@@ -366,21 +350,17 @@ namespace SaleApp
                         return;// Neu khong co' trong ban PRODUCT thi phai thoat luon? Nhung cha'c cha'n la sai do'
                     }
                     m_fg[e.Row, (int)e_col_Number.PRODUCT_NAME] = v_dr_product[0][DM_PRODUCT.PRODUCT_NAME];
-                    m_fg[e.Row, (int)e_col_Number.UNIT_PRICE] = v_dr_product[0][DM_PRODUCT.CURRENT_PRICE];
+                    
                     // Focus vào cột nào(tương ứng với dòng nào)
                 }
 
-                if (m_fg[e.Row, (int)e_col_Number.UNIT_PRICE] == null) return;
+                
                 if (m_fg[e.Row, (int)e_col_Number.QUANTITY] == null) return;
-                if (CIPConvert.is_valid_number(m_fg[e.Row, (int)e_col_Number.UNIT_PRICE]) == false) return;
+                
                 if (CIPConvert.is_valid_number(m_fg[e.Row, (int)e_col_Number.QUANTITY]) == false) return;
                 
                 // 2. Tự động tính thông tin thành tiền trên từng dòng
-                m_fg[e.Row, (int)e_col_Number.AMMOUNT]
-                    = CIPConvert.ToDecimal(m_fg[e.Row, (int)e_col_Number.UNIT_PRICE])
-                        * CIPConvert.ToDecimal(m_fg[e.Row, (int)e_col_Number.QUANTITY]);
-                //3. Tự động tính tổng tiền bán
-                calculate_total_amount();
+                
             }
             catch (Exception v_e)
             {                
@@ -412,13 +392,13 @@ namespace SaleApp
             }
         }
 
-        void m_cmd_add_customer_Click(object sender, EventArgs e)
+        void m_cmd_add_provider_Click(object sender, EventArgs e)
         {
             try
             {
-                f501_dm_customer v_frm501_customer = new f501_dm_customer();
-                v_frm501_customer.select_customer(ref m_us_customer);
-                m_txt_customer.Text = m_us_customer.strCUSTOMER_NAME;
+                f701_dm_provider v_frm701_provider = new f701_dm_provider();
+                v_frm701_provider.select_provider(ref m_us_provider);
+                m_txt_provider.Text = m_us_provider.strPROVIDER_NAME;
                 m_fg.Focus();
 
             }

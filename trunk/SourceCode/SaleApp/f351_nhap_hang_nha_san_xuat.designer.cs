@@ -31,22 +31,19 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f351_nhap_hang_nha_san_xuat));
             this.m_lbl_header = new System.Windows.Forms.Label();
-            this.m_txt_customer = new System.Windows.Forms.TextBox();
-            this.m_lbl_customer = new System.Windows.Forms.Label();
-            this.m_cmd_add_customer = new System.Windows.Forms.Button();
+            this.m_txt_provider = new System.Windows.Forms.TextBox();
+            this.m_lbl_provider = new System.Windows.Forms.Label();
+            this.m_cmd_add_provider = new System.Windows.Forms.Button();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
-            this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.m_cmd_ds_hoa_don = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_ds_phieu_nhap = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_view = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_txt_tax_rate = new System.Windows.Forms.TextBox();
-            this.m_lbl_tax_code = new System.Windows.Forms.Label();
             this.m_lbl_date = new System.Windows.Forms.Label();
-            this.m_dat_bill_date = new System.Windows.Forms.DateTimePicker();
+            this.m_dat_delivery_date = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_company_info_address = new System.Windows.Forms.Label();
             this.m_lbl_phone = new System.Windows.Forms.Label();
             this.m_lbl_company_info_name = new System.Windows.Forms.Label();
@@ -55,17 +52,11 @@
             this.m_lbl_company_phone = new System.Windows.Forms.Label();
             this.m_lbl_depository = new System.Windows.Forms.Label();
             this.m_cbo_repository = new System.Windows.Forms.ComboBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.m_txt_total_price = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.m_cmd_remove_row = new System.Windows.Forms.Button();
             this.m_txt_delivery_code = new System.Windows.Forms.TextBox();
             this.m_lbl_order_number = new System.Windows.Forms.Label();
-            this.m_pnl_out_place_dm.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_lbl_header
@@ -79,35 +70,35 @@
             this.m_lbl_header.Text = "NHẬP HÀNG TỪ NHÀ SẢN XUẤT";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // m_txt_customer
+            // m_txt_provider
             // 
-            this.m_txt_customer.BackColor = System.Drawing.SystemColors.Info;
-            this.m_txt_customer.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.m_txt_customer.Location = new System.Drawing.Point(148, 201);
-            this.m_txt_customer.Name = "m_txt_customer";
-            this.m_txt_customer.Size = new System.Drawing.Size(287, 20);
-            this.m_txt_customer.TabIndex = 16;
-            this.m_txt_customer.TabStop = false;
+            this.m_txt_provider.BackColor = System.Drawing.SystemColors.Info;
+            this.m_txt_provider.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.m_txt_provider.Location = new System.Drawing.Point(148, 201);
+            this.m_txt_provider.Name = "m_txt_provider";
+            this.m_txt_provider.Size = new System.Drawing.Size(287, 20);
+            this.m_txt_provider.TabIndex = 16;
+            this.m_txt_provider.TabStop = false;
             // 
-            // m_lbl_customer
+            // m_lbl_provider
             // 
-            this.m_lbl_customer.AutoSize = true;
-            this.m_lbl_customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_customer.Location = new System.Drawing.Point(25, 205);
-            this.m_lbl_customer.Name = "m_lbl_customer";
-            this.m_lbl_customer.Size = new System.Drawing.Size(114, 16);
-            this.m_lbl_customer.TabIndex = 15;
-            this.m_lbl_customer.Text = "Khách hàng           :";
+            this.m_lbl_provider.AutoSize = true;
+            this.m_lbl_provider.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_provider.Location = new System.Drawing.Point(25, 205);
+            this.m_lbl_provider.Name = "m_lbl_provider";
+            this.m_lbl_provider.Size = new System.Drawing.Size(114, 16);
+            this.m_lbl_provider.TabIndex = 15;
+            this.m_lbl_provider.Text = "Khách hàng           :";
             // 
-            // m_cmd_add_customer
+            // m_cmd_add_provider
             // 
-            this.m_cmd_add_customer.ImageIndex = 5;
-            this.m_cmd_add_customer.ImageList = this.ImageList;
-            this.m_cmd_add_customer.Location = new System.Drawing.Point(450, 199);
-            this.m_cmd_add_customer.Name = "m_cmd_add_customer";
-            this.m_cmd_add_customer.Size = new System.Drawing.Size(32, 22);
-            this.m_cmd_add_customer.TabIndex = 17;
-            this.m_cmd_add_customer.UseVisualStyleBackColor = true;
+            this.m_cmd_add_provider.ImageIndex = 5;
+            this.m_cmd_add_provider.ImageList = this.ImageList;
+            this.m_cmd_add_provider.Location = new System.Drawing.Point(450, 199);
+            this.m_cmd_add_provider.Name = "m_cmd_add_provider";
+            this.m_cmd_add_provider.Size = new System.Drawing.Size(32, 22);
+            this.m_cmd_add_provider.TabIndex = 17;
+            this.m_cmd_add_provider.UseVisualStyleBackColor = true;
             // 
             // ImageList
             // 
@@ -136,44 +127,34 @@
             this.ImageList.Images.SetKeyName(20, "");
             this.ImageList.Images.SetKeyName(21, "");
             // 
-            // m_pnl_out_place_dm
-            // 
-            this.m_pnl_out_place_dm.Controls.Add(this.panel1);
-            this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 576);
-            this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
-            this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(832, 40);
-            this.m_pnl_out_place_dm.TabIndex = 20;
-            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.m_cmd_ds_hoa_don);
+            this.panel1.Controls.Add(this.m_cmd_ds_phieu_nhap);
             this.panel1.Controls.Add(this.m_cmd_update);
             this.panel1.Controls.Add(this.m_cmd_view);
             this.panel1.Controls.Add(this.m_cmd_delete);
             this.panel1.Controls.Add(this.m_cmd_exit);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(4, 1);
+            this.panel1.Location = new System.Drawing.Point(0, 568);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(4);
-            this.panel1.Size = new System.Drawing.Size(824, 35);
+            this.panel1.Size = new System.Drawing.Size(832, 48);
             this.panel1.TabIndex = 20;
             // 
-            // m_cmd_ds_hoa_don
+            // m_cmd_ds_phieu_nhap
             // 
-            this.m_cmd_ds_hoa_don.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_ds_hoa_don.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_ds_hoa_don.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_ds_hoa_don.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_ds_hoa_don.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_ds_hoa_don.ImageIndex = 21;
-            this.m_cmd_ds_hoa_don.ImageList = this.ImageList;
-            this.m_cmd_ds_hoa_don.Location = new System.Drawing.Point(112, 4);
-            this.m_cmd_ds_hoa_don.Name = "m_cmd_ds_hoa_don";
-            this.m_cmd_ds_hoa_don.Size = new System.Drawing.Size(131, 27);
-            this.m_cmd_ds_hoa_don.TabIndex = 4;
-            this.m_cmd_ds_hoa_don.Text = "Danh sách hóa đơn";
+            this.m_cmd_ds_phieu_nhap.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_ds_phieu_nhap.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_ds_phieu_nhap.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_ds_phieu_nhap.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_ds_phieu_nhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_ds_phieu_nhap.ImageIndex = 21;
+            this.m_cmd_ds_phieu_nhap.ImageList = this.ImageList;
+            this.m_cmd_ds_phieu_nhap.Location = new System.Drawing.Point(112, 4);
+            this.m_cmd_ds_phieu_nhap.Name = "m_cmd_ds_phieu_nhap";
+            this.m_cmd_ds_phieu_nhap.Size = new System.Drawing.Size(150, 40);
+            this.m_cmd_ds_phieu_nhap.TabIndex = 4;
+            this.m_cmd_ds_phieu_nhap.Text = "Danh sách phiếu nhập";
             // 
             // m_cmd_update
             // 
@@ -184,9 +165,9 @@
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_update.ImageIndex = 10;
             this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(556, 4);
+            this.m_cmd_update.Location = new System.Drawing.Point(564, 4);
             this.m_cmd_update.Name = "m_cmd_update";
-            this.m_cmd_update.Size = new System.Drawing.Size(88, 27);
+            this.m_cmd_update.Size = new System.Drawing.Size(88, 40);
             this.m_cmd_update.TabIndex = 0;
             this.m_cmd_update.Text = "&Lưu";
             // 
@@ -201,7 +182,7 @@
             this.m_cmd_view.ImageList = this.ImageList;
             this.m_cmd_view.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_view.Name = "m_cmd_view";
-            this.m_cmd_view.Size = new System.Drawing.Size(108, 27);
+            this.m_cmd_view.Size = new System.Drawing.Size(108, 40);
             this.m_cmd_view.TabIndex = 3;
             this.m_cmd_view.Text = "In hóa đơn";
             // 
@@ -214,9 +195,9 @@
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(644, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(652, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
-            this.m_cmd_delete.Size = new System.Drawing.Size(88, 27);
+            this.m_cmd_delete.Size = new System.Drawing.Size(88, 40);
             this.m_cmd_delete.TabIndex = 1;
             this.m_cmd_delete.Text = "&Xoá hóa đơn";
             this.m_cmd_delete.Visible = false;
@@ -230,9 +211,9 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(732, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(740, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
-            this.m_cmd_exit.Size = new System.Drawing.Size(88, 27);
+            this.m_cmd_exit.Size = new System.Drawing.Size(88, 40);
             this.m_cmd_exit.TabIndex = 2;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
@@ -243,33 +224,12 @@
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_fg.KeyActionTab = C1.Win.C1FlexGrid.KeyActionEnum.MoveAcrossOut;
-            this.m_fg.Location = new System.Drawing.Point(0, 231);
+            this.m_fg.Location = new System.Drawing.Point(0, 239);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Rows.Count = 4;
-            this.m_fg.Size = new System.Drawing.Size(832, 296);
+            this.m_fg.Rows.Count = 3;
+            this.m_fg.Size = new System.Drawing.Size(832, 329);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 18;
-            // 
-            // m_txt_tax_rate
-            // 
-            this.m_txt_tax_rate.Location = new System.Drawing.Point(93, 10);
-            this.m_txt_tax_rate.Name = "m_txt_tax_rate";
-            this.m_txt_tax_rate.Size = new System.Drawing.Size(47, 20);
-            this.m_txt_tax_rate.TabIndex = 1;
-            this.m_txt_tax_rate.Text = "0";
-            this.m_txt_tax_rate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.m_txt_tax_rate.Visible = false;
-            // 
-            // m_lbl_tax_code
-            // 
-            this.m_lbl_tax_code.AutoSize = true;
-            this.m_lbl_tax_code.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_tax_code.Location = new System.Drawing.Point(5, 11);
-            this.m_lbl_tax_code.Name = "m_lbl_tax_code";
-            this.m_lbl_tax_code.Size = new System.Drawing.Size(73, 16);
-            this.m_lbl_tax_code.TabIndex = 0;
-            this.m_lbl_tax_code.Text = "Thuế suất :";
-            this.m_lbl_tax_code.Visible = false;
             // 
             // m_lbl_date
             // 
@@ -281,15 +241,15 @@
             this.m_lbl_date.TabIndex = 3;
             this.m_lbl_date.Text = "Ngày  :";
             // 
-            // m_dat_bill_date
+            // m_dat_delivery_date
             // 
-            this.m_dat_bill_date.CustomFormat = "dd/MM/yyyy";
-            this.m_dat_bill_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_bill_date.Location = new System.Drawing.Point(391, 59);
-            this.m_dat_bill_date.Name = "m_dat_bill_date";
-            this.m_dat_bill_date.Size = new System.Drawing.Size(112, 20);
-            this.m_dat_bill_date.TabIndex = 4;
-            this.m_dat_bill_date.TabStop = false;
+            this.m_dat_delivery_date.CustomFormat = "dd/MM/yyyy";
+            this.m_dat_delivery_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.m_dat_delivery_date.Location = new System.Drawing.Point(391, 59);
+            this.m_dat_delivery_date.Name = "m_dat_delivery_date";
+            this.m_dat_delivery_date.Size = new System.Drawing.Size(112, 20);
+            this.m_dat_delivery_date.TabIndex = 4;
+            this.m_dat_delivery_date.TabStop = false;
             // 
             // m_lbl_company_info_address
             // 
@@ -372,57 +332,11 @@
             this.m_cbo_repository.TabIndex = 2;
             this.m_cbo_repository.TabStop = false;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.m_txt_total_price);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.m_txt_tax_rate);
-            this.panel2.Controls.Add(this.m_lbl_tax_code);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 527);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(4);
-            this.panel2.Size = new System.Drawing.Size(832, 49);
-            this.panel2.TabIndex = 19;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(146, 11);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(20, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "%";
-            this.label2.Visible = false;
-            // 
-            // m_txt_total_price
-            // 
-            this.m_txt_total_price.BackColor = System.Drawing.SystemColors.Info;
-            this.m_txt_total_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_txt_total_price.Location = new System.Drawing.Point(520, 7);
-            this.m_txt_total_price.Name = "m_txt_total_price";
-            this.m_txt_total_price.Size = new System.Drawing.Size(287, 20);
-            this.m_txt_total_price.TabIndex = 4;
-            this.m_txt_total_price.TabStop = false;
-            this.m_txt_total_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(447, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 16);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Tổng tiền :";
-            // 
             // m_cmd_remove_row
             // 
             this.m_cmd_remove_row.ImageIndex = 4;
             this.m_cmd_remove_row.ImageList = this.ImageList;
-            this.m_cmd_remove_row.Location = new System.Drawing.Point(800, 225);
+            this.m_cmd_remove_row.Location = new System.Drawing.Point(796, 239);
             this.m_cmd_remove_row.Name = "m_cmd_remove_row";
             this.m_cmd_remove_row.Size = new System.Drawing.Size(32, 22);
             this.m_cmd_remove_row.TabIndex = 21;
@@ -453,7 +367,7 @@
             this.ClientSize = new System.Drawing.Size(832, 616);
             this.Controls.Add(this.m_cmd_remove_row);
             this.Controls.Add(this.m_fg);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.m_cbo_repository);
             this.Controls.Add(this.m_lbl_depository);
             this.Controls.Add(this.m_lbl_company_phone);
@@ -462,24 +376,20 @@
             this.Controls.Add(this.m_lbl_company_info_address);
             this.Controls.Add(this.m_lbl_phone);
             this.Controls.Add(this.m_lbl_company_info_name);
-            this.Controls.Add(this.m_dat_bill_date);
+            this.Controls.Add(this.m_dat_delivery_date);
             this.Controls.Add(this.m_lbl_date);
             this.Controls.Add(this.m_txt_delivery_code);
             this.Controls.Add(this.m_lbl_order_number);
-            this.Controls.Add(this.m_pnl_out_place_dm);
-            this.Controls.Add(this.m_cmd_add_customer);
-            this.Controls.Add(this.m_txt_customer);
-            this.Controls.Add(this.m_lbl_customer);
+            this.Controls.Add(this.m_cmd_add_provider);
+            this.Controls.Add(this.m_txt_provider);
+            this.Controls.Add(this.m_lbl_provider);
             this.Controls.Add(this.m_lbl_header);
             this.MaximizeBox = false;
             this.Name = "f351_nhap_hang_nha_san_xuat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F351- Nhập hàng nhà sản xuất";
-            this.m_pnl_out_place_dm.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -488,15 +398,12 @@
         #endregion
 
         private System.Windows.Forms.Label m_lbl_header;
-        private System.Windows.Forms.TextBox m_txt_customer;
-        private System.Windows.Forms.Label m_lbl_customer;
-        private System.Windows.Forms.Button m_cmd_add_customer;
-        internal System.Windows.Forms.Panel m_pnl_out_place_dm;
+        private System.Windows.Forms.TextBox m_txt_provider;
+        private System.Windows.Forms.Label m_lbl_provider;
+        private System.Windows.Forms.Button m_cmd_add_provider;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
-        private System.Windows.Forms.TextBox m_txt_tax_rate;
-        private System.Windows.Forms.Label m_lbl_tax_code;
         private System.Windows.Forms.Label m_lbl_date;
-        private System.Windows.Forms.DateTimePicker m_dat_bill_date;
+        private System.Windows.Forms.DateTimePicker m_dat_delivery_date;
         private System.Windows.Forms.Label m_lbl_company_info_address;
         private System.Windows.Forms.Label m_lbl_phone;
         private System.Windows.Forms.Label m_lbl_company_info_name;
@@ -511,12 +418,8 @@
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
         private System.Windows.Forms.Label m_lbl_depository;
         private System.Windows.Forms.ComboBox m_cbo_repository;
-        internal SIS.Controls.Button.SiSButton m_cmd_ds_hoa_don;
-        internal System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox m_txt_total_price;
-        private System.Windows.Forms.Label label1;
+        internal SIS.Controls.Button.SiSButton m_cmd_ds_phieu_nhap;
         private System.Windows.Forms.Button m_cmd_remove_row;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox m_txt_delivery_code;
         private System.Windows.Forms.Label m_lbl_order_number;
     }
