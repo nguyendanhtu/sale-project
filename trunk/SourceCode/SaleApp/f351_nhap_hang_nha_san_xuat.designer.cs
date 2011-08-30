@@ -43,8 +43,6 @@
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
-            this.m_txt_bill_code = new System.Windows.Forms.TextBox();
-            this.m_lbl_order_number = new System.Windows.Forms.Label();
             this.m_txt_tax_rate = new System.Windows.Forms.TextBox();
             this.m_lbl_tax_code = new System.Windows.Forms.Label();
             this.m_lbl_date = new System.Windows.Forms.Label();
@@ -62,6 +60,8 @@
             this.m_txt_total_price = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.m_cmd_remove_row = new System.Windows.Forms.Button();
+            this.m_txt_delivery_code = new System.Windows.Forms.TextBox();
+            this.m_lbl_order_number = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -76,7 +76,7 @@
             this.m_lbl_header.Name = "m_lbl_header";
             this.m_lbl_header.Size = new System.Drawing.Size(832, 46);
             this.m_lbl_header.TabIndex = 0;
-            this.m_lbl_header.Text = "HÓA ĐƠN BÁN HÀNG";
+            this.m_lbl_header.Text = "NHẬP HÀNG TỪ NHÀ SẢN XUẤT";
             this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_txt_customer
@@ -245,27 +245,10 @@
             this.m_fg.KeyActionTab = C1.Win.C1FlexGrid.KeyActionEnum.MoveAcrossOut;
             this.m_fg.Location = new System.Drawing.Point(0, 231);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Rows.Count = 3;
+            this.m_fg.Rows.Count = 4;
             this.m_fg.Size = new System.Drawing.Size(832, 296);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 18;
-            // 
-            // m_txt_bill_code
-            // 
-            this.m_txt_bill_code.Location = new System.Drawing.Point(669, 59);
-            this.m_txt_bill_code.Name = "m_txt_bill_code";
-            this.m_txt_bill_code.Size = new System.Drawing.Size(138, 20);
-            this.m_txt_bill_code.TabIndex = 6;
-            // 
-            // m_lbl_order_number
-            // 
-            this.m_lbl_order_number.AutoSize = true;
-            this.m_lbl_order_number.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_order_number.Location = new System.Drawing.Point(580, 63);
-            this.m_lbl_order_number.Name = "m_lbl_order_number";
-            this.m_lbl_order_number.Size = new System.Drawing.Size(83, 16);
-            this.m_lbl_order_number.TabIndex = 5;
-            this.m_lbl_order_number.Text = "Số hóa đơn :";
             // 
             // m_txt_tax_rate
             // 
@@ -374,9 +357,9 @@
             this.m_lbl_depository.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_depository.Location = new System.Drawing.Point(25, 63);
             this.m_lbl_depository.Name = "m_lbl_depository";
-            this.m_lbl_depository.Size = new System.Drawing.Size(73, 16);
+            this.m_lbl_depository.Size = new System.Drawing.Size(97, 16);
             this.m_lbl_depository.TabIndex = 1;
-            this.m_lbl_depository.Text = "Kho hàng  :";
+            this.m_lbl_depository.Text = "Vào kho hàng :";
             // 
             // m_cbo_repository
             // 
@@ -445,6 +428,23 @@
             this.m_cmd_remove_row.TabIndex = 21;
             this.m_cmd_remove_row.UseVisualStyleBackColor = true;
             // 
+            // m_txt_delivery_code
+            // 
+            this.m_txt_delivery_code.Location = new System.Drawing.Point(669, 59);
+            this.m_txt_delivery_code.Name = "m_txt_delivery_code";
+            this.m_txt_delivery_code.Size = new System.Drawing.Size(138, 20);
+            this.m_txt_delivery_code.TabIndex = 6;
+            // 
+            // m_lbl_order_number
+            // 
+            this.m_lbl_order_number.AutoSize = true;
+            this.m_lbl_order_number.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_order_number.Location = new System.Drawing.Point(566, 63);
+            this.m_lbl_order_number.Name = "m_lbl_order_number";
+            this.m_lbl_order_number.Size = new System.Drawing.Size(97, 16);
+            this.m_lbl_order_number.TabIndex = 5;
+            this.m_lbl_order_number.Text = "Số phiếu nhập:";
+            // 
             // f351_nhap_hang_nha_san_xuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -464,7 +464,7 @@
             this.Controls.Add(this.m_lbl_company_info_name);
             this.Controls.Add(this.m_dat_bill_date);
             this.Controls.Add(this.m_lbl_date);
-            this.Controls.Add(this.m_txt_bill_code);
+            this.Controls.Add(this.m_txt_delivery_code);
             this.Controls.Add(this.m_lbl_order_number);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_cmd_add_customer);
@@ -493,8 +493,6 @@
         private System.Windows.Forms.Button m_cmd_add_customer;
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
-        private System.Windows.Forms.TextBox m_txt_bill_code;
-        private System.Windows.Forms.Label m_lbl_order_number;
         private System.Windows.Forms.TextBox m_txt_tax_rate;
         private System.Windows.Forms.Label m_lbl_tax_code;
         private System.Windows.Forms.Label m_lbl_date;
@@ -519,5 +517,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button m_cmd_remove_row;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox m_txt_delivery_code;
+        private System.Windows.Forms.Label m_lbl_order_number;
     }
 }
