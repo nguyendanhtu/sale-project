@@ -370,6 +370,7 @@ namespace SaleApp
         {
             CExcelReport v_obj_export_excel = new CExcelReport("f921_rpt_bao_cao_doanh_thu_ban_hang_theo_nhom_hang.xlsx", 6, 1);
             v_obj_export_excel.AddFindAndReplaceItem("</TU_NGAY>", m_dat_from_date.Value.Date.ToString("dd/MM/yyyy"));
+            v_obj_export_excel.AddFindAndReplaceItem("</NHOM_SAN_PHAM>", m_cbo_ten_nhom_hang.SelectedValue.ToString() );
             v_obj_export_excel.AddFindAndReplaceItem("</DEN_NGAY>", m_dat_to_date.Value.Date.ToString("dd/MM/yyyy"));
             v_obj_export_excel.FindAndReplace(false);
             v_obj_export_excel.Export2ExcelWithoutFixedRows(m_fg, (int)e_col_Number.BILL_DATE, m_fg.Cols.Count - 1, true);
