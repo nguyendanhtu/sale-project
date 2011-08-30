@@ -42,6 +42,8 @@ namespace SaleApp
         private DateTimePicker m_dat_from_date;
         private Label label1;
         internal SIS.Controls.Button.SiSButton m_cmd_view;
+        internal SIS.Controls.Button.SiSButton m_cmd_select;
+        internal SIS.Controls.Button.SiSButton m_cmd_delete;
         private System.ComponentModel.IContainer components;
 
         public f932_bao_cao_doanh_thu_theo_ky()
@@ -83,15 +85,17 @@ namespace SaleApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f932_bao_cao_doanh_thu_theo_ky));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_select = new SIS.Controls.Button.SiSButton();
             this.m_cmd_export_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.m_cmd_view = new SIS.Controls.Button.SiSButton();
             this.m_dat_to_date = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.m_dat_from_date = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.m_cmd_view = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -126,6 +130,8 @@ namespace SaleApp
             // 
             // m_pnl_out_place_dm
             // 
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_select);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_export_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -134,6 +140,21 @@ namespace SaleApp
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
             this.m_pnl_out_place_dm.Size = new System.Drawing.Size(936, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
+            // 
+            // m_cmd_select
+            // 
+            this.m_cmd_select.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_select.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_select.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_select.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_select.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_select.ImageIndex = 14;
+            this.m_cmd_select.ImageList = this.ImageList;
+            this.m_cmd_select.Location = new System.Drawing.Point(756, 4);
+            this.m_cmd_select.Name = "m_cmd_select";
+            this.m_cmd_select.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_select.TabIndex = 22;
+            this.m_cmd_select.Text = "Chọn";
             // 
             // m_cmd_export_excel
             // 
@@ -190,6 +211,21 @@ namespace SaleApp
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin báo cáo";
             // 
+            // m_cmd_view
+            // 
+            this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_view.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_view.ImageIndex = 5;
+            this.m_cmd_view.ImageList = this.ImageList;
+            this.m_cmd_view.Location = new System.Drawing.Point(845, 16);
+            this.m_cmd_view.Name = "m_cmd_view";
+            this.m_cmd_view.Size = new System.Drawing.Size(88, 81);
+            this.m_cmd_view.TabIndex = 22;
+            this.m_cmd_view.Text = "In báo cáo";
+            // 
             // m_dat_to_date
             // 
             this.m_dat_to_date.CustomFormat = "dd/MM/yyyy";
@@ -226,20 +262,20 @@ namespace SaleApp
             this.label1.TabIndex = 0;
             this.label1.Text = "Từ ngày";
             // 
-            // m_cmd_view
+            // m_cmd_delete
             // 
-            this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_view.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_view.ImageIndex = 5;
-            this.m_cmd_view.ImageList = this.ImageList;
-            this.m_cmd_view.Location = new System.Drawing.Point(845, 16);
-            this.m_cmd_view.Name = "m_cmd_view";
-            this.m_cmd_view.Size = new System.Drawing.Size(88, 81);
-            this.m_cmd_view.TabIndex = 22;
-            this.m_cmd_view.Text = "In báo cáo";
+            this.m_cmd_delete.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_delete.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_delete.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_delete.ImageIndex = 4;
+            this.m_cmd_delete.ImageList = this.ImageList;
+            this.m_cmd_delete.Location = new System.Drawing.Point(92, 4);
+            this.m_cmd_delete.Name = "m_cmd_delete";
+            this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_delete.TabIndex = 23;
+            this.m_cmd_delete.Text = "Xóa hóa đơn";
             // 
             // f932_bao_cao_doanh_thu_theo_ky
             // 
@@ -249,7 +285,7 @@ namespace SaleApp
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f932_bao_cao_doanh_thu_theo_ky";
-            this.Text = "f932_bao_cao_doanh_thu_theo_ky";
+            this.Text = "F932 - Báo cáo doanh thu bán hàng theo kỳ";
             this.Load += new System.EventHandler(this.f932_bao_cao_doanh_thu_theo_ky_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
@@ -263,7 +299,17 @@ namespace SaleApp
         #region Public Interface
         public void display()
         {
+            m_e_form_mode = DataEntryFormMode.ViewDataState;
             this.ShowDialog();
+        }
+
+        public DialogResult select_gd_bill(ref US_GD_BILL op_gd_bill)
+        {
+            m_dgl_result = DialogResult.Cancel;
+            m_e_form_mode = DataEntryFormMode.SelectDataState;
+            op_gd_bill = m_us_gd_bill;
+            this.ShowDialog();
+            return m_dgl_result;
         }
         #endregion
 
@@ -283,7 +329,11 @@ namespace SaleApp
         #region Members
         ITransferDataRow m_obj_trans;
         DS_V_RPT_GD_BILL m_ds = new DS_V_RPT_GD_BILL();
-        US_V_RPT_GD_BILL m_us = new US_V_RPT_GD_BILL();
+        US_V_RPT_GD_BILL m_us_v_rpt_gd_bill = new US_V_RPT_GD_BILL();
+
+        US_GD_BILL m_us_gd_bill = new US_GD_BILL();
+        DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
+        DialogResult m_dgl_result = DialogResult.Cancel;
         #endregion
 
         #region Private Methods
@@ -300,6 +350,23 @@ namespace SaleApp
         {
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_grid();
+
+            switch (m_e_form_mode)
+            {
+
+                case DataEntryFormMode.SelectDataState:
+                    this.Text = "F932 - Danh sách hóa đơn bán hàng";
+                    m_cmd_select.Visible = true;
+                    m_cmd_delete.Visible = true;
+                    break;
+          
+                case DataEntryFormMode.ViewDataState:
+                    this.Text = "F932 - Báo cáo doanh thu bán hàng theo kỳ";
+                    m_cmd_select.Visible = false;
+                    m_cmd_delete.Visible = false;
+                    break;
+
+            }
         }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
@@ -315,7 +382,7 @@ namespace SaleApp
         private void load_data_2_grid()
         {
             m_ds = new DS_V_RPT_GD_BILL();
-            m_us.FillDataset(m_ds, m_dat_from_date.Value.Date, m_dat_to_date.Value.Date);
+            m_us_v_rpt_gd_bill.FillDataset(m_ds, m_dat_from_date.Value.Date, m_dat_to_date.Value.Date);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
             m_fg.Subtotal(AggregateEnum.Sum, 0, -1, (int)e_col_Number.AMMOUNT, "Tổng tiền bán hàng");
@@ -343,9 +410,23 @@ namespace SaleApp
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            grid2us_object(m_us, m_fg.Row);
+            grid2us_object(m_us_v_rpt_gd_bill, m_fg.Row);
             //	f932_bao_cao_doanh_thu_theo_ky_DE v_fDE = new f932_bao_cao_doanh_thu_theo_ky_DE();			
             //	v_fDE.display(m_us);
+        }
+
+        private void select_hoa_don_ban_hang()
+        {
+
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+
+            if (m_fg.Rows[m_fg.Row].IsNode == true) return;
+            grid2us_object(m_us_v_rpt_gd_bill, m_fg.Row);
+
+            m_us_v_rpt_gd_bill.CopyData2US_GD_BILL(ref m_us_gd_bill);
+            m_dgl_result = DialogResult.OK;
+            this.Close();
         }
 
         private void export_excel()
@@ -359,6 +440,32 @@ namespace SaleApp
 
         }
 
+        private void delete_gd_bill()
+        {
+            if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            if (m_fg.Rows[m_fg.Row].IsNode == true) return;
+            if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
+            grid2us_object(m_us_v_rpt_gd_bill, m_fg.Row);
+            m_us_v_rpt_gd_bill.CopyData2US_GD_BILL(ref m_us_gd_bill);
+            try
+            {
+                m_us_gd_bill.BeginTransaction();
+                m_us_gd_bill.Delete();
+                m_us_gd_bill.CommitTransaction();
+            }
+            catch (Exception v_e)
+            {
+                if (m_us_gd_bill.is_having_transaction())
+                {
+                    m_us_gd_bill.Rollback();
+                }
+                throw;
+            }
+            load_data_2_grid();   
+         
+
+        }
         #endregion
         private void set_define_events()
         {
@@ -366,6 +473,72 @@ namespace SaleApp
 
             m_cmd_export_excel.Click += new EventHandler(m_cmd_export_excel_Click);
             m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
+
+            m_cmd_select.Click += new EventHandler(m_cmd_select_Click);
+            m_fg.DoubleClick += new EventHandler(m_fg_DoubleClick);
+            this.KeyDown += new KeyEventHandler(f932_bao_cao_doanh_thu_theo_ky_KeyDown);
+        }
+
+        void m_cmd_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                delete_gd_bill();
+            }
+            catch (Exception v_e)
+            {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void f932_bao_cao_doanh_thu_theo_ky_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.Enter:
+                        if ((m_fg.Focused)&&(m_e_form_mode == DataEntryFormMode.SelectDataState))
+                        {
+                            select_hoa_don_ban_hang();
+                        }
+                        break;
+                }
+                select_hoa_don_ban_hang();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_fg_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                select_hoa_don_ban_hang();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        void m_cmd_select_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                select_hoa_don_ban_hang();
+            }
+            catch (Exception v_e)
+            {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
         }
 
         void m_cmd_view_Click(object sender, EventArgs e)

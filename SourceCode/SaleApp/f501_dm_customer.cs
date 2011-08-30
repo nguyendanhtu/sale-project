@@ -37,7 +37,7 @@ namespace SaleApp
         internal SIS.Controls.Button.SiSButton m_cmd_update;
         internal SIS.Controls.Button.SiSButton m_cmd_insert;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
-        internal SIS.Controls.Button.SiSButton m_cmd_view;
+        internal SIS.Controls.Button.SiSButton m_cmd_select_customer;
         private System.ComponentModel.IContainer components;
 
         public f501_dm_customer()
@@ -81,7 +81,7 @@ namespace SaleApp
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_insert = new SIS.Controls.Button.SiSButton();
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_view = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_select_customer = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
@@ -120,7 +120,7 @@ namespace SaleApp
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_insert);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_update);
-            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_view);
+            this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_select_customer);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_delete);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -160,20 +160,20 @@ namespace SaleApp
             this.m_cmd_update.TabIndex = 13;
             this.m_cmd_update.Text = "&Sửa";
             // 
-            // m_cmd_view
+            // m_cmd_select_customer
             // 
-            this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_view.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_view.ImageIndex = 18;
-            this.m_cmd_view.ImageList = this.ImageList;
-            this.m_cmd_view.Location = new System.Drawing.Point(4, 4);
-            this.m_cmd_view.Name = "m_cmd_view";
-            this.m_cmd_view.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_view.TabIndex = 21;
-            this.m_cmd_view.Text = "Xem";
+            this.m_cmd_select_customer.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_select_customer.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_select_customer.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_select_customer.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_select_customer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_select_customer.ImageIndex = 14;
+            this.m_cmd_select_customer.ImageList = this.ImageList;
+            this.m_cmd_select_customer.Location = new System.Drawing.Point(4, 4);
+            this.m_cmd_select_customer.Name = "m_cmd_select_customer";
+            this.m_cmd_select_customer.Size = new System.Drawing.Size(123, 28);
+            this.m_cmd_select_customer.TabIndex = 21;
+            this.m_cmd_select_customer.Text = "Chọn khách hàng";
             // 
             // m_cmd_delete
             // 
@@ -209,11 +209,12 @@ namespace SaleApp
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.m_fg.KeyActionEnter = C1.Win.C1FlexGrid.KeyActionEnum.None;
             this.m_fg.Location = new System.Drawing.Point(0, 0);
             this.m_fg.Name = "m_fg";
             this.m_fg.Size = new System.Drawing.Size(686, 373);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 20;
+            this.m_fg.TabIndex = 0;
             // 
             // f501_dm_customer
             // 
@@ -234,19 +235,26 @@ namespace SaleApp
         #region Public Interface
         public void display()
         {
+            m_e_form_mode = DataEntryFormMode.ViewDataState;
             this.ShowDialog();
+        }
+        public void select_customer(ref US_DM_CUSTOMER op_us_customer)
+        {
+            m_e_form_mode = DataEntryFormMode.SelectDataState;
+            this.ShowDialog();
+            op_us_customer = m_us_customer;
         }
         #endregion
 
         #region Data Structure
         private enum e_col_Number
         {
-            MOBLIE_PHONE = 2,
+            MOBLIE_PHONE = 3,
             ADDRESS = 6,
-            CUSTOMER_GROUP_ID = 4,
-            TAX_CODE = 3,
+            CUSTOMER_GROUP_ID = 1,
+            TAX_CODE = 4,
             WEBSITE = 7,
-            CUSTOMER_NAME = 1,
+            CUSTOMER_NAME = 2,
             EMAIL = 5
         }
         #endregion
@@ -254,7 +262,8 @@ namespace SaleApp
         #region Members
         ITransferDataRow m_obj_trans;
         DS_DM_CUSTOMER m_ds = new DS_DM_CUSTOMER();
-        US_DM_CUSTOMER m_us = new US_DM_CUSTOMER();
+        US_DM_CUSTOMER m_us_customer = new US_DM_CUSTOMER();
+        DataEntryFormMode m_e_form_mode = DataEntryFormMode.ViewDataState;
         #endregion
 
         #region Private Methods
@@ -262,6 +271,10 @@ namespace SaleApp
         {
             CControlFormat.setFormStyle(this);
             CControlFormat.setC1FlexFormat(m_fg);
+            mapping_col_customer_group();
+            m_fg.Tree.Column = (int)e_col_Number.CUSTOMER_NAME;
+            m_fg.Tree.Style = TreeStyleFlags.SimpleLeaf;
+            m_fg.Cols[(int)e_col_Number.CUSTOMER_GROUP_ID].Visible = false;
             set_define_events();
             this.KeyPreview = true;
         }
@@ -270,6 +283,22 @@ namespace SaleApp
         {
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_grid();
+            switch (m_e_form_mode)
+            {
+                case DataEntryFormMode.InsertDataState:
+                    break;
+                case DataEntryFormMode.SelectDataState:
+                    m_cmd_insert.Visible = false;
+                    m_cmd_update.Visible = false;
+                    m_cmd_delete.Visible = false;
+                    break;
+                case DataEntryFormMode.UpdateDataState:
+                    break;
+                case DataEntryFormMode.ViewDataState:
+                    break;
+                default:
+                    break;
+            }
         }
         private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg)
         {
@@ -277,7 +306,6 @@ namespace SaleApp
             v_htb.Add(DM_CUSTOMER.MOBLIE_PHONE, e_col_Number.MOBLIE_PHONE);
             v_htb.Add(DM_CUSTOMER.ADDRESS, e_col_Number.ADDRESS);
             v_htb.Add(DM_CUSTOMER.CUSTOMER_GROUP_ID, e_col_Number.CUSTOMER_GROUP_ID);
-
             v_htb.Add(DM_CUSTOMER.TAX_CODE, e_col_Number.TAX_CODE);
             v_htb.Add(DM_CUSTOMER.WEBSITE, e_col_Number.WEBSITE);
             v_htb.Add(DM_CUSTOMER.CUSTOMER_NAME, e_col_Number.CUSTOMER_NAME);
@@ -286,13 +314,32 @@ namespace SaleApp
             ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg, v_htb, m_ds.DM_CUSTOMER.NewRow());
             return v_obj_trans;
         }
+
+        private void mapping_col_customer_group()
+        {
+            Hashtable v_hst = new Hashtable();
+            DS_DM_CUSTOMER_GROUP v_ds_customer_group = new DS_DM_CUSTOMER_GROUP();
+            US_DM_CUSTOMER_GROUP v_us_customer_group = new US_DM_CUSTOMER_GROUP();
+            v_us_customer_group.FillDataset(v_ds_customer_group);
+            foreach (DataRow v_dr in v_ds_customer_group.DM_CUSTOMER_GROUP.Rows)
+            {
+                v_hst.Add(v_dr[DM_CUSTOMER_GROUP.ID], v_dr[DM_CUSTOMER_GROUP.CUSTOMER_GROUP_NAME]);
+            }
+            m_fg.Cols[(int)e_col_Number.CUSTOMER_GROUP_ID].DataMap = v_hst;
+        }
         private void load_data_2_grid()
         {
             m_ds = new DS_DM_CUSTOMER();
-            m_us.FillDataset(m_ds);
+            m_us_customer.FillDataset(m_ds, "ORDER BY " + DM_CUSTOMER.CUSTOMER_GROUP_ID);
             m_fg.Redraw = false;
             CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            m_fg.Subtotal(AggregateEnum.Count
+               , 0
+               , (int)e_col_Number.CUSTOMER_GROUP_ID
+               , (int)e_col_Number.CUSTOMER_NAME
+               , "{0}");
             m_fg.Redraw = true;
+            CGridUtils.stand_on_TopLeft_Cell(m_fg);
         }
         private void grid2us_object(US_DM_CUSTOMER i_us
             , int i_grid_row)
@@ -323,11 +370,12 @@ namespace SaleApp
         private void update_dm_customer()
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
-            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            grid2us_object(m_us, m_fg.Row);
+            if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return; 
+            if (m_fg.Rows[m_fg.Row].IsNode == true) return;
+            grid2us_object(m_us_customer, m_fg.Row);
 
             f502_dm_customer_de frm502 = new f502_dm_customer_de();
-            frm502.display_for_update(m_us);
+            frm502.display_for_update(m_us_customer);
             load_data_2_grid();
         }
 
@@ -335,6 +383,7 @@ namespace SaleApp
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
+            if (m_fg.Rows[m_fg.Row].IsNode == true) return;
             if (BaseMessages.askUser_DataCouldBeDeleted(8) != BaseMessages.IsDataCouldBeDeleted.CouldBeDeleted) return;
             US_DM_CUSTOMER v_us = new US_DM_CUSTOMER();
             grid2us_object(v_us, m_fg.Row);
@@ -354,13 +403,13 @@ namespace SaleApp
             }
         }
 
-        private void view_dm_customer()
+        private void select_dm_customer()
         {
             if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
             if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-            grid2us_object(m_us, m_fg.Row);
-            //	f501_dm_customer_DE v_fDE = new f501_dm_customer_DE();			
-            //	v_fDE.display(m_us);
+            if (m_fg.Rows[m_fg.Row].IsNode == true) return;
+            grid2us_object(m_us_customer, m_fg.Row);
+            this.Close();
         }
         private void set_define_events()
         {
@@ -368,8 +417,30 @@ namespace SaleApp
             m_cmd_insert.Click += new EventHandler(m_cmd_insert_Click);
             m_cmd_update.Click += new EventHandler(m_cmd_update_Click);
             m_cmd_delete.Click += new EventHandler(m_cmd_delete_Click);
-            m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+            m_cmd_select_customer.Click += new EventHandler(m_cmd_select_customer_Click);
+
+            this.KeyDown += new KeyEventHandler(f501_dm_customer_KeyDown);
         }
+
+        void f501_dm_customer_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.Enter:
+                        select_dm_customer();
+                        break;
+                }
+            }
+            catch (Exception v_e)
+            {
+                
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+       
         #endregion
 
         //
@@ -438,11 +509,11 @@ namespace SaleApp
             }
         }
 
-        private void m_cmd_view_Click(object sender, EventArgs e)
+        private void m_cmd_select_customer_Click(object sender, EventArgs e)
         {
             try
             {
-                view_dm_customer();
+                select_dm_customer();
             }
             catch (Exception v_e)
             {
