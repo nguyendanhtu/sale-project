@@ -343,7 +343,7 @@ namespace SaleApp
             m_us.FillDataset(m_ds,decimal.Parse(m_cbo_ten_mat_hang.SelectedValue.ToString()),m_dat_from_date.Value.Date,m_dat_to_date.Value.Date);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
-            m_fg.Subtotal(AggregateEnum.Sum, 0, -1, (int)e_col_Number.AMMOUNT, "Tổng tiền bán hàng");
+            m_fg.Subtotal(AggregateEnum.Sum, 0, -1, (int)e_col_Number.AMOUNT, "Tổng tiền bán hàng");
 			m_fg.Redraw = true;
 		}
 		private void grid2us_object(US_V_RPT_GD_BILL_DETAIL i_us, int i_grid_row) {
