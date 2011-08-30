@@ -90,6 +90,8 @@ namespace SaleApp
             this.m_cmd_export_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_grb_thong_tin_ban_hang = new System.Windows.Forms.GroupBox();
+            this.m_cbo_repository = new System.Windows.Forms.ComboBox();
+            this.m_lbl_repository = new System.Windows.Forms.Label();
             this.m_cbo_ten_mat_hang = new System.Windows.Forms.ComboBox();
             this.m_lbl_product_name = new System.Windows.Forms.Label();
             this.m_dat_to_date = new System.Windows.Forms.DateTimePicker();
@@ -97,8 +99,6 @@ namespace SaleApp
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.m_dat_from_date = new System.Windows.Forms.DateTimePicker();
-            this.m_cbo_repository = new System.Windows.Forms.ComboBox();
-            this.m_lbl_repository = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.m_grb_thong_tin_ban_hang.SuspendLayout();
@@ -201,6 +201,26 @@ namespace SaleApp
             this.m_grb_thong_tin_ban_hang.TabStop = false;
             this.m_grb_thong_tin_ban_hang.Text = "Thông tin bán hàng";
             // 
+            // m_cbo_repository
+            // 
+            this.m_cbo_repository.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.m_cbo_repository.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.m_cbo_repository.FormattingEnabled = true;
+            this.m_cbo_repository.Location = new System.Drawing.Point(409, 84);
+            this.m_cbo_repository.MaxDropDownItems = 5;
+            this.m_cbo_repository.Name = "m_cbo_repository";
+            this.m_cbo_repository.Size = new System.Drawing.Size(162, 21);
+            this.m_cbo_repository.TabIndex = 33;
+            // 
+            // m_lbl_repository
+            // 
+            this.m_lbl_repository.AutoSize = true;
+            this.m_lbl_repository.Location = new System.Drawing.Point(348, 89);
+            this.m_lbl_repository.Name = "m_lbl_repository";
+            this.m_lbl_repository.Size = new System.Drawing.Size(26, 13);
+            this.m_lbl_repository.TabIndex = 32;
+            this.m_lbl_repository.Text = "Kho";
+            // 
             // m_cbo_ten_mat_hang
             // 
             this.m_cbo_ten_mat_hang.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
@@ -272,26 +292,6 @@ namespace SaleApp
             this.m_dat_from_date.Size = new System.Drawing.Size(200, 20);
             this.m_dat_from_date.TabIndex = 24;
             // 
-            // m_cbo_repository
-            // 
-            this.m_cbo_repository.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.m_cbo_repository.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.m_cbo_repository.FormattingEnabled = true;
-            this.m_cbo_repository.Location = new System.Drawing.Point(409, 84);
-            this.m_cbo_repository.MaxDropDownItems = 5;
-            this.m_cbo_repository.Name = "m_cbo_repository";
-            this.m_cbo_repository.Size = new System.Drawing.Size(162, 21);
-            this.m_cbo_repository.TabIndex = 33;
-            // 
-            // m_lbl_repository
-            // 
-            this.m_lbl_repository.AutoSize = true;
-            this.m_lbl_repository.Location = new System.Drawing.Point(348, 89);
-            this.m_lbl_repository.Name = "m_lbl_repository";
-            this.m_lbl_repository.Size = new System.Drawing.Size(26, 13);
-            this.m_lbl_repository.TabIndex = 32;
-            this.m_lbl_repository.Text = "Kho";
-            // 
             // f961_bao_cao_xuat_nhap_trong_ky
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -335,6 +335,7 @@ namespace SaleApp
 			CControlFormat.setC1FlexFormat(m_fg);
 			CGridUtils.AddSave_Excel_Handlers(m_fg);
 			CGridUtils.AddSearch_Handlers(m_fg);
+            m_fg.Cols[(int)e_col_Number.QUANTITY].Visible = false;
 			set_define_events();
 			this.KeyPreview = true;		
 		}
