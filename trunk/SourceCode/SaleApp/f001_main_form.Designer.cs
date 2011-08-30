@@ -60,6 +60,7 @@
             this.mnu_cmd_kiemkehanghoa = new DevExpress.XtraBars.BarButtonItem();
             this.m_mnu_bc_theo_hang = new DevExpress.XtraBars.BarButtonItem();
             this.mnu_cmd_employee = new DevExpress.XtraBars.BarButtonItem();
+            this.mnu_bao_cao_theo_nhom = new DevExpress.XtraBars.BarButtonItem();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.hệThốngToolStripMenuItem = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.quanTriHêThôngToolStripMenuItem = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -89,12 +90,11 @@
             this.ribbonPageGroup21 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup22 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup24 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.s = new DevExpress.XtraEditors.PanelControl();
-            this.ribbonPageGroup24 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.mnu_bao_cao_theo_nhom = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection2)).BeginInit();
@@ -161,7 +161,7 @@
             this.nhậpLiệuToolStripMenuItem,
             this.báoCáoToolStripMenuItem,
             this.ribbonPage5});
-            this.ribbon.SelectedPage = this.báoCáoToolStripMenuItem;
+            this.ribbon.SelectedPage = this.nhậpLiệuToolStripMenuItem;
             this.ribbon.Size = new System.Drawing.Size(1083, 148);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
@@ -431,6 +431,7 @@
             this.mnu_cmd_hangnhacungcap.LargeImageIndex = 78;
             this.mnu_cmd_hangnhacungcap.LargeWidth = 60;
             this.mnu_cmd_hangnhacungcap.Name = "mnu_cmd_hangnhacungcap";
+            this.mnu_cmd_hangnhacungcap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_cmd_hangnhacungcap_ItemClick);
             // 
             // mnu_cmd_hangtralaikhach
             // 
@@ -511,6 +512,15 @@
             this.mnu_cmd_employee.LargeImageIndex = 80;
             this.mnu_cmd_employee.Name = "mnu_cmd_employee";
             this.mnu_cmd_employee.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_cmd_employee_ItemClick);
+            // 
+            // mnu_bao_cao_theo_nhom
+            // 
+            this.mnu_bao_cao_theo_nhom.Caption = "Báo cáo theo nhóm";
+            this.mnu_bao_cao_theo_nhom.Id = 38;
+            this.mnu_bao_cao_theo_nhom.LargeImageIndex = 12;
+            this.mnu_bao_cao_theo_nhom.LargeWidth = 60;
+            this.mnu_bao_cao_theo_nhom.Name = "mnu_bao_cao_theo_nhom";
+            this.mnu_bao_cao_theo_nhom.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_bao_cao_theo_nhom_ItemClick);
             // 
             // imageCollection1
             // 
@@ -802,6 +812,12 @@
             this.ribbonPageGroup22.Name = "ribbonPageGroup22";
             this.ribbonPageGroup22.ShowCaptionButton = false;
             // 
+            // ribbonPageGroup24
+            // 
+            this.ribbonPageGroup24.ItemLinks.Add(this.mnu_bao_cao_theo_nhom);
+            this.ribbonPageGroup24.Name = "ribbonPageGroup24";
+            this.ribbonPageGroup24.ShowCaptionButton = false;
+            // 
             // ribbonPage5
             // 
             this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -832,21 +848,6 @@
             this.s.Name = "s";
             this.s.Size = new System.Drawing.Size(1083, 531);
             this.s.TabIndex = 2;
-            // 
-            // ribbonPageGroup24
-            // 
-            this.ribbonPageGroup24.ItemLinks.Add(this.mnu_bao_cao_theo_nhom);
-            this.ribbonPageGroup24.Name = "ribbonPageGroup24";
-            this.ribbonPageGroup24.ShowCaptionButton = false;
-            // 
-            // mnu_bao_cao_theo_nhom
-            // 
-            this.mnu_bao_cao_theo_nhom.Caption = "Báo cáo theo nhóm";
-            this.mnu_bao_cao_theo_nhom.Id = 38;
-            this.mnu_bao_cao_theo_nhom.LargeImageIndex = 12;
-            this.mnu_bao_cao_theo_nhom.LargeWidth = 60;
-            this.mnu_bao_cao_theo_nhom.Name = "mnu_bao_cao_theo_nhom";
-            this.mnu_bao_cao_theo_nhom.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_bao_cao_theo_nhom_ItemClick);
             // 
             // f001_main_form
             // 
