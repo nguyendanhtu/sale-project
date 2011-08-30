@@ -139,6 +139,14 @@ Public Class BaseMessages
         Return MsgBox_Confirm(v_StrMsg)
     End Function
 
+
+    'Hàm cảnh báo
+
+    Public Shared Function MsgBox_Warning(ByVal MsgWarning As String) As Boolean
+
+        Dim v_FormMsg As New MessageForms.MsgBoxForm_OK
+        v_FormMsg.Display(MsgWarning, c_WarningMsgString, Msgs.MsgIconType.WarningIcon)
+    End Function
     'Hàm cảnh báo
 
     Public Shared Function MsgBox_Warning(ByVal MsgNumber As Integer) As Boolean
