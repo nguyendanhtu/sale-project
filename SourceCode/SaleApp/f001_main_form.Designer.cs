@@ -88,7 +88,6 @@
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup21 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup25 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup22 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -159,7 +158,7 @@
             this.nhậpLiệuToolStripMenuItem,
             this.báoCáoToolStripMenuItem,
             this.ribbonPage5});
-            this.ribbon.SelectedPage = this.ribbonPage2;
+            this.ribbon.SelectedPage = this.báoCáoToolStripMenuItem;
             this.ribbon.Size = new System.Drawing.Size(1083, 148);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
@@ -770,7 +769,6 @@
             this.ribbonPageGroup8,
             this.ribbonPageGroup21,
             this.ribbonPageGroup23,
-            this.ribbonPageGroup25,
             this.ribbonPageGroup22});
             this.báoCáoToolStripMenuItem.ImageIndex = 1;
             this.báoCáoToolStripMenuItem.Name = "báoCáoToolStripMenuItem";
@@ -793,12 +791,6 @@
             this.ribbonPageGroup23.ItemLinks.Add(this.mnu_bc_banhang);
             this.ribbonPageGroup23.Name = "ribbonPageGroup23";
             this.ribbonPageGroup23.ShowCaptionButton = false;
-            // 
-            // ribbonPageGroup25
-            // 
-            this.ribbonPageGroup25.ItemLinks.Add(this.barButtonItem16);
-            this.ribbonPageGroup25.Name = "ribbonPageGroup25";
-            this.ribbonPageGroup25.ShowCaptionButton = false;
             // 
             // ribbonPageGroup22
             // 
@@ -915,7 +907,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup20;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup21;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup23;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup25;
         private DevExpress.XtraBars.BarButtonItem mnu_dm_goupcustomer;
         private DevExpress.XtraBars.BarButtonItem mnu_dm_employee;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
