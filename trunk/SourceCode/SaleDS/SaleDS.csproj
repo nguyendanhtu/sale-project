@@ -154,6 +154,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_GD_BILL_DETAIL.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_GD_DELIVERY_ORDER.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_GD_DELIVERY_ORDER.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_GD_DELIVERY_ORDER_DETAIL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_GD_DELIVERY_ORDER_DETAIL.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_HT_QUYEN_USER.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -306,6 +316,28 @@
     </None>
     <None Include="DS_GD_BILL_DETAIL.xss">
       <DependentUpon>DS_GD_BILL_DETAIL.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_DELIVERY_ORDER.xsc">
+      <DependentUpon>DS_GD_DELIVERY_ORDER.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_DELIVERY_ORDER.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_GD_DELIVERY_ORDER.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_GD_DELIVERY_ORDER.xss">
+      <DependentUpon>DS_GD_DELIVERY_ORDER.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_DELIVERY_ORDER_DETAIL.xsc">
+      <DependentUpon>DS_GD_DELIVERY_ORDER_DETAIL.xsd</DependentUpon>
+    </None>
+    <None Include="DS_GD_DELIVERY_ORDER_DETAIL.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_GD_DELIVERY_ORDER_DETAIL.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_GD_DELIVERY_ORDER_DETAIL.xss">
+      <DependentUpon>DS_GD_DELIVERY_ORDER_DETAIL.xsd</DependentUpon>
     </None>
     <None Include="DS_HT_QUYEN_USER.xsc">
       <DependentUpon>DS_HT_QUYEN_USER.xsd</DependentUpon>
