@@ -533,6 +533,7 @@
             this.mnu_phieu_nhap_xuat.LargeImageIndex = 17;
             this.mnu_phieu_nhap_xuat.LargeWidth = 60;
             this.mnu_phieu_nhap_xuat.Name = "mnu_phieu_nhap_xuat";
+            this.mnu_phieu_nhap_xuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnu_phieu_nhap_xuat_ItemClick);
             // 
             // imageCollection1
             // 

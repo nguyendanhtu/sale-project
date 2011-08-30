@@ -295,6 +295,17 @@ namespace SaleApp
             f351_nhap_hang_nha_san_xuat v_frm351 = new f351_nhap_hang_nha_san_xuat();
             v_frm351.display();
         }
+        private void show_phieu_nhap_xuat_trong_ky()
+        {
+            if (!CAppContext_201.IsHavingQuyen(IP.Core.IPSystemAdmin.PHAN_QUYEN.IN_BAO_CAO))
+            {
+                BaseMessages.MsgBox_Infor(" Người sử dụng không được phép truy nhập phần này !!! ");
+                return;
+            }
+
+            f971_danh_sach_phieu_nhap_xuat_trong_ky v_frm971 = new f971_danh_sach_phieu_nhap_xuat_trong_ky();
+            v_frm971.display();
+        }        
         #endregion
         //
         //
@@ -625,6 +636,19 @@ namespace SaleApp
             try
             {
                 show_bao_cao_xuat_nhap_theo_ky();
+            }
+            catch (Exception v_e)
+            {
+
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void mnu_phieu_nhap_xuat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                show_phieu_nhap_xuat_trong_ky();
             }
             catch (Exception v_e)
             {
