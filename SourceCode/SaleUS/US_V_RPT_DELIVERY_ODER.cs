@@ -295,7 +295,22 @@ public class US_V_RPT_DELIVERY_ODER : US_Object
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
 #endregion
+    #region Addition Methods
 
+    public void FillDataset(DS_V_RPT_GD_BILL_DETAIL op_ds_rpt_gd_bill
+   , decimal ip_dc_product_id
+    , DateTime ip_dat_from_date
+    , DateTime ip_dat_to_date
+        , decimal ip_repository_id)
+    {
+        CStoredProc v_obj_procedure = new CStoredProc("pr_V_RPT_GD_BILL_DETAIL_Select");
+        v_obj_procedure.addDecimalInputParam("@ip_dc_product_id", ip_dc_product_id);
+        v_obj_procedure.addDatetimeInputParam("@ip_dat_from_dat", ip_dat_from_date);
+        v_obj_procedure.addDatetimeInputParam("@ip_dat_to_dat", ip_dat_to_date);
+        v_obj_procedure.addDecimalInputParam("@ip_repository_id", ip_repository_id);
+        v_obj_procedure.fillDataSetByCommand(this, op_ds_rpt_gd_bill);
+    }
+    #endregion
 
-  }
+}
 }
