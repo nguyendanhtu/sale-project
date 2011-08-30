@@ -145,6 +145,28 @@ public class US_GD_DELIVERY_ORDER : US_Object
 		pm_objDR["CUSTOMER_ID"] = System.Convert.DBNull;
 	}
 
+    public string strIN_OUT_YN
+    {
+        get
+        {
+            return CNull.RowNVLString(pm_objDR, "IN_OUT_YN", IPConstants.c_DefaultString);
+        }
+        set
+        {
+            pm_objDR["IN_OUT_YN"] = value;
+        }
+    }
+
+    public bool IsIN_OUT_YNNull()
+    {
+        return pm_objDR.IsNull("IN_OUT_YN");
+    }
+
+    public void SetIN_OUT_YNNull()
+    {
+        pm_objDR["IN_OUT_YN"] = System.Convert.DBNull;
+    }
+
 #endregion
 
 
