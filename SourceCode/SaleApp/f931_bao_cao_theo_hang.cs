@@ -86,13 +86,13 @@ namespace SaleApp
             this.m_cbo_ten_mat_hang = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.m_dat_to_date = new System.Windows.Forms.DateTimePicker();
+            this.m_cmd_view = new SIS.Controls.Button.SiSButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.m_dat_from_date = new System.Windows.Forms.DateTimePicker();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.m_cmd_export_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
-            this.m_cmd_view = new SIS.Controls.Button.SiSButton();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.m_grb_thong_tin_ban_hang.SuspendLayout();
             this.m_pnl_out_place_dm.SuspendLayout();
@@ -181,6 +181,21 @@ namespace SaleApp
             this.m_dat_to_date.Size = new System.Drawing.Size(200, 20);
             this.m_dat_to_date.TabIndex = 26;
             // 
+            // m_cmd_view
+            // 
+            this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_view.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_view.ImageIndex = 5;
+            this.m_cmd_view.ImageList = this.ImageList;
+            this.m_cmd_view.Location = new System.Drawing.Point(674, 16);
+            this.m_cmd_view.Name = "m_cmd_view";
+            this.m_cmd_view.Size = new System.Drawing.Size(88, 100);
+            this.m_cmd_view.TabIndex = 29;
+            this.m_cmd_view.Text = "In báo cáo";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -249,21 +264,6 @@ namespace SaleApp
             this.m_cmd_exit.TabIndex = 11;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
-            // m_cmd_view
-            // 
-            this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_view.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_view.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_view.ImageIndex = 5;
-            this.m_cmd_view.ImageList = this.ImageList;
-            this.m_cmd_view.Location = new System.Drawing.Point(674, 16);
-            this.m_cmd_view.Name = "m_cmd_view";
-            this.m_cmd_view.Size = new System.Drawing.Size(88, 100);
-            this.m_cmd_view.TabIndex = 29;
-            this.m_cmd_view.Text = "In báo cáo";
-            // 
             // f931_bao_cao_theo_hang
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -272,7 +272,7 @@ namespace SaleApp
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_grb_thong_tin_ban_hang);
             this.Name = "f931_bao_cao_theo_hang";
-            this.Text = "f931_bao_cao_theo_hang";
+            this.Text = "F921 Báo cáo bán hàng theo sản phẩm";
             this.Load += new System.EventHandler(this.f931_bao_cao_theo_hang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.m_grb_thong_tin_ban_hang.ResumeLayout(false);
@@ -343,6 +343,7 @@ namespace SaleApp
             m_us.FillDataset(m_ds,decimal.Parse(m_cbo_ten_mat_hang.SelectedValue.ToString()),m_dat_from_date.Value.Date,m_dat_to_date.Value.Date);
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            m_fg.Subtotal(AggregateEnum.Sum, 0, -1, (int)e_col_Number.AMMOUNT, "Tổng tiền bán hàng");
 			m_fg.Redraw = true;
 		}
 		private void grid2us_object(US_V_RPT_GD_BILL_DETAIL i_us, int i_grid_row) {
@@ -383,9 +384,9 @@ namespace SaleApp
             CExcelReport v_obj_export_excel = new CExcelReport("f931_rpt_bao_cao_doanh_thu_ban_hang_theo_mat_hang.xlsx", 6, 1);
             v_obj_export_excel.AddFindAndReplaceItem("</TU_NGAY>", m_dat_from_date.Value.Date.ToString("dd/MM/yyyy"));
             v_obj_export_excel.AddFindAndReplaceItem("</DEN_NGAY>", m_dat_to_date.Value.Date.ToString("dd/MM/yyyy"));
-            v_obj_export_excel.AddFindAndReplaceItem("</SAN_PHAM>", m_cbo_ten_mat_hang.SelectedValue.ToString() );
+            v_obj_export_excel.AddFindAndReplaceItem("</SAN_PHAM>", m_cbo_ten_mat_hang.Text);
             v_obj_export_excel.FindAndReplace(false);
-            v_obj_export_excel.Export2ExcelWithoutFixedRows(m_fg, (int)e_col_Number.BILL_DATE, m_fg.Cols.Count - 1, true);
+            v_obj_export_excel.Export2ExcelWithoutFixedRows(m_fg, (int)e_col_Number.BILL_SERI, m_fg.Cols.Count - 1, true);
 
 
         }
