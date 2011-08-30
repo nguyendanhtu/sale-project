@@ -368,7 +368,7 @@ namespace SaleApp
         private void export_excel()
         
         {
-            CExcelReport v_obj_export_excel = new CExcelReport("f931_rpt_bao_cao_doanh_thu_ban_hang_theo_nhom_hang.xlsx", 6, 1);
+            CExcelReport v_obj_export_excel = new CExcelReport("f921_rpt_bao_cao_doanh_thu_ban_hang_theo_nhom_hang.xlsx", 6, 1);
             v_obj_export_excel.AddFindAndReplaceItem("</TU_NGAY>", m_dat_from_date.Value.Date.ToString("dd/MM/yyyy"));
             v_obj_export_excel.AddFindAndReplaceItem("</DEN_NGAY>", m_dat_to_date.Value.Date.ToString("dd/MM/yyyy"));
             v_obj_export_excel.FindAndReplace(false);
