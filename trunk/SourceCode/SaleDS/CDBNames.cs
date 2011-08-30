@@ -6,6 +6,26 @@ namespace Sale.CDBNames
 	/// Summary description for CDBNames.
 	/// </summary>
     /// 
+
+    public class GD_DELIVERY_ORDER_DETAIL
+    {
+        public const string ID = "ID";
+        public const string DELIVERY_ORDER_ID = "DELIVERY_ORDER_ID";
+        public const string PRODUCT_ID = "PRODUCT_ID";
+        public const string QUANTITY = "QUANTITY";
+    }
+
+
+    public class GD_DELIVERY_ORDER
+    {
+        public const string ID = "ID";
+        public const string DELIVERY_ORDER_CODE = "DELIVERY_ORDER_CODE";
+        public const string DELIVERY_ORDER_DATE = "DELIVERY_ORDER_DATE";
+        public const string REPOSITORY_ID = "REPOSITORY_ID";
+        public const string USER_ID = "USER_ID";
+        public const string CUSTOMER_ID = "CUSTOMER_ID";
+    }
+
     public class RPT_BILL_DETAIL_SALES
     {
         public const string ID = "ID";
