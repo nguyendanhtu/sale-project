@@ -34,10 +34,10 @@
             this.m_txt_customer = new System.Windows.Forms.TextBox();
             this.m_lbl_customer = new System.Windows.Forms.Label();
             this.m_cmd_add_customer = new System.Windows.Forms.Button();
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.m_cmd_ds_hoa_don = new SIS.Controls.Button.SiSButton();
-            this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_view = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
@@ -45,7 +45,7 @@
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_txt_bill_code = new System.Windows.Forms.TextBox();
             this.m_lbl_order_number = new System.Windows.Forms.Label();
-            this.m_txt_tax_code = new System.Windows.Forms.TextBox();
+            this.m_txt_tax_rate = new System.Windows.Forms.TextBox();
             this.m_lbl_tax_code = new System.Windows.Forms.Label();
             this.m_lbl_date = new System.Windows.Forms.Label();
             this.m_dat_bill_date = new System.Windows.Forms.DateTimePicker();
@@ -61,6 +61,7 @@
             this.m_txt_total_price = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.m_cmd_remove_row = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
@@ -108,6 +109,33 @@
             this.m_cmd_add_customer.TabIndex = 17;
             this.m_cmd_add_customer.UseVisualStyleBackColor = true;
             // 
+            // ImageList
+            // 
+            this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
+            this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.ImageList.Images.SetKeyName(0, "");
+            this.ImageList.Images.SetKeyName(1, "");
+            this.ImageList.Images.SetKeyName(2, "");
+            this.ImageList.Images.SetKeyName(3, "");
+            this.ImageList.Images.SetKeyName(4, "");
+            this.ImageList.Images.SetKeyName(5, "");
+            this.ImageList.Images.SetKeyName(6, "");
+            this.ImageList.Images.SetKeyName(7, "");
+            this.ImageList.Images.SetKeyName(8, "");
+            this.ImageList.Images.SetKeyName(9, "");
+            this.ImageList.Images.SetKeyName(10, "");
+            this.ImageList.Images.SetKeyName(11, "");
+            this.ImageList.Images.SetKeyName(12, "");
+            this.ImageList.Images.SetKeyName(13, "");
+            this.ImageList.Images.SetKeyName(14, "");
+            this.ImageList.Images.SetKeyName(15, "");
+            this.ImageList.Images.SetKeyName(16, "");
+            this.ImageList.Images.SetKeyName(17, "");
+            this.ImageList.Images.SetKeyName(18, "");
+            this.ImageList.Images.SetKeyName(19, "");
+            this.ImageList.Images.SetKeyName(20, "");
+            this.ImageList.Images.SetKeyName(21, "");
+            // 
             // m_pnl_out_place_dm
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.panel1);
@@ -143,36 +171,9 @@
             this.m_cmd_ds_hoa_don.ImageList = this.ImageList;
             this.m_cmd_ds_hoa_don.Location = new System.Drawing.Point(112, 4);
             this.m_cmd_ds_hoa_don.Name = "m_cmd_ds_hoa_don";
-            this.m_cmd_ds_hoa_don.Size = new System.Drawing.Size(108, 27);
+            this.m_cmd_ds_hoa_don.Size = new System.Drawing.Size(131, 27);
             this.m_cmd_ds_hoa_don.TabIndex = 4;
-            this.m_cmd_ds_hoa_don.Text = "In hóa đơn";
-            // 
-            // ImageList
-            // 
-            this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
-            this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.ImageList.Images.SetKeyName(0, "");
-            this.ImageList.Images.SetKeyName(1, "");
-            this.ImageList.Images.SetKeyName(2, "");
-            this.ImageList.Images.SetKeyName(3, "");
-            this.ImageList.Images.SetKeyName(4, "");
-            this.ImageList.Images.SetKeyName(5, "");
-            this.ImageList.Images.SetKeyName(6, "");
-            this.ImageList.Images.SetKeyName(7, "");
-            this.ImageList.Images.SetKeyName(8, "");
-            this.ImageList.Images.SetKeyName(9, "");
-            this.ImageList.Images.SetKeyName(10, "");
-            this.ImageList.Images.SetKeyName(11, "");
-            this.ImageList.Images.SetKeyName(12, "");
-            this.ImageList.Images.SetKeyName(13, "");
-            this.ImageList.Images.SetKeyName(14, "");
-            this.ImageList.Images.SetKeyName(15, "");
-            this.ImageList.Images.SetKeyName(16, "");
-            this.ImageList.Images.SetKeyName(17, "");
-            this.ImageList.Images.SetKeyName(18, "");
-            this.ImageList.Images.SetKeyName(19, "");
-            this.ImageList.Images.SetKeyName(20, "");
-            this.ImageList.Images.SetKeyName(21, "");
+            this.m_cmd_ds_hoa_don.Text = "Danh sách hóa đơn";
             // 
             // m_cmd_update
             // 
@@ -181,13 +182,13 @@
             this.m_cmd_update.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
             this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_update.ImageIndex = 3;
+            this.m_cmd_update.ImageIndex = 10;
             this.m_cmd_update.ImageList = this.ImageList;
             this.m_cmd_update.Location = new System.Drawing.Point(556, 4);
             this.m_cmd_update.Name = "m_cmd_update";
             this.m_cmd_update.Size = new System.Drawing.Size(88, 27);
             this.m_cmd_update.TabIndex = 0;
-            this.m_cmd_update.Text = "&Cập nhật";
+            this.m_cmd_update.Text = "&Lưu";
             // 
             // m_cmd_view
             // 
@@ -217,7 +218,8 @@
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 27);
             this.m_cmd_delete.TabIndex = 1;
-            this.m_cmd_delete.Text = "&Xoá";
+            this.m_cmd_delete.Text = "&Xoá hóa đơn";
+            this.m_cmd_delete.Visible = false;
             // 
             // m_cmd_exit
             // 
@@ -241,9 +243,9 @@
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.m_fg.KeyActionTab = C1.Win.C1FlexGrid.KeyActionEnum.MoveAcrossOut;
-            this.m_fg.Location = new System.Drawing.Point(0, 225);
+            this.m_fg.Location = new System.Drawing.Point(0, 231);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Rows.Count = 3;
+            this.m_fg.Rows.Count = 4;
             this.m_fg.Size = new System.Drawing.Size(832, 296);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 18;
@@ -265,22 +267,26 @@
             this.m_lbl_order_number.TabIndex = 5;
             this.m_lbl_order_number.Text = "Số hóa đơn :";
             // 
-            // m_txt_tax_code
+            // m_txt_tax_rate
             // 
-            this.m_txt_tax_code.Location = new System.Drawing.Point(530, 158);
-            this.m_txt_tax_code.Name = "m_txt_tax_code";
-            this.m_txt_tax_code.Size = new System.Drawing.Size(277, 20);
-            this.m_txt_tax_code.TabIndex = 14;
+            this.m_txt_tax_rate.Location = new System.Drawing.Point(93, 10);
+            this.m_txt_tax_rate.Name = "m_txt_tax_rate";
+            this.m_txt_tax_rate.Size = new System.Drawing.Size(47, 20);
+            this.m_txt_tax_rate.TabIndex = 1;
+            this.m_txt_tax_rate.Text = "0";
+            this.m_txt_tax_rate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.m_txt_tax_rate.Visible = false;
             // 
             // m_lbl_tax_code
             // 
             this.m_lbl_tax_code.AutoSize = true;
             this.m_lbl_tax_code.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_tax_code.Location = new System.Drawing.Point(442, 159);
+            this.m_lbl_tax_code.Location = new System.Drawing.Point(5, 11);
             this.m_lbl_tax_code.Name = "m_lbl_tax_code";
-            this.m_lbl_tax_code.Size = new System.Drawing.Size(82, 16);
-            this.m_lbl_tax_code.TabIndex = 13;
-            this.m_lbl_tax_code.Text = "Mã số thuế  :";
+            this.m_lbl_tax_code.Size = new System.Drawing.Size(73, 16);
+            this.m_lbl_tax_code.TabIndex = 0;
+            this.m_lbl_tax_code.Text = "Thuế suất :";
+            this.m_lbl_tax_code.Visible = false;
             // 
             // m_lbl_date
             // 
@@ -300,6 +306,7 @@
             this.m_dat_bill_date.Name = "m_dat_bill_date";
             this.m_dat_bill_date.Size = new System.Drawing.Size(112, 20);
             this.m_dat_bill_date.TabIndex = 4;
+            this.m_dat_bill_date.TabStop = false;
             // 
             // m_lbl_company_info_address
             // 
@@ -384,13 +391,16 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.m_txt_total_price);
             this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.m_txt_tax_rate);
+            this.panel2.Controls.Add(this.m_lbl_tax_code);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 521);
+            this.panel2.Location = new System.Drawing.Point(0, 527);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(4);
-            this.panel2.Size = new System.Drawing.Size(832, 55);
+            this.panel2.Size = new System.Drawing.Size(832, 49);
             this.panel2.TabIndex = 19;
             // 
             // m_txt_total_price
@@ -400,7 +410,7 @@
             this.m_txt_total_price.Location = new System.Drawing.Point(520, 7);
             this.m_txt_total_price.Name = "m_txt_total_price";
             this.m_txt_total_price.Size = new System.Drawing.Size(287, 20);
-            this.m_txt_total_price.TabIndex = 1;
+            this.m_txt_total_price.TabIndex = 4;
             this.m_txt_total_price.TabStop = false;
             this.m_txt_total_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -411,7 +421,7 @@
             this.label1.Location = new System.Drawing.Point(447, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 16);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 3;
             this.label1.Text = "Tổng tiền :";
             // 
             // m_cmd_remove_row
@@ -423,6 +433,17 @@
             this.m_cmd_remove_row.Size = new System.Drawing.Size(32, 22);
             this.m_cmd_remove_row.TabIndex = 21;
             this.m_cmd_remove_row.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(146, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(20, 16);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "%";
+            this.label2.Visible = false;
             // 
             // f331_xuat_ban_hang
             // 
@@ -443,8 +464,6 @@
             this.Controls.Add(this.m_lbl_company_info_name);
             this.Controls.Add(this.m_dat_bill_date);
             this.Controls.Add(this.m_lbl_date);
-            this.Controls.Add(this.m_txt_tax_code);
-            this.Controls.Add(this.m_lbl_tax_code);
             this.Controls.Add(this.m_txt_bill_code);
             this.Controls.Add(this.m_lbl_order_number);
             this.Controls.Add(this.m_pnl_out_place_dm);
@@ -476,7 +495,7 @@
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
         private System.Windows.Forms.TextBox m_txt_bill_code;
         private System.Windows.Forms.Label m_lbl_order_number;
-        private System.Windows.Forms.TextBox m_txt_tax_code;
+        private System.Windows.Forms.TextBox m_txt_tax_rate;
         private System.Windows.Forms.Label m_lbl_tax_code;
         private System.Windows.Forms.Label m_lbl_date;
         private System.Windows.Forms.DateTimePicker m_dat_bill_date;
@@ -499,5 +518,6 @@
         private System.Windows.Forms.TextBox m_txt_total_price;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button m_cmd_remove_row;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -55,6 +55,7 @@ namespace SaleApp
         {
             CControlFormat.setFormStyle(this);
             CControlFormat.setC1FlexFormat(m_fg);
+            m_fg.AutoSearch = C1.Win.C1FlexGrid.AutoSearchEnum.None;
             m_fg.AllowEditing = true;
             m_lbl_header.ForeColor = Color.Blue;
             m_lbl_header.Font = new Font("Arial", 16);
@@ -143,6 +144,8 @@ namespace SaleApp
             for (int v_i_cur_row = m_fg.Rows.Fixed; v_i_cur_row < m_fg.Rows.Count; v_i_cur_row++)
             {
                 grid_2_us_object(v_i_cur_row, v_us_product_balance);
+                if (v_us_product_balance.IsQUANTITYNull()) continue;
+                if (v_us_product_balance.dcQUANTITY == 0) continue;
                 v_us_product_balance.Insert();
             }
             BaseMessages.MsgBox_Infor(10);
