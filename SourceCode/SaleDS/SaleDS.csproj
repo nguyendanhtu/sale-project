@@ -189,6 +189,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_V_GD_PRODUCT_PRICE.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DS_V_RPT_DELIVERY_ODER.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_V_RPT_DELIVERY_ODER.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_V_RPT_GD_BILL.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -393,6 +398,17 @@
     </None>
     <None Include="DS_V_GD_PRODUCT_PRICE.xss">
       <DependentUpon>DS_V_GD_PRODUCT_PRICE.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_RPT_DELIVERY_ODER.xsc">
+      <DependentUpon>DS_V_RPT_DELIVERY_ODER.xsd</DependentUpon>
+    </None>
+    <None Include="DS_V_RPT_DELIVERY_ODER.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_V_RPT_DELIVERY_ODER.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_V_RPT_DELIVERY_ODER.xss">
+      <DependentUpon>DS_V_RPT_DELIVERY_ODER.xsd</DependentUpon>
     </None>
     <None Include="DS_V_RPT_GD_BILL.xsc">
       <DependentUpon>DS_V_RPT_GD_BILL.xsd</DependentUpon>
