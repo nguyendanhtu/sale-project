@@ -30,57 +30,63 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f331_xuat_ban_hang));
-            this.label1 = new System.Windows.Forms.Label();
+            this.m_lbl_header = new System.Windows.Forms.Label();
             this.m_txt_customer = new System.Windows.Forms.TextBox();
             this.m_lbl_customer = new System.Windows.Forms.Label();
             this.m_cmd_add_customer = new System.Windows.Forms.Button();
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.m_cmd_update = new SIS.Controls.Button.SiSButton();
+            this.m_cmd_ds_hoa_don = new SIS.Controls.Button.SiSButton();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
+            this.m_cmd_update = new SIS.Controls.Button.SiSButton();
             this.m_cmd_view = new SIS.Controls.Button.SiSButton();
             this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
             this.m_fg = new C1.Win.C1FlexGrid.C1FlexGrid();
             this.m_txt_bill_code = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.m_lbl_order_number = new System.Windows.Forms.Label();
             this.m_txt_tax_code = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.m_lbl_company_info = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.m_lbl_tax_code = new System.Windows.Forms.Label();
+            this.m_lbl_date = new System.Windows.Forms.Label();
             this.m_dat_bill_date = new System.Windows.Forms.DateTimePicker();
             this.m_lbl_company_info_address = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.m_lbl_phone = new System.Windows.Forms.Label();
             this.m_lbl_company_info_name = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.m_lbl_noi_ban = new System.Windows.Forms.Label();
+            this.m_lbl_address = new System.Windows.Forms.Label();
             this.m_lbl_company_phone = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.m_cbo_user = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.m_lbl_depository = new System.Windows.Forms.Label();
             this.m_cbo_repository = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.m_txt_total_price = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.m_cmd_remove_row = new System.Windows.Forms.Button();
             this.m_pnl_out_place_dm.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // m_lbl_header
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(821, 46);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "HÓA ĐƠN BÁN HÀNG";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.m_lbl_header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.m_lbl_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_header.Location = new System.Drawing.Point(0, 0);
+            this.m_lbl_header.Name = "m_lbl_header";
+            this.m_lbl_header.Size = new System.Drawing.Size(832, 46);
+            this.m_lbl_header.TabIndex = 0;
+            this.m_lbl_header.Text = "HÓA ĐƠN BÁN HÀNG";
+            this.m_lbl_header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_txt_customer
             // 
+            this.m_txt_customer.BackColor = System.Drawing.SystemColors.Info;
+            this.m_txt_customer.ForeColor = System.Drawing.SystemColors.WindowText;
             this.m_txt_customer.Location = new System.Drawing.Point(148, 201);
             this.m_txt_customer.Name = "m_txt_customer";
             this.m_txt_customer.Size = new System.Drawing.Size(287, 20);
-            this.m_txt_customer.TabIndex = 0;
+            this.m_txt_customer.TabIndex = 16;
+            this.m_txt_customer.TabStop = false;
             // 
             // m_lbl_customer
             // 
@@ -89,30 +95,32 @@
             this.m_lbl_customer.Location = new System.Drawing.Point(25, 205);
             this.m_lbl_customer.Name = "m_lbl_customer";
             this.m_lbl_customer.Size = new System.Drawing.Size(114, 16);
-            this.m_lbl_customer.TabIndex = 10;
+            this.m_lbl_customer.TabIndex = 15;
             this.m_lbl_customer.Text = "Khách hàng           :";
             // 
             // m_cmd_add_customer
             // 
+            this.m_cmd_add_customer.ImageIndex = 5;
+            this.m_cmd_add_customer.ImageList = this.ImageList;
             this.m_cmd_add_customer.Location = new System.Drawing.Point(450, 199);
             this.m_cmd_add_customer.Name = "m_cmd_add_customer";
             this.m_cmd_add_customer.Size = new System.Drawing.Size(32, 22);
-            this.m_cmd_add_customer.TabIndex = 1;
-            this.m_cmd_add_customer.Text = "+";
+            this.m_cmd_add_customer.TabIndex = 17;
             this.m_cmd_add_customer.UseVisualStyleBackColor = true;
             // 
             // m_pnl_out_place_dm
             // 
             this.m_pnl_out_place_dm.Controls.Add(this.panel1);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 553);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 576);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(821, 40);
-            this.m_pnl_out_place_dm.TabIndex = 10;
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(832, 40);
+            this.m_pnl_out_place_dm.TabIndex = 20;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.m_cmd_ds_hoa_don);
             this.panel1.Controls.Add(this.m_cmd_update);
             this.panel1.Controls.Add(this.m_cmd_view);
             this.panel1.Controls.Add(this.m_cmd_delete);
@@ -121,23 +129,23 @@
             this.panel1.Location = new System.Drawing.Point(4, 1);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(4);
-            this.panel1.Size = new System.Drawing.Size(813, 35);
+            this.panel1.Size = new System.Drawing.Size(824, 35);
             this.panel1.TabIndex = 20;
             // 
-            // m_cmd_update
+            // m_cmd_ds_hoa_don
             // 
-            this.m_cmd_update.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_update.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_update.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
-            this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_update.ImageIndex = 3;
-            this.m_cmd_update.ImageList = this.ImageList;
-            this.m_cmd_update.Location = new System.Drawing.Point(545, 4);
-            this.m_cmd_update.Name = "m_cmd_update";
-            this.m_cmd_update.Size = new System.Drawing.Size(88, 27);
-            this.m_cmd_update.TabIndex = 13;
-            this.m_cmd_update.Text = "&Cập nhật";
+            this.m_cmd_ds_hoa_don.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_ds_hoa_don.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_ds_hoa_don.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_ds_hoa_don.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_ds_hoa_don.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_ds_hoa_don.ImageIndex = 21;
+            this.m_cmd_ds_hoa_don.ImageList = this.ImageList;
+            this.m_cmd_ds_hoa_don.Location = new System.Drawing.Point(112, 4);
+            this.m_cmd_ds_hoa_don.Name = "m_cmd_ds_hoa_don";
+            this.m_cmd_ds_hoa_don.Size = new System.Drawing.Size(108, 27);
+            this.m_cmd_ds_hoa_don.TabIndex = 4;
+            this.m_cmd_ds_hoa_don.Text = "In hóa đơn";
             // 
             // ImageList
             // 
@@ -166,6 +174,21 @@
             this.ImageList.Images.SetKeyName(20, "");
             this.ImageList.Images.SetKeyName(21, "");
             // 
+            // m_cmd_update
+            // 
+            this.m_cmd_update.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_update.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_update.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_update.Dock = System.Windows.Forms.DockStyle.Right;
+            this.m_cmd_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_update.ImageIndex = 3;
+            this.m_cmd_update.ImageList = this.ImageList;
+            this.m_cmd_update.Location = new System.Drawing.Point(556, 4);
+            this.m_cmd_update.Name = "m_cmd_update";
+            this.m_cmd_update.Size = new System.Drawing.Size(88, 27);
+            this.m_cmd_update.TabIndex = 0;
+            this.m_cmd_update.Text = "&Cập nhật";
+            // 
             // m_cmd_view
             // 
             this.m_cmd_view.AdjustImageLocation = new System.Drawing.Point(0, 0);
@@ -173,13 +196,13 @@
             this.m_cmd_view.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
             this.m_cmd_view.Dock = System.Windows.Forms.DockStyle.Left;
             this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_view.ImageIndex = 19;
+            this.m_cmd_view.ImageIndex = 15;
             this.m_cmd_view.ImageList = this.ImageList;
             this.m_cmd_view.Location = new System.Drawing.Point(4, 4);
             this.m_cmd_view.Name = "m_cmd_view";
             this.m_cmd_view.Size = new System.Drawing.Size(108, 27);
-            this.m_cmd_view.TabIndex = 21;
-            this.m_cmd_view.Text = "Xu&ất hóa đơn";
+            this.m_cmd_view.TabIndex = 3;
+            this.m_cmd_view.Text = "In hóa đơn";
             // 
             // m_cmd_delete
             // 
@@ -190,10 +213,10 @@
             this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_delete.ImageIndex = 4;
             this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(633, 4);
+            this.m_cmd_delete.Location = new System.Drawing.Point(644, 4);
             this.m_cmd_delete.Name = "m_cmd_delete";
             this.m_cmd_delete.Size = new System.Drawing.Size(88, 27);
-            this.m_cmd_delete.TabIndex = 14;
+            this.m_cmd_delete.TabIndex = 1;
             this.m_cmd_delete.Text = "&Xoá";
             // 
             // m_cmd_exit
@@ -205,134 +228,128 @@
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(721, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(732, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 27);
-            this.m_cmd_exit.TabIndex = 11;
+            this.m_cmd_exit.TabIndex = 2;
             this.m_cmd_exit.Text = "Thoát (Esc)";
             // 
             // m_fg
             // 
+            this.m_fg.AllowAddNew = true;
+            this.m_fg.AllowSorting = C1.Win.C1FlexGrid.AllowSortingEnum.None;
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_fg.Location = new System.Drawing.Point(0, 257);
+            this.m_fg.KeyActionTab = C1.Win.C1FlexGrid.KeyActionEnum.MoveAcrossOut;
+            this.m_fg.Location = new System.Drawing.Point(0, 225);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(821, 296);
+            this.m_fg.Rows.Count = 3;
+            this.m_fg.Size = new System.Drawing.Size(832, 296);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
-            this.m_fg.TabIndex = 8;
-            this.m_fg.CellChanged += new C1.Win.C1FlexGrid.RowColEventHandler(this.m_fg_CellChanged);
+            this.m_fg.TabIndex = 18;
             // 
             // m_txt_bill_code
             // 
-            this.m_txt_bill_code.Location = new System.Drawing.Point(636, 59);
+            this.m_txt_bill_code.Location = new System.Drawing.Point(669, 59);
             this.m_txt_bill_code.Name = "m_txt_bill_code";
             this.m_txt_bill_code.Size = new System.Drawing.Size(138, 20);
-            this.m_txt_bill_code.TabIndex = 12;
+            this.m_txt_bill_code.TabIndex = 6;
             // 
-            // label4
+            // m_lbl_order_number
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(547, 63);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 16);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Số hóa đơn :";
+            this.m_lbl_order_number.AutoSize = true;
+            this.m_lbl_order_number.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_order_number.Location = new System.Drawing.Point(580, 63);
+            this.m_lbl_order_number.Name = "m_lbl_order_number";
+            this.m_lbl_order_number.Size = new System.Drawing.Size(83, 16);
+            this.m_lbl_order_number.TabIndex = 5;
+            this.m_lbl_order_number.Text = "Số hóa đơn :";
             // 
             // m_txt_tax_code
             // 
-            this.m_txt_tax_code.Location = new System.Drawing.Point(450, 159);
+            this.m_txt_tax_code.Location = new System.Drawing.Point(530, 158);
             this.m_txt_tax_code.Name = "m_txt_tax_code";
-            this.m_txt_tax_code.Size = new System.Drawing.Size(142, 20);
+            this.m_txt_tax_code.Size = new System.Drawing.Size(277, 20);
             this.m_txt_tax_code.TabIndex = 14;
             // 
-            // label5
+            // m_lbl_tax_code
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(344, 159);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 16);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Mã số thuế  :";
+            this.m_lbl_tax_code.AutoSize = true;
+            this.m_lbl_tax_code.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_tax_code.Location = new System.Drawing.Point(442, 159);
+            this.m_lbl_tax_code.Name = "m_lbl_tax_code";
+            this.m_lbl_tax_code.Size = new System.Drawing.Size(82, 16);
+            this.m_lbl_tax_code.TabIndex = 13;
+            this.m_lbl_tax_code.Text = "Mã số thuế  :";
             // 
-            // m_lbl_company_info
+            // m_lbl_date
             // 
-            this.m_lbl_company_info.AutoSize = true;
-            this.m_lbl_company_info.Location = new System.Drawing.Point(12, 9);
-            this.m_lbl_company_info.Name = "m_lbl_company_info";
-            this.m_lbl_company_info.Size = new System.Drawing.Size(104, 13);
-            this.m_lbl_company_info.TabIndex = 15;
-            this.m_lbl_company_info.Text = "company information";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(314, 63);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 16);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Ngày  :";
+            this.m_lbl_date.AutoSize = true;
+            this.m_lbl_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_date.Location = new System.Drawing.Point(335, 63);
+            this.m_lbl_date.Name = "m_lbl_date";
+            this.m_lbl_date.Size = new System.Drawing.Size(50, 16);
+            this.m_lbl_date.TabIndex = 3;
+            this.m_lbl_date.Text = "Ngày  :";
             // 
             // m_dat_bill_date
             // 
             this.m_dat_bill_date.CustomFormat = "dd/MM/yyyy";
             this.m_dat_bill_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_bill_date.Location = new System.Drawing.Point(370, 59);
+            this.m_dat_bill_date.Location = new System.Drawing.Point(391, 59);
             this.m_dat_bill_date.Name = "m_dat_bill_date";
             this.m_dat_bill_date.Size = new System.Drawing.Size(112, 20);
-            this.m_dat_bill_date.TabIndex = 17;
+            this.m_dat_bill_date.TabIndex = 4;
             // 
             // m_lbl_company_info_address
             // 
             this.m_lbl_company_info_address.AutoSize = true;
-            this.m_lbl_company_info_address.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_company_info_address.Location = new System.Drawing.Point(447, 117);
+            this.m_lbl_company_info_address.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_company_info_address.Location = new System.Drawing.Point(529, 117);
             this.m_lbl_company_info_address.Name = "m_lbl_company_info_address";
-            this.m_lbl_company_info_address.Size = new System.Drawing.Size(236, 16);
-            this.m_lbl_company_info_address.TabIndex = 53;
-            this.m_lbl_company_info_address.Text = "405 Đại Cồ Việt- Hai Bà Trưng - Hà Nội";
+            this.m_lbl_company_info_address.Size = new System.Drawing.Size(278, 16);
+            this.m_lbl_company_info_address.TabIndex = 10;
+            this.m_lbl_company_info_address.Text = "66 Nguyễn Thị Định - Cầu Giấy - Hà Nội";
             // 
-            // label10
+            // m_lbl_phone
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(25, 159);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(115, 16);
-            this.label10.TabIndex = 52;
-            this.label10.Text = "Điện thoại               :";
+            this.m_lbl_phone.AutoSize = true;
+            this.m_lbl_phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_phone.Location = new System.Drawing.Point(25, 159);
+            this.m_lbl_phone.Name = "m_lbl_phone";
+            this.m_lbl_phone.Size = new System.Drawing.Size(115, 16);
+            this.m_lbl_phone.TabIndex = 11;
+            this.m_lbl_phone.Text = "Điện thoại               :";
             // 
             // m_lbl_company_info_name
             // 
             this.m_lbl_company_info_name.AutoSize = true;
-            this.m_lbl_company_info_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.m_lbl_company_info_name.Location = new System.Drawing.Point(145, 117);
+            this.m_lbl_company_info_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_company_info_name.Location = new System.Drawing.Point(135, 117);
             this.m_lbl_company_info_name.Name = "m_lbl_company_info_name";
-            this.m_lbl_company_info_name.Size = new System.Drawing.Size(115, 16);
-            this.m_lbl_company_info_name.TabIndex = 51;
-            this.m_lbl_company_info_name.Text = "Công ty phân phối";
+            this.m_lbl_company_info_name.Size = new System.Drawing.Size(265, 16);
+            this.m_lbl_company_info_name.TabIndex = 8;
+            this.m_lbl_company_info_name.Text = "Cửa hàng quần áo trẻ em KINGRIVER";
             // 
-            // label7
+            // m_lbl_noi_ban
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(25, 117);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(113, 16);
-            this.label7.TabIndex = 54;
-            this.label7.Text = "Đơn vị bán hàng  :";
+            this.m_lbl_noi_ban.AutoSize = true;
+            this.m_lbl_noi_ban.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_noi_ban.Location = new System.Drawing.Point(25, 117);
+            this.m_lbl_noi_ban.Name = "m_lbl_noi_ban";
+            this.m_lbl_noi_ban.Size = new System.Drawing.Size(113, 16);
+            this.m_lbl_noi_ban.TabIndex = 7;
+            this.m_lbl_noi_ban.Text = "Đơn vị bán hàng  :";
             // 
-            // label8
+            // m_lbl_address
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(344, 117);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(81, 16);
-            this.label8.TabIndex = 55;
-            this.label8.Text = "Địa chỉ          :";
+            this.m_lbl_address.AutoSize = true;
+            this.m_lbl_address.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_address.Location = new System.Drawing.Point(443, 117);
+            this.m_lbl_address.Name = "m_lbl_address";
+            this.m_lbl_address.Size = new System.Drawing.Size(81, 16);
+            this.m_lbl_address.TabIndex = 9;
+            this.m_lbl_address.Text = "Địa chỉ          :";
             // 
             // m_lbl_company_phone
             // 
@@ -340,82 +357,110 @@
             this.m_lbl_company_phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_lbl_company_phone.Location = new System.Drawing.Point(145, 159);
             this.m_lbl_company_phone.Name = "m_lbl_company_phone";
-            this.m_lbl_company_phone.Size = new System.Drawing.Size(86, 16);
-            this.m_lbl_company_phone.TabIndex = 56;
-            this.m_lbl_company_phone.Text = "xxxxxxxxxxxxx";
+            this.m_lbl_company_phone.Size = new System.Drawing.Size(84, 16);
+            this.m_lbl_company_phone.TabIndex = 12;
+            this.m_lbl_company_phone.Text = "0902.023.488";
             // 
-            // label9
+            // m_lbl_depository
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(547, 205);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 16);
-            this.label9.TabIndex = 57;
-            this.label9.Text = "Nhân viên  :";
-            // 
-            // m_cbo_user
-            // 
-            this.m_cbo_user.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.m_cbo_user.FormattingEnabled = true;
-            this.m_cbo_user.Location = new System.Drawing.Point(636, 200);
-            this.m_cbo_user.Name = "m_cbo_user";
-            this.m_cbo_user.Size = new System.Drawing.Size(159, 21);
-            this.m_cbo_user.TabIndex = 58;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(43, 63);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(73, 16);
-            this.label11.TabIndex = 59;
-            this.label11.Text = "Kho hàng  :";
+            this.m_lbl_depository.AutoSize = true;
+            this.m_lbl_depository.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_lbl_depository.Location = new System.Drawing.Point(25, 63);
+            this.m_lbl_depository.Name = "m_lbl_depository";
+            this.m_lbl_depository.Size = new System.Drawing.Size(73, 16);
+            this.m_lbl_depository.TabIndex = 1;
+            this.m_lbl_depository.Text = "Kho hàng  :";
             // 
             // m_cbo_repository
             // 
             this.m_cbo_repository.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.m_cbo_repository.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.m_cbo_repository.FormattingEnabled = true;
-            this.m_cbo_repository.Location = new System.Drawing.Point(143, 58);
+            this.m_cbo_repository.Location = new System.Drawing.Point(125, 58);
             this.m_cbo_repository.Name = "m_cbo_repository";
-            this.m_cbo_repository.Size = new System.Drawing.Size(121, 21);
-            this.m_cbo_repository.TabIndex = 60;
+            this.m_cbo_repository.Size = new System.Drawing.Size(151, 21);
+            this.m_cbo_repository.TabIndex = 2;
+            this.m_cbo_repository.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.m_txt_total_price);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 521);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(4);
+            this.panel2.Size = new System.Drawing.Size(832, 55);
+            this.panel2.TabIndex = 19;
+            // 
+            // m_txt_total_price
+            // 
+            this.m_txt_total_price.BackColor = System.Drawing.SystemColors.Info;
+            this.m_txt_total_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_txt_total_price.Location = new System.Drawing.Point(520, 7);
+            this.m_txt_total_price.Name = "m_txt_total_price";
+            this.m_txt_total_price.Size = new System.Drawing.Size(287, 20);
+            this.m_txt_total_price.TabIndex = 1;
+            this.m_txt_total_price.TabStop = false;
+            this.m_txt_total_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(447, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tổng tiền :";
+            // 
+            // m_cmd_remove_row
+            // 
+            this.m_cmd_remove_row.ImageIndex = 4;
+            this.m_cmd_remove_row.ImageList = this.ImageList;
+            this.m_cmd_remove_row.Location = new System.Drawing.Point(800, 225);
+            this.m_cmd_remove_row.Name = "m_cmd_remove_row";
+            this.m_cmd_remove_row.Size = new System.Drawing.Size(32, 22);
+            this.m_cmd_remove_row.TabIndex = 21;
+            this.m_cmd_remove_row.UseVisualStyleBackColor = true;
             // 
             // f331_xuat_ban_hang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Turquoise;
-            this.ClientSize = new System.Drawing.Size(821, 593);
+            this.ClientSize = new System.Drawing.Size(832, 616);
+            this.Controls.Add(this.m_cmd_remove_row);
+            this.Controls.Add(this.m_fg);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.m_cbo_repository);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.m_cbo_user);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.m_lbl_depository);
             this.Controls.Add(this.m_lbl_company_phone);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.m_lbl_address);
+            this.Controls.Add(this.m_lbl_noi_ban);
             this.Controls.Add(this.m_lbl_company_info_address);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.m_lbl_phone);
             this.Controls.Add(this.m_lbl_company_info_name);
             this.Controls.Add(this.m_dat_bill_date);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.m_lbl_company_info);
+            this.Controls.Add(this.m_lbl_date);
             this.Controls.Add(this.m_txt_tax_code);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.m_lbl_tax_code);
             this.Controls.Add(this.m_txt_bill_code);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.m_fg);
+            this.Controls.Add(this.m_lbl_order_number);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_cmd_add_customer);
             this.Controls.Add(this.m_txt_customer);
             this.Controls.Add(this.m_lbl_customer);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.m_lbl_header);
+            this.MaximizeBox = false;
             this.Name = "f331_xuat_ban_hang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F331- Hoa don ban hang";
             this.m_pnl_out_place_dm.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -423,34 +468,36 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label m_lbl_header;
         private System.Windows.Forms.TextBox m_txt_customer;
         private System.Windows.Forms.Label m_lbl_customer;
         private System.Windows.Forms.Button m_cmd_add_customer;
         internal System.Windows.Forms.Panel m_pnl_out_place_dm;
         private C1.Win.C1FlexGrid.C1FlexGrid m_fg;
         private System.Windows.Forms.TextBox m_txt_bill_code;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label m_lbl_order_number;
         private System.Windows.Forms.TextBox m_txt_tax_code;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label m_lbl_company_info;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label m_lbl_tax_code;
+        private System.Windows.Forms.Label m_lbl_date;
         private System.Windows.Forms.DateTimePicker m_dat_bill_date;
         private System.Windows.Forms.Label m_lbl_company_info_address;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label m_lbl_phone;
         private System.Windows.Forms.Label m_lbl_company_info_name;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label m_lbl_noi_ban;
+        private System.Windows.Forms.Label m_lbl_address;
         private System.Windows.Forms.Label m_lbl_company_phone;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox m_cbo_user;
         internal System.Windows.Forms.Panel panel1;
         internal System.Windows.Forms.ImageList ImageList;
         internal SIS.Controls.Button.SiSButton m_cmd_update;
         internal SIS.Controls.Button.SiSButton m_cmd_view;
         internal SIS.Controls.Button.SiSButton m_cmd_delete;
         internal SIS.Controls.Button.SiSButton m_cmd_exit;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label m_lbl_depository;
         private System.Windows.Forms.ComboBox m_cbo_repository;
+        internal SIS.Controls.Button.SiSButton m_cmd_ds_hoa_don;
+        internal System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox m_txt_total_price;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button m_cmd_remove_row;
     }
 }
