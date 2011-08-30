@@ -288,6 +288,8 @@ namespace SaleDS {
             
             private global::System.Data.DataColumn columnAMOUNT;
             
+            private global::System.Data.DataColumn columnCATEGORY_ID;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public V_RPT_GD_BILL_DETAILDataTable() {
                 this.TableName = "V_RPT_GD_BILL_DETAIL";
@@ -410,6 +412,13 @@ namespace SaleDS {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn CATEGORY_IDColumn {
+                get {
+                    return this.columnCATEGORY_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -438,7 +447,7 @@ namespace SaleDS {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public V_RPT_GD_BILL_DETAILRow AddV_RPT_GD_BILL_DETAILRow(decimal BILL_ID, decimal PRODUCT_ID, decimal QUANTITY, string BILL_SERI, decimal CUSTOMER_ID, System.DateTime BILL_DATE, string CUSTOMER_NAME, string PRODUCT_NAME, string PRODUCT_CODE, string CATEGORY_NAME, decimal CURRENT_PRICE, decimal AMOUNT) {
+            public V_RPT_GD_BILL_DETAILRow AddV_RPT_GD_BILL_DETAILRow(decimal BILL_ID, decimal PRODUCT_ID, decimal QUANTITY, string BILL_SERI, decimal CUSTOMER_ID, System.DateTime BILL_DATE, string CUSTOMER_NAME, string PRODUCT_NAME, string PRODUCT_CODE, string CATEGORY_NAME, decimal CURRENT_PRICE, decimal AMOUNT, decimal CATEGORY_ID) {
                 V_RPT_GD_BILL_DETAILRow rowV_RPT_GD_BILL_DETAILRow = ((V_RPT_GD_BILL_DETAILRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -453,7 +462,8 @@ namespace SaleDS {
                         PRODUCT_CODE,
                         CATEGORY_NAME,
                         CURRENT_PRICE,
-                        AMOUNT};
+                        AMOUNT,
+                        CATEGORY_ID};
                 rowV_RPT_GD_BILL_DETAILRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowV_RPT_GD_BILL_DETAILRow);
                 return rowV_RPT_GD_BILL_DETAILRow;
@@ -497,6 +507,7 @@ namespace SaleDS {
                 this.columnCATEGORY_NAME = base.Columns["CATEGORY_NAME"];
                 this.columnCURRENT_PRICE = base.Columns["CURRENT_PRICE"];
                 this.columnAMOUNT = base.Columns["AMOUNT"];
+                this.columnCATEGORY_ID = base.Columns["CATEGORY_ID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -527,6 +538,8 @@ namespace SaleDS {
                 base.Columns.Add(this.columnCURRENT_PRICE);
                 this.columnAMOUNT = new global::System.Data.DataColumn("AMOUNT", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAMOUNT);
+                this.columnCATEGORY_ID = new global::System.Data.DataColumn("CATEGORY_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCATEGORY_ID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -542,6 +555,7 @@ namespace SaleDS {
                 this.columnBILL_SERI.MaxLength = 50;
                 this.columnCUSTOMER_ID.AllowDBNull = false;
                 this.columnBILL_DATE.AllowDBNull = false;
+                this.columnCUSTOMER_NAME.AllowDBNull = false;
                 this.columnCUSTOMER_NAME.MaxLength = 250;
                 this.columnPRODUCT_NAME.AllowDBNull = false;
                 this.columnPRODUCT_NAME.MaxLength = 250;
@@ -551,6 +565,7 @@ namespace SaleDS {
                 this.columnCATEGORY_NAME.MaxLength = 250;
                 this.columnCURRENT_PRICE.AllowDBNull = false;
                 this.columnAMOUNT.ReadOnly = true;
+                this.columnCATEGORY_ID.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -755,12 +770,7 @@ namespace SaleDS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public string CUSTOMER_NAME {
                 get {
-                    try {
-                        return ((string)(this[this.tableV_RPT_GD_BILL_DETAIL.CUSTOMER_NAMEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CUSTOMER_NAME\' in table \'V_RPT_GD_BILL_DETAIL\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableV_RPT_GD_BILL_DETAIL.CUSTOMER_NAMEColumn]));
                 }
                 set {
                     this[this.tableV_RPT_GD_BILL_DETAIL.CUSTOMER_NAMEColumn] = value;
@@ -823,13 +833,13 @@ namespace SaleDS {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsCUSTOMER_NAMENull() {
-                return this.IsNull(this.tableV_RPT_GD_BILL_DETAIL.CUSTOMER_NAMEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetCUSTOMER_NAMENull() {
-                this[this.tableV_RPT_GD_BILL_DETAIL.CUSTOMER_NAMEColumn] = global::System.Convert.DBNull;
+            public decimal CATEGORY_ID {
+                get {
+                    return ((decimal)(this[this.tableV_RPT_GD_BILL_DETAIL.CATEGORY_IDColumn]));
+                }
+                set {
+                    this[this.tableV_RPT_GD_BILL_DETAIL.CATEGORY_IDColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1006,13 +1016,14 @@ namespace SaleDS.DS_V_RPT_GD_BILL_DETAILTableAdapters {
             tableMapping.ColumnMappings.Add("CATEGORY_NAME", "CATEGORY_NAME");
             tableMapping.ColumnMappings.Add("CURRENT_PRICE", "CURRENT_PRICE");
             tableMapping.ColumnMappings.Add("AMOUNT", "AMOUNT");
+            tableMapping.ColumnMappings.Add("CATEGORY_ID", "CATEGORY_ID");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SaleDS.Properties.Settings.Default.QuanLyBanHangConnectionString3;
+            this._connection.ConnectionString = global::SaleDS.Properties.Settings.Default.QuanLyBanHangConnectionString4;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1021,8 +1032,8 @@ namespace SaleDS.DS_V_RPT_GD_BILL_DETAILTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, BILL_ID, PRODUCT_ID, QUANTITY, BILL_SERI, CUSTOMER_ID, BILL_DATE, CUST" +
-                "OMER_NAME, PRODUCT_NAME, PRODUCT_CODE, CATEGORY_NAME, CURRENT_PRICE, AMOUNT FROM" +
-                " dbo.V_RPT_GD_BILL_DETAIL";
+                "OMER_NAME, PRODUCT_NAME, PRODUCT_CODE, CATEGORY_NAME, CURRENT_PRICE, AMOUNT, CAT" +
+                "EGORY_ID FROM dbo.V_RPT_GD_BILL_DETAIL";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
