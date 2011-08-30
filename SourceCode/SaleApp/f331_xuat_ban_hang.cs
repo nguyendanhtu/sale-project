@@ -170,7 +170,7 @@ namespace SaleApp
             //2. grid 2 us gd delivery order detail
             op_us_gd_delivery_order_detail.dcDELIVERY_ORDER_ID = m_us_gd_delivery_order.dcID;
             op_us_gd_delivery_order_detail.dcPRODUCT_ID = op_us_gd_bill_detail.dcPRODUCT_ID;
-            op_us_gd_delivery_order_detail.dcQUANTITY = CIPConvert.ToDecimal(m_fg[i_grid_row, (int)e_col_Number.QUANTITY]);
+            op_us_gd_delivery_order_detail.dcQUANTITY = op_us_gd_bill_detail.dcQUANTITY * (-1);
             
         }
 
