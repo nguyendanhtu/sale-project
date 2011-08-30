@@ -208,6 +208,22 @@ public class US_GD_DELIVERY_ORDER : US_Object
 		this.FillDatasetByCommand(pm_objDS, v_cmdSQL);
 		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
 	}
+
+    public void FillDataset(
+        DS_GD_DELIVERY_ORDER op_gd_delivery_order
+        , decimal ip_repository_id
+        , DateTime ip_from_date
+        , DateTime ip_to_date
+        , string ip_str_in_out_yn)
+    {
+        CStoredProc v_obj_pr = new CStoredProc("pr_GD_DELIVERY_ORDER_Select");
+        
+        v_obj_pr.addDatetimeInputParam("@ip_from_date", ip_from_date);
+        v_obj_pr.addDatetimeInputParam("@ip_to_date", ip_to_date);
+        v_obj_pr.addDecimalInputParam("@REPOSITORY_ID", ip_repository_id);
+        v_obj_pr.addNVarcharInputParam("@IN_OUT_YN", ip_str_in_out_yn);
+        v_obj_pr.fillDataSetByCommand(this, op_gd_delivery_order);
+    }
 #endregion
 
   }
