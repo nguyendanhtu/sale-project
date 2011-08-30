@@ -9,6 +9,7 @@
 
 using System;
 using SaleDS;
+using Sale.CDBNames;
 using IP.Core.IPCommon;
 using IP.Core.IPUserService;
 using System.Data.SqlClient;
@@ -173,6 +174,19 @@ public class US_GD_DELIVERY_ORDER : US_Object
 	}
 #endregion
 
+    #region Addtion Function
+    public void InitByDELIVERY_CODE(string  ip_str_delivery_code) 
+	{
+		pm_objDS = new DS_GD_DELIVERY_ORDER();
+		pm_strTableName = c_TableName;
+		IMakeSelectCmd v_objMkCmd = new CMakeAndSelectCmd(pm_objDS, c_TableName);
+        v_objMkCmd.AddCondition(GD_DELIVERY_ORDER.DELIVERY_ORDER_CODE, ip_str_delivery_code, eKieuDuLieu.KieuString, eKieuSoSanh.Bang);
+		SqlCommand v_cmdSQL;
+		v_cmdSQL = v_objMkCmd.getSelectCmd();
+		this.FillDatasetByCommand(pm_objDS, v_cmdSQL);
+		pm_objDR = getRowClone(pm_objDS.Tables[pm_strTableName].Rows[0]);
+	}
+#endregion
 
   }
 }

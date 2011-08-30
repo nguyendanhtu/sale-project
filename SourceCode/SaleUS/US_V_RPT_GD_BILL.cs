@@ -240,6 +240,16 @@ namespace SaleUS
 
             v_obj_procedure.fillDataSetByCommand(this, op_ds_rpt_gd_bill);
         }
+        public void CopyData2US_GD_BILL(ref US_GD_BILL op_us_gd_bill)
+        {
+            op_us_gd_bill.dcID = this.dcID;
+            op_us_gd_bill.strBILL_SERI = this.strBILL_SERI;
+            op_us_gd_bill.dcCUSTOMER_ID = this.dcCUSTOMER_ID;
+            op_us_gd_bill.datBILL_DATE = this.datBILL_DATE;
+            op_us_gd_bill.dcTAX_RATE = this.dcTAX_RATE;
+            op_us_gd_bill.dcAMMOUNT = this.dcAMMOUNT;
+            op_us_gd_bill.dcUSER_ID = this.dcUSER_ID;
+        }
         #endregion
 
 
