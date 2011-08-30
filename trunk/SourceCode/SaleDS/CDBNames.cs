@@ -24,6 +24,7 @@ namespace Sale.CDBNames
         public const string REPOSITORY_ID = "REPOSITORY_ID";
         public const string USER_ID = "USER_ID";
         public const string CUSTOMER_ID = "CUSTOMER_ID";
+        public const string IN_OUT_YN = "IN_OUT_YN";
     }
     public class V_RPT_DELIVERY_ODER
     {
