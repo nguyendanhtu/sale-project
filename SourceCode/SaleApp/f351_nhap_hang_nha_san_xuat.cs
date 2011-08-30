@@ -81,7 +81,7 @@ namespace SaleApp
             m_lbl_depository.Font = new Font("Arial", 9);
             m_lbl_customer.Font = new Font("Arial", 9);
             m_lbl_noi_ban.Font = new Font("Arial", 9);
-            m_lbl_order_number.Font = new Font("Arial", 9);
+            
             m_lbl_date.Font = new Font("Arial", 9);
 
             m_fg.Cols[(int)e_col_Number.PRODUCT_ID].Visible = false;
@@ -142,7 +142,7 @@ namespace SaleApp
 
         private bool is_check_validate_data_ok()
         {
-            if (!CValidateTextBox.IsValid(m_txt_bill_code, DataType.StringType, allowNull.NO, true)) return false;
+            if (!CValidateTextBox.IsValid(m_txt_delivery_code, DataType.StringType, allowNull.NO, true)) return false;
             if (!CValidateTextBox.IsValid(m_txt_customer, DataType.StringType, allowNull.NO, true)) return false;
             if (!CValidateTextBox.IsValid(m_txt_total_price, DataType.NumberType, allowNull.NO, true)) return false;
 
@@ -177,7 +177,7 @@ namespace SaleApp
         private void form_2_us_object(US_GD_BILL op_us_gd_bill, US_GD_DELIVERY_ORDER op_us_gd_delivery_order)
         {
             //1. form 2 us bill
-            op_us_gd_bill.strBILL_SERI = m_txt_bill_code.Text;
+            op_us_gd_bill.strBILL_SERI = m_txt_delivery_code.Text;
             op_us_gd_bill.dcCUSTOMER_ID = m_us_customer.dcID;
             op_us_gd_bill.datBILL_DATE = m_dat_bill_date.Value.Date;          
             op_us_gd_bill.SetTAX_RATENull(); // Chương trình chưa xử lý phần thuế
@@ -185,7 +185,7 @@ namespace SaleApp
             op_us_gd_bill.dcUSER_ID = CAppContext_201.getCurrentUserID();
 
             //1. form 2 us delivery
-            op_us_gd_delivery_order.strDELIVERY_ORDER_CODE = m_txt_bill_code.Text;
+            op_us_gd_delivery_order.strDELIVERY_ORDER_CODE = m_txt_delivery_code.Text;
             op_us_gd_delivery_order.dcCUSTOMER_ID = m_us_customer.dcID;
             op_us_gd_delivery_order.datDELIVERY_ORDER_DATE = m_dat_bill_date.Value.Date;
             op_us_gd_delivery_order.dcREPOSITORY_ID = CIPConvert.ToDecimal(m_cbo_repository.SelectedValue);
@@ -268,7 +268,7 @@ namespace SaleApp
         private void us_gd_bill_2_form(US_GD_BILL ip_us_gd_bill)
         {
             //1. us gd bill 2 form
-            m_txt_bill_code.Text = ip_us_gd_bill.strBILL_SERI;
+            m_txt_delivery_code.Text = ip_us_gd_bill.strBILL_SERI;
             m_us_customer = new US_DM_CUSTOMER(ip_us_gd_bill.dcCUSTOMER_ID);
             m_txt_customer.Text = m_us_customer.strCUSTOMER_NAME;
             m_dat_bill_date.Value = ip_us_gd_bill.datBILL_DATE;
