@@ -393,6 +393,9 @@
     <Compile Include="f932_bao_cao_doanh_thu_theo_ky.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="f961_bao_cao_xuat_nhap_trong_ky.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="f996_license_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -521,6 +524,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="f932_bao_cao_doanh_thu_theo_ky.resx">
       <DependentUpon>f932_bao_cao_doanh_thu_theo_ky.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f961_bao_cao_xuat_nhap_trong_ky.resx">
+      <DependentUpon>f961_bao_cao_xuat_nhap_trong_ky.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="f996_license_form.resx">
