@@ -25,6 +25,21 @@ namespace Sale.CDBNames
         public const string USER_ID = "USER_ID";
         public const string CUSTOMER_ID = "CUSTOMER_ID";
     }
+    public class V_RPT_DELIVERY_ODER
+    {
+        public const string ID = "ID";
+        public const string DELIVERY_ORDER_ID = "DELIVERY_ORDER_ID";
+        public const string PRODUCT_ID = "PRODUCT_ID";
+        public const string QUANTITY = "QUANTITY";
+        public const string DELIVERY_ORDER_CODE = "DELIVERY_ORDER_CODE";
+        public const string DELIVERY_ORDER_DATE = "DELIVERY_ORDER_DATE";
+        public const string PRODUCT_CODE = "PRODUCT_CODE";
+        public const string PRODUCT_NAME = "PRODUCT_NAME";
+        public const string UNIT_ID = "UNIT_ID";
+        public const string UNIT_CODE = "UNIT_CODE";
+        public const string QUANTITY_IN = "QUANTITY_IN";
+        public const string QUANTITY_OUT = "QUANTITY_OUT";
+    }
 
     public class RPT_BILL_DETAIL_SALES
     {
