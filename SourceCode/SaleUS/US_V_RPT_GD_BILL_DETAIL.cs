@@ -336,7 +336,7 @@ public class US_V_RPT_GD_BILL_DETAIL : US_Object
      , DateTime ip_dat_to_date
         )
     {
-        CStoredProc v_obj_procedure = new CStoredProc("pr_V_RPT_GD_BILL_DETAIL_Select");
+        CStoredProc v_obj_procedure = new CStoredProc("pr_V_RPT_GD_BILL_DETAIL_Select_Group");
         v_obj_procedure.addDecimalInputParam("@ip_dc_category_id", ip_dc_category_id);
         v_obj_procedure.addDatetimeInputParam("@ip_dat_from_dat", ip_dat_from_date);
         v_obj_procedure.addDatetimeInputParam("@ip_dat_to_dat", ip_dat_to_date);
