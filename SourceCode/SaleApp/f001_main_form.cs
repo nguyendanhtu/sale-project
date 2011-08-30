@@ -278,6 +278,12 @@ namespace SaleApp
             f401_dm_company_info v_frm401 = new f401_dm_company_info();
             v_frm401.display();
         }
+
+        private void show_nhap_xuat()
+        {
+            f351_nhap_hang_nha_san_xuat v_frm351 = new f351_nhap_hang_nha_san_xuat();
+            v_frm351.display();
+        }
         #endregion
         //
         //
@@ -586,6 +592,19 @@ namespace SaleApp
             catch (Exception v_e)
             {
 
+                CSystemLog_301.ExceptionHandle(v_e);
+            }
+        }
+
+        private void mnu_cmd_hangnhacungcap_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                show_nhap_xuat();
+            }
+            catch (Exception v_e)
+            {
+                
                 CSystemLog_301.ExceptionHandle(v_e);
             }
         }
