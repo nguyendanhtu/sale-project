@@ -267,11 +267,11 @@ namespace SaleApp
 
         private void select_delivery()
         {
-            //f932_bao_cao_doanh_thu_theo_ky v_frm932 = new f932_bao_cao_doanh_thu_theo_ky();
-            //if (v_frm932.select_gd_bill(ref m_us_gd_bill) == DialogResult.OK)
-            //{
-            //    us_gd_bill_2_form(m_us_gd_bill);
-            //}
+            f971_danh_sach_phieu_nhap_xuat_trong_ky v_frm971 = new f971_danh_sach_phieu_nhap_xuat_trong_ky();
+            if (v_frm971.select_in_repository(ref m_us_gd_delivery_order) == DialogResult.OK)
+            {
+                us_gd_delivery_2_form(m_us_gd_delivery_order);
+            }
         }
         #endregion
 

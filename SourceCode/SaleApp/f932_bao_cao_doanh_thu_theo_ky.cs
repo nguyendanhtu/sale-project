@@ -85,6 +85,7 @@ namespace SaleApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f932_bao_cao_doanh_thu_theo_ky));
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
             this.m_pnl_out_place_dm = new System.Windows.Forms.Panel();
+            this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_cmd_select = new SIS.Controls.Button.SiSButton();
             this.m_cmd_export_excel = new SIS.Controls.Button.SiSButton();
             this.m_cmd_exit = new SIS.Controls.Button.SiSButton();
@@ -95,7 +96,6 @@ namespace SaleApp
             this.label2 = new System.Windows.Forms.Label();
             this.m_dat_from_date = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.m_cmd_delete = new SIS.Controls.Button.SiSButton();
             this.m_pnl_out_place_dm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -135,11 +135,26 @@ namespace SaleApp
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_export_excel);
             this.m_pnl_out_place_dm.Controls.Add(this.m_cmd_exit);
             this.m_pnl_out_place_dm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 458);
+            this.m_pnl_out_place_dm.Location = new System.Drawing.Point(0, 415);
             this.m_pnl_out_place_dm.Name = "m_pnl_out_place_dm";
             this.m_pnl_out_place_dm.Padding = new System.Windows.Forms.Padding(4);
-            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(936, 36);
+            this.m_pnl_out_place_dm.Size = new System.Drawing.Size(794, 36);
             this.m_pnl_out_place_dm.TabIndex = 19;
+            // 
+            // m_cmd_delete
+            // 
+            this.m_cmd_delete.AdjustImageLocation = new System.Drawing.Point(0, 0);
+            this.m_cmd_delete.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
+            this.m_cmd_delete.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
+            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Left;
+            this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.m_cmd_delete.ImageIndex = 4;
+            this.m_cmd_delete.ImageList = this.ImageList;
+            this.m_cmd_delete.Location = new System.Drawing.Point(92, 4);
+            this.m_cmd_delete.Name = "m_cmd_delete";
+            this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
+            this.m_cmd_delete.TabIndex = 23;
+            this.m_cmd_delete.Text = "Xóa hóa đơn";
             // 
             // m_cmd_select
             // 
@@ -150,7 +165,7 @@ namespace SaleApp
             this.m_cmd_select.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_select.ImageIndex = 14;
             this.m_cmd_select.ImageList = this.ImageList;
-            this.m_cmd_select.Location = new System.Drawing.Point(756, 4);
+            this.m_cmd_select.Location = new System.Drawing.Point(614, 4);
             this.m_cmd_select.Name = "m_cmd_select";
             this.m_cmd_select.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_select.TabIndex = 22;
@@ -180,7 +195,7 @@ namespace SaleApp
             this.m_cmd_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_exit.ImageIndex = 12;
             this.m_cmd_exit.ImageList = this.ImageList;
-            this.m_cmd_exit.Location = new System.Drawing.Point(844, 4);
+            this.m_cmd_exit.Location = new System.Drawing.Point(702, 4);
             this.m_cmd_exit.Name = "m_cmd_exit";
             this.m_cmd_exit.Size = new System.Drawing.Size(88, 28);
             this.m_cmd_exit.TabIndex = 11;
@@ -190,9 +205,9 @@ namespace SaleApp
             // 
             this.m_fg.ColumnInfo = resources.GetString("m_fg.ColumnInfo");
             this.m_fg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.m_fg.Location = new System.Drawing.Point(0, 100);
+            this.m_fg.Location = new System.Drawing.Point(0, 74);
             this.m_fg.Name = "m_fg";
-            this.m_fg.Size = new System.Drawing.Size(936, 358);
+            this.m_fg.Size = new System.Drawing.Size(794, 341);
             this.m_fg.Styles = new C1.Win.C1FlexGrid.CellStyleCollection(resources.GetString("m_fg.Styles"));
             this.m_fg.TabIndex = 20;
             // 
@@ -206,7 +221,7 @@ namespace SaleApp
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(936, 100);
+            this.groupBox1.Size = new System.Drawing.Size(794, 74);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin báo cáo";
@@ -220,9 +235,9 @@ namespace SaleApp
             this.m_cmd_view.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.m_cmd_view.ImageIndex = 5;
             this.m_cmd_view.ImageList = this.ImageList;
-            this.m_cmd_view.Location = new System.Drawing.Point(845, 16);
+            this.m_cmd_view.Location = new System.Drawing.Point(703, 16);
             this.m_cmd_view.Name = "m_cmd_view";
-            this.m_cmd_view.Size = new System.Drawing.Size(88, 81);
+            this.m_cmd_view.Size = new System.Drawing.Size(88, 55);
             this.m_cmd_view.TabIndex = 22;
             this.m_cmd_view.Text = "In báo cáo";
             // 
@@ -230,7 +245,7 @@ namespace SaleApp
             // 
             this.m_dat_to_date.CustomFormat = "dd/MM/yyyy";
             this.m_dat_to_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_to_date.Location = new System.Drawing.Point(477, 36);
+            this.m_dat_to_date.Location = new System.Drawing.Point(436, 34);
             this.m_dat_to_date.Name = "m_dat_to_date";
             this.m_dat_to_date.Size = new System.Drawing.Size(200, 20);
             this.m_dat_to_date.TabIndex = 3;
@@ -238,7 +253,7 @@ namespace SaleApp
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(425, 42);
+            this.label2.Location = new System.Drawing.Point(384, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 2;
@@ -248,7 +263,7 @@ namespace SaleApp
             // 
             this.m_dat_from_date.CustomFormat = "dd/MM/yyyy";
             this.m_dat_from_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.m_dat_from_date.Location = new System.Drawing.Point(194, 37);
+            this.m_dat_from_date.Location = new System.Drawing.Point(153, 35);
             this.m_dat_from_date.Name = "m_dat_from_date";
             this.m_dat_from_date.Size = new System.Drawing.Size(200, 20);
             this.m_dat_from_date.TabIndex = 1;
@@ -256,31 +271,16 @@ namespace SaleApp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(142, 43);
+            this.label1.Location = new System.Drawing.Point(101, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Từ ngày";
             // 
-            // m_cmd_delete
-            // 
-            this.m_cmd_delete.AdjustImageLocation = new System.Drawing.Point(0, 0);
-            this.m_cmd_delete.BtnShape = SIS.Controls.Button.emunType.BtnShape.Rectangle;
-            this.m_cmd_delete.BtnStyle = SIS.Controls.Button.emunType.XPStyle.Default;
-            this.m_cmd_delete.Dock = System.Windows.Forms.DockStyle.Left;
-            this.m_cmd_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.m_cmd_delete.ImageIndex = 4;
-            this.m_cmd_delete.ImageList = this.ImageList;
-            this.m_cmd_delete.Location = new System.Drawing.Point(92, 4);
-            this.m_cmd_delete.Name = "m_cmd_delete";
-            this.m_cmd_delete.Size = new System.Drawing.Size(88, 28);
-            this.m_cmd_delete.TabIndex = 23;
-            this.m_cmd_delete.Text = "Xóa hóa đơn";
-            // 
             // f932_bao_cao_doanh_thu_theo_ky
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(936, 494);
+            this.ClientSize = new System.Drawing.Size(794, 451);
             this.Controls.Add(this.m_fg);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_pnl_out_place_dm);
@@ -337,6 +337,7 @@ namespace SaleApp
         #endregion
 
         #region Private Methods
+
         private void format_controls()
         {
             CControlFormat.setFormStyle(this);
@@ -346,6 +347,7 @@ namespace SaleApp
             set_define_events();
             this.KeyPreview = true;
         }
+
         private void set_initial_form_load()
         {
             m_obj_trans = get_trans_object(m_fg);
@@ -505,8 +507,7 @@ namespace SaleApp
                             select_hoa_don_ban_hang();
                         }
                         break;
-                }
-                select_hoa_don_ban_hang();
+                }                
             }
             catch (Exception v_e)
             {
