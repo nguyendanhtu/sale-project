@@ -300,7 +300,7 @@ namespace SaleApp
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_grb_thong_tin_ban_hang);
             this.Name = "f961_bao_cao_xuat_nhap_trong_ky";
-            this.Text = "f961_bao_cao_xuat_nhap_trong_ky";
+            this.Text = "F961 - Báo cáo xuất nhập trong kỳ";
             this.Load += new System.EventHandler(this.f961_bao_cao_xuat_nhap_trong_ky_Load);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.m_pnl_out_place_dm.ResumeLayout(false);
@@ -319,7 +319,14 @@ namespace SaleApp
 
 		#region Data Structure
 		private enum e_col_Number{
-			QUANTITY = 4,UNIT_CODE = 5,QUANTITY_OUT = 6,QUANTITY_IN = 7,PRODUCT_NAME = 3,PRODUCT_CODE = 2,DELIVERY_ORDER_DATE = 1
+			QUANTITY = 4
+,UNIT_CODE = 5
+,QUANTITY_OUT = 6
+,QUANTITY_IN = 7
+,PRODUCT_NAME = 3
+,PRODUCT_CODE = 2
+,DELIVERY_ORDER_DATE = 1
+
 		}			
 		#endregion
 
@@ -348,7 +355,14 @@ namespace SaleApp
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
-			v_htb.Add(V_RPT_DELIVERY_ODER.QUANTITY, e_col_Number.QUANTITY);			v_htb.Add(V_RPT_DELIVERY_ODER.UNIT_CODE, e_col_Number.UNIT_CODE);			v_htb.Add(V_RPT_DELIVERY_ODER.QUANTITY_OUT, e_col_Number.QUANTITY_OUT);			v_htb.Add(V_RPT_DELIVERY_ODER.QUANTITY_IN, e_col_Number.QUANTITY_IN);			v_htb.Add(V_RPT_DELIVERY_ODER.PRODUCT_NAME, e_col_Number.PRODUCT_NAME);			v_htb.Add(V_RPT_DELIVERY_ODER.PRODUCT_CODE, e_col_Number.PRODUCT_CODE);			v_htb.Add(V_RPT_DELIVERY_ODER.DELIVERY_ORDER_DATE, e_col_Number.DELIVERY_ORDER_DATE);									
+			v_htb.Add(V_RPT_DELIVERY_ODER.QUANTITY, e_col_Number.QUANTITY);
+			v_htb.Add(V_RPT_DELIVERY_ODER.UNIT_CODE, e_col_Number.UNIT_CODE);
+			v_htb.Add(V_RPT_DELIVERY_ODER.QUANTITY_OUT, e_col_Number.QUANTITY_OUT);
+			v_htb.Add(V_RPT_DELIVERY_ODER.QUANTITY_IN, e_col_Number.QUANTITY_IN);
+			v_htb.Add(V_RPT_DELIVERY_ODER.PRODUCT_NAME, e_col_Number.PRODUCT_NAME);
+			v_htb.Add(V_RPT_DELIVERY_ODER.PRODUCT_CODE, e_col_Number.PRODUCT_CODE);
+			v_htb.Add(V_RPT_DELIVERY_ODER.DELIVERY_ORDER_DATE, e_col_Number.DELIVERY_ORDER_DATE);
+									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_RPT_DELIVERY_ODER.NewRow());
 			return v_obj_trans;			
 		}
@@ -384,6 +398,8 @@ namespace SaleApp
                 ,CIPConvert.ToDecimal(m_cbo_repository.SelectedValue));
 			m_fg.Redraw = false;
 			CGridUtils.Dataset2C1Grid(m_ds, m_fg, m_obj_trans);
+            m_fg.Subtotal(AggregateEnum.Sum, 0, -1, (int)e_col_Number.QUANTITY_IN);
+            m_fg.Subtotal(AggregateEnum.Sum, 0, -1, (int)e_col_Number.QUANTITY_OUT, "Tổng Xuất/Nhập"); 
 			m_fg.Redraw = true;
 		}
         
@@ -405,10 +421,11 @@ namespace SaleApp
 
         private void export_excel()
         {
-            CExcelReport v_obj_export_excel = new CExcelReport("f961_rpt_bao_cao_xuat_nhap_theo_ky.xlsx", 6, 1);
+            CExcelReport v_obj_export_excel = new CExcelReport("f961_rpt_bao_cao_xuat_nhap_theo_ky.xlsx", 7, 1);
             v_obj_export_excel.AddFindAndReplaceItem("</TU_NGAY>", m_dat_from_date.Value.Date.ToString("dd/MM/yyyy"));
             v_obj_export_excel.AddFindAndReplaceItem("</DEN_NGAY>", m_dat_to_date.Value.Date.ToString("dd/MM/yyyy"));
             v_obj_export_excel.AddFindAndReplaceItem("</SAN_PHAM>", m_cbo_ten_mat_hang.Text);
+            v_obj_export_excel.AddFindAndReplaceItem("</KHO>", m_cbo_repository.Text);
             v_obj_export_excel.FindAndReplace(false);
             v_obj_export_excel.Export2ExcelWithoutFixedRows(m_fg, (int)e_col_Number.DELIVERY_ORDER_DATE, m_fg.Cols.Count - 1, true);
 
@@ -419,14 +436,13 @@ namespace SaleApp
 		private void view_v_rpt_delivery_oder(){			
 			if (!CGridUtils.IsThere_Any_NonFixed_Row(m_fg)) return;
 			if (!CGridUtils.isValid_NonFixed_RowIndex(m_fg, m_fg.Row)) return;
-			grid2us_object(m_us, m_fg.Row);
-		//	f961_bao_cao_xuat_nhap_trong_ky_DE v_fDE = new f961_bao_cao_xuat_nhap_trong_ky_DE();			
-		//	v_fDE.display(m_us);
+            load_data_2_grid();
 		}
 		private void set_define_events(){
 			m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_export_excel.Click += new EventHandler(m_cmd_export_excel_Click);
-			m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
+			
+            m_cmd_view.Click += new EventHandler(m_cmd_view_Click);
             m_dat_from_date.ValueChanged += new EventHandler(m_dat_from_date_ValueChanged);
             m_dat_to_date.ValueChanged += new EventHandler(m_dat_to_date_ValueChanged);
 		}

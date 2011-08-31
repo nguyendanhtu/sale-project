@@ -294,7 +294,15 @@ namespace SaleApp
 
 		#region Data Structure
 		private enum e_col_Number{
-			CUSTOMER_NAME = 7,PRODUCT_NAME = 4,AMOUNT = 8,QUANTITY = 6,BILL_SERI = 2,PRODUCT_CODE = 3,CURRENT_PRICE = 5,BILL_DATE = 1
+			CUSTOMER_NAME = 7
+,PRODUCT_NAME = 4
+,AMOUNT = 8
+,QUANTITY = 5
+,BILL_SERI = 2
+,PRODUCT_CODE = 3
+,CURRENT_PRICE = 6
+,BILL_DATE = 1
+
 		}			
 		#endregion
 
@@ -320,7 +328,15 @@ namespace SaleApp
 		}	
 		private ITransferDataRow get_trans_object(C1.Win.C1FlexGrid.C1FlexGrid i_fg){
 			Hashtable v_htb = new Hashtable();
-			v_htb.Add(V_RPT_GD_BILL_DETAIL.CUSTOMER_NAME, e_col_Number.CUSTOMER_NAME);			v_htb.Add(V_RPT_GD_BILL_DETAIL.PRODUCT_NAME, e_col_Number.PRODUCT_NAME);			v_htb.Add(V_RPT_GD_BILL_DETAIL.AMOUNT, e_col_Number.AMOUNT);			v_htb.Add(V_RPT_GD_BILL_DETAIL.QUANTITY, e_col_Number.QUANTITY);			v_htb.Add(V_RPT_GD_BILL_DETAIL.BILL_SERI, e_col_Number.BILL_SERI);			v_htb.Add(V_RPT_GD_BILL_DETAIL.PRODUCT_CODE, e_col_Number.PRODUCT_CODE);			v_htb.Add(V_RPT_GD_BILL_DETAIL.CURRENT_PRICE, e_col_Number.CURRENT_PRICE);			v_htb.Add(V_RPT_GD_BILL_DETAIL.BILL_DATE, e_col_Number.BILL_DATE);									
+			v_htb.Add(V_RPT_GD_BILL_DETAIL.CUSTOMER_NAME, e_col_Number.CUSTOMER_NAME);
+			v_htb.Add(V_RPT_GD_BILL_DETAIL.PRODUCT_NAME, e_col_Number.PRODUCT_NAME);
+			v_htb.Add(V_RPT_GD_BILL_DETAIL.AMOUNT, e_col_Number.AMOUNT);
+			v_htb.Add(V_RPT_GD_BILL_DETAIL.QUANTITY, e_col_Number.QUANTITY);
+			v_htb.Add(V_RPT_GD_BILL_DETAIL.BILL_SERI, e_col_Number.BILL_SERI);
+			v_htb.Add(V_RPT_GD_BILL_DETAIL.PRODUCT_CODE, e_col_Number.PRODUCT_CODE);
+			v_htb.Add(V_RPT_GD_BILL_DETAIL.CURRENT_PRICE, e_col_Number.CURRENT_PRICE);
+			v_htb.Add(V_RPT_GD_BILL_DETAIL.BILL_DATE, e_col_Number.BILL_DATE);
+									
 			ITransferDataRow v_obj_trans = new CC1TransferDataRow(i_fg,v_htb,m_ds.V_RPT_GD_BILL_DETAIL.NewRow());
 			return v_obj_trans;			
 		}
@@ -419,7 +435,7 @@ namespace SaleApp
 
 		private void m_cmd_view_Click(object sender, EventArgs e) {
 			try{
-				view_v_rpt_gd_bill_detail();
+				//view_v_rpt_gd_bill_detail();
                 load_data_2_grid();
 			}
 			catch (Exception v_e){

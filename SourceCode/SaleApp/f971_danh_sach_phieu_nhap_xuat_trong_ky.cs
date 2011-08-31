@@ -330,7 +330,7 @@ namespace SaleApp
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Name = "f971_danh_sach_phieu_nhap_xuat_trong_ky";
-            this.Text = "f971_danh_sach_phieu_nhap_xuat_trong_ky";
+            this.Text = "F971 - Danh sách phiếu nhập xuất trong kỳ";
             this.Load += new System.EventHandler(this.f971_danh_sach_phieu_nhap_xuat_trong_ky_Load);
             this.m_pnl_out_place_dm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
