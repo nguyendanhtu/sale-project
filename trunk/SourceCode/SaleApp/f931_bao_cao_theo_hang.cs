@@ -272,7 +272,7 @@ namespace SaleApp
             this.Controls.Add(this.m_pnl_out_place_dm);
             this.Controls.Add(this.m_grb_thong_tin_ban_hang);
             this.Name = "f931_bao_cao_theo_hang";
-            this.Text = "F921 Báo cáo bán hàng theo sản phẩm";
+            this.Text = "F931 Báo cáo bán hàng theo sản phẩm";
             this.Load += new System.EventHandler(this.f931_bao_cao_theo_hang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.m_fg)).EndInit();
             this.m_grb_thong_tin_ban_hang.ResumeLayout(false);
