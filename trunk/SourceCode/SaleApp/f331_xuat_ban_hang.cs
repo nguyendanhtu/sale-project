@@ -104,9 +104,6 @@ namespace SaleApp
             m_obj_trans = get_trans_object(m_fg);
             load_data_2_repository();
             mapping_col_product_code();
-
-          
-          
         }
 
         private void load_data_2_repository()
@@ -133,10 +130,6 @@ namespace SaleApp
                 m_hst_mapping_id_2_code_product.Add( v_dr[DM_PRODUCT.ID], v_dr[DM_PRODUCT.PRODUCT_CODE]);
             }
 
-            
-
-           
-
         }
        
 
@@ -156,9 +149,6 @@ namespace SaleApp
             // check grid co' okie du lieu hay khong?
             return true;
         }
-
-        
-
 
         private void grid_2_us_object(int i_grid_row, US_GD_BILL_DETAIL op_us_gd_bill_detail, US_GD_DELIVERY_ORDER_DETAIL op_us_gd_delivery_order_detail)
         {
