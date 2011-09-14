@@ -203,9 +203,6 @@ namespace SaleApp
             return true;
         }
 
-        
-
-
         private void save_data()
         {
             if (!is_check_validate_data_ok())    return;
