@@ -144,12 +144,16 @@
     <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\..\Tools\Thu vien devexpress\DevExpress.XtraEditors.v10.1.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\Tools\Thu vien devexpress\DevExpress.XtraGrid.v10.1.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.XtraLayout.v10.1, Version=10.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Tools\Thu vien devexpress\DevExpress.XtraLayout.v10.1.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraVerticalGrid.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\Tools\Thu vien devexpress\DevExpress.XtraVerticalGrid.v10.1.dll</HintPath>
+    </Reference>
     <Reference Include="Interop.Excel">
       <Name>Interop.Excel</Name>
       <HintPath>..\DLL\Interop.Excel.dll</HintPath>
