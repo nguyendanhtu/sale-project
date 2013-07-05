@@ -211,7 +211,7 @@ public class US_DM_PRODUCT : US_Object
 #region Init Functions
 	public US_DM_PRODUCT() 
 	{
-		pm_objDS = new DS_DM_PRODUCT();
+        pm_objDS = new SaleDS.DS_DM_PRODUCT();
 		pm_strTableName = c_TableName;
 		pm_objDR = pm_objDS.Tables[pm_strTableName].NewRow();
 	}

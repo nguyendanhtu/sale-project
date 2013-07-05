@@ -2,14 +2,15 @@
 <xs:schema id="DS_PRODUCT" targetNamespace="http://tempuri.org/DS_PRODUCT.xsd" xmlns:mstns="http://tempuri.org/DS_PRODUCT.xsd" xmlns="http://tempuri.org/DS_PRODUCT.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QuanLyBanHangConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QuanLyBanHangConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SaleDS.Properties.Settings.GlobalReference.Default.QuanLyBanHangConnectionString2" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QuanLyBanHangConnectionString5" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QuanLyBanHangConnectionString5 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SaleDS.Properties.Settings.GlobalReference.Default.QuanLyBanHangConnectionString5" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DM_PRODUCTTableAdapter" GeneratorDataComponentClassName="DM_PRODUCTTableAdapter" Name="DM_PRODUCT" UserDataComponentName="DM_PRODUCTTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QuanLyBanHangConnectionString2 (Settings)" DbObjectName="QuanLyBanHang.dbo.DM_PRODUCT" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QuanLyBanHangConnectionString5 (Settings)" DbObjectName="QuanLyBanHang.dbo.DM_PRODUCT" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[DM_PRODUCT] WHERE (([ID] = @Original_ID) AND ([PRODUCT_CODE] = @Original_PRODUCT_CODE) AND ([PRODUCT_NAME] = @Original_PRODUCT_NAME) AND ([UNIT_ID] = @Original_UNIT_ID) AND ([CATEGORY_ID] = @Original_CATEGORY_ID) AND ((@IsNull_IMAGE_PATH = 1 AND [IMAGE_PATH] IS NULL) OR ([IMAGE_PATH] = @Original_IMAGE_PATH)) AND ((@IsNull_DESCRIPTION = 1 AND [DESCRIPTION] IS NULL) OR ([DESCRIPTION] = @Original_DESCRIPTION)) AND ((@IsNull_PROVIDER_ID = 1 AND [PROVIDER_ID] IS NULL) OR ([PROVIDER_ID] = @Original_PROVIDER_ID)) AND ([CURRENT_PRICE] = @Original_CURRENT_PRICE))</CommandText>
@@ -100,45 +101,45 @@ SELECT ID, PRODUCT_CODE, PRODUCT_NAME, UNIT_ID, CATEGORY_ID, IMAGE_PATH, DESCRIP
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DS_PRODUCT" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="DS_PRODUCT" msprop:Generator_UserDSName="DS_PRODUCT" msprop:EnableTableAdapterManager="true">
+  <xs:element name="DS_PRODUCT" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_PRODUCT" msprop:Generator_UserDSName="DS_PRODUCT">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DM_PRODUCT" msprop:Generator_UserTableName="DM_PRODUCT" msprop:Generator_RowDeletedName="DM_PRODUCTRowDeleted" msprop:Generator_TableClassName="DM_PRODUCTDataTable" msprop:Generator_RowChangedName="DM_PRODUCTRowChanged" msprop:Generator_RowClassName="DM_PRODUCTRow" msprop:Generator_RowChangingName="DM_PRODUCTRowChanging" msprop:Generator_RowEvArgName="DM_PRODUCTRowChangeEvent" msprop:Generator_RowEvHandlerName="DM_PRODUCTRowChangeEventHandler" msprop:Generator_TablePropName="DM_PRODUCT" msprop:Generator_TableVarName="tableDM_PRODUCT" msprop:Generator_RowDeletingName="DM_PRODUCTRowDeleting">
+        <xs:element name="DM_PRODUCT" msprop:Generator_TableClassName="DM_PRODUCTDataTable" msprop:Generator_TableVarName="tableDM_PRODUCT" msprop:Generator_TablePropName="DM_PRODUCT" msprop:Generator_RowDeletingName="DM_PRODUCTRowDeleting" msprop:Generator_UserTableName="DM_PRODUCT" msprop:Generator_RowChangingName="DM_PRODUCTRowChanging" msprop:Generator_RowEvHandlerName="DM_PRODUCTRowChangeEventHandler" msprop:Generator_RowDeletedName="DM_PRODUCTRowDeleted" msprop:Generator_RowEvArgName="DM_PRODUCTRowChangeEvent" msprop:Generator_RowChangedName="DM_PRODUCTRowChanged" msprop:Generator_RowClassName="DM_PRODUCTRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInTable="IDColumn" type="xs:decimal" />
-              <xs:element name="PRODUCT_CODE" msprop:Generator_UserColumnName="PRODUCT_CODE" msprop:Generator_ColumnPropNameInRow="PRODUCT_CODE" msprop:Generator_ColumnVarNameInTable="columnPRODUCT_CODE" msprop:Generator_ColumnPropNameInTable="PRODUCT_CODEColumn">
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:decimal" />
+              <xs:element name="PRODUCT_CODE" msprop:Generator_ColumnVarNameInTable="columnPRODUCT_CODE" msprop:Generator_ColumnPropNameInRow="PRODUCT_CODE" msprop:Generator_ColumnPropNameInTable="PRODUCT_CODEColumn" msprop:Generator_UserColumnName="PRODUCT_CODE">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="PRODUCT_NAME" msprop:Generator_UserColumnName="PRODUCT_NAME" msprop:Generator_ColumnPropNameInRow="PRODUCT_NAME" msprop:Generator_ColumnVarNameInTable="columnPRODUCT_NAME" msprop:Generator_ColumnPropNameInTable="PRODUCT_NAMEColumn">
+              <xs:element name="PRODUCT_NAME" msprop:Generator_ColumnVarNameInTable="columnPRODUCT_NAME" msprop:Generator_ColumnPropNameInRow="PRODUCT_NAME" msprop:Generator_ColumnPropNameInTable="PRODUCT_NAMEColumn" msprop:Generator_UserColumnName="PRODUCT_NAME">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="UNIT_ID" msprop:Generator_UserColumnName="UNIT_ID" msprop:Generator_ColumnPropNameInRow="UNIT_ID" msprop:Generator_ColumnVarNameInTable="columnUNIT_ID" msprop:Generator_ColumnPropNameInTable="UNIT_IDColumn" type="xs:decimal" />
-              <xs:element name="CATEGORY_ID" msprop:Generator_UserColumnName="CATEGORY_ID" msprop:Generator_ColumnPropNameInRow="CATEGORY_ID" msprop:Generator_ColumnVarNameInTable="columnCATEGORY_ID" msprop:Generator_ColumnPropNameInTable="CATEGORY_IDColumn" type="xs:decimal" />
-              <xs:element name="IMAGE_PATH" msprop:Generator_UserColumnName="IMAGE_PATH" msprop:Generator_ColumnPropNameInRow="IMAGE_PATH" msprop:Generator_ColumnVarNameInTable="columnIMAGE_PATH" msprop:Generator_ColumnPropNameInTable="IMAGE_PATHColumn" minOccurs="0">
+              <xs:element name="UNIT_ID" msprop:Generator_ColumnVarNameInTable="columnUNIT_ID" msprop:Generator_ColumnPropNameInRow="UNIT_ID" msprop:Generator_ColumnPropNameInTable="UNIT_IDColumn" msprop:Generator_UserColumnName="UNIT_ID" type="xs:decimal" />
+              <xs:element name="CATEGORY_ID" msprop:Generator_ColumnVarNameInTable="columnCATEGORY_ID" msprop:Generator_ColumnPropNameInRow="CATEGORY_ID" msprop:Generator_ColumnPropNameInTable="CATEGORY_IDColumn" msprop:Generator_UserColumnName="CATEGORY_ID" type="xs:decimal" />
+              <xs:element name="IMAGE_PATH" msprop:Generator_ColumnVarNameInTable="columnIMAGE_PATH" msprop:Generator_ColumnPropNameInRow="IMAGE_PATH" msprop:Generator_ColumnPropNameInTable="IMAGE_PATHColumn" msprop:Generator_UserColumnName="IMAGE_PATH" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DESCRIPTION" msprop:Generator_UserColumnName="DESCRIPTION" msprop:Generator_ColumnPropNameInRow="DESCRIPTION" msprop:Generator_ColumnVarNameInTable="columnDESCRIPTION" msprop:Generator_ColumnPropNameInTable="DESCRIPTIONColumn" minOccurs="0">
+              <xs:element name="DESCRIPTION" msprop:Generator_ColumnVarNameInTable="columnDESCRIPTION" msprop:Generator_ColumnPropNameInRow="DESCRIPTION" msprop:Generator_ColumnPropNameInTable="DESCRIPTIONColumn" msprop:Generator_UserColumnName="DESCRIPTION" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="PROVIDER_ID" msprop:Generator_UserColumnName="PROVIDER_ID" msprop:Generator_ColumnPropNameInRow="PROVIDER_ID" msprop:Generator_ColumnVarNameInTable="columnPROVIDER_ID" msprop:Generator_ColumnPropNameInTable="PROVIDER_IDColumn" type="xs:decimal" minOccurs="0" />
-              <xs:element name="CURRENT_PRICE" msprop:Generator_UserColumnName="CURRENT_PRICE" msprop:Generator_ColumnPropNameInRow="CURRENT_PRICE" msprop:Generator_ColumnVarNameInTable="columnCURRENT_PRICE" msprop:Generator_ColumnPropNameInTable="CURRENT_PRICEColumn" type="xs:decimal" />
+              <xs:element name="PROVIDER_ID" msprop:Generator_ColumnVarNameInTable="columnPROVIDER_ID" msprop:Generator_ColumnPropNameInRow="PROVIDER_ID" msprop:Generator_ColumnPropNameInTable="PROVIDER_IDColumn" msprop:Generator_UserColumnName="PROVIDER_ID" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CURRENT_PRICE" msprop:Generator_ColumnVarNameInTable="columnCURRENT_PRICE" msprop:Generator_ColumnPropNameInRow="CURRENT_PRICE" msprop:Generator_ColumnPropNameInTable="CURRENT_PRICEColumn" msprop:Generator_UserColumnName="CURRENT_PRICE" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

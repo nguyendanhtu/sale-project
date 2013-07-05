@@ -159,7 +159,7 @@ namespace SaleApp
                 return;
             }
 
-            f301_dm_produc v_frm301 = new f301_dm_produc();
+            f301_dm_product v_frm301 = new f301_dm_product();
             v_frm301.display();
         }
 
