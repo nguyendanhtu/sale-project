@@ -32,10 +32,17 @@ namespace SaleApp
             this.ShowDialog();
         }
 
-        public void display_for_update(US_DM_PRODUCT_DE ip_us_product_detail)
+        public void display_for_update(US_DM_PRODUCT ip_us_product_detail)
         {
             m_e_form_mode = DataEntryFormMode.UpdateDataState;
             m_us_product_detail = ip_us_product_detail;
+            this.ShowDialog();
+        }
+        public void display_for_view(US_DM_PRODUCT ip_us_detail)
+        {
+
+            m_e_form_mode = DataEntryFormMode.ViewDataState;
+            m_us_product_detail = ip_us_detail;
             this.ShowDialog();
         }
 
@@ -50,7 +57,7 @@ namespace SaleApp
         #endregion 
 
         #region Members
-        US_DM_PRODUCT_DE m_us_product_detail = new US_DM_PRODUCT_DE();
+        US_DM_PRODUCT m_us_product_detail = new US_DM_PRODUCT();
         DataEntryFormMode m_e_form_mode = DataEntryFormMode.InsertDataState;
         #endregion
 
@@ -73,7 +80,16 @@ namespace SaleApp
             m_lblproduct_name.Font = new Font("Arial", 9);
             m_lblproduct_unit.Font = new Font("Arial", 9);
         }
-
+        private void us_object_2_form(US_DM_PRODUCT ip_us_product_detail)
+        {
+            m_txt_product_code.Text = ip_us_product_detail.strPRODUCT_CODE;
+            m_txt_product_name.Text = ip_us_product_detail.strPRODUCT_NAME;
+            m_txt_price.Text = CIPConvert.ToStr(ip_us_product_detail.dcCURRENT_PRICE,"#,###");
+            m_txt_description.Text = ip_us_product_detail.strDESCRIPTION;
+            m_cbo_unit.SelectedValue = CIPConvert.ToStr(ip_us_product_detail.dcUNIT_ID);
+            m_cbo_category.SelectedValue = CIPConvert.ToStr(ip_us_product_detail.dcCATEGORY_ID);
+            m_txt_image_path.Text = ip_us_product_detail.strIMAGE_PATH;
+        }
         private void load_data_2_unit_cbo()
         {
             US_DM_UNIT v_us_unit = new US_DM_UNIT();
@@ -92,19 +108,7 @@ namespace SaleApp
             m_cbo_category.ValueMember = DM_CATEGORY.ID;
             m_cbo_category.DataSource = v_ds_dm_category.DM_CATEGORY;
         }
-
-
-        private void us_object_2_form(US_DM_PRODUCT_DE ip_us_product_detail)
-        {
-            m_txt_product_code.Text=ip_us_product_detail.strPRODUCT_CODE;
-            m_txt_product_name.Text=ip_us_product_detail.strPRODUCT_NAME;
-            m_txt_price.Text = CIPConvert.ToStr(ip_us_product_detail.dcCURRENT_PRICE , "#,###");
-            m_txt_description.Text=ip_us_product_detail.strDESCRIPTION;
-            m_cbo_unit.SelectedValue = CIPConvert.ToStr(ip_us_product_detail.dcUNIT_ID);
-            m_cbo_category.SelectedValue = CIPConvert.ToStr(ip_us_product_detail.dcCATEGORY_ID);            
-        }
-
-        private void form_2_us_object(US_DM_PRODUCT_DE op_us_product)
+        private void form_2_us_object(US_DM_PRODUCT op_us_product)
         {
             op_us_product.strPRODUCT_CODE= m_txt_product_code.Text;
             op_us_product.strPRODUCT_NAME=m_txt_product_name.Text;
@@ -112,8 +116,8 @@ namespace SaleApp
             op_us_product.strDESCRIPTION = m_txt_description.Text;
             op_us_product.dcUNIT_ID = CIPConvert.ToDecimal(m_cbo_unit.SelectedValue);
             op_us_product.dcCATEGORY_ID = CIPConvert.ToDecimal(m_cbo_category.SelectedValue);
-            op_us_product.SetPROVIDER_IDNull();
-            op_us_product.SetIMAGE_PATHNull();
+            //op_us_product.SetPROVIDER_CODENull();
+            op_us_product.strIMAGE_PATH=m_txt_image_path.Text;
         }
         private bool check_data_validate()
         {
@@ -154,7 +158,7 @@ namespace SaleApp
         {
             m_cmd_exit.Click += new EventHandler(m_cmd_exit_Click);
             m_cmd_save.Click += new EventHandler(m_cmd_save_Click);
-            this.Load += new EventHandler(f301_dm_product_de_Load);
+            this.Load += new EventHandler(f302_dm_product_de_Load);
 
             m_txt_price.Leave += new EventHandler(m_txt_price_Leave);
         }
@@ -178,11 +182,10 @@ namespace SaleApp
         }
         #endregion
 
-
         // ======================
         //============Event =========
         //==========================
-        void f301_dm_product_de_Load(object sender, EventArgs e)
+        void f302_dm_product_de_Load(object sender, EventArgs e)
         {
             try
             {
@@ -196,13 +199,20 @@ namespace SaleApp
                         break;
                     case DataEntryFormMode.UpdateDataState:
                         us_object_2_form(m_us_product_detail);
-                        m_txt_price.Enabled = false;
+                        //m_txt_price.Enabled = false;
                         break;
                     case DataEntryFormMode.ViewDataState:
+                        us_object_2_form(m_us_product_detail);
                         break;
                     default:
                         break;
                 }
+                if (m_txt_image_path.Text!="")
+                {
+                    Image m_img_myimage = Image.FromFile(m_txt_image_path.Text);
+                    pictureBox1.Image = m_img_myimage;
+                }
+                
             }
             catch (Exception v_e) 
             {
@@ -236,6 +246,16 @@ namespace SaleApp
             {
                 CSystemLog_301.ExceptionHandle(v_e);
             }
+        }
+
+        private void m_cmd_browse_img_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+            string m_str_image_path = openFileDialog1.FileName;
+           
+            m_txt_image_path.Text = m_str_image_path;
+            Image m_img_myimage = Image.FromFile(m_txt_image_path.Text);
+            pictureBox1.Image = m_img_myimage;
         }
     }
 }
